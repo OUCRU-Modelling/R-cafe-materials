@@ -1,0 +1,240 @@
+[
+  {
+    "objectID": "slides/quarto/basic-quarto.html",
+    "href": "slides/quarto/basic-quarto.html",
+    "title": "Basic quarto",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "slides/quarto/basic-quarto.html#quarto",
+    "href": "slides/quarto/basic-quarto.html#quarto",
+    "title": "Basic quarto",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "slides/quarto/basic-quarto.html#bullets",
+    "href": "slides/quarto/basic-quarto.html#bullets",
+    "title": "Basic quarto",
+    "section": "Bullets",
+    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+  },
+  {
+    "objectID": "slides/quarto/basic-quarto.html#code",
+    "href": "slides/quarto/basic-quarto.html#code",
+    "title": "Basic quarto",
+    "section": "Code",
+    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "slides/quarto/index.html",
+    "href": "slides/quarto/index.html",
+    "title": "Test",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "objectID": "slides/quarto/index.html#slide-1",
+    "href": "slides/quarto/index.html#slide-1",
+    "title": "Quarto",
+    "section": "Slide 1",
+    "text": "Slide 1\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "objectID": "slides/quarto/index.html#slide-2",
+    "href": "slides/quarto/index.html#slide-2",
+    "title": "Quarto",
+    "section": "Slide 2",
+    "text": "Slide 2\n\n\n\nindex.qmd\n---\ntitle: \"Basic quarto\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see &lt;https://quarto.org/docs/presentations/&gt;.\n\n## Bullets\n\nWhen you click the **Render** button a document will be generated that includes:\n\n-   Content authored with markdown\n-   Output from executable code\n\n## Code\n\nWhen you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n```{r}\n1 + 1\n```\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html",
+    "href": "slides/quarto-intro/quarto-example.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#quarto",
+    "href": "slides/quarto-intro/quarto-example.html#quarto",
+    "title": "Basic quarto",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#bullets",
+    "href": "slides/quarto-intro/quarto-example.html#bullets",
+    "title": "Basic quarto",
+    "section": "Bullets",
+    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#code",
+    "href": "slides/quarto-intro/quarto-example.html#code",
+    "title": "Basic quarto",
+    "section": "Code",
+    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html",
+    "href": "slides/quarto-intro/index.html",
+    "title": "Introduction to Quarto",
+    "section": "",
+    "text": "index.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#quarto",
+    "href": "slides/quarto-intro/index.html#quarto",
+    "title": "Introduction to Quarto",
+    "section": "Quarto",
+    "text": "Quarto\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Code Block Example: Simple Plot\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#yaml-header",
+    "href": "slides/quarto-intro/index.html#yaml-header",
+    "title": "Introduction to Quarto",
+    "section": "YAML header",
+    "text": "YAML header\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnavbar: false\n---\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#markdown-syntax",
+    "href": "slides/quarto-intro/index.html#markdown-syntax",
+    "title": "Introduction to Quarto",
+    "section": "Markdown syntax",
+    "text": "Markdown syntax"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#header-levels",
+    "href": "slides/quarto-intro/quarto-example.html#header-levels",
+    "title": "Hello, Quarto",
+    "section": "2 Header Levels",
+    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#inline-text-formatting",
+    "href": "slides/quarto-intro/quarto-example.html#inline-text-formatting",
+    "title": "Hello, Quarto",
+    "section": "3 Inline Text Formatting",
+    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#lists",
+    "href": "slides/quarto-intro/quarto-example.html#lists",
+    "title": "Hello, Quarto",
+    "section": "4 Lists",
+    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#code-block-example-simple-plot",
+    "href": "slides/quarto-intro/quarto-example.html#code-block-example-simple-plot",
+    "title": "Hello, Quarto",
+    "section": "5 Code Block Example: Simple Plot",
+    "text": "5 Code Block Example: Simple Plot\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#footnotes",
+    "href": "slides/quarto-intro/quarto-example.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
+    "href": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#quarto-markdown-to-output",
+    "href": "slides/quarto-intro/index.html#quarto-markdown-to-output",
+    "title": "Introduction to Quarto",
+    "section": "Quarto markdown to output",
+    "text": "Quarto markdown to output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Code Block Example: Simple Plot\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#introduction-to-quarto",
+    "href": "slides/quarto-intro/index.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
+    "section": "Introduction to Quarto",
+    "text": "Introduction to Quarto\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#header-levels",
+    "href": "slides/quarto-intro/index.html#header-levels",
+    "title": "Hello, Quarto",
+    "section": "Header Levels",
+    "text": "Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\nNested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#inline-text-formatting",
+    "href": "slides/quarto-intro/index.html#inline-text-formatting",
+    "title": "Hello, Quarto",
+    "section": "Inline Text Formatting",
+    "text": "Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#lists",
+    "href": "slides/quarto-intro/index.html#lists",
+    "title": "Hello, Quarto",
+    "section": "Lists",
+    "text": "Lists\nQuarto supports both ordered and unordered lists.\nUnordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\nOrdered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#code-block-example-simple-plot",
+    "href": "slides/quarto-intro/index.html#code-block-example-simple-plot",
+    "title": "Hello, Quarto",
+    "section": "Code Block Example: Simple Plot",
+    "text": "Code Block Example: Simple Plot\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#footnotes",
+    "href": "slides/quarto-intro/index.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\nFootnotes can be added inline to provide additional information or references. Here’s an example of a footnote in Quarto: 1"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#html-output",
+    "href": "slides/quarto-intro/index.html#html-output",
+    "title": "Introduction to Quarto",
+    "section": "HTML output",
+    "text": "HTML output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png){fig-alt=\"OUCRU logo\"}\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#tables",
+    "href": "slides/quarto-intro/quarto-example.html#tables",
+    "title": "Hello, Quarto",
+    "section": "6 Tables",
+    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#links-and-images",
+    "href": "slides/quarto-intro/quarto-example.html#links-and-images",
+    "title": "Hello, Quarto",
+    "section": "5 Links and images",
+    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "slides/quarto-intro/quarto-example.html#code-block",
+    "href": "slides/quarto-intro/quarto-example.html#code-block",
+    "title": "Hello, Quarto",
+    "section": "7 Code block",
+    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
+    "href": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
+    "title": "Introduction to Quarto",
+    "section": "Quarto markdown vs output",
+    "text": "Quarto markdown vs output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+  }
+]
