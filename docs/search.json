@@ -431,7 +431,7 @@
     "href": "intro.html#packages-1",
     "title": "Foundation of R",
     "section": "Packages",
-    "text": "Packages\n\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"data/linelist_raw.xlsx\")\nhead(data)"
+    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"data/linelist_raw.xlsx\")\nhead(data)"
   },
   {
     "objectID": "intro.html#packages-2",
@@ -466,13 +466,62 @@
     "href": "intro.html#recap",
     "title": "Foundation of R",
     "section": "Recap",
-    "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nHow to upload your project to Github using Github Desktop"
+    "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nHow to upload your project to Github using Github Desktop\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nPerform data import, export, overview in R"
   },
   {
     "objectID": "intro.html#exercise",
     "href": "intro.html#exercise",
     "title": "Foundation of R",
     "section": "Exercise",
-    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreak\nLoad a dataset to R\n\nUpload the code to github"
+    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreak\nLoad a dataset to R and perform data overview\n\nUpload the code to github"
+  },
+  {
+    "objectID": "intro.html#data-import",
+    "href": "intro.html#data-import",
+    "title": "Foundation of R",
+    "section": "Data import",
+    "text": "Data import\nSome useful import functions\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nread_excel()\nreadxl\nimport Excel (.xlsx, .xls) files\n\n\nread_csv()\nreadr\nimport .csv files\n\n\nreadRDS()\nbase\nimport .rds files\n\n\nload()\nbase\nimport .rda files"
+  },
+  {
+    "objectID": "intro.html#data-import-1",
+    "href": "intro.html#data-import-1",
+    "title": "Foundation of R",
+    "section": "Data import",
+    "text": "Data import\n\nrio - support data import for multiple data format\n\nlibrary(rio)\nimport(\"data/linelist_raw.xlsx\", skip = 2)"
+  },
+  {
+    "objectID": "intro.html#data-export",
+    "href": "intro.html#data-export",
+    "title": "Foundation of R",
+    "section": "Data export",
+    "text": "Data export\nSome useful export function in R\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nwrite_xlsx()\nwritexl\nexport data as Excel files\n\n\nwrite.csv()\nutils\nexport data as .csv files\n\n\nsaveRDS()\nbase\nexport data as .rds files\n\n\nsave()\nbase\nexport data .rda files"
+  },
+  {
+    "objectID": "intro.html#clean-column-names",
+    "href": "intro.html#clean-column-names",
+    "title": "Foundation of R",
+    "section": "Clean column names",
+    "text": "Clean column names\n\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
+  },
+  {
+    "objectID": "intro.html#data-summary",
+    "href": "intro.html#data-summary",
+    "title": "Foundation of R",
+    "section": "Data summary",
+    "text": "Data summary\nIn base R, function summary() is used to have the basic statistics of each variables in the dataset\n\nsummary(data)\n\n   case_id            generation   infection_date                  \n Length:6611        Min.   : 0.0   Min.   :2012-04-09 00:00:00.00  \n Class :character   1st Qu.:13.0   1st Qu.:2014-08-25 00:00:00.00  \n Mode  :character   Median :16.0   Median :2014-10-04 00:00:00.00  \n                    Mean   :16.6   Mean   :2014-08-17 15:30:00.42  \n                    3rd Qu.:20.0   3rd Qu.:2014-11-26 00:00:00.00  \n                    Max.   :37.0   Max.   :2015-04-27 00:00:00.00  \n                    NA's   :7      NA's   :2322                    \n  date_onset          hosp_date                     \n Length:6611        Min.   :2012-04-20 00:00:00.00  \n Class :character   1st Qu.:2014-09-07 00:00:00.00  \n Mode  :character   Median :2014-10-15 00:00:00.00  \n                    Mean   :2014-08-31 05:10:56.32  \n                    3rd Qu.:2014-12-10 00:00:00.00  \n                    Max.   :2015-04-30 00:00:00.00  \n                    NA's   :7                       \n date_of_outcome                   outcome             gender         \n Min.   :2012-05-14 00:00:00.0   Length:6611        Length:6611       \n 1st Qu.:2014-09-14 00:00:00.0   Class :character   Class :character  \n Median :2014-10-26 00:00:00.0   Mode  :character   Mode  :character  \n Mean   :2014-09-11 00:04:09.4                                        \n 3rd Qu.:2014-12-21 00:00:00.0                                        \n Max.   :2015-06-04 00:00:00.0                                        \n NA's   :1068                                                         \n   hospital              lon              lat          infector        \n Length:6611        Min.   :-13.27   Min.   :8.446   Length:6611       \n Class :character   1st Qu.:-13.25   1st Qu.:8.461   Class :character  \n Mode  :character   Median :-13.23   Median :8.469   Mode  :character  \n                    Mean   :-13.23   Mean   :8.470                     \n                    3rd Qu.:-13.22   3rd Qu.:8.480                     \n                    Max.   :-13.21   Max.   :8.492                     \n                    NA's   :7        NA's   :7                         \n    source              age              age_unit            row_num    \n Length:6611        Length:6611        Length:6611        Min.   :   1  \n Class :character   Class :character   Class :character   1st Qu.:1648  \n Mode  :character   Mode  :character   Mode  :character   Median :3241  \n                                                          Mean   :3241  \n                                                          3rd Qu.:4836  \n                                                          Max.   :6481  \n                                                                        \n     wt_kg            ht_cm          ct_blood        fever          \n Min.   :-11.00   Min.   :  4.0   Min.   :16.00   Length:6611       \n 1st Qu.: 41.00   1st Qu.: 91.0   1st Qu.:20.00   Class :character  \n Median : 54.00   Median :130.0   Median :22.00   Mode  :character  \n Mean   : 52.69   Mean   :125.2   Mean   :21.26                     \n 3rd Qu.: 66.00   3rd Qu.:159.0   3rd Qu.:22.00                     \n Max.   :111.00   Max.   :295.0   Max.   :26.00                     \n NA's   :7        NA's   :7       NA's   :7                         \n    chills             cough              aches              vomit          \n Length:6611        Length:6611        Length:6611        Length:6611       \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n                                                                            \n      temp      time_admission     merged_header          x28           \n Min.   :35.2   Length:6611        Length:6611        Length:6611       \n 1st Qu.:38.3   Class :character   Class :character   Class :character  \n Median :38.8   Mode  :character   Mode  :character   Mode  :character  \n Mean   :38.6                                                           \n 3rd Qu.:39.2                                                           \n Max.   :40.8                                                           \n NA's   :158"
+  },
+  {
+    "objectID": "intro.html#data-summary-1",
+    "href": "intro.html#data-summary-1",
+    "title": "Foundation of R",
+    "section": "Data summary",
+    "text": "Data summary\n\nHowever, function skim() from package skimr can return a better table output with tables grouped by class of data\n\nlibrary(skimr)\nskim(data)\n\n\nData summary\n\n\nName\ndata\n\n\nNumber of rows\n6611\n\n\nNumber of columns\n28\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n17\n\n\nnumeric\n8\n\n\nPOSIXct\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\ncase_id\n137\n0.98\n6\n6\n0\n5888\n0\n\n\ndate_onset\n293\n0.96\n10\n10\n0\n580\n0\n\n\noutcome\n1500\n0.77\n5\n7\n0\n2\n0\n\n\ngender\n324\n0.95\n1\n1\n0\n2\n0\n\n\nhospital\n1512\n0.77\n5\n36\n0\n13\n0\n\n\ninfector\n2323\n0.65\n6\n6\n0\n2697\n0\n\n\nsource\n2323\n0.65\n5\n7\n0\n2\n0\n\n\nage\n107\n0.98\n1\n2\n0\n75\n0\n\n\nage_unit\n7\n1.00\n5\n6\n0\n2\n0\n\n\nfever\n258\n0.96\n2\n3\n0\n2\n0\n\n\nchills\n258\n0.96\n2\n3\n0\n2\n0\n\n\ncough\n258\n0.96\n2\n3\n0\n2\n0\n\n\naches\n258\n0.96\n2\n3\n0\n2\n0\n\n\nvomit\n258\n0.96\n2\n3\n0\n2\n0\n\n\ntime_admission\n844\n0.87\n5\n5\n0\n1091\n0\n\n\nmerged_header\n0\n1.00\n1\n1\n0\n1\n0\n\n\nx28\n0\n1.00\n1\n1\n0\n1\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ngeneration\n7\n1.00\n16.60\n5.71\n0.00\n13.00\n16.00\n20.00\n37.00\n▁▆▇▂▁\n\n\nlon\n7\n1.00\n-13.23\n0.02\n-13.27\n-13.25\n-13.23\n-13.22\n-13.21\n▅▃▃▅▇\n\n\nlat\n7\n1.00\n8.47\n0.01\n8.45\n8.46\n8.47\n8.48\n8.49\n▅▇▇▇▆\n\n\nrow_num\n0\n1.00\n3240.91\n1857.83\n1.00\n1647.50\n3241.00\n4836.50\n6481.00\n▇▇▇▇▇\n\n\nwt_kg\n7\n1.00\n52.69\n18.59\n-11.00\n41.00\n54.00\n66.00\n111.00\n▁▃▇▅▁\n\n\nht_cm\n7\n1.00\n125.25\n49.57\n4.00\n91.00\n130.00\n159.00\n295.00\n▂▅▇▂▁\n\n\nct_blood\n7\n1.00\n21.26\n1.67\n16.00\n20.00\n22.00\n22.00\n26.00\n▁▃▇▃▁\n\n\ntemp\n158\n0.98\n38.60\n0.95\n35.20\n38.30\n38.80\n39.20\n40.80\n▁▂▂▇▁\n\n\n\nVariable type: POSIXct\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ninfection_date\n2322\n0.65\n2012-04-09\n2015-04-27\n2014-10-04\n538\n\n\nhosp_date\n7\n1.00\n2012-04-20\n2015-04-30\n2014-10-15\n570\n\n\ndate_of_outcome\n1068\n0.84\n2012-05-14\n2015-06-04\n2014-10-26\n575"
+  },
+  {
+    "objectID": "intro.html#clean-column-names-1",
+    "href": "intro.html#clean-column-names-1",
+    "title": "Foundation of R",
+    "section": "Clean column names",
+    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
   }
 ]

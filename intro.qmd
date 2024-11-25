@@ -179,6 +179,28 @@ Which creates `renv.lock` file and a folder `renv` in your project
 An R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process.
 :::
 
+# Github
+
+## Git and Github {auto-animate="true"}
+
+**Git** is a distributed version control system, its purpose is to keep track of changes of files under a *git* *repository* and provide the capability to revert to previous version.
+
+**Github** is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.
+
+## Set up version control in RStudio {auto-animate="true"}
+
+In the menu
+
+-   Click Tools \> Project Options \> Git/SVN
+
+-   At `Version Control System`, select `Git` in the drop down
+
+-   Click `OK`
+
+## Github Desktop
+
+*To be updated*
+
 # R foundations
 
 ## R script {auto-animate="true"}
@@ -457,40 +479,111 @@ help(readxl)
 help(read_excel, package= readxl)
 ```
 
+# Data management in R
 
-# Github
+## Data import {auto-animate="true"}
 
-## Git and Github {auto-animate="true"}
+Some useful import functions
 
-**Git** is a distributed version control system, its purpose is to keep track of changes of files under a *git* *repository* and provide the capability to revert to previous version.
+| Function       | Package  | Description                          |
+|----------------|----------|--------------------------------------|
+| `read_excel()` | `readxl` | import Excel (`.xlsx`, `.xls`) files |
+| `read_csv()`   | `readr`  | import `.csv` files                  |
+| `readRDS()`    | `base`   | import `.rds` files                  |
+| `load()`       | `base`   | import `.rda` files                  |
 
-**Github** is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.
+## Data import {auto-animate="true"}
 
-## Set up version control in RStudio {auto-animate="true"}
+::: r-fit-text
+`rio` - support data import for multiple data format
 
-In the menu
+```{r}
+library(rio)
+import("data/linelist_raw.xlsx", skip = 2)
+```
+:::
 
--   Click Tools \> Project Options \> Git/SVN
+## Data export {auto-animate="true"}
 
--   At `Version Control System`, select `Git` in the drop down
+Some useful export function in R
 
--   Click `OK`
+| Function       | Package   | Description                 |
+|----------------|-----------|-----------------------------|
+| `write_xlsx()` | `writexl` | export data as Excel files  |
+| `write.csv()`  | `utils`   | export data as `.csv` files |
+| `saveRDS()`    | `base`    | export data as `.rds` files |
+| `save()`       | `base`    | export data `.rda` files    |
 
-## Github Desktop
+## Clean column names {auto-animate="true"}
 
-*To be updated*
+The thing we usually do first after importing data is check the column names, to do that we use function `colnames()`
 
+```{r}
+colnames(data)
+```
+
+## Clean column names {auto-animate="true"}
+
+::: r-fit-text
+You may notice some names go against the "rule of thumb" for naming
+
+To quickly resolve this, package `janitor` offers `clean_names()` function to automatically fix the naming
+
+```{r}
+library(janitor)
+data <- clean_names(data)
+head(data)
+```
+:::
+
+## Data summary {auto-animate="true"}
+
+In base R, function `summary()` is used to have the basic statistics of each variables in the dataset
+
+```{r}
+summary(data)
+```
+
+## Data summary {.scrollable auto-animate="true"}
+
+::: r-fit-text
+However, function `skim()` from package `skimr` can return a better table output with tables grouped by class of data
+
+```{r}
+library(skimr)
+skim(data)
+```
+:::
+
+## Upcoming lessons
+::: {.r-fit-text}
+Data cleaning in R
+
+`tidyverse` package for
+
+-   Data cleaning, handling tricky datatypes (string, Date, factor, etc.)
+
+-   Data visualization using `ggplots`
+
+Data analysis in R
+
+-   Demographic analysis, perform statistical tests using `gtsummary`
+
+-   Creating report using `Rmarkdown`/`Quarto`
+:::
 ## Recap {auto-animate="true"}
 
 After today, you have learnt to:
 
 -   Create an R project and set up a project environment
 
+-   How to upload your project to Github using Github Desktop
+
 -   Understand R variables and classes, functions, packages
 
 -   How to look up documentations for functions and packages
 
--   How to upload your project to Github using Github Desktop
+-   Perform data import, export, overview in R
 
 ## Exercise {auto-animate="true"}
 
@@ -505,6 +598,7 @@ After today, you have learnt to:
     -   Create an R script in your project
 
     -   In your script, load package `outbreak`
-    -   Load a dataset to R
+
+    -   Load a dataset to R and perform data overview
 
 -   Upload the code to github
