@@ -1,0 +1,11 @@
+/* css styles */
+
+.reveal .slide-logo {
+  height: 30px !important;
+  width: 112px !important;
+  max-height: unset !important;
+}
+
+.codewindow .textarea .sourceCode {
+  text-wrap: balance;
+}
