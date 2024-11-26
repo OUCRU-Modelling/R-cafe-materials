@@ -418,15 +418,20 @@
 <li>Anh Phan Truong Quynh (anhptq@oucru.org)</li>
 </ul>
 </section>
-<section id="foundation-of-r" class="slide level2">
-<h2>Foundation of R</h2>
+<section>
+<section id="foundation-of-r" class="title-slide slide level1 center">
+<h1>Foundation of R</h1>
+
+</section>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Overview</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -457,6 +462,25 @@
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="github" class="title-slide slide level1 center">
+<h1>Github</h1>
+
+</section>
+<section id="git-and-github" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Git and Github</h2>
+<p><strong>Git</strong> is a distributed version control system, its purpose is to <u>keep track of changes</u> of files under a <em>git</em> <em>repository</em> and provide the capability to <u>revert to previous version</u>.</p>
+<p><strong>Github</strong> is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.</p>
+</section>
+<section id="set-up-version-control-in-rstudio" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Set up version control in RStudio</h2>
+<p>In the menu</p>
+<ul>
+<li><p>Click Tools &gt; Project Options &gt; Git/SVN</p></li>
+<li><p>At <code>Version Control System</code>, select <code>Git</code> in the drop down</p></li>
+<li><p>Click <code>OK</code></p></li>
+</ul>
 </section>
 <section id="r-and-rstudio" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">R and RStudio</h2>
@@ -469,9 +493,9 @@
 <ul>
 <li><p><strong>Cost</strong>: R is free and open-source.</p></li>
 <li><p><strong>Reproducibility</strong>: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.</p></li>
-<li><p><strong>Community</strong>: R has a large, collaborative user base, with new tools and packages for analysis developed constantly.</p></li>
+<li><p><strong>Community</strong>: R has a large, collaborative user base, with new tools and packages for analysis developed constantly</p></li>
 </ul>
-</section>
+</section></section>
 <section>
 <section id="r-project" class="title-slide slide level1 center">
 <h1>R project</h1>
@@ -482,9 +506,8 @@
 <p>The process of creating an R project is as followed</p>
 <ul>
 <li><p>In the menu&nbsp;<strong><code>File</code>&nbsp;&gt;&nbsp;<code>New Project…</code></strong></p></li>
-<li><p>Click&nbsp;<strong><code>New Directory</code>&nbsp;&gt;</strong>&nbsp;<strong><code>New Project</code></strong></p></li>
-<li><p>Enter the name for the R project directory at&nbsp;<strong><code>Directory name</code></strong></p></li>
-<li><p>Click&nbsp;<strong><code>Browse</code></strong>&nbsp;and select the parent directory for your project directory</p></li>
+<li><p>Click&nbsp;<strong><code>Existing Directory</code>&nbsp;&gt;</strong>&nbsp;<strong><code>Browse</code></strong></p></li>
+<li><p>Click&nbsp;<strong><code>Browse</code></strong>&nbsp;and click on your project directory</p></li>
 <li><p>Click&nbsp;<strong><code>Create Project</code></strong></p></li>
 </ul>
 </section>
@@ -579,25 +602,6 @@
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="github" class="title-slide slide level1 center">
-<h1>Github</h1>
-
-</section>
-<section id="git-and-github" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Git and Github</h2>
-<p><strong>Git</strong> is a distributed version control system, its purpose is to keep track of changes of files under a <em>git</em> <em>repository</em> and provide the capability to revert to previous version.</p>
-<p><strong>Github</strong> is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.</p>
-</section>
-<section id="set-up-version-control-in-rstudio" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Set up version control in RStudio</h2>
-<p>In the menu</p>
-<ul>
-<li><p>Click Tools &gt; Project Options &gt; Git/SVN</p></li>
-<li><p>At <code>Version Control System</code>, select <code>Git</code> in the drop down</p></li>
-<li><p>Click <code>OK</code></p></li>
-</ul>
 </section>
 <section id="github-desktop" class="slide level2">
 <h2>Github Desktop</h2>
@@ -753,7 +757,7 @@
 </section>
 <section id="functions" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Functions</h2>
-<p>A function is a reusable sequence of code.</p>
+<p>A function is a <strong>reusable</strong> sequence of code.</p>
 <p>It can be created using the syntax</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
@@ -782,7 +786,7 @@
 </section>
 <section id="functions-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Functions</h2>
-<p>Functions can also have parameters, which creates reusable code with dynamic inputs and outputs</p>
+<p>Functions can also have parameters, which creates reusable code with <strong>dynamic inputs and outputs</strong></p>
 <p>A function with parameters as followed. Note that you can include as many parameters as you want</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(parameter_1, parameter_2){</span>
@@ -1030,7 +1034,6 @@
 </section>
 <section id="clean-column-names" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Clean column names</h2>
-<div class="r-fit-text">
 <p>The thing we usually do first after importing data is check the column names, to do that we use function <code>colnames()</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb37-1" class="hljs-ln-code"><a href="#cb37-1"></a><span class="fu">colnames</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1042,7 +1045,6 @@
 [17] "wt_kg"           "ht_cm"           "ct_blood"        "fever"          
 [21] "chills"          "cough"           "aches"           "vomit"          
 [25] "temp"            "time_admission"  "merged_header"   "...28"          </code></pre>
-</div>
 </div>
 </div>
 </section>
@@ -1582,6 +1584,22 @@
 </div>
 </div>
 </section>
+<section id="upcoming-lessons" class="slide level2">
+<h2>Upcoming lessons</h2>
+<div class="r-fit-text">
+<p>Data cleaning in R</p>
+<p><code>tidyverse</code> package for</p>
+<ul>
+<li><p>Data cleaning, handling tricky datatypes (string, Date, factor, etc.)</p></li>
+<li><p>Data visualization using <code>ggplots</code></p></li>
+</ul>
+<p>Data analysis in R</p>
+<ul>
+<li><p>Demographic analysis, perform statistical tests using <code>gtsummary</code></p></li>
+<li><p>Creating report using <code>Rmarkdown</code>/<code>Quarto</code></p></li>
+</ul>
+</div>
+</section>
 <section id="recap" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Recap</h2>
 <p>After today, you have learnt to:</p>
@@ -1604,13 +1622,15 @@
 <li><p>Create your first R Script</p>
 <ul>
 <li><p>Create an R script in your project</p></li>
-<li><p>In your script, load package <code>outbreak</code></p></li>
+<li><p>In your script, load package <code>outbreaks</code></p></li>
 <li><p>Load a dataset to R and perform data overview</p></li>
 </ul></li>
 <li><p>Upload the code to github</p></li>
+<li><p>Peer reviews</p></li>
 </ul>
 
-<div class="footer footer-default">
+
+<img src="./imgs/oucru-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
 </section></section>
@@ -1666,7 +1686,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

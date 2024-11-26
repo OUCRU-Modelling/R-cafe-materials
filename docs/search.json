@@ -277,14 +277,14 @@
     "href": "intro.html#r-and-rstudio-1",
     "title": "Foundation of R",
     "section": "R and RStudio",
-    "text": "R and RStudio\nWhy use R?\n\nCost: R is free and open-source.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly."
+    "text": "R and RStudio\nWhy use R?\n\nCost: R is free and open-source.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly"
   },
   {
     "objectID": "intro.html#create-project-in-rstudio",
     "href": "intro.html#create-project-in-rstudio",
     "title": "Foundation of R",
     "section": "Create Project in RStudio",
-    "text": "Create Project in RStudio\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick New Directory > New Project\nEnter the name for the R project directory at Directory name\nClick Browse and select the parent directory for your project directory\nClick Create Project"
+    "text": "Create Project in RStudio\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick Existing Directory > Browse\nClick Browse and click on your project directory\nClick Create Project"
   },
   {
     "objectID": "intro.html#rstudio-interface",
@@ -473,7 +473,7 @@
     "href": "intro.html#exercise",
     "title": "Foundation of R",
     "section": "Exercise",
-    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreak\nLoad a dataset to R and perform data overview\n\nUpload the code to github"
+    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\n\nUpload the code to github\nPeer reviews"
   },
   {
     "objectID": "intro.html#data-import",
@@ -501,7 +501,7 @@
     "href": "intro.html#clean-column-names",
     "title": "Foundation of R",
     "section": "Clean column names",
-    "text": "Clean column names\n\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
+    "text": "Clean column names\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
   },
   {
     "objectID": "intro.html#data-summary",
@@ -523,5 +523,19 @@
     "title": "Foundation of R",
     "section": "Clean column names",
     "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
+  },
+  {
+    "objectID": "intro.html#upcoming-lessons",
+    "href": "intro.html#upcoming-lessons",
+    "title": "Foundation of R",
+    "section": "Upcoming lessons",
+    "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
+  },
+  {
+    "objectID": "intro.html#overview",
+    "href": "intro.html#overview",
+    "title": "Foundation of R",
+    "section": "Overview",
+    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
   }
 ]

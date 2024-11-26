@@ -3,6 +3,8 @@ title: "Foundation of R"
 format: 
   revealjs:
     df-print: paged
+    slide-number: true
+    logo: "./imgs/oucru-logo.png"
 ---
 
 ## About the course {auto-animate="true"}
@@ -28,11 +30,11 @@ Teaching team:
 -   Tuyen Huynh Ngoc (tuyenhn\@oucru.org)
 -   Anh Phan Truong Quynh (anhptq\@oucru.org)
 
-## Foundation of R
+# Foundation of R
 
-::: callout-note
 ## Overview
 
+::: callout-note
 -   Intro to RStudio
 
 -   R project (create R project, set up renv)
@@ -52,6 +54,24 @@ Teaching team:
 -   a Github account and Git installed
 :::
 
+# Github
+
+## Git and Github {auto-animate="true"}
+
+**Git** is a distributed version control system, its purpose is to [keep track of changes]{.underline} of files under a *git* *repository* and provide the capability to [revert to previous version]{.underline}.
+
+**Github** is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.
+
+## Set up version control in RStudio {auto-animate="true"}
+
+In the menu
+
+-   Click Tools \> Project Options \> Git/SVN
+
+-   At `Version Control System`, select `Git` in the drop down
+
+-   Click `OK`
+
 ## R and RStudio {auto-animate="true"}
 
 **R** is a programming language for statistical computing and data visualization.
@@ -66,7 +86,7 @@ Teaching team:
 
 -   **Reproducibility**: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.
 
--   **Community**: R has a large, collaborative user base, with new tools and packages for analysis developed constantly.
+-   **Community**: R has a large, collaborative user base, with new tools and packages for analysis developed constantly
 
 # R project
 
@@ -76,11 +96,9 @@ The process of creating an R project is as followed
 
 -   In the menu **`File` \> `New Project…`**
 
--   Click **`New Directory` \>** **`New Project`**
+-   Click **`Existing Directory` \>** **`Browse`**
 
--   Enter the name for the R project directory at **`Directory name`**
-
--   Click **`Browse`** and select the parent directory for your project directory
+-   Click **`Browse`** and click on your project directory
 
 -   Click **`Create Project`**
 
@@ -178,24 +196,6 @@ Which creates `renv.lock` file and a folder `renv` in your project
 
 An R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process.
 :::
-
-# Github
-
-## Git and Github {auto-animate="true"}
-
-**Git** is a distributed version control system, its purpose is to keep track of changes of files under a *git* *repository* and provide the capability to revert to previous version.
-
-**Github** is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.
-
-## Set up version control in RStudio {auto-animate="true"}
-
-In the menu
-
--   Click Tools \> Project Options \> Git/SVN
-
--   At `Version Control System`, select `Git` in the drop down
-
--   Click `OK`
 
 ## Github Desktop
 
@@ -303,7 +303,7 @@ All the objects stored in R have a class which tells R how to handle the object.
 
 ## Functions {auto-animate="true"}
 
-A function is a reusable sequence of code.
+A function is a **reusable** sequence of code.
 
 It can be created using the syntax
 
@@ -331,7 +331,7 @@ print_hello()
 
 ## Functions {auto-animate="true"}
 
-Functions can also have parameters, which creates reusable code with dynamic inputs and outputs
+Functions can also have parameters, which creates reusable code with **dynamic inputs and outputs**
 
 A function with parameters as followed. Note that you can include as many parameters as you want
 
@@ -397,6 +397,10 @@ compute_power <- function(base, power){
 compute_power(5, 2)
 ```
 :::
+
+```{r echo=FALSE, include=FALSE}
+# TODO: add exercise - function with seed()
+```
 
 ## Scope {auto-animate="true"}
 
@@ -556,7 +560,8 @@ skim(data)
 :::
 
 ## Upcoming lessons
-::: {.r-fit-text}
+
+::: r-fit-text
 Data cleaning in R
 
 `tidyverse` package for
@@ -571,6 +576,7 @@ Data analysis in R
 
 -   Creating report using `Rmarkdown`/`Quarto`
 :::
+
 ## Recap {auto-animate="true"}
 
 After today, you have learnt to:
@@ -597,8 +603,19 @@ After today, you have learnt to:
 
     -   Create an R script in your project
 
-    -   In your script, load package `outbreak`
+    -   In your script, load package `outbreaks`
 
     -   Load a dataset to R and perform data overview
 
 -   Upload the code to github
+
+-   Peer reviews
+
+```{r echo=FALSE, include=FALSE}
+# TODO: R exercise
+# ggplot code -> function
+# adjust limit, breaks, title 
+# - basic: limit fr parameters
+# - slightly advanced: option for dynamic limit using min, max
+?outbreaks
+```
