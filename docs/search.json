@@ -1,61 +1,5 @@
 [
   {
-    "objectID": "slides/quarto/basic-quarto.html",
-    "href": "slides/quarto/basic-quarto.html",
-    "title": "Basic quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
-  },
-  {
-    "objectID": "slides/quarto/basic-quarto.html#quarto",
-    "href": "slides/quarto/basic-quarto.html#quarto",
-    "title": "Basic quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
-  },
-  {
-    "objectID": "slides/quarto/basic-quarto.html#bullets",
-    "href": "slides/quarto/basic-quarto.html#bullets",
-    "title": "Basic quarto",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
-  },
-  {
-    "objectID": "slides/quarto/basic-quarto.html#code",
-    "href": "slides/quarto/basic-quarto.html#code",
-    "title": "Basic quarto",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "slides/quarto/index.html",
-    "href": "slides/quarto/index.html",
-    "title": "Test",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    "objectID": "slides/quarto/index.html#slide-1",
-    "href": "slides/quarto/index.html#slide-1",
-    "title": "Quarto",
-    "section": "Slide 1",
-    "text": "Slide 1\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    "objectID": "slides/quarto/index.html#slide-2",
-    "href": "slides/quarto/index.html#slide-2",
-    "title": "Quarto",
-    "section": "Slide 2",
-    "text": "Slide 2\n\n\n\nindex.qmd\n---\ntitle: \"Basic quarto\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see &lt;https://quarto.org/docs/presentations/&gt;.\n\n## Bullets\n\nWhen you click the **Render** button a document will be generated that includes:\n\n-   Content authored with markdown\n-   Output from executable code\n\n## Code\n\nWhen you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n```{r}\n1 + 1\n```\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "slides/quarto-intro/quarto-example.html",
     "href": "slides/quarto-intro/quarto-example.html",
     "title": "Hello, Quarto",
@@ -63,53 +7,11 @@
     "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
   },
   {
-    "objectID": "slides/quarto-intro/quarto-example.html#quarto",
-    "href": "slides/quarto-intro/quarto-example.html#quarto",
-    "title": "Basic quarto",
+    "objectID": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
+    "href": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#bullets",
-    "href": "slides/quarto-intro/quarto-example.html#bullets",
-    "title": "Basic quarto",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#code",
-    "href": "slides/quarto-intro/quarto-example.html#code",
-    "title": "Basic quarto",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html",
-    "href": "slides/quarto-intro/index.html",
-    "title": "Introduction to Quarto",
-    "section": "",
-    "text": "index.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#quarto",
-    "href": "slides/quarto-intro/index.html#quarto",
-    "title": "Introduction to Quarto",
-    "section": "Quarto",
-    "text": "Quarto\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Code Block Example: Simple Plot\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#yaml-header",
-    "href": "slides/quarto-intro/index.html#yaml-header",
-    "title": "Introduction to Quarto",
-    "section": "YAML header",
-    "text": "YAML header\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnavbar: false\n---\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#markdown-syntax",
-    "href": "slides/quarto-intro/index.html#markdown-syntax",
-    "title": "Introduction to Quarto",
-    "section": "Markdown syntax",
-    "text": "Markdown syntax"
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
   },
   {
     "objectID": "slides/quarto-intro/quarto-example.html#header-levels",
@@ -133,81 +35,11 @@
     "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
   },
   {
-    "objectID": "slides/quarto-intro/quarto-example.html#code-block-example-simple-plot",
-    "href": "slides/quarto-intro/quarto-example.html#code-block-example-simple-plot",
+    "objectID": "slides/quarto-intro/quarto-example.html#links-and-images",
+    "href": "slides/quarto-intro/quarto-example.html#links-and-images",
     "title": "Hello, Quarto",
-    "section": "5 Code Block Example: Simple Plot",
-    "text": "5 Code Block Example: Simple Plot\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#footnotes",
-    "href": "slides/quarto-intro/quarto-example.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
-    "href": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#quarto-markdown-to-output",
-    "href": "slides/quarto-intro/index.html#quarto-markdown-to-output",
-    "title": "Introduction to Quarto",
-    "section": "Quarto markdown to output",
-    "text": "Quarto markdown to output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Code Block Example: Simple Plot\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#introduction-to-quarto",
-    "href": "slides/quarto-intro/index.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "Introduction to Quarto",
-    "text": "Introduction to Quarto\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#header-levels",
-    "href": "slides/quarto-intro/index.html#header-levels",
-    "title": "Hello, Quarto",
-    "section": "Header Levels",
-    "text": "Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\nNested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#inline-text-formatting",
-    "href": "slides/quarto-intro/index.html#inline-text-formatting",
-    "title": "Hello, Quarto",
-    "section": "Inline Text Formatting",
-    "text": "Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#lists",
-    "href": "slides/quarto-intro/index.html#lists",
-    "title": "Hello, Quarto",
-    "section": "Lists",
-    "text": "Lists\nQuarto supports both ordered and unordered lists.\nUnordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\nOrdered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#code-block-example-simple-plot",
-    "href": "slides/quarto-intro/index.html#code-block-example-simple-plot",
-    "title": "Hello, Quarto",
-    "section": "Code Block Example: Simple Plot",
-    "text": "Code Block Example: Simple Plot\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#footnotes",
-    "href": "slides/quarto-intro/index.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\nFootnotes can be added inline to provide additional information or references. Here’s an example of a footnote in Quarto: 1"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#html-output",
-    "href": "slides/quarto-intro/index.html#html-output",
-    "title": "Introduction to Quarto",
-    "section": "HTML output",
-    "text": "HTML output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png){fig-alt=\"OUCRU logo\"}\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+    "section": "5 Links and images",
+    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
   },
   {
     "objectID": "slides/quarto-intro/quarto-example.html#tables",
@@ -217,13 +49,6 @@
     "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
   },
   {
-    "objectID": "slides/quarto-intro/quarto-example.html#links-and-images",
-    "href": "slides/quarto-intro/quarto-example.html#links-and-images",
-    "title": "Hello, Quarto",
-    "section": "5 Links and images",
-    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
-  },
-  {
     "objectID": "slides/quarto-intro/quarto-example.html#code-block",
     "href": "slides/quarto-intro/quarto-example.html#code-block",
     "title": "Hello, Quarto",
@@ -231,11 +56,46 @@
     "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
   },
   {
-    "objectID": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
-    "href": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
-    "title": "Introduction to Quarto",
-    "section": "Quarto markdown vs output",
-    "text": "Quarto markdown vs output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+    "objectID": "slides/quarto-intro/quarto-example.html#footnotes",
+    "href": "slides/quarto-intro/quarto-example.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to R Café - Pilot phase",
+    "section": "",
+    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
+  },
+  {
+    "objectID": "index.html#duration",
+    "href": "index.html#duration",
+    "title": "Welcome to R Café - Pilot phase",
+    "section": "",
+    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
+  },
+  {
+    "objectID": "index.html#structure",
+    "href": "index.html#structure",
+    "title": "Welcome to R Café - Pilot phase",
+    "section": "Structure",
+    "text": "Structure\n\n2-hour face-to-face sessions per day, 1 day per week\nTake home exercises given between face-to-face sessions"
+  },
+  {
+    "objectID": "index.html#agenda",
+    "href": "index.html#agenda",
+    "title": "Welcome to R Café - Pilot phase",
+    "section": "Agenda",
+    "text": "Agenda\n\nFoundation of R (theoretical) (day 1)\n\nWhat is R Cafe & Agenda - Tuyen (5’)\nGitHub Desktop & setup: branching, cloning - Tuyen (15’)\nRstudio - QA (30’)\nPause (10’)\nR foundations - QA (40’)\nExercises to write functions\nWorking & collaborating on GitHub - Tuyen (20’)\n\nTidyverse: Style, pipe, ggplot2 (day 2)\nQuarto & Markdown (and related) (day 3)"
+  },
+  {
+    "objectID": "index.html#take-home-exercises",
+    "href": "index.html#take-home-exercises",
+    "title": "Welcome to R Café - Pilot phase",
+    "section": "Take-home exercises",
+    "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nHandle missing data\nReformat\nFactor your data (with forcats)\nTricky data types: Datetime, String\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
   },
   {
     "objectID": "intro.html#about-the-course",
@@ -252,11 +112,11 @@
     "text": "About the course\nBy the end of this course, you will be able to conduct an end-to-end data analysis process on a dummy data and create a report using R and RMarkdown/Quarto\nTeaching team:\n\nHai Ho Bich (haihb@oucru.org)\nThinh Ong Phuc (thinhop@oucru.org)\nTuyen Huynh Ngoc (tuyenhn@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)"
   },
   {
-    "objectID": "intro.html#foundation-of-r",
-    "href": "intro.html#foundation-of-r",
+    "objectID": "intro.html#overview",
+    "href": "intro.html#overview",
     "title": "Foundation of R",
-    "section": "Foundation of R",
-    "text": "Foundation of R\n\n\n\n\n\n\nOverview\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
+    "section": "Overview",
+    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
   },
   {
     "objectID": "intro.html#prerequisite",
@@ -264,6 +124,20 @@
     "title": "Foundation of R",
     "section": "Prerequisite",
     "text": "Prerequisite\n\n\n\n\n\n\nBefore this lesson, you should have:\n\n\n\nR and RStudio installed\na Github account and Git installed"
+  },
+  {
+    "objectID": "intro.html#git-and-github",
+    "href": "intro.html#git-and-github",
+    "title": "Foundation of R",
+    "section": "Git and Github",
+    "text": "Git and Github\nGit is a distributed version control system, its purpose is to keep track of changes of files under a git repository and provide the capability to revert to previous version.\nGithub is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators."
+  },
+  {
+    "objectID": "intro.html#set-up-version-control-in-rstudio",
+    "href": "intro.html#set-up-version-control-in-rstudio",
+    "title": "Foundation of R",
+    "section": "Set up version control in RStudio",
+    "text": "Set up version control in RStudio\nIn the menu\n\nClick Tools &gt; Project Options &gt; Git/SVN\nAt Version Control System, select Git in the drop down\nClick OK"
   },
   {
     "objectID": "intro.html#r-and-rstudio",
@@ -284,7 +158,7 @@
     "href": "intro.html#create-project-in-rstudio",
     "title": "Foundation of R",
     "section": "Create Project in RStudio",
-    "text": "Create Project in RStudio\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick Existing Directory > Browse\nClick Browse and click on your project directory\nClick Create Project"
+    "text": "Create Project in RStudio\nThe process of creating an R project is as followed\n\nIn the menu File &gt; New Project…\nClick Existing Directory &gt; Browse\nClick Browse and click on your project directory\nClick Create Project"
   },
   {
     "objectID": "intro.html#rstudio-interface",
@@ -319,7 +193,7 @@
     "href": "intro.html#set-up-renv",
     "title": "Foundation of R",
     "section": "Set up renv",
-    "text": "Set up renv\nTo use renv for your project\n\nClick Tools > Project Options… > Environments\nTick Use renv with this project\n\nWhich creates renv.lock file and a folder renv in your project"
+    "text": "Set up renv\nTo use renv for your project\n\nClick Tools &gt; Project Options… &gt; Environments\nTick Use renv with this project\n\nWhich creates renv.lock file and a folder renv in your project"
   },
   {
     "objectID": "intro.html#why-use-renv",
@@ -329,11 +203,18 @@
     "text": "Why use renv?\n\n\nEncapsulate the development environment of your R projects (R version, packages used and their versions) in a file called renv.lock\nEnsure collaborators to replicate your R project’s development environment by simply running renv::restore()\nIsolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under\n\npath_to_project/renv/library/{R-version}/{device-architecture}/\n\n\n\n\n\n\n\n\n\nWhat are packages?\n\n\nAn R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process."
   },
   {
+    "objectID": "intro.html#github-desktop",
+    "href": "intro.html#github-desktop",
+    "title": "Foundation of R",
+    "section": "Github Desktop",
+    "text": "Github Desktop\nTo be updated"
+  },
+  {
     "objectID": "intro.html#r-script",
     "href": "intro.html#r-script",
     "title": "Foundation of R",
     "section": "R script",
-    "text": "R script\nTo create an R script in RStudio, in the menu section, click File > New File > R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
+    "text": "R script\nTo create an R script in RStudio, in the menu section, click File &gt; New File &gt; R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
   },
   {
     "objectID": "intro.html#r-script-1",
@@ -347,14 +228,14 @@
     "href": "intro.html#variable",
     "title": "Foundation of R",
     "section": "Variable",
-    "text": "Variable\n\nEverything you store in R - datasets, a vector of names, a total population number, even outputs such as graphs - are objects which can be assigned to a variable and can be referenced in later commands.\nIn R, a variable can be created by assigning an object to it using <-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb <- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting <- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\"\n\n# or vector of numbers/ characters\nnumb_list <- c(1,2,3,4,5)\nnumb_list\n\n[1] 1 2 3 4 5\n\nanother_numb_list <- c(1:5) \nanother_numb_list\n\n[1] 1 2 3 4 5\n\nchar_list <- c(\"R\", \"Python\", \"Java\", \"JavaScript\", \"C++\")\nchar_list\n\n[1] \"R\"          \"Python\"     \"Java\"       \"JavaScript\" \"C++\""
+    "text": "Variable\n\nEverything you store in R - datasets, a vector of names, a total population number, even outputs such as graphs - are objects which can be assigned to a variable and can be referenced in later commands.\nIn R, a variable can be created by assigning an object to it using &lt;-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb &lt;- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting &lt;- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\"\n\n# or vector of numbers/ characters\nnumb_list &lt;- c(1,2,3,4,5)\nnumb_list\n\n[1] 1 2 3 4 5\n\nanother_numb_list &lt;- c(1:5) \nanother_numb_list\n\n[1] 1 2 3 4 5\n\nchar_list &lt;- c(\"R\", \"Python\", \"Java\", \"JavaScript\", \"C++\")\nchar_list\n\n[1] \"R\"          \"Python\"     \"Java\"       \"JavaScript\" \"C++\""
   },
   {
     "objectID": "intro.html#variable-1",
     "href": "intro.html#variable-1",
     "title": "Foundation of R",
     "section": "Variable",
-    "text": "Variable\nvalue of a variable can also be overridden\n\nvar <- 5\nvar\n\n[1] 5\n\n# override variable\nvar <- \"new value\"\nvar\n\n[1] \"new value\""
+    "text": "Variable\nvalue of a variable can also be overridden\n\nvar &lt;- 5\nvar\n\n[1] 5\n\n# override variable\nvar &lt;- \"new value\"\nvar\n\n[1] \"new value\""
   },
   {
     "objectID": "intro.html#classes",
@@ -368,28 +249,28 @@
     "href": "intro.html#functions",
     "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name <- function(){\n\n# function content\n\n}"
+    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name &lt;- function(){\n\n# function content\n\n}"
   },
   {
     "objectID": "intro.html#functions-1",
     "href": "intro.html#functions-1",
     "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nExample: a simple function\n\nprint_hello <- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
+    "text": "Functions\nExample: a simple function\n\nprint_hello &lt;- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
   },
   {
     "objectID": "intro.html#functions-2",
     "href": "intro.html#functions-2",
     "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nFunctions can also have parameters, which creates reusable code with dynamic inputs and outputs\nA function with parameters as followed. Note that you can include as many parameters as you want\n\nfunction_name <- function(parameter_1, parameter_2){\n  # function content\n  # values of parameters can be accessed simply calling parameter name\n}"
+    "text": "Functions\nFunctions can also have parameters, which creates reusable code with dynamic inputs and outputs\nA function with parameters as followed. Note that you can include as many parameters as you want\n\nfunction_name &lt;- function(parameter_1, parameter_2){\n  # function content\n  # values of parameters can be accessed simply calling parameter name\n}"
   },
   {
     "objectID": "intro.html#functions-3",
     "href": "intro.html#functions-3",
     "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nExample: simple function\n\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
+    "text": "Functions\nExample: simple function\n\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "intro.html#functions-4",
@@ -403,7 +284,7 @@
     "href": "intro.html#functions-5",
     "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code > Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
+    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code &gt; Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "intro.html#scope",
@@ -417,21 +298,21 @@
     "href": "intro.html#scope-1",
     "title": "Foundation of R",
     "section": "Scope",
-    "text": "Scope\n\n# this is a global variable since it is not created in any local environment\nglobal_var <- 10\n\nexample_func <- function(param){\n  print(paste0(\"Global variable can be accessed within function \", global_var))\n  \n  # this is creating a local variable named global_var\n  # it will not affect global_var\n  global_var <- 20\n  \n  # note that parameters is also only accessible within the function\n  print(paste0(\"Function parameter \", param))\n}\n\nexample_func(60)\n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Function parameter 60\"\n\nprint(paste0(\"The global variable is not modified \", global_var))\n\n[1] \"The global variable is not modified 10\""
+    "text": "Scope\n\n# this is a global variable since it is not created in any local environment\nglobal_var &lt;- 10\n\nexample_func &lt;- function(param){\n  print(paste0(\"Global variable can be accessed within function \", global_var))\n  \n  # this is creating a local variable named global_var\n  # it will not affect global_var\n  global_var &lt;- 20\n  \n  # note that parameters is also only accessible within the function\n  print(paste0(\"Function parameter \", param))\n}\n\nexample_func(60)\n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Function parameter 60\"\n\nprint(paste0(\"The global variable is not modified \", global_var))\n\n[1] \"The global variable is not modified 10\""
   },
   {
     "objectID": "intro.html#packages",
     "href": "intro.html#packages",
     "title": "Foundation of R",
     "section": "Packages",
-    "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages > Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")"
+    "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages &gt; Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")"
   },
   {
     "objectID": "intro.html#packages-1",
     "href": "intro.html#packages-1",
     "title": "Foundation of R",
     "section": "Packages",
-    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"data/linelist_raw.xlsx\")\nhead(data)"
+    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata &lt;- read_excel(\"data/linelist_raw.xlsx\")\nhead(data)"
   },
   {
     "objectID": "intro.html#packages-2",
@@ -439,41 +320,6 @@
     "title": "Foundation of R",
     "section": "Packages",
     "text": "Packages\nSimilar to functions, you can also look up documentation for packages using ? or help()\n\n# --- look up documentation for package ---\n?readxl\nhelp(readxl)\n\n# --- look up documentation for function of the package ---\n?readxl::read_excel\nhelp(read_excel, package= readxl)"
-  },
-  {
-    "objectID": "intro.html#git-and-github",
-    "href": "intro.html#git-and-github",
-    "title": "Foundation of R",
-    "section": "Git and Github",
-    "text": "Git and Github\nGit is a distributed version control system, its purpose is to keep track of changes of files under a git repository and provide the capability to revert to previous version.\nGithub is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators."
-  },
-  {
-    "objectID": "intro.html#set-up-version-control-in-rstudio",
-    "href": "intro.html#set-up-version-control-in-rstudio",
-    "title": "Foundation of R",
-    "section": "Set up version control in RStudio",
-    "text": "Set up version control in RStudio\nIn the menu\n\nClick Tools > Project Options > Git/SVN\nAt Version Control System, select Git in the drop down\nClick OK"
-  },
-  {
-    "objectID": "intro.html#github-desktop",
-    "href": "intro.html#github-desktop",
-    "title": "Foundation of R",
-    "section": "Github Desktop",
-    "text": "Github Desktop\nTo be updated"
-  },
-  {
-    "objectID": "intro.html#recap",
-    "href": "intro.html#recap",
-    "title": "Foundation of R",
-    "section": "Recap",
-    "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nHow to upload your project to Github using Github Desktop\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nPerform data import, export, overview in R"
-  },
-  {
-    "objectID": "intro.html#exercise",
-    "href": "intro.html#exercise",
-    "title": "Foundation of R",
-    "section": "Exercise",
-    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\n\nUpload the code to github\nPeer reviews"
   },
   {
     "objectID": "intro.html#data-import",
@@ -504,6 +350,13 @@
     "text": "Clean column names\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
   },
   {
+    "objectID": "intro.html#clean-column-names-1",
+    "href": "intro.html#clean-column-names-1",
+    "title": "Foundation of R",
+    "section": "Clean column names",
+    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\nlibrary(janitor)\ndata &lt;- clean_names(data)\nhead(data)"
+  },
+  {
     "objectID": "intro.html#data-summary",
     "href": "intro.html#data-summary",
     "title": "Foundation of R",
@@ -518,13 +371,6 @@
     "text": "Data summary\n\nHowever, function skim() from package skimr can return a better table output with tables grouped by class of data\n\nlibrary(skimr)\nskim(data)\n\n\nData summary\n\n\nName\ndata\n\n\nNumber of rows\n6611\n\n\nNumber of columns\n28\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n17\n\n\nnumeric\n8\n\n\nPOSIXct\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\ncase_id\n137\n0.98\n6\n6\n0\n5888\n0\n\n\ndate_onset\n293\n0.96\n10\n10\n0\n580\n0\n\n\noutcome\n1500\n0.77\n5\n7\n0\n2\n0\n\n\ngender\n324\n0.95\n1\n1\n0\n2\n0\n\n\nhospital\n1512\n0.77\n5\n36\n0\n13\n0\n\n\ninfector\n2323\n0.65\n6\n6\n0\n2697\n0\n\n\nsource\n2323\n0.65\n5\n7\n0\n2\n0\n\n\nage\n107\n0.98\n1\n2\n0\n75\n0\n\n\nage_unit\n7\n1.00\n5\n6\n0\n2\n0\n\n\nfever\n258\n0.96\n2\n3\n0\n2\n0\n\n\nchills\n258\n0.96\n2\n3\n0\n2\n0\n\n\ncough\n258\n0.96\n2\n3\n0\n2\n0\n\n\naches\n258\n0.96\n2\n3\n0\n2\n0\n\n\nvomit\n258\n0.96\n2\n3\n0\n2\n0\n\n\ntime_admission\n844\n0.87\n5\n5\n0\n1091\n0\n\n\nmerged_header\n0\n1.00\n1\n1\n0\n1\n0\n\n\nx28\n0\n1.00\n1\n1\n0\n1\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ngeneration\n7\n1.00\n16.60\n5.71\n0.00\n13.00\n16.00\n20.00\n37.00\n▁▆▇▂▁\n\n\nlon\n7\n1.00\n-13.23\n0.02\n-13.27\n-13.25\n-13.23\n-13.22\n-13.21\n▅▃▃▅▇\n\n\nlat\n7\n1.00\n8.47\n0.01\n8.45\n8.46\n8.47\n8.48\n8.49\n▅▇▇▇▆\n\n\nrow_num\n0\n1.00\n3240.91\n1857.83\n1.00\n1647.50\n3241.00\n4836.50\n6481.00\n▇▇▇▇▇\n\n\nwt_kg\n7\n1.00\n52.69\n18.59\n-11.00\n41.00\n54.00\n66.00\n111.00\n▁▃▇▅▁\n\n\nht_cm\n7\n1.00\n125.25\n49.57\n4.00\n91.00\n130.00\n159.00\n295.00\n▂▅▇▂▁\n\n\nct_blood\n7\n1.00\n21.26\n1.67\n16.00\n20.00\n22.00\n22.00\n26.00\n▁▃▇▃▁\n\n\ntemp\n158\n0.98\n38.60\n0.95\n35.20\n38.30\n38.80\n39.20\n40.80\n▁▂▂▇▁\n\n\n\nVariable type: POSIXct\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ninfection_date\n2322\n0.65\n2012-04-09\n2015-04-27\n2014-10-04\n538\n\n\nhosp_date\n7\n1.00\n2012-04-20\n2015-04-30\n2014-10-15\n570\n\n\ndate_of_outcome\n1068\n0.84\n2012-05-14\n2015-06-04\n2014-10-26\n575"
   },
   {
-    "objectID": "intro.html#clean-column-names-1",
-    "href": "intro.html#clean-column-names-1",
-    "title": "Foundation of R",
-    "section": "Clean column names",
-    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
-  },
-  {
     "objectID": "intro.html#upcoming-lessons",
     "href": "intro.html#upcoming-lessons",
     "title": "Foundation of R",
@@ -532,10 +378,38 @@
     "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
   },
   {
-    "objectID": "intro.html#overview",
-    "href": "intro.html#overview",
+    "objectID": "intro.html#recap",
+    "href": "intro.html#recap",
     "title": "Foundation of R",
-    "section": "Overview",
-    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
+    "section": "Recap",
+    "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nHow to upload your project to Github using Github Desktop\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nPerform data import, export, overview in R"
+  },
+  {
+    "objectID": "intro.html#exercise",
+    "href": "intro.html#exercise",
+    "title": "Foundation of R",
+    "section": "Exercise",
+    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\n\nUpload the code to github\nPeer reviews"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
+    "href": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
+    "title": "Introduction to Quarto",
+    "section": "Quarto markdown vs output",
+    "text": "Quarto markdown vs output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#yaml-header",
+    "href": "slides/quarto-intro/index.html#yaml-header",
+    "title": "Introduction to Quarto",
+    "section": "YAML header",
+    "text": "YAML header\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnavbar: false\n---\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/quarto-intro/index.html#markdown-syntax",
+    "href": "slides/quarto-intro/index.html#markdown-syntax",
+    "title": "Introduction to Quarto",
+    "section": "Markdown syntax",
+    "text": "Markdown syntax"
   }
 ]
