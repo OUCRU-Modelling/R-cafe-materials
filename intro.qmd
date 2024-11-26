@@ -1,0 +1,621 @@
+---
+title: "Foundation of R"
+format: 
+  revealjs:
+    df-print: paged
+    slide-number: true
+    logo: "./imgs/oucru-logo.png"
+---
+
+## About the course {auto-animate="true"}
+
+This course is a pilot phase of a future course "***R-cafe:** R for reproducible research*"
+
+In this pilot phase, the following topics will be covered
+
+-   **Foundation of R** - introduction to working with RStudio, R and Github
+
+-   **Tidyverse** - introduce important tools for cleaning data in R
+
+-   **Markdown/Quarto and \`gtsummary\`** - introduce gtsummary for analysis and creating report with Markdown/Quarto
+
+## About the course {auto-animate="true"}
+
+By the end of this course, you will be able to conduct an end-to-end data analysis process on a dummy data and create a report using R and RMarkdown/Quarto
+
+Teaching team:
+
+-   Hai Ho Bich (haihb\@oucru.org)
+-   Thinh Ong Phuc (thinhop\@oucru.org)
+-   Tuyen Huynh Ngoc (tuyenhn\@oucru.org)
+-   Anh Phan Truong Quynh (anhptq\@oucru.org)
+
+# Foundation of R
+
+## Overview
+
+::: callout-note
+-   Intro to RStudio
+
+-   R project (create R project, set up renv)
+
+-   Intro to R
+
+-   Github
+:::
+
+## Prerequisite
+
+::: callout-tip
+## Before this lesson, you should have:
+
+-   R and RStudio installed
+
+-   a Github account and Git installed
+:::
+
+# Github
+
+## Git and Github {auto-animate="true"}
+
+**Git** is a distributed version control system, its purpose is to [keep track of changes]{.underline} of files under a *git* *repository* and provide the capability to [revert to previous version]{.underline}.
+
+**Github** is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.
+
+## Set up version control in RStudio {auto-animate="true"}
+
+In the menu
+
+-   Click Tools \> Project Options \> Git/SVN
+
+-   At `Version Control System`, select `Git` in the drop down
+
+-   Click `OK`
+
+## R and RStudio {auto-animate="true"}
+
+**R** is a programming language for statistical computing and data visualization.
+
+**RStudio** is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE).
+
+## R and RStudio {auto-animate="true"}
+
+**Why use R?**
+
+-   **Cost**: R is free and open-source.
+
+-   **Reproducibility**: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.
+
+-   **Community**: R has a large, collaborative user base, with new tools and packages for analysis developed constantly
+
+# R project
+
+## Create Project in RStudio {auto-animate="true"}
+
+The process of creating an R project is as followed
+
+-   In the menu **`File` \> `New Project…`**
+
+-   Click **`Existing Directory` \>** **`Browse`**
+
+-   Click **`Browse`** and click on your project directory
+
+-   Click **`Create Project`**
+
+## RStudio interface {auto-animate="true"}
+
+::: r-fit-text
+Consists of 4 main panes
+
+-   **Source code**: Show the content of a source code file
+
+-   **Console**: Show the executed code lines and their output
+
+-   **Defined variables**: Show the currently defined variables
+
+-   **Files/Plot/Package/Help**:
+
+    -   Files: for files nagivation
+
+    -   Plots: show plot output
+
+    -   Packages: show all the installed packages and packages being used (packages in use will have a ✓)
+
+    -   Help: show documentations for functions or packages
+:::
+
+## RStudio interface {auto-animate="true"}
+
+![](imgs/r_foundation/rstudio_components.png)
+
+## Project structure {auto-animate="true"}
+
+A minimal R project structure will have the following format
+
+```         
+└── my_project
+    ├── output
+    ├── data
+    │   ├── raw
+    │   └── processed
+    └── analysis.R 
+```
+
+Where
+
+-   `data` folder contains data to by analyzed
+
+-   `output` stores code output (plot, figures, etc.)
+
+-   `analysis.R` is the file containing R code. There can be multiple `.R` files under 1 project.
+
+## Project structure
+
+::: r-fit-text
+***Naming convention***
+
+Some rules of thumb for naming files and folders:
+
+-   Do not use diacritics (e.g. Vietnamese accent marks).
+
+-   Do not use overly long names, keep it short but meaningful.
+
+-   Do not include special characters such as `/`, `\`, `&`, `,`, `(`, `)`\... in names. It's best to use only letters and numbers.
+
+-   Avoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., `dataSoiHcm`) or PascalCase (capitalize the first letter of all words, e.g., `DataSoiHcm`).
+
+-   Do not include spaces (`" "`) in names. Instead, you can use camelCase, or replace spaces with `-` or `_`. For example, instead of naming a file `data soi HCM 2023.xlsx`, you could name it `dataSoiHcm2023.xlsx`, `data-soi-hcm-2023.xlsx`, or `data_soi_hcm_2023.xlsx`.
+:::
+
+# Project environment
+
+## Set up renv {auto-animate="true"}
+
+To use renv for your project
+
+-   Click `Tools` \> `Project Options…` \> `Environments`
+
+-   Tick `Use renv with this project`
+
+Which creates `renv.lock` file and a folder `renv` in your project
+
+## Why use renv? {auto-animate="true"}
+
+::: r-fit-text
+-   Encapsulate the development environment of your R projects (R version, packages used and their versions) in a file called `renv.lock`
+
+-   Ensure collaborators to replicate your R project's development environment by simply running `renv::restore()`
+
+-   Isolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under
+
+    -   `path_to_project/renv/library/{R-version}/{device-architecture}/`
+:::
+
+::: callout-note
+### What are packages? {auto-animate="true"}
+
+An R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process.
+:::
+
+## Github Desktop
+
+*To be updated*
+
+# R foundations
+
+## R script {auto-animate="true"}
+
+To create an R script in RStudio, in the menu section, click `File` \> `New File` \> `R Script`
+
+R script is where you store your R code and comments.
+
+**Comments** are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add `#` at the start of your note.
+
+## R script {auto-animate="true"}
+
+***Example:*** Some R codes and comment
+
+```{r}
+# this is a comment, and the following code will print Hello world in the console
+print("Hello world")
+
+# you can also perform computations in R
+# In R, you can denote 
+# - multiplication as *
+# - power as **
+# - devision as /
+# - e5 is the shorthand notation for *10**5
+12*10e5 + 313**2 - 11890/2
+```
+
+## Variable {auto-animate="true"}
+
+::: r-fit-text
+Everything you store in R - datasets, a vector of names, a total population number, even outputs such as graphs - are *objects* which can be *assigned to a variable* and *can be referenced* in later commands.
+
+In R, a variable can be created by assigning an object to it using `<-`
+
+As previously mentioned, an object can be a number, string, vector of characters, etc.
+
+```{r}
+# assigning 3.14 to the variable pi_numb
+pi_numb <- 3.14
+# which can then be referenced 
+pi_numb
+
+# object can also be a text/characters
+greeting <- "Hello World" # note that it must be contained within quotation marks
+greeting
+
+# or vector of numbers/ characters
+numb_list <- c(1,2,3,4,5)
+numb_list
+
+another_numb_list <- c(1:5) 
+another_numb_list
+
+char_list <- c("R", "Python", "Java", "JavaScript", "C++")
+char_list
+```
+:::
+
+## Variable {auto-animate="true"}
+
+value of a variable can also be overridden
+
+```{r}
+var <- 5
+var
+# override variable
+var <- "new value"
+var
+```
+
+## Classes {.scrollable auto-animate="true"}
+
+::: r-fit-text
+All the objects stored in R have a class which tells R how to handle the object. There are many possible classes, but common ones include
+
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+| Classes      | Explanation                                                                                               | Examples                           |
++==============+===========================================================================================================+====================================+
+| `numeric`    | for numerical data, including decimals                                                                    | `3.14`, `-1000`, `10`, `2e6`, etc. |
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+| `logical`    | for boolean data (`TRUE`/`FALSE`) **without quotation marks**                                             | `TRUE` or `FALSE`                  |
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+| `character`  | for text/characters data (also referred to as string)                                                     | `"Hello world"`, `"R Cafe"`, etc.  |
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+| `Date`       | data classified as Date can be displayed and manipulated in special ways                                  | `2024-12-09` , `s`, etc.           |
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+| `factor`     | for categorical data                                                                                      | gender: female or male,            |
+|              |                                                                                                           |                                    |
+|              |                                                                                                           | economic status,                   |
+|              |                                                                                                           |                                    |
+|              |                                                                                                           | district, ethnicity, etc.          |
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+| `data.frame` | common way for R to store dataset.                                                                        |                                    |
+|              |                                                                                                           |                                    |
+|              | Consists of vectors (columns, each column must be of a specific class) of data bounded together.          |                                    |
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+| `tibble`     | an "enhanced" version of `data.frame` which is less prone to error and printed more nicely in the console |                                    |
++--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
+:::
+
+## Functions {auto-animate="true"}
+
+A function is a **reusable** sequence of code.
+
+It can be created using the syntax
+
+```{r, eval=FALSE}
+function_name <- function(){
+
+# function content
+
+}
+```
+
+## Functions {auto-animate="true"}
+
+***Example:*** a simple function
+
+```{r}
+print_hello <- function(){
+  print("Hello world")
+  print("This is R Cafe course")
+}
+
+# defined function can then be called as followed
+print_hello()
+```
+
+## Functions {auto-animate="true"}
+
+Functions can also have parameters, which creates reusable code with **dynamic inputs and outputs**
+
+A function with parameters as followed. Note that you can include as many parameters as you want
+
+```{r, eval=FALSE}
+function_name <- function(parameter_1, parameter_2){
+  # function content
+  # values of parameters can be accessed simply calling parameter name
+}
+```
+
+## Functions {auto-animate="true"}
+
+***Example:*** simple function
+
+```{r}
+compute_power <- function(base, power){
+  # return a raised to the power of b
+  base**power
+}
+
+compute_power(5, 2)
+```
+
+## Functions {auto-animate="true"}
+
+::: r-fit-text
+R is a functional programming language, which means you will encounter a lot of functions while coding in R.
+
+To assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use `?` or `help()`
+
+```{r}
+# look up documentation for `sqrt` function
+?sqrt
+help(sqrt)
+```
+
+Note that the built-in documentation only helps when you already know which function you want to ask about. If you are looking for a function to achieve a specific task, it is better to start with **search engine** (Google, Bing, etc.), **forums/Q&A sites** (Github discussions, StackOverflow, etc.) or even ChatGPT.
+:::
+
+## Functions {auto-animate="true"}
+
+::: r-fit-text
+The documentation that show up when calling `help()` or `?` are usually generated from something called roxygen documentation.
+
+To create a roxygen documentation, place the cursor within the function and from the menu, click `Code` \> `Insert Roxygen Skeleton`
+
+```{r}
+#' Compute power
+#' 
+#' Takes two arguments, `base` and `power` then return base raised to given power
+#'
+#' @param base - a numeric value for base number
+#' @param power - a numeric value for power
+#'
+#' @return numeric value for base^power
+#' @examples
+#' compute_power(3,4)
+compute_power <- function(base, power){
+  # return a raised to the power of b
+  base**power
+}
+
+compute_power(5, 2)
+```
+:::
+
+```{r echo=FALSE, include=FALSE}
+# TODO: add exercise - function with seed()
+```
+
+## Scope {auto-animate="true"}
+
+**Scope** refers to where variables can be accessed or modified.
+
+To put simply
+
+-   By default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is [**not**]{.underline} recommended).
+-   **global variables** can be accessed anywhere.
+-   **local variables** are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function.
+
+## Scope {auto-animate="true"}
+
+```{r}
+# this is a global variable since it is not created in any local environment
+global_var <- 10
+
+example_func <- function(param){
+  print(paste0("Global variable can be accessed within function ", global_var))
+  
+  # this is creating a local variable named global_var
+  # it will not affect global_var
+  global_var <- 20
+  
+  # note that parameters is also only accessible within the function
+  print(paste0("Function parameter ", param))
+}
+
+example_func(60)
+print(paste0("The global variable is not modified ", global_var))
+```
+
+## Packages {auto-animate="true"}
+
+::: r-fit-text
+2 options to install an R packages
+
+-   Via RStudio interface.
+
+    -   In the `File/Plots/Packages/Help` panel
+
+    -   Click `Packages` \> `Install`
+
+    -   Type name of the packages to be installed separated by `,`
+
+    -   Click install
+
+-   Using R code
+
+***Example:*** Download package for reading Excel files
+
+```{r eval=FALSE}
+install.packages("readxl")
+```
+:::
+
+## Packages {auto-animate="true"}
+
+{{< downloadthis data/linelisting_raw.xlsx dname="linelisting_raw" label="linelisting_raw.xlsx" type=light >}}
+
+To use a package, you must first load it to R using `library()` function
+
+```{r}
+library(readxl)
+data <- read_excel("data/linelist_raw.xlsx")
+head(data)
+```
+
+## Packages {auto-animate="true"}
+
+Similar to functions, you can also look up documentation for packages using `?` or `help()`
+
+```{r}
+# --- look up documentation for package ---
+?readxl
+help(readxl)
+
+# --- look up documentation for function of the package ---
+?readxl::read_excel
+help(read_excel, package= readxl)
+```
+
+# Data management in R
+
+## Data import {auto-animate="true"}
+
+Some useful import functions
+
+| Function       | Package  | Description                          |
+|----------------|----------|--------------------------------------|
+| `read_excel()` | `readxl` | import Excel (`.xlsx`, `.xls`) files |
+| `read_csv()`   | `readr`  | import `.csv` files                  |
+| `readRDS()`    | `base`   | import `.rds` files                  |
+| `load()`       | `base`   | import `.rda` files                  |
+
+## Data import {auto-animate="true"}
+
+::: r-fit-text
+`rio` - support data import for multiple data format
+
+```{r}
+library(rio)
+import("data/linelist_raw.xlsx", skip = 2)
+```
+:::
+
+## Data export {auto-animate="true"}
+
+Some useful export function in R
+
+| Function       | Package   | Description                 |
+|----------------|-----------|-----------------------------|
+| `write_xlsx()` | `writexl` | export data as Excel files  |
+| `write.csv()`  | `utils`   | export data as `.csv` files |
+| `saveRDS()`    | `base`    | export data as `.rds` files |
+| `save()`       | `base`    | export data `.rda` files    |
+
+## Clean column names {auto-animate="true"}
+
+The thing we usually do first after importing data is check the column names, to do that we use function `colnames()`
+
+```{r}
+colnames(data)
+```
+
+## Clean column names {auto-animate="true"}
+
+::: r-fit-text
+You may notice some names go against the "rule of thumb" for naming
+
+To quickly resolve this, package `janitor` offers `clean_names()` function to automatically fix the naming
+
+```{r}
+library(janitor)
+data <- clean_names(data)
+head(data)
+```
+:::
+
+## Data summary {auto-animate="true"}
+
+In base R, function `summary()` is used to have the basic statistics of each variables in the dataset
+
+```{r}
+summary(data)
+```
+
+## Data summary {.scrollable auto-animate="true"}
+
+::: r-fit-text
+However, function `skim()` from package `skimr` can return a better table output with tables grouped by class of data
+
+```{r}
+library(skimr)
+skim(data)
+```
+:::
+
+## Upcoming lessons
+
+::: r-fit-text
+Data cleaning in R
+
+`tidyverse` package for
+
+-   Data cleaning, handling tricky datatypes (string, Date, factor, etc.)
+
+-   Data visualization using `ggplots`
+
+Data analysis in R
+
+-   Demographic analysis, perform statistical tests using `gtsummary`
+
+-   Creating report using `Rmarkdown`/`Quarto`
+:::
+
+## Recap {auto-animate="true"}
+
+After today, you have learnt to:
+
+-   Create an R project and set up a project environment
+
+-   How to upload your project to Github using Github Desktop
+
+-   Understand R variables and classes, functions, packages
+
+-   How to look up documentations for functions and packages
+
+-   Perform data import, export, overview in R
+
+## Exercise {auto-animate="true"}
+
+-   Create an R project
+
+-   Install packages
+
+    -   Install package `outbreak`
+
+-   Create your first R Script
+
+    -   Create an R script in your project
+
+    -   In your script, load package `outbreaks`
+
+    -   Load a dataset to R and perform data overview
+
+-   Upload the code to github
+
+-   Peer reviews
+
+```{r echo=FALSE, include=FALSE}
+# TODO: R exercise
+# ggplot code -> function
+# adjust limit, breaks, title 
+# - basic: limit fr parameters
+# - slightly advanced: option for dynamic limit using min, max
+?outbreaks
+```
