@@ -11,7 +11,7 @@ format: html
 - Take home exercises given between face-to-face sessions
 
 ## Agenda
-1. [Foundation of R (theoretical) (day 1)](intro.qmd)
+1. [Foundation of R (day 1)](intro.qmd)
 	- What is R Cafe & Agenda - Tuyen (5')
 	- GitHub Desktop & setup: branching, cloning - Tuyen (15')
 	- Rstudio - QA (30')

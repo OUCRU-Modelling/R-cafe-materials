@@ -88,7 +88,7 @@
     "href": "index.html#agenda",
     "title": "Welcome to R Café - Pilot phase",
     "section": "Agenda",
-    "text": "Agenda\n\nFoundation of R (theoretical) (day 1)\n\nWhat is R Cafe & Agenda - Tuyen (5’)\nGitHub Desktop & setup: branching, cloning - Tuyen (15’)\nRstudio - QA (30’)\nPause (10’)\nR foundations - QA (40’)\nExercises to write functions\nWorking & collaborating on GitHub - Tuyen (20’)\n\nTidyverse: Style, pipe, ggplot2 (day 2)\nQuarto & Markdown (and related) (day 3)"
+    "text": "Agenda\n\nFoundation of R (day 1)\n\nWhat is R Cafe & Agenda - Tuyen (5’)\nGitHub Desktop & setup: branching, cloning - Tuyen (15’)\nRstudio - QA (30’)\nPause (10’)\nR foundations - QA (40’)\nExercises to write functions\nWorking & collaborating on GitHub - Tuyen (20’)\n\nTidyverse: Style, pipe, ggplot2 (day 2)\nQuarto & Markdown (and related) (day 3)"
   },
   {
     "objectID": "index.html#take-home-exercises",
