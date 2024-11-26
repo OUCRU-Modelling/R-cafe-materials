@@ -1,11 +1,41 @@
 ---
-title: "rcafe"
+title: "Welcome to R Café - Pilot phase"
+format: html
 ---
 
-This is a Quarto website.
+## Duration
+3 weeks of study + 1 week of extra content (if any) and closing remarks
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Structure
+- 2-hour face-to-face sessions per day, 1 day per week
+- Take home exercises given between face-to-face sessions
 
-```{r}
-1 + 1
-```
+## Agenda
+1. [Foundation of R (theoretical) (day 1)](intro.qmd)
+	- What is R Cafe & Agenda - Tuyen (5')
+	- GitHub Desktop & setup: branching, cloning - Tuyen (15')
+	- Rstudio - QA (30')
+	- Pause (10')
+	- R foundations - QA (40')
+	- Exercises to write functions
+	- Working & collaborating on GitHub - Tuyen (20')
+
+2. Tidyverse: Style, pipe, ggplot2 (day 2)
+3. Quarto & Markdown (and related) (day 3)
+
+## Take-home exercises
+1. Initial Data Analysis - IDA (with `skimr`)
+	- Generate questions around your data
+	- Customize your summary table output
+	- Simple visualization data, e.g. histogram
+	- Calculate statistics, e.g. correlation, collinearity
+2. Data transformation
+	- Handle missing data
+	- Reformat
+	- Factor your data (with `forcats`)
+	- Tricky data types: Datetime, String
+3. Analysis with `gtsummary`
+	- Demographic summary
+	- Statistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.
+4. Generate report with Quarto
+	- Citation (inline footnote and reference)
