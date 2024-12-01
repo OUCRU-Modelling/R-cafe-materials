@@ -1,5 +1,5 @@
 ---
-title: "Foundation of R"
+title: "Foundations of R"
 format: 
   revealjs:
     df-print: paged
@@ -13,7 +13,7 @@ This course is a pilot phase of a future course "***R-cafe:** R for reproducible
 
 In this pilot phase, the following topics will be covered
 
--   **Foundation of R** - introduction to working with RStudio, R and Github
+-   **Foundations of R** - introduction to working with RStudio, R and Github
 
 -   **Tidyverse** - introduce important tools for cleaning data in R
 
