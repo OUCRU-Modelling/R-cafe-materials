@@ -8,7 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - intro.qmd
+      - href: slides/intro.qmd
+        text: Foundations of R
 
 execute: 
   echo: TRUE
