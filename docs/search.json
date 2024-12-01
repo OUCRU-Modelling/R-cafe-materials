@@ -2,294 +2,294 @@
   {
     "objectID": "slides/intro.html#about-the-course",
     "href": "slides/intro.html#about-the-course",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "About the course",
-    "text": "About the course\nThis course is a pilot phase of a future course “R-cafe: R for reproducible research”\nIn this pilot phase, the following topics will be covered\n\nFoundation of R - introduction to working with RStudio, R and Github\nTidyverse - introduce important tools for cleaning data in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
+    "text": "About the course\nThis course is a pilot phase of a future course “R-cafe: R for reproducible research”\nIn this pilot phase, the following topics will be covered\n\nFoundations of R - introduction to working with RStudio, R and Github\nTidyverse - introduce important tools for cleaning data in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
   },
   {
     "objectID": "slides/intro.html#about-the-course-1",
     "href": "slides/intro.html#about-the-course-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "About the course",
     "text": "About the course\nBy the end of this course, you will be able to conduct an end-to-end data analysis process on a dummy data and create a report using R and RMarkdown/Quarto\nTeaching team:\n\nHai Ho Bich (haihb@oucru.org)\nThinh Ong Phuc (thinhop@oucru.org)\nTuyen Huynh Ngoc (tuyenhn@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)"
   },
   {
     "objectID": "slides/intro.html#overview",
     "href": "slides/intro.html#overview",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Overview",
     "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
   },
   {
     "objectID": "slides/intro.html#prerequisite",
     "href": "slides/intro.html#prerequisite",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Prerequisite",
     "text": "Prerequisite\n\n\n\n\n\n\nBefore this lesson, you should have:\n\n\n\nR and RStudio installed\na Github account and Git installed"
   },
   {
     "objectID": "slides/intro.html#git-and-github",
     "href": "slides/intro.html#git-and-github",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Git and Github",
     "text": "Git and Github\nGit is a distributed version control system, its purpose is to keep track of changes of files under a git repository and provide the capability to revert to previous version.\nGithub is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators."
   },
   {
     "objectID": "slides/intro.html#set-up-version-control-in-rstudio",
     "href": "slides/intro.html#set-up-version-control-in-rstudio",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Set up version control in RStudio",
     "text": "Set up version control in RStudio\nIn the menu\n\nClick Tools &gt; Project Options &gt; Git/SVN\nAt Version Control System, select Git in the drop down\nClick OK"
   },
   {
     "objectID": "slides/intro.html#r-and-rstudio",
     "href": "slides/intro.html#r-and-rstudio",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "R and RStudio",
     "text": "R and RStudio\nR is a programming language for statistical computing and data visualization.\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
   },
   {
     "objectID": "slides/intro.html#r-and-rstudio-1",
     "href": "slides/intro.html#r-and-rstudio-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "R and RStudio",
     "text": "R and RStudio\nWhy use R?\n\nCost: R is free and open-source.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly"
   },
   {
     "objectID": "slides/intro.html#create-project-in-rstudio",
     "href": "slides/intro.html#create-project-in-rstudio",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Create Project in RStudio",
     "text": "Create Project in RStudio\nThe process of creating an R project is as followed\n\nIn the menu File &gt; New Project…\nClick Existing Directory &gt; Browse\nClick Browse and click on your project directory\nClick Create Project"
   },
   {
     "objectID": "slides/intro.html#rstudio-interface",
     "href": "slides/intro.html#rstudio-interface",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "RStudio interface",
     "text": "RStudio interface\n\nConsists of 4 main panes\n\nSource code: Show the content of a source code file\nConsole: Show the executed code lines and their output\nDefined variables: Show the currently defined variables\nFiles/Plot/Package/Help:\n\nFiles: for files nagivation\nPlots: show plot output\nPackages: show all the installed packages and packages being used (packages in use will have a ✓)\nHelp: show documentations for functions or packages"
   },
   {
     "objectID": "slides/intro.html#rstudio-interface-1",
     "href": "slides/intro.html#rstudio-interface-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "RStudio interface",
     "text": "RStudio interface"
   },
   {
     "objectID": "slides/intro.html#project-structure",
     "href": "slides/intro.html#project-structure",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Project structure",
     "text": "Project structure\nA minimal R project structure will have the following format\n└── my_project\n    ├── output\n    ├── data\n    │   ├── raw\n    │   └── processed\n    └── analysis.R \nWhere\n\ndata folder contains data to by analyzed\noutput stores code output (plot, figures, etc.)\nanalysis.R is the file containing R code. There can be multiple .R files under 1 project."
   },
   {
     "objectID": "slides/intro.html#project-structure-1",
     "href": "slides/intro.html#project-structure-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Project structure",
     "text": "Project structure\n\nNaming convention\nSome rules of thumb for naming files and folders:\n\nDo not use diacritics (e.g. Vietnamese accent marks).\nDo not use overly long names, keep it short but meaningful.\nDo not include special characters such as /, \\, &, ,, (, )... in names. It’s best to use only letters and numbers.\nAvoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., dataSoiHcm) or PascalCase (capitalize the first letter of all words, e.g., DataSoiHcm).\nDo not include spaces (\" \") in names. Instead, you can use camelCase, or replace spaces with - or _. For example, instead of naming a file data soi HCM 2023.xlsx, you could name it dataSoiHcm2023.xlsx, data-soi-hcm-2023.xlsx, or data_soi_hcm_2023.xlsx."
   },
   {
     "objectID": "slides/intro.html#set-up-renv",
     "href": "slides/intro.html#set-up-renv",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Set up renv",
     "text": "Set up renv\nTo use renv for your project\n\nClick Tools &gt; Project Options… &gt; Environments\nTick Use renv with this project\n\nWhich creates renv.lock file and a folder renv in your project"
   },
   {
     "objectID": "slides/intro.html#why-use-renv",
     "href": "slides/intro.html#why-use-renv",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Why use renv?",
     "text": "Why use renv?\n\n\nEncapsulate the development environment of your R projects (R version, packages used and their versions) in a file called renv.lock\nEnsure collaborators to replicate your R project’s development environment by simply running renv::restore()\nIsolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under\n\npath_to_project/renv/library/{R-version}/{device-architecture}/\n\n\n\n\n\n\n\n\n\nWhat are packages?\n\n\nAn R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process."
   },
   {
     "objectID": "slides/intro.html#github-desktop",
     "href": "slides/intro.html#github-desktop",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Github Desktop",
     "text": "Github Desktop\nTo be updated"
   },
   {
     "objectID": "slides/intro.html#r-script",
     "href": "slides/intro.html#r-script",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "R script",
     "text": "R script\nTo create an R script in RStudio, in the menu section, click File &gt; New File &gt; R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
   },
   {
     "objectID": "slides/intro.html#r-script-1",
     "href": "slides/intro.html#r-script-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "R script",
     "text": "R script\nExample: Some R codes and comment\n\n# this is a comment, and the following code will print Hello world in the console\nprint(\"Hello world\")\n\n[1] \"Hello world\"\n\n# you can also perform computations in R\n# In R, you can denote \n# - multiplication as *\n# - power as **\n# - devision as /\n# - e5 is the shorthand notation for *10**5\n12*10e5 + 313**2 - 11890/2\n\n[1] 12092024"
   },
   {
     "objectID": "slides/intro.html#variable",
     "href": "slides/intro.html#variable",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Variable",
     "text": "Variable\n\nEverything you store in R - datasets, a vector of names, a total population number, even outputs such as graphs - are objects which can be assigned to a variable and can be referenced in later commands.\nIn R, a variable can be created by assigning an object to it using &lt;-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb &lt;- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting &lt;- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\"\n\n# or vector of numbers/ characters\nnumb_list &lt;- c(1,2,3,4,5)\nnumb_list\n\n[1] 1 2 3 4 5\n\nanother_numb_list &lt;- c(1:5) \nanother_numb_list\n\n[1] 1 2 3 4 5\n\nchar_list &lt;- c(\"R\", \"Python\", \"Java\", \"JavaScript\", \"C++\")\nchar_list\n\n[1] \"R\"          \"Python\"     \"Java\"       \"JavaScript\" \"C++\""
   },
   {
     "objectID": "slides/intro.html#variable-1",
     "href": "slides/intro.html#variable-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Variable",
     "text": "Variable\nvalue of a variable can also be overridden\n\nvar &lt;- 5\nvar\n\n[1] 5\n\n# override variable\nvar &lt;- \"new value\"\nvar\n\n[1] \"new value\""
   },
   {
     "objectID": "slides/intro.html#classes",
     "href": "slides/intro.html#classes",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Classes",
     "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object. There are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
   },
   {
     "objectID": "slides/intro.html#functions",
     "href": "slides/intro.html#functions",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Functions",
     "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name &lt;- function(){\n\n# function content\n\n}"
   },
   {
     "objectID": "slides/intro.html#functions-1",
     "href": "slides/intro.html#functions-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Functions",
     "text": "Functions\nExample: a simple function\n\nprint_hello &lt;- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
   },
   {
     "objectID": "slides/intro.html#functions-2",
     "href": "slides/intro.html#functions-2",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Functions",
     "text": "Functions\nFunctions can also have parameters, which creates reusable code with dynamic inputs and outputs\nA function with parameters as followed. Note that you can include as many parameters as you want\n\nfunction_name &lt;- function(parameter_1, parameter_2){\n  # function content\n  # values of parameters can be accessed simply calling parameter name\n}"
   },
   {
     "objectID": "slides/intro.html#functions-3",
     "href": "slides/intro.html#functions-3",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Functions",
     "text": "Functions\nExample: simple function\n\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "slides/intro.html#functions-4",
     "href": "slides/intro.html#functions-4",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Functions",
     "text": "Functions\n\nR is a functional programming language, which means you will encounter a lot of functions while coding in R.\nTo assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use ? or help()\n\n# look up documentation for `sqrt` function\n?sqrt\nhelp(sqrt)\n\nNote that the built-in documentation only helps when you already know which function you want to ask about. If you are looking for a function to achieve a specific task, it is better to start with search engine (Google, Bing, etc.), forums/Q&A sites (Github discussions, StackOverflow, etc.) or even ChatGPT."
   },
   {
     "objectID": "slides/intro.html#functions-5",
     "href": "slides/intro.html#functions-5",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Functions",
     "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code &gt; Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "slides/intro.html#scope",
     "href": "slides/intro.html#scope",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Scope",
     "text": "Scope\nScope refers to where variables can be accessed or modified.\nTo put simply\n\nBy default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is not recommended).\nglobal variables can be accessed anywhere.\nlocal variables are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function."
   },
   {
     "objectID": "slides/intro.html#scope-1",
     "href": "slides/intro.html#scope-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Scope",
     "text": "Scope\n\n# this is a global variable since it is not created in any local environment\nglobal_var &lt;- 10\n\nexample_func &lt;- function(param){\n  print(paste0(\"Global variable can be accessed within function \", global_var))\n  \n  # this is creating a local variable named global_var\n  # it will not affect global_var\n  global_var &lt;- 20\n  \n  # note that parameters is also only accessible within the function\n  print(paste0(\"Function parameter \", param))\n}\n\nexample_func(60)\n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Function parameter 60\"\n\nprint(paste0(\"The global variable is not modified \", global_var))\n\n[1] \"The global variable is not modified 10\""
   },
   {
     "objectID": "slides/intro.html#packages",
     "href": "slides/intro.html#packages",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Packages",
     "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages &gt; Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")"
   },
   {
     "objectID": "slides/intro.html#packages-1",
     "href": "slides/intro.html#packages-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Packages",
     "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata &lt;- read_excel(\"../data/linelist_raw.xlsx\")\nhead(data)"
   },
   {
     "objectID": "slides/intro.html#packages-2",
     "href": "slides/intro.html#packages-2",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Packages",
     "text": "Packages\nSimilar to functions, you can also look up documentation for packages using ? or help()\n\n# --- look up documentation for package ---\n?readxl\nhelp(readxl)\n\n# --- look up documentation for function of the package ---\n?readxl::read_excel\nhelp(read_excel, package= readxl)"
   },
   {
     "objectID": "slides/intro.html#data-import",
     "href": "slides/intro.html#data-import",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Data import",
     "text": "Data import\nSome useful import functions\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nread_excel()\nreadxl\nimport Excel (.xlsx, .xls) files\n\n\nread_csv()\nreadr\nimport .csv files\n\n\nreadRDS()\nbase\nimport .rds files\n\n\nload()\nbase\nimport .rda files"
   },
   {
     "objectID": "slides/intro.html#data-import-1",
     "href": "slides/intro.html#data-import-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Data import",
     "text": "Data import\n\nrio - support data import for multiple data format\n\nlibrary(rio)\nimport(\"../data/linelist_raw.xlsx\", skip = 2)"
   },
   {
     "objectID": "slides/intro.html#data-export",
     "href": "slides/intro.html#data-export",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Data export",
     "text": "Data export\nSome useful export function in R\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nwrite_xlsx()\nwritexl\nexport data as Excel files\n\n\nwrite.csv()\nutils\nexport data as .csv files\n\n\nsaveRDS()\nbase\nexport data as .rds files\n\n\nsave()\nbase\nexport data .rda files"
   },
   {
     "objectID": "slides/intro.html#clean-column-names",
     "href": "slides/intro.html#clean-column-names",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Clean column names",
     "text": "Clean column names\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
   },
   {
     "objectID": "slides/intro.html#clean-column-names-1",
     "href": "slides/intro.html#clean-column-names-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Clean column names",
     "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\nlibrary(janitor)\ndata &lt;- clean_names(data)\nhead(data)"
   },
   {
     "objectID": "slides/intro.html#data-summary",
     "href": "slides/intro.html#data-summary",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Data summary",
     "text": "Data summary\nIn base R, function summary() is used to have the basic statistics of each variables in the dataset\n\nsummary(data)\n\n   case_id            generation   infection_date                  \n Length:6611        Min.   : 0.0   Min.   :2012-04-09 00:00:00.00  \n Class :character   1st Qu.:13.0   1st Qu.:2014-08-25 00:00:00.00  \n Mode  :character   Median :16.0   Median :2014-10-04 00:00:00.00  \n                    Mean   :16.6   Mean   :2014-08-17 15:30:00.42  \n                    3rd Qu.:20.0   3rd Qu.:2014-11-26 00:00:00.00  \n                    Max.   :37.0   Max.   :2015-04-27 00:00:00.00  \n                    NA's   :7      NA's   :2322                    \n  date_onset          hosp_date                     \n Length:6611        Min.   :2012-04-20 00:00:00.00  \n Class :character   1st Qu.:2014-09-07 00:00:00.00  \n Mode  :character   Median :2014-10-15 00:00:00.00  \n                    Mean   :2014-08-31 05:10:56.32  \n                    3rd Qu.:2014-12-10 00:00:00.00  \n                    Max.   :2015-04-30 00:00:00.00  \n                    NA's   :7                       \n date_of_outcome                   outcome             gender         \n Min.   :2012-05-14 00:00:00.0   Length:6611        Length:6611       \n 1st Qu.:2014-09-14 00:00:00.0   Class :character   Class :character  \n Median :2014-10-26 00:00:00.0   Mode  :character   Mode  :character  \n Mean   :2014-09-11 00:04:09.4                                        \n 3rd Qu.:2014-12-21 00:00:00.0                                        \n Max.   :2015-06-04 00:00:00.0                                        \n NA's   :1068                                                         \n   hospital              lon              lat          infector        \n Length:6611        Min.   :-13.27   Min.   :8.446   Length:6611       \n Class :character   1st Qu.:-13.25   1st Qu.:8.461   Class :character  \n Mode  :character   Median :-13.23   Median :8.469   Mode  :character  \n                    Mean   :-13.23   Mean   :8.470                     \n                    3rd Qu.:-13.22   3rd Qu.:8.480                     \n                    Max.   :-13.21   Max.   :8.492                     \n                    NA's   :7        NA's   :7                         \n    source              age              age_unit            row_num    \n Length:6611        Length:6611        Length:6611        Min.   :   1  \n Class :character   Class :character   Class :character   1st Qu.:1648  \n Mode  :character   Mode  :character   Mode  :character   Median :3241  \n                                                          Mean   :3241  \n                                                          3rd Qu.:4836  \n                                                          Max.   :6481  \n                                                                        \n     wt_kg            ht_cm          ct_blood        fever          \n Min.   :-11.00   Min.   :  4.0   Min.   :16.00   Length:6611       \n 1st Qu.: 41.00   1st Qu.: 91.0   1st Qu.:20.00   Class :character  \n Median : 54.00   Median :130.0   Median :22.00   Mode  :character  \n Mean   : 52.69   Mean   :125.2   Mean   :21.26                     \n 3rd Qu.: 66.00   3rd Qu.:159.0   3rd Qu.:22.00                     \n Max.   :111.00   Max.   :295.0   Max.   :26.00                     \n NA's   :7        NA's   :7       NA's   :7                         \n    chills             cough              aches              vomit          \n Length:6611        Length:6611        Length:6611        Length:6611       \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n                                                                            \n      temp      time_admission     merged_header          x28           \n Min.   :35.2   Length:6611        Length:6611        Length:6611       \n 1st Qu.:38.3   Class :character   Class :character   Class :character  \n Median :38.8   Mode  :character   Mode  :character   Mode  :character  \n Mean   :38.6                                                           \n 3rd Qu.:39.2                                                           \n Max.   :40.8                                                           \n NA's   :158"
   },
   {
     "objectID": "slides/intro.html#data-summary-1",
     "href": "slides/intro.html#data-summary-1",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Data summary",
     "text": "Data summary\n\nHowever, function skim() from package skimr can return a better table output with tables grouped by class of data\n\nlibrary(skimr)\nskim(data)\n\n\nData summary\n\n\nName\ndata\n\n\nNumber of rows\n6611\n\n\nNumber of columns\n28\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n17\n\n\nnumeric\n8\n\n\nPOSIXct\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\ncase_id\n137\n0.98\n6\n6\n0\n5888\n0\n\n\ndate_onset\n293\n0.96\n10\n10\n0\n580\n0\n\n\noutcome\n1500\n0.77\n5\n7\n0\n2\n0\n\n\ngender\n324\n0.95\n1\n1\n0\n2\n0\n\n\nhospital\n1512\n0.77\n5\n36\n0\n13\n0\n\n\ninfector\n2323\n0.65\n6\n6\n0\n2697\n0\n\n\nsource\n2323\n0.65\n5\n7\n0\n2\n0\n\n\nage\n107\n0.98\n1\n2\n0\n75\n0\n\n\nage_unit\n7\n1.00\n5\n6\n0\n2\n0\n\n\nfever\n258\n0.96\n2\n3\n0\n2\n0\n\n\nchills\n258\n0.96\n2\n3\n0\n2\n0\n\n\ncough\n258\n0.96\n2\n3\n0\n2\n0\n\n\naches\n258\n0.96\n2\n3\n0\n2\n0\n\n\nvomit\n258\n0.96\n2\n3\n0\n2\n0\n\n\ntime_admission\n844\n0.87\n5\n5\n0\n1091\n0\n\n\nmerged_header\n0\n1.00\n1\n1\n0\n1\n0\n\n\nx28\n0\n1.00\n1\n1\n0\n1\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ngeneration\n7\n1.00\n16.60\n5.71\n0.00\n13.00\n16.00\n20.00\n37.00\n▁▆▇▂▁\n\n\nlon\n7\n1.00\n-13.23\n0.02\n-13.27\n-13.25\n-13.23\n-13.22\n-13.21\n▅▃▃▅▇\n\n\nlat\n7\n1.00\n8.47\n0.01\n8.45\n8.46\n8.47\n8.48\n8.49\n▅▇▇▇▆\n\n\nrow_num\n0\n1.00\n3240.91\n1857.83\n1.00\n1647.50\n3241.00\n4836.50\n6481.00\n▇▇▇▇▇\n\n\nwt_kg\n7\n1.00\n52.69\n18.59\n-11.00\n41.00\n54.00\n66.00\n111.00\n▁▃▇▅▁\n\n\nht_cm\n7\n1.00\n125.25\n49.57\n4.00\n91.00\n130.00\n159.00\n295.00\n▂▅▇▂▁\n\n\nct_blood\n7\n1.00\n21.26\n1.67\n16.00\n20.00\n22.00\n22.00\n26.00\n▁▃▇▃▁\n\n\ntemp\n158\n0.98\n38.60\n0.95\n35.20\n38.30\n38.80\n39.20\n40.80\n▁▂▂▇▁\n\n\n\nVariable type: POSIXct\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ninfection_date\n2322\n0.65\n2012-04-09\n2015-04-27\n2014-10-04\n538\n\n\nhosp_date\n7\n1.00\n2012-04-20\n2015-04-30\n2014-10-15\n570\n\n\ndate_of_outcome\n1068\n0.84\n2012-05-14\n2015-06-04\n2014-10-26\n575"
   },
   {
     "objectID": "slides/intro.html#upcoming-lessons",
     "href": "slides/intro.html#upcoming-lessons",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Upcoming lessons",
     "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
   },
   {
     "objectID": "slides/intro.html#recap",
     "href": "slides/intro.html#recap",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Recap",
     "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nHow to upload your project to Github using Github Desktop\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nPerform data import, export, overview in R"
   },
   {
     "objectID": "slides/intro.html#exercise",
     "href": "slides/intro.html#exercise",
-    "title": "Foundation of R",
+    "title": "Foundations of R",
     "section": "Exercise",
     "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\n\nUpload the code to github\nPeer reviews"
   },
