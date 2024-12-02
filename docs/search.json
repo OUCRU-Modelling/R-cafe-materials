@@ -1,5 +1,68 @@
 [
   {
+    "objectID": "slides/intro_github.html#git-vs.-github",
+    "href": "slides/intro_github.html#git-vs.-github",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git vs. GitHub",
+    "text": "Git vs. GitHub\n\n\nGit is a version control system, its purpose is to keep track of changes of files within a repository and provide the capability to revert to previous version\nGitHub is a cloud-based service to host Git repository, its main purpose is to store and/or share your Git project with collaborators"
+  },
+  {
+    "objectID": "slides/intro_github.html#local-vs.-remote",
+    "href": "slides/intro_github.html#local-vs.-remote",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Local vs. Remote",
+    "text": "Local vs. Remote\n\n\nLocal means your physical computer. When we say local we are talking about what’s happening directly on your computer\nRemote can mean a computing cloud, a server, or someone else’s computer. When we say remote we are talking about what’s happening not on your computer, i.e. remotely."
+  },
+  {
+    "objectID": "slides/intro_github.html#git-and-github-1",
+    "href": "slides/intro_github.html#git-and-github-1",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\n\nGit is a software that works locally. You don’t need GitHub for Git to work. You can use Git as-is\nGitHub acts as a remote server for Git, so that you can share your project and collaborate with others remotely\nA repository is a place where Git tracks all of your changes to files and folders. GitHub stores a copy of your repository whenever you push to it"
+  },
+  {
+    "objectID": "slides/intro_github.html#git-and-github-2",
+    "href": "slides/intro_github.html#git-and-github-2",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\n\n\n\n\n\nTerminologies\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
+  },
+  {
+    "objectID": "slides/intro_github.html#git-and-github-3",
+    "href": "slides/intro_github.html#git-and-github-3",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub"
+  },
+  {
+    "objectID": "slides/intro_github.html#git-and-github-4",
+    "href": "slides/intro_github.html#git-and-github-4",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\n\n\n\n\n\nImportant\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
+  },
+  {
+    "objectID": "slides/intro_github.html#github-desktop",
+    "href": "slides/intro_github.html#github-desktop",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "GitHub Desktop",
+    "text": "GitHub Desktop\n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
+  },
+  {
+    "objectID": "slides/intro_github.html#github-desktop-1",
+    "href": "slides/intro_github.html#github-desktop-1",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "GitHub Desktop",
+    "text": "GitHub Desktop\n\n\nGitHub Desktop is a software that makes it easier for you to use Git. It is a software built by GitHub, again, separate from Git\nAdvantages:\n\nSimplifies everything and only provide commonly used functionalities of Git\nReduces the chances that you will make errors in using Git\nDirect integration to GitHub, makes it easier for authentication"
+  },
+  {
+    "objectID": "slides/intro_github.html#setting-up-github-desktop",
+    "href": "slides/intro_github.html#setting-up-github-desktop",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Setting up GitHub Desktop",
+    "text": "Setting up GitHub Desktop\n\n\n\n\n\n\nChecklist\n\n\n\nInstall GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\n\nRefer to the handouts for instructions"
+  },
+  {
     "objectID": "slides/intro.html#about-the-course",
     "href": "slides/intro.html#about-the-course",
     "title": "Foundations of R",
@@ -312,14 +375,21 @@
     "href": "index.html#structure",
     "title": "Welcome to R Café - Pilot phase",
     "section": "Structure",
-    "text": "Structure\n\n2-hour face-to-face sessions per day, 1 day per week\nTake home exercises given between face-to-face sessions"
+    "text": "Structure\n\n3-hour face-to-face sessions per day, 1 day per week\nTake home exercises given between face-to-face sessions"
+  },
+  {
+    "objectID": "index.html#r-café-helpful-shortcuts",
+    "href": "index.html#r-café-helpful-shortcuts",
+    "title": "Welcome to R Café - Pilot phase",
+    "section": "R Café helpful shortcuts",
+    "text": "R Café helpful shortcuts\n\nTeams Tech support channel\nMain GitHub repository\nTheoretical slides\nCurrent instructor roster:\n\nThinh Ong Phuc (thinhop@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)\nTuyen Huynh (tuyenhn@oucru.org)\nHai Ho Bich (haihb@oucru.org)"
   },
   {
     "objectID": "index.html#agenda",
     "href": "index.html#agenda",
     "title": "Welcome to R Café - Pilot phase",
     "section": "Agenda",
-    "text": "Agenda\n\nFoundation of R (day 1)\n\nWhat is R Cafe & Agenda - Tuyen (5’)\nGitHub Desktop & setup: branching, cloning - Tuyen (15’)\nRstudio - QA (30’)\nPause (10’)\nR foundations - QA (40’)\nExercises to write functions\nWorking & collaborating on GitHub - Tuyen (20’)\n\nTidyverse: Style, pipe, ggplot2 (day 2)\nQuarto & Markdown (and related) (day 3)"
+    "text": "Agenda\n\nTBD (day 1)\n\nPart 1: Setup (45’) - Tuyen & QA\n\nWhat is R Café & Agenda (5’)\nBrief introduction to Git, GitHub, and GitHub Desktop (20’)\n\nGoal: Publish your own branch on R Café’s GitHub repository\n\nRstudio (20’)\n\nGoal: Create RStudio project\nGoal: Everyone create and push their first commit onto their own branch\n\nNavigate GitHub\n\nPart 2: Foundations of R (60’) - QA\n\nVariables & Functions & Packages (with outline)\nExercises\n\nGoal: Create a function and push to GitHub\nGoal: Create issues and comment on each other’s issues on GitHub\n\n\nBreak (15’)\nPart 3: Data manipulation in R (45’) - QA\n\nData management\nTake-home exercises setup\n\n\nR programming with tidyverse (day 2)\nQuarto & Markdown (and related) (day 3)"
   },
   {
     "objectID": "index.html#take-home-exercises",
@@ -327,5 +397,89 @@
     "title": "Welcome to R Café - Pilot phase",
     "section": "Take-home exercises",
     "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nHandle missing data\nReformat\nFactor your data (with forcats)\nTricky data types: Datetime, String\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
+  },
+  {
+    "objectID": "slides/tidyverse.html#session-overview",
+    "href": "slides/tidyverse.html#session-overview",
+    "title": "R programming with tidyverse",
+    "section": "Session overview",
+    "text": "Session overview\nWhat will be covered:\n\nStepping into the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\n\ntidyverse style vs. base R style\n\nVectorisation with map() vs. *apply()\nPiping with %&gt;% and |&gt;\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-tidyverse",
+    "href": "slides/tidyverse.html#what-is-tidyverse",
+    "title": "R programming with tidyverse",
+    "section": "What is tidyverse?",
+    "text": "What is tidyverse?\n\ntidyverse is a collection of R packages built for data science\nAll packages shared the same principle of tidy data (this will be very apparent later on!)\nConsists of 8 core packages, and a dozen more packages for specific purposes"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-tidyverse-1",
+    "href": "slides/tidyverse.html#what-is-tidyverse-1",
+    "title": "R programming with tidyverse",
+    "section": "What is tidyverse?",
+    "text": "What is tidyverse?"
+  },
+  {
+    "objectID": "slides/tidyverse.html#why-tidyverse",
+    "href": "slides/tidyverse.html#why-tidyverse",
+    "title": "R programming with tidyverse",
+    "section": "Why tidyverse?",
+    "text": "Why tidyverse?\n\nEvery function under tidyverse shares consistent structure and pattern. Making it very easy to implement and edit your R code\nIn general, your R code might look cleaner and easier to follow, compared to base R\nYou just need to install everything once, instead of different packages for different things\nWith piping, you eliminate the need of intermediary objects and nesting of functions (examples later)\n\n\n\n\n\n\n\nNote\n\n\nThis is all subjective and your experience with tidyverse may varies"
+  },
+  {
+    "objectID": "slides/tidyverse.html#why-tidyverse-1",
+    "href": "slides/tidyverse.html#why-tidyverse-1",
+    "title": "R programming with tidyverse",
+    "section": "Why tidyverse?",
+    "text": "Why tidyverse?\n\n\n\n\n\n\nImportant\n\n\n\ntidyverse is not a replacement of base R. It is a collection of packages\nYou don’t have to use tidyverse when using R\ntidyverse has most functions for data science needs. Though, there are times base R will be needed, and might be better\nUnderstanding the principles and goals of tidyverse will better your knowledge on good coding practices and R"
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\nStart by installing it!\n\ninstall.packages(\"tidyverse\")\n\n\n\n\n\n\n\nNote\n\n\nMost packages will be installed. You might need some more packages, but generally it should cover most of your needs."
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-1",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-1",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\nThen load it into your R environment!\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nTip\n\n\nYou can load specific packages like library(dplyr), but it doesn’t matter in most cases."
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-2",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\nRun this example code below to make sure everything is running ok\n\ndiamonds %&gt;%\n  group_by(clarity) %&gt;%\n  summarise(mean_price = mean(price)) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = clarity, y = mean_price)) +\n  geom_col()\n\n\n\n\n\n\n\n\nTip\n\n\nFree R tip: type ?function_name for help on how to use a function and see which package is it coming from"
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse"
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-3",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-3",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\n\n\n\n\n\n\nTip\n\n\nFree R tip: add “tidyverse” into your Google searches when looking for R issues"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation-with-map-vs.-apply",
+    "href": "slides/tidyverse.html#vectorisation-with-map-vs.-apply",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation with map() vs. *apply()",
+    "text": "Vectorisation with map() vs. *apply()\n\nRecall what is “vectorisation”\nMost things in R are vectors"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation-with-map-vs.-apply-1",
+    "href": "slides/tidyverse.html#vectorisation-with-map-vs.-apply-1",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation with map() vs. *apply()",
+    "text": "Vectorisation with map() vs. *apply()\nVectorisation vs. looping"
   }
 ]
