@@ -7,20 +7,41 @@ format: html
 3 weeks of study + 1 week of extra content (if any) and closing remarks
 
 ## Structure
-- 2-hour face-to-face sessions per day, 1 day per week
+- 3-hour face-to-face sessions per day, 1 day per week
 - Take home exercises given between face-to-face sessions
 
-## Agenda
-1. [Foundation of R (day 1)](slides/intro.qmd){target="_blank"}
-	- What is R Cafe & Agenda - Tuyen (5')
-	- GitHub Desktop & setup: branching, cloning - Tuyen (15')
-	- Rstudio - QA (30')
-	- Pause (10')
-	- R foundations - QA (40')
-	- Exercises to write functions
-	- Working & collaborating on GitHub - Tuyen (20')
+## R Café helpful shortcuts
+- [Teams Tech support channel](https://teams.microsoft.com/l/channel/19%3AGyu0GBNtFFuDmjrVqXsrTYScHLPgP5bpTDLOoaJEeaE1%40thread.tacv2/Tech%20support?groupId=6abc7e7a-0132-4ec2-afa7-393d89c247d8&tenantId=22514748-bbda-4cb8-9795-bfa3fbeec018&ngc=true&allowXTenantAccess=true)
+- [Main GitHub repository](https://github.com/OUCRU-Modelling/R-cafe)
+- [Theoretical slides](https://oucru-modelling.github.io/R-cafe-materials/)
+- Current instructor roster:
+	- Thinh Ong Phuc (thinhop\@oucru.org)
+	- Anh Phan Truong Quynh (anhptq\@oucru.org)
+	- Hung Tran Thai (hungtt\@oucru.org)
+	- Tuyen Huynh (tuyenhn\@oucru.org)
+	- Hai Ho Bich (haihb\@oucru.org)
 
-2. Tidyverse: Style, pipe, ggplot2 (day 2)
+## Agenda
+1. [TBD (day 1)](slides/intro.qmd){target="_blank"}
+	- **Part 1**: Setup (45') - Tuyen & QA
+		- What is R Café & Agenda (5')
+		- Brief introduction to Git, GitHub, and GitHub Desktop (20')
+			- Goal: Publish your own branch on R Café's GitHub repository
+		- Rstudio (20')
+			- Goal: Create RStudio project
+			- Goal: Everyone create and push their first commit onto their own branch
+		- Navigate GitHub
+	- **Part 2**: Foundations of R (60') - QA
+		- Variables & Functions & Packages (with outline)
+		- Exercises
+			- Goal: Create a function and push to GitHub
+			- Goal: Create issues and comment on each other's issues on GitHub
+	- **Break** (15')
+	- **Part 3**: Data manipulation in R (45') - QA
+		- Data management
+		- Take-home exercises setup
+
+2. R programming with `tidyverse` (day 2)
 3. Quarto & Markdown (and related) (day 3)
 
 ## Take-home exercises
