@@ -9,3 +9,11 @@
 .codewindow .textarea .sourceCode {
   text-wrap: balance;
 }
+
+.medium-text-size{
+  font-size:30px !important;
+}
+
+div.cell-output-display div.pagedtable-wrapper table.table {
+  font-size: 0.6em !important;
+}

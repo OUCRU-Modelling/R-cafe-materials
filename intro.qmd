@@ -1,10 +1,12 @@
 ---
-title: "Foundation of R"
+title: "Foundations of R"
 format: 
   revealjs:
+    css: "./styles.css"
     df-print: paged
     slide-number: true
     logo: "./imgs/oucru-logo.png"
+    code-copy: false
 ---
 
 ## About the course {auto-animate="true"}
@@ -13,7 +15,7 @@ This course is a pilot phase of a future course "***R-cafe:** R for reproducible
 
 In this pilot phase, the following topics will be covered
 
--   **Foundation of R** - introduction to working with RStudio, R and Github
+-   **Foundations of R** - introduction to working with RStudio, R and Github
 
 -   **Tidyverse** - introduce important tools for cleaning data in R
 
@@ -29,20 +31,9 @@ Teaching team:
 -   Thinh Ong Phuc (thinhop\@oucru.org)
 -   Tuyen Huynh Ngoc (tuyenhn\@oucru.org)
 -   Anh Phan Truong Quynh (anhptq\@oucru.org)
+-   Hung Tran Thai (hungtt\@oucru.org)
 
-# Foundation of R
-
-## Overview
-
-::: callout-note
--   Intro to RStudio
-
--   R project (create R project, set up renv)
-
--   Intro to R
-
--   Github
-:::
+# Set up
 
 ## Prerequisite
 
@@ -51,7 +42,19 @@ Teaching team:
 
 -   R and RStudio installed
 
--   a Github account and Git installed
+-   a Github account, Github Desktop installed
+:::
+
+## Overview
+
+::: callout-note
+-   Github Desktop
+
+-   Intro to RStudio
+
+-   R project (create R project, set up renv)
+
+-   Intro to R
 :::
 
 # Github
@@ -62,15 +65,15 @@ Teaching team:
 
 **Github** is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.
 
-## Set up version control in RStudio {auto-animate="true"}
+**Github Desktop** is an application that allows users to `push` their changes from local changes to Github
 
-In the menu
+## Git and Github {auto-animate="true"}
 
--   Click Tools \> Project Options \> Git/SVN
+push, pull, commit, branch
 
--   At `Version Control System`, select `Git` in the drop down
+## Clone R-cafe repository {auto-animate="true"}
 
--   Click `OK`
+R-cafe repo: <https://github.com/OUCRU-Modelling/R-cafe>
 
 ## R and RStudio {auto-animate="true"}
 
@@ -86,11 +89,13 @@ In the menu
 
 -   **Reproducibility**: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.
 
--   **Community**: R has a large, collaborative user base, with new tools and packages for analysis developed constantly
+-   **Community**: R has a large, collaborative user base, with new tools and packages for analysis developed constantly.
 
 # R project
 
 ## Create Project in RStudio {auto-animate="true"}
+
+An **R project** is a directory with `.Rproj` file, signaling RStudio to manage the project settings accordingly.
 
 The process of creating an R project is as followed
 
@@ -104,7 +109,11 @@ The process of creating an R project is as followed
 
 ## RStudio interface {auto-animate="true"}
 
-::: r-fit-text
+![](imgs/r_foundation/rstudio_components.png)
+
+## RStudio interface {auto-animate="true"}
+
+::: medium-text-size
 Consists of 4 main panes
 
 -   **Source code**: Show the content of a source code file
@@ -124,10 +133,6 @@ Consists of 4 main panes
     -   Help: show documentations for functions or packages
 :::
 
-## RStudio interface {auto-animate="true"}
-
-![](imgs/r_foundation/rstudio_components.png)
-
 ## Project structure {auto-animate="true"}
 
 A minimal R project structure will have the following format
@@ -143,17 +148,16 @@ A minimal R project structure will have the following format
 
 Where
 
--   `data` folder contains data to by analyzed
+-   `data` folder contains data to be analyzed
 
 -   `output` stores code output (plot, figures, etc.)
 
 -   `analysis.R` is the file containing R code. There can be multiple `.R` files under 1 project.
 
-## Project structure
+## Naming convention {#sec-file-naming}
 
-::: r-fit-text
-***Naming convention***
-
+::: medium-text-size
+::: callout-note
 Some rules of thumb for naming files and folders:
 
 -   Do not use diacritics (e.g. Vietnamese accent marks).
@@ -165,6 +169,7 @@ Some rules of thumb for naming files and folders:
 -   Avoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., `dataSoiHcm`) or PascalCase (capitalize the first letter of all words, e.g., `DataSoiHcm`).
 
 -   Do not include spaces (`" "`) in names. Instead, you can use camelCase, or replace spaces with `-` or `_`. For example, instead of naming a file `data soi HCM 2023.xlsx`, you could name it `dataSoiHcm2023.xlsx`, `data-soi-hcm-2023.xlsx`, or `data_soi_hcm_2023.xlsx`.
+:::
 :::
 
 # Project environment
@@ -181,7 +186,7 @@ Which creates `renv.lock` file and a folder `renv` in your project
 
 ## Why use renv? {auto-animate="true"}
 
-::: r-fit-text
+::: medium-text-size
 -   Encapsulate the development environment of your R projects (R version, packages used and their versions) in a file called `renv.lock`
 
 -   Ensure collaborators to replicate your R project's development environment by simply running `renv::restore()`
@@ -196,10 +201,6 @@ Which creates `renv.lock` file and a folder `renv` in your project
 
 An R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process.
 :::
-
-## Github Desktop
-
-*To be updated*
 
 # R foundations
 
@@ -230,8 +231,8 @@ print("Hello world")
 
 ## Variable {auto-animate="true"}
 
-::: r-fit-text
-Everything you store in R - datasets, a vector of names, a total population number, even outputs such as graphs - are *objects* which can be *assigned to a variable* and *can be referenced* in later commands.
+::: medium-text-size
+In R, a **variable** is a name used to store an **object**, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.
 
 In R, a variable can be created by assigning an object to it using `<-`
 
@@ -246,22 +247,12 @@ pi_numb
 # object can also be a text/characters
 greeting <- "Hello World" # note that it must be contained within quotation marks
 greeting
-
-# or vector of numbers/ characters
-numb_list <- c(1,2,3,4,5)
-numb_list
-
-another_numb_list <- c(1:5) 
-another_numb_list
-
-char_list <- c("R", "Python", "Java", "JavaScript", "C++")
-char_list
 ```
 :::
 
 ## Variable {auto-animate="true"}
 
-value of a variable can also be overridden
+Value of a variable can also be overridden
 
 ```{r}
 var <- 5
@@ -271,9 +262,17 @@ var <- "new value"
 var
 ```
 
+::: callout-note
+### Naming variable {.callout-note}
+
+The rule for naming variable is similar to that of naming file/folder names (See @sec-file-naming)
+
+Additionally, variable name needs to be [**concise**]{.underline} and beware of [**overriding values**]{.underline}
+:::
+
 ## Classes {.scrollable auto-animate="true"}
 
-::: r-fit-text
+::: medium-text-size
 All the objects stored in R have a class which tells R how to handle the object. There are many possible classes, but common ones include
 
 +--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
@@ -300,6 +299,20 @@ All the objects stored in R have a class which tells R how to handle the object.
 | `tibble`     | an "enhanced" version of `data.frame` which is less prone to error and printed more nicely in the console |                                    |
 +--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
 :::
+
+## Special values {auto-animate="true"}
+
++--------------+---------------------------------------------------------------------------------------------------------------+
+| Value        | Description                                                                                                   |
++==============+===============================================================================================================+
+| `NA`         | Stands for [Not Available]{.underline}. Indicates missing values.                                             |
++--------------+---------------------------------------------------------------------------------------------------------------+
+| `NULL`       | Indicates undefined/abscence of value. (e.g. `numb <- NULL` indicates value for variable `numb` is undefined) |
++--------------+---------------------------------------------------------------------------------------------------------------+
+| `NaN`        | Stands for [Not a Number]{.underline}. Indicates unrepresentable number (e.g. result for `0/0` )              |
++--------------+---------------------------------------------------------------------------------------------------------------+
+| `Inf`/`-Inf` | Infinity/Negative infinity                                                                                    |
++--------------+---------------------------------------------------------------------------------------------------------------+
 
 ## Functions {auto-animate="true"}
 
@@ -331,14 +344,14 @@ print_hello()
 
 ## Functions {auto-animate="true"}
 
-Functions can also have parameters, which creates reusable code with **dynamic inputs and outputs**
+Functions can also have arguments, which creates reusable code with **dynamic inputs and outputs**
 
-A function with parameters as followed. Note that you can include as many parameters as you want
+A function with arguments as followed. Note that you can include as many arguments as you want
 
 ```{r, eval=FALSE}
-function_name <- function(parameter_1, parameter_2){
+function_name <- function(argument_1, argument_2){
   # function content
-  # values of parameters can be accessed simply calling parameter name
+  # values of argument can be accessed simply calling argument name
 }
 ```
 
@@ -352,12 +365,151 @@ compute_power <- function(base, power){
   base**power
 }
 
-compute_power(5, 2)
+# output can be assigned to a variable
+output <- compute_power(base = 5, power = 2)
+output
 ```
 
 ## Functions {auto-animate="true"}
 
-::: r-fit-text
+::: callout-note
+You can provide value for each argument [without specifying the name]{.underline} but it must follow the same order in the function definition.
+
+However, **it is generally recommended to include the name of the argument** for better readability. When argument name is specified, [order no longer matter]{.underline}.
+
+```{r}
+compute_power(5, 2) 
+compute_power(2, 5) # expect different result (2^5)
+
+compute_power(base = 5, power = 2)
+compute_power(power = 2, base = 5) # expect same result
+```
+:::
+
+## Functions {.scrollable auto-animate="true"}
+
+::: medium-text-size
+**When to create a function?**
+
+A general rule is when you start to [copy-paste a sequence of code multiple times]{.underline} (usually \>3), you should make a function for it
+
+***Exercise***
+
+Given a dataset with number of reported cases for 211 countries
+:::
+
+```{r echo=FALSE, warning=FALSE}
+library(outbreaks)
+library(tidyverse)
+
+
+covid_cases <- sarscov2_who_2019 %>% 
+  select(date, matches("^cases_[[:alpha:]]{3}$")) %>% 
+  mutate_at(
+    # compute new cases per day from cumulative cases
+    vars(matches("^cases_[[:alpha:]]{3}$")), 
+    ~ c(0, diff(., differences = 1))
+  )
+```
+
+```{r}
+head(covid_cases)
+```
+
+## Functions {.scrollable auto-animate="true"}
+
+::: medium-text-size
+***Exercise:*** Create a function that allow users to choose compute basic statistics for number cases of each country.
+
+Given the code to compute basic stats for case reports in China (`cases_chn`) is as followed
+
+```{r}
+case_col <- "cases_chn"
+
+basic_stats <- c(
+  min =  min(covid_cases[[case_col]]),
+  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),
+  median = median(covid_cases[[case_col]]),
+  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),
+  max = max(covid_cases[[case_col]])
+)
+
+basic_stats
+```
+
+::: callout-note
+The syntax `data[[column_name]]` is used for extracting values in a column
+:::
+:::
+
+```{r include=FALSE}
+plot_col <- "cases_chn"
+country <- "China"
+
+ggplot(data = covid_cases) +
+  geom_line(
+    aes(date, y = !! sym(plot_col) ), # define columns for x, y axis
+    color = "blue" # choose color for line plot
+  ) + 
+  labs(
+    y = "Cases",
+    x = "Date",
+    title = sprintf("Reported Covid cases for %s", country)
+)
+```
+
+## Functions {.scrollable auto-animate="true"}
+
+***Exercise:*** Suggested solution
+
+```{r }
+#| fold: true
+compute_stats <- function(data, colname){
+  return(
+    c(
+      min = min(data[[colname]]),
+      q1 = quantile(data[[colname]], 0.25, names=FALSE),
+      median = median(data[[colname]]),
+      q3 = quantile(data[[colname]], 0.75, names=FALSE),
+      max = max(data[[colname]])
+    )
+  )
+}
+compute_stats(covid_cases, colname = "cases_chn")
+```
+
+```{r include=FALSE}
+plot_cases <- function(data, plot_col="cases_chn", country="China", ylab = "Cases", xlab = "Date"){
+  ggplot(data = data) +
+  geom_line(
+    aes(date, y = !! sym(plot_col) ), # define columns for x, y axis
+    color = "blue" # choose color for line plot
+  ) + 
+  labs(
+    y = ylab,
+    x = xlab,
+    title = sprintf("Reported Covid cases for %s", country)
+  )
+}
+
+plot_cases(covid_cases, plot_col="cases_kor", country = "Korea")
+```
+
+## Functions {auto-animate="true"}
+
+::: medium-text-size
+**Some criteria for a good function**
+
+-   **Modularity** - each function should focus on ***one task*** (e.g. you can have a function to import data, another to model the data, another to visualize data but [**not**]{.underline} a function doing all of those 3 tasks)
+
+-   **Concise -** the content of a function should not be too lengthy. If a function starts to have \> 30 lines of code, it may be an indication that the modularity rule is violated.
+
+-   **Readability** - function's name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented.
+:::
+
+## Functions {auto-animate="true"}
+
+::: medium-text-size
 R is a functional programming language, which means you will encounter a lot of functions while coding in R.
 
 To assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use `?` or `help()`
@@ -368,12 +520,12 @@ To assist users, R also include a built-in documentation system that explains th
 help(sqrt)
 ```
 
-Note that the built-in documentation only helps when you already know which function you want to ask about. If you are looking for a function to achieve a specific task, it is better to start with **search engine** (Google, Bing, etc.), **forums/Q&A sites** (Github discussions, StackOverflow, etc.) or even ChatGPT.
+Note that the built-in documentation only helps when you [already know which function you want to ask about]{.underline}. If you are looking for a function to achieve a specific task, it is better to start with **search engine** (Google, Bing, etc.), **forums/Q&A sites** (Github discussions, StackOverflow, etc.) or even ChatGPT.
 :::
 
 ## Functions {auto-animate="true"}
 
-::: r-fit-text
+::: medium-text-size
 The documentation that show up when calling `help()` or `?` are usually generated from something called roxygen documentation.
 
 To create a roxygen documentation, place the cursor within the function and from the menu, click `Code` \> `Insert Roxygen Skeleton`
@@ -398,8 +550,153 @@ compute_power(5, 2)
 ```
 :::
 
-```{r echo=FALSE, include=FALSE}
-# TODO: add exercise - function with seed()
+## Function `set.seed()` {visibility="hidden"}
+
+::: medium-text-size
+`set.seed()` is essential to [ensure reproducibility for processes that uses a random number generator]{.underline}
+
+A seed is an input value to generate the "random data". By specifying the same seed, we can ensure the number generator always [return the same result]{.underline}.
+
+```{r}
+# Set seed 
+set.seed(123)
+
+# Generate sample data
+sample_data <- rnorm(10, mean = 50, sd = 10)  
+sample_data
+```
+:::
+
+## Vectorization {visibility="hidden"}
+
+::: medium-text-size
+**Vectorization** refers to performing an operation on [all items of a vector at once]{.underline} instead of going through each item in a loop.
+
+Code using vectorized functions are also much cleaner than using for loop
+
+***Example:*** Given a vector of numeric, and square all the odd numbers while divide even numbers by 2
+
+```{r}
+non_vectorized <- function(numbs){
+  for (i in 1:length(numbs)){ # go through each number in numbs
+    if (numbs[i] %%2 == 0){
+      numbs[i] <- numbs[i]/2
+    }else{
+      numbs[i] <- numbs[i]**2
+    }
+  }
+  
+  numbs
+}
+
+vectorized <- function(numbs){
+  numbs <- ifelse(numbs %%2 == 0, numbs/2, numbs**2)
+  
+  numbs
+}
+```
+:::
+
+## Vectorization {visibility="hidden"}
+
+***Example:*** Compare run time between 2 approahces
+
+```{r}
+# non vectorization approach
+system.time(
+  non_vectorized(c(1:100000))
+)
+
+# vectorized approach
+system.time(
+  vectorized(c(1:100000))
+)
+```
+
+## Scope {auto-animate="true"}
+
+**Brainstorming**
+
+Read the code and guess the answer for 3 Questions below
+
+```{r, eval = FALSE}
+#| error: true
+example_var <- 10
+
+example_func <- function(arg){
+  print(paste0("Value of variable example_var: ", example_var))
+  
+  example_var <- 20
+  
+  print(paste0("Value of variable example_var after assignment: ", example_var))
+  print(paste0("Value of function argument: ", arg)) 
+}
+
+# Q1: What will the 2 print statements show?
+example_func(60) 
+# Q2: What will be the value for example_var here?
+paste0("Value of variable example_var: ", example_var)
+# Q3: What will be the value for arg here?
+arg  
+```
+
+## Scope {.scrollable auto-animate="true"}
+
+**Answer**
+
+```{r, error = TRUE}
+#| error: true
+example_var <- 10
+
+example_func <- function(arg){
+  print(paste0("Value of variable example_var: ", example_var))
+  
+  example_var <- 20
+  
+  print(paste0("Value of variable example_var after assignment: ", example_var))
+  print(paste0("Value of function argument: ", arg)) 
+}
+
+# Q1: What will the 2 print statements show?
+example_func(60) 
+# Q2: What will be the value for example_var here?
+paste0("Value of variable example_var: ", example_var)
+# Q3: What will be the value for arg here?
+arg  
+```
+
+## Scope {auto-animate="true"}
+
+![](imgs/r_foundation/scope_fig.png){width="544"}
+
+## Scope {auto-animate="true"}
+
+**Explanation**
+
+```{r}
+#| error: true
+# this is a global variable since it is not created in any local environment
+example_var <- 10
+
+example_func <- function(arg){
+  # global_var
+  print(paste0("Global variable can be accessed within function ", example_var))
+  
+  # this is creating a local variable named example_var
+  # it will not affect example_var
+  example_var <- 20
+  
+  # this example_var refers to the local variable example_var
+  print(paste0("Value of variable example_var after assignment", example_var))
+  # note that argument is also only accessible within the function
+  print(paste0("Function argument ", arg))
+}
+
+example_func(60) 
+# value for argument should only accessible within function 
+arg  
+# refers to global variabl example_var here 
+paste0("Value of variable example_var ", example_var)
 ```
 
 ## Scope {auto-animate="true"}
@@ -409,33 +706,14 @@ compute_power(5, 2)
 To put simply
 
 -   By default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is [**not**]{.underline} recommended).
--   **global variables** can be accessed anywhere.
+
+-   **global variables** can be accessed anywhere within the session.
+
 -   **local variables** are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function.
-
-## Scope {auto-animate="true"}
-
-```{r}
-# this is a global variable since it is not created in any local environment
-global_var <- 10
-
-example_func <- function(param){
-  print(paste0("Global variable can be accessed within function ", global_var))
-  
-  # this is creating a local variable named global_var
-  # it will not affect global_var
-  global_var <- 20
-  
-  # note that parameters is also only accessible within the function
-  print(paste0("Function parameter ", param))
-}
-
-example_func(60)
-print(paste0("The global variable is not modified ", global_var))
-```
 
 ## Packages {auto-animate="true"}
 
-::: r-fit-text
+::: medium-text-size
 2 options to install an R packages
 
 -   Via RStudio interface.
@@ -498,14 +776,14 @@ Some useful import functions
 
 ## Data import {auto-animate="true"}
 
-::: r-fit-text
+::: medium-text-size
 `rio` - support data import for multiple data format
+:::
 
 ```{r}
 library(rio)
 import("data/linelist_raw.xlsx", skip = 2)
 ```
-:::
 
 ## Data export {auto-animate="true"}
 
@@ -528,15 +806,44 @@ colnames(data)
 
 ## Clean column names {auto-animate="true"}
 
-::: r-fit-text
+::: medium-text-size
 You may notice some names go against the "rule of thumb" for naming
 
 To quickly resolve this, package `janitor` offers `clean_names()` function to automatically fix the naming
+:::
 
 ```{r}
 library(janitor)
 data <- clean_names(data)
 head(data)
+```
+
+## Simple data extraction {.scrollable auto-animate="true"}
+
+::: medium-text-size
+Data cell(s) can be extracted using the syntax `data[row, col]`
+
+-   To extract all rows, left `col` blank
+
+-   To extract all cols, left `row` blank
+
+```{r}
+#| df-print: kable
+
+# get the cell at row 5, column 2
+data[5 ,2]
+
+# column can also be accessed using column name
+data[5 , "hosp_date"]
+
+# get all values in the 5th row
+data[5, ]
+
+# extract specific columns
+data[, c("case_id", "infection_date", "date_onset", "hosp_date")] 
+
+# extract first 10 rows from specific columns
+data[1:10, c("case_id", "infection_date", "date_onset", "hosp_date")] 
 ```
 :::
 
@@ -550,31 +857,13 @@ summary(data)
 
 ## Data summary {.scrollable auto-animate="true"}
 
-::: r-fit-text
+::: medium-text-size
 However, function `skim()` from package `skimr` can return a better table output with tables grouped by class of data
 
 ```{r}
 library(skimr)
 skim(data)
 ```
-:::
-
-## Upcoming lessons
-
-::: r-fit-text
-Data cleaning in R
-
-`tidyverse` package for
-
--   Data cleaning, handling tricky datatypes (string, Date, factor, etc.)
-
--   Data visualization using `ggplots`
-
-Data analysis in R
-
--   Demographic analysis, perform statistical tests using `gtsummary`
-
--   Creating report using `Rmarkdown`/`Quarto`
 :::
 
 ## Recap {auto-animate="true"}
@@ -591,7 +880,7 @@ After today, you have learnt to:
 
 -   Perform data import, export, overview in R
 
-## Exercise {auto-animate="true"}
+## Exercise {.scrollable auto-animate="true" visibility="hidden"}
 
 -   Create an R project
 
@@ -607,15 +896,26 @@ After today, you have learnt to:
 
     -   Load a dataset to R and perform data overview
 
+    -   Write a function for the given snippet of code
+
 -   Upload the code to github
 
 -   Peer reviews
 
-```{r echo=FALSE, include=FALSE}
-# TODO: R exercise
-# ggplot code -> function
-# adjust limit, breaks, title 
-# - basic: limit fr parameters
-# - slightly advanced: option for dynamic limit using min, max
-?outbreaks
-```
+## Upcoming lessons
+
+::: medium-text-size
+Data cleaning in R
+
+`tidyverse` package for
+
+-   Data cleaning, handling tricky datatypes (string, Date, factor, etc.)
+
+-   Data visualization using `ggplots`
+
+Data analysis in R
+
+-   Demographic analysis, perform statistical tests using `gtsummary`
+
+-   Creating report using `Rmarkdown`/`Quarto`
+:::
