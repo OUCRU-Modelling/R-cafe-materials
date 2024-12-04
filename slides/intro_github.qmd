@@ -1,15 +1,20 @@
 ---
 title: "Brief introduction to Git, GitHub, and GitHub Desktop"
+title-slide-attributes:
+  data-background-image: imgs/intro_github/git-suite.jpeg
+  data-background-size: contain
+  data-background-opacity: "0.5"
 format:
   revealjs:
     df-print: paged
     slide-number: true
     logo: "imgs/oucru-logo.png"
+css: /styles.css
 ---
 
-# Git and GitHub
+# Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
 
-## Git vs. GitHub {auto-animate="true"}
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} vs. GitHub ![](imgs/intro_github/github-icon.png){.inline-img} {auto-animate="true"}
 
 :::{.incremental}
 - **Git** is a [version control system]{.underline}, its purpose is to keep track of changes of files within a [repository]{.underline} and provide the capability to [revert to previous version]{.underline}
@@ -23,7 +28,7 @@ format:
 - **Remote** can mean a computing cloud, a server, or someone else's computer. When we say **remote** we are talking about what's happening **not on** your computer, i.e. remotely.
 :::
 
-## Git and GitHub {auto-animate="true"}
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img} {auto-animate="true"}
 
 :::{.incremental}
 - **Git** is a software that works **locally**. You don't need GitHub for Git to work. You can use Git as-is
@@ -31,7 +36,7 @@ format:
 - A **repository** is a place where Git *tracks all of your changes* to files and folders. GitHub stores a copy of your repository whenever you **push** to it
 :::
 
-## Git and GitHub
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
 
 ::: callout-note
 ### Terminologies
@@ -43,19 +48,21 @@ format:
 - **Add**: chosing which changes you want to commit
 :::
 
-## Git and GitHub
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
 
 ![](imgs/intro_github/git_push_pull.png)
 
 
-## Git and GitHub
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
 
 ::: callout-important
 - **Git is a standalone software**, which works fully locally.  You can use Git without GitHub
 - **GitHub is a platform** for collaboration. It uses Git as the [version control system]{.underline}
 :::
 
-## GitHub Desktop
+# GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img}
+
+## GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img} {.scrollable}
 
 - **Git** is a command-line interface (CLI) software.
 
@@ -65,7 +72,7 @@ format:
 We strongly recommend **to not use Git through its CLI**. It is not fun and **you will lose your work** because of a typo.
 :::
 
-## GitHub Desktop
+## GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img}
 
 :::{.incremental}
 - **GitHub Desktop** is a software that makes it easier for you to use Git. It is a software **built by GitHub**, again, separate from Git
@@ -75,14 +82,14 @@ We strongly recommend **to not use Git through its CLI**. It is not fun and **yo
   - Direct integration to GitHub, makes it easier for authentication
 :::
 
-# Setting up GitHub Desktop for R Café
+# Setting up GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img} for R Café
 
-## Setting up GitHub Desktop
+## Setting up GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img}
 
 ::: callout-note
 ### Checklist
 
-- Install GitHub Desktop
+- Sign in to your account in GitHub Desktop
 - Clone R Cafe into your computer/laptop. [Link](https://github.com/OUCRU-Modelling/R-cafe){target="_blank"}
 - Create your own branch
 - Publish (push) your branch

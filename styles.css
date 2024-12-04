@@ -9,3 +9,10 @@
 .codewindow .textarea .sourceCode {
   text-wrap: balance;
 }
+
+.inline-img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 30px;
+}
