@@ -23,21 +23,21 @@ format: html
 
 ## Agenda
 1. [TBD (day 1)](slides/intro.qmd){target="_blank"}
-	- **Part 1**: Setup (45') - Tuyen & QA
+	- **Part 1**: Setup (45') - *Tuyen & QA*
 		- What is R Café & Agenda (5')
-		- Brief introduction to Git, GitHub, and GitHub Desktop (20')
+		- [Brief introduction to Git, GitHub, and GitHub Desktop](slides/intro_github.qmd) (20')
 			- Goal: Publish your own branch on R Café's GitHub repository
 		- Rstudio (20')
 			- Goal: Create RStudio project
 			- Goal: Everyone create and push their first commit onto their own branch
 		- Navigate GitHub
-	- **Part 2**: Foundations of R (60') - QA
+	- **Part 2**: Foundations of R (60') - *QA*
 		- Variables & Functions & Packages (with outline)
 		- Exercises
 			- Goal: Create a function and push to GitHub
 			- Goal: Create issues and comment on each other's issues on GitHub
 	- **Break** (15')
-	- **Part 3**: Data manipulation in R (45') - QA
+	- **Part 3**: Data manipulation in R (45') - *QA*
 		- Data management
 		- Take-home exercises setup
 
