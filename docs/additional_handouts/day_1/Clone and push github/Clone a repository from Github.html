@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tran Thai Hung">
-<meta name="keywords" content="Rproject, Rstudio">
+<meta name="keywords" content="github, clone, new branch, push">
 
-<title>Rproject setup</title>
+<title>Github note 1 – R Café</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,37 +25,110 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="Rproject_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Rproject_files/libs/quarto-html/quarto.js"></script>
-<script src="Rproject_files/libs/quarto-html/popper.min.js"></script>
-<script src="Rproject_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Rproject_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Rproject_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Rproject_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Rproject_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Rproject_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Rproject_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body>
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">R Café</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../slides/intro.html"> 
+<span class="menu-text">Foundations of R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../slides/tidyverse.html"> 
+<span class="menu-text">R programming with tidyverse</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#steps-to-setup-rproject" id="toc-steps-to-setup-rproject" class="nav-link active" data-scroll-target="#steps-to-setup-rproject"><span class="header-section-number">1</span> Steps to setup Rproject</a></li>
+  <li><a href="#steps-to-clone-a-repository-on-github" id="toc-steps-to-clone-a-repository-on-github" class="nav-link active" data-scroll-target="#steps-to-clone-a-repository-on-github"><span class="header-section-number">1</span> Steps to Clone a Repository on GitHub</a></li>
+  <li><a href="#steps-to-create-a-new-branch" id="toc-steps-to-create-a-new-branch" class="nav-link" data-scroll-target="#steps-to-create-a-new-branch"><span class="header-section-number">2</span> Steps to create a new branch</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Rproject.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="Rproject.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
-</div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Clone-a-repository-from-Github.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="Clone a repository from Github.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Rproject setup</h1>
+<h1 class="title">Github note 1</h1>
 </div>
 
 
@@ -89,70 +162,125 @@ ul.task-list li input[type="checkbox"] {
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    Quick note to setup Rproject
+    Quick note to clone a repo and publish a branch.
   </div>
 </div>
 
 <div>
   <div class="keywords">
     <div class="block-title">Keywords</div>
-    <p>Rproject, Rstudio</p>
+    <p>github, clone, new branch, push</p>
   </div>
 </div>
 
 </header>
 
 
-<section id="steps-to-setup-rproject" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Steps to setup Rproject</h1>
+<section id="steps-to-clone-a-repository-on-github" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Steps to Clone a Repository on GitHub</h1>
 <ol type="1">
-<li><strong>Open Rstudio</strong><br>
-In the menu, <code>File</code> -&gt; <code>New project...</code></li>
+<li><p><strong>Visit the GitHub repository you would like to clone</strong><br>
+For example: <a href="https://github.com/OUCRU-Modelling/R-cafe">https://github.com/OUCRU-Modelling/R-cafe</a>.</p></li>
+<li><p><strong>Click on <code>Code</code> → select <code>HTTPS</code> → copy the link in the URL</strong>.</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure\fig_1.png" class="img-fluid figure-img"></p>
-<figcaption>Create New project</figcaption>
+<figcaption>Copy the repository link</figcaption>
 </figure>
 </div>
-<ol start="2" type="1">
-<li><strong>Choose Existing Directory</strong>.</li>
+<ol start="3" type="1">
+<li><strong>Open GitHub Desktop</strong><br>
+Then choose <code>File</code> → <code>Clone repository</code>.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure\fig_2.png" class="img-fluid figure-img"></p>
-<figcaption>Existing Directory</figcaption>
+<figcaption>Open cloning tab</figcaption>
 </figure>
 </div>
-<ol start="3" type="1">
-<li><strong>Create project at prefered directory</strong>
+<ol start="4" type="1">
+<li><strong>Choose <code>URL</code></strong>
 <ul>
-<li>Click <code>Browse</code> and select your project directory</li>
-<li>Then click <code>Create project</code></li>
+<li>Paste the copied link into the blank field below “Hub/cool-repo”.<br>
+</li>
+<li>Change the local path to your preferred directory (or it will use the default directory).<br>
+</li>
+<li>Click <code>Clone</code>.</li>
 </ul></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure\fig_3.png" class="img-fluid figure-img"></p>
-<figcaption>Select the directory</figcaption>
+<figcaption>Paste the link</figcaption>
 </figure>
 </div>
-<ol start="4" type="1">
-<li><strong>Check your Rproject</strong>
-<ul>
-<li>Your Rproject will be at your directory</li>
-</ul></li>
+<ol start="5" type="1">
+<li><strong>Verify</strong><br>
+Check if the repository has been cloned to the correct location.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure\fig_4.png" class="img-fluid figure-img"></p>
-<figcaption>Rproject</figcaption>
+<figcaption>Check local repository</figcaption>
 </figure>
 </div>
 </section>
+<section id="steps-to-create-a-new-branch" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Steps to create a new branch</h1>
+<ol type="1">
+<li><strong>Create new branch</strong>
+<ul>
+<li>Click on Current branch (main) -&gt; choose New branch</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figure\fig_5.png" class="img-fluid figure-img"></p>
+<figcaption>Create new branch</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><strong>Name the new branch</strong>
+<ul>
+<li>Fill in the branch name (For example: “hungtt”) -&gt; choose Create branch</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figure\fig_6.png" class="img-fluid figure-img"></p>
+<figcaption>Name the new branch</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li><strong>Publish your branch</strong>
+<ul>
+<li>Click on Publish branch</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figure\fig_7.png" class="img-fluid figure-img"></p>
+<figcaption>Publish branch</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><strong>Check your branch on Github</strong>
+<ul>
+<li>Click on main. You might see your branch name. If not, choose View all branches to find your branch.</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figure\fig_8.png" class="img-fluid figure-img"></p>
+<figcaption>Find your branch</figcaption>
+</figure>
+</div>
 
-</main>
-<!-- /main column -->
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -188,18 +316,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -231,7 +348,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -239,7 +378,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
