@@ -22,7 +22,7 @@ format: html
 	- Hai Ho Bich (haihb\@oucru.org)
 
 ## Agenda
-1. [TBD (day 1)](slides/intro.qmd){target="_blank"}
+1. [Getting started with R and Git (day 1)](slides/intro.qmd){target="_blank"}
 	- **Part 1**: Setup (45') - *Tuyen & QA*
 		- What is R Café & Agenda (5')
 		- [Brief introduction to Git, GitHub, and GitHub Desktop](slides/intro_github.qmd){target="_blank"} (20')
