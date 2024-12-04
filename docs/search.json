@@ -3,8 +3,8 @@
     "objectID": "slides/intro_github.html#git-vs.-github",
     "href": "slides/intro_github.html#git-vs.-github",
     "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "Git vs. GitHub",
-    "text": "Git vs. GitHub\n\n\nGit is a version control system, its purpose is to keep track of changes of files within a repository and provide the capability to revert to previous version\nGitHub is a cloud-based service to host Git repository, its main purpose is to store and/or share your Git project with collaborators"
+    "section": "Git  vs. GitHub ",
+    "text": "Git  vs. GitHub \n\n\nGit is a version control system, its purpose is to keep track of changes of files within a repository and provide the capability to revert to previous version\nGitHub is a cloud-based service to host Git repository, its main purpose is to store and/or share your Git project with collaborators"
   },
   {
     "objectID": "slides/intro_github.html#local-vs.-remote",
@@ -17,50 +17,50 @@
     "objectID": "slides/intro_github.html#git-and-github-1",
     "href": "slides/intro_github.html#git-and-github-1",
     "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\n\n\nGit is a software that works locally. You don’t need GitHub for Git to work. You can use Git as-is\nGitHub acts as a remote server for Git, so that you can share your project and collaborate with others remotely\nA repository is a place where Git tracks all of your changes to files and folders. GitHub stores a copy of your repository whenever you push to it"
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\nGit is a software that works locally. You don’t need GitHub for Git to work. You can use Git as-is\nGitHub acts as a remote server for Git, so that you can share your project and collaborate with others remotely\nA repository is a place where Git tracks all of your changes to files and folders. GitHub stores a copy of your repository whenever you push to it"
   },
   {
     "objectID": "slides/intro_github.html#git-and-github-2",
     "href": "slides/intro_github.html#git-and-github-2",
     "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\n\n\n\n\n\n\nTerminologies\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\n\n\n\n\nTerminologies\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
   },
   {
     "objectID": "slides/intro_github.html#git-and-github-3",
     "href": "slides/intro_github.html#git-and-github-3",
     "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub"
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub"
   },
   {
     "objectID": "slides/intro_github.html#git-and-github-4",
     "href": "slides/intro_github.html#git-and-github-4",
     "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\n\n\n\n\n\n\nImportant\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
-  },
-  {
-    "objectID": "slides/intro_github.html#github-desktop",
-    "href": "slides/intro_github.html#github-desktop",
-    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "GitHub Desktop",
-    "text": "GitHub Desktop\n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\n\n\n\n\nImportant\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
   },
   {
     "objectID": "slides/intro_github.html#github-desktop-1",
     "href": "slides/intro_github.html#github-desktop-1",
     "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "GitHub Desktop",
-    "text": "GitHub Desktop\n\n\nGitHub Desktop is a software that makes it easier for you to use Git. It is a software built by GitHub, again, separate from Git\nAdvantages:\n\nSimplifies everything and only provide commonly used functionalities of Git\nReduces the chances that you will make errors in using Git\nDirect integration to GitHub, makes it easier for authentication"
+    "section": "GitHub Desktop ",
+    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
+  },
+  {
+    "objectID": "slides/intro_github.html#github-desktop-2",
+    "href": "slides/intro_github.html#github-desktop-2",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "GitHub Desktop ",
+    "text": "GitHub Desktop \n\n\nGitHub Desktop is a software that makes it easier for you to use Git. It is a software built by GitHub, again, separate from Git\nAdvantages:\n\nSimplifies everything and only provide commonly used functionalities of Git\nReduces the chances that you will make errors in using Git\nDirect integration to GitHub, makes it easier for authentication"
   },
   {
     "objectID": "slides/intro_github.html#setting-up-github-desktop",
     "href": "slides/intro_github.html#setting-up-github-desktop",
     "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
-    "section": "Setting up GitHub Desktop",
-    "text": "Setting up GitHub Desktop\n\n\n\n\n\n\nChecklist\n\n\n\nInstall GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\n\nRefer to the handouts for instructions"
+    "section": "Setting up GitHub Desktop ",
+    "text": "Setting up GitHub Desktop \n\n\n\n\n\n\nChecklist\n\n\n\nSign in to your account in GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\n\nRefer to the handouts for instructions"
   },
   {
     "objectID": "slides/intro.html#about-the-course",
