@@ -508,7 +508,7 @@
     "href": "slides/intro.html#set-up-renv",
     "title": "R café: day 1",
     "section": "Set up renv",
-    "text": "Set up renv\nTo use renv for your project\n\nClick Tools > Project Options… > Environments\nTick Use renv with this project\n\nWhich creates renv.lock file and a folder renv in your project"
+    "text": "Set up renv\nTo use renv for your project. Run the following line of code in your console\n\nrenv::init()\n\nWhich will create renv.lock and renv folder under your project"
   },
   {
     "objectID": "slides/intro.html#why-use-renv",
@@ -690,7 +690,7 @@
     "href": "slides/intro.html#goal",
     "title": "R café: day 1",
     "section": "Goal",
-    "text": "Goal\n\n\n\n\n\n\nNote\n\n\nIn this exercise, you will:\n\nCreate a function from the given code\nPush your code to Github\nComment code"
+    "text": "Goal\n\n\n\n\n\n\nNote\n\n\nIn this exercise, you will:\n\nCreate a function from the given code\nPush your code to Github\nCommenting collaborators’ code on Github"
   },
   {
     "objectID": "slides/intro.html#code-file",
@@ -711,7 +711,7 @@
     "href": "slides/intro.html#create-function-1",
     "title": "R café: day 1",
     "section": "Create function",
-    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country. Given the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
+    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
   },
   {
     "objectID": "slides/intro.html#suggested-solution",
@@ -725,7 +725,7 @@
     "href": "slides/intro.html#navigating-github-desktop-github",
     "title": "R café: day 1",
     "section": "Navigating Github Desktop & Github",
-    "text": "Navigating Github Desktop & Github\nOnce you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)\n\n\n\n\n\n\nNote\n\n\n\nPush your code to Github using Github Desktop\nCreate an issue on Github once you have had your code on Github\nCreate a comment on Github for at least one other participant’s code"
+    "text": "Navigating Github Desktop & Github\nOnce you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)\n\n\n\n\n\n\nNote\n\n\n\nPush your code to Github using Github Desktop\nCreate an issue on Github to comment on at least 1 other participant’s code"
   },
   {
     "objectID": "slides/intro.html#data-import",
