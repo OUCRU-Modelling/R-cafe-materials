@@ -1,8 +1,12 @@
 ---
-title: "Foundations of R"
+title: "R café: day 1"
+# title-slide-attributes:
+#   data-background-image: imgs/intro_github/git-suite.jpeg
+#   data-background-size: contain
+#   data-background-opacity: "0.5"
 format: 
   revealjs:
-    css: "./styles.css"
+    css: "../styles.css"
     df-print: paged
     slide-number: true
     logo: "./imgs/oucru-logo.png"
@@ -57,23 +61,90 @@ Teaching team:
 -   Intro to R
 :::
 
-# Github
+# Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
 
-## Git and Github {auto-animate="true"}
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} vs. GitHub ![](imgs/intro_github/github-icon.png){.inline-img} {auto-animate="true"}
 
-**Git** is a distributed version control system, its purpose is to [keep track of changes]{.underline} of files under a *git* *repository* and provide the capability to [revert to previous version]{.underline}.
+:::{.incremental}
+- **Git** is a [version control system]{.underline}, its purpose is to keep track of changes of files within a [repository]{.underline} and provide the capability to [revert to previous version]{.underline}
+- **GitHub** is a cloud-based service to [host]{.underline} Git repository, its main purpose is to store and/or share your Git project with collaborators
+:::
 
-**Github** is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.
+## Local vs. Remote {auto-animate="true"}
 
-**Github Desktop** is an application that allows users to `push` their changes from local changes to Github
+:::{.incremental}
+- **Local** means your physical computer. When we say **local** we are talking about what's happening **directly on** your computer
+- **Remote** can mean a computing cloud, a server, or someone else's computer. When we say **remote** we are talking about what's happening **not on** your computer, i.e. remotely.
+:::
 
-## Git and Github {auto-animate="true"}
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img} {auto-animate="true"}
 
-push, pull, commit, branch
+:::{.incremental}
+- **Git** is a software that works **locally**. You don't need GitHub for Git to work. You can use Git as-is
+- **GitHub** acts as a **remote** server for Git, so that you can share your project and collaborate with others remotely
+- A **repository** is a place where Git *tracks all of your changes* to files and folders. GitHub stores a copy of your repository whenever you **push** to it
+:::
 
-## Clone R-cafe repository {auto-animate="true"}
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
 
-R-cafe repo: <https://github.com/OUCRU-Modelling/R-cafe>
+::: callout-note
+### Terminologies
+
+- **Branch**: a separate environment, identical copy of **where and when** you branch from
+- **Commit**: packaging all the changes you made into a **"version"**
+- **Push**: pushing a commit (a "version") to remote, e.g. GitHub
+- **Pull**: updating your local repository with changes from remote
+- **Add**: chosing which changes you want to commit
+:::
+
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
+
+![](imgs/intro_github/git_push_pull.png)
+
+
+## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
+
+::: callout-important
+- **Git is a standalone software**, which works fully locally.  You can use Git without GitHub
+- **GitHub is a platform** for collaboration. It uses Git as the [version control system]{.underline}
+:::
+
+# GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img}
+
+## GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img} {.scrollable}
+
+- **Git** is a command-line interface (CLI) software.
+
+![](imgs/intro_github/git-cli.png)
+
+::: callout-caution
+We strongly recommend **to not use Git through its CLI**. It is not fun and **you will lose your work** because of a typo.
+:::
+
+## GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img}
+
+:::{.incremental}
+- **GitHub Desktop** is a software that makes it easier for you to use Git. It is a software **built by GitHub**, again, separate from Git
+- **Advantages**:
+  - Simplifies everything and only provide commonly used functionalities of Git
+  - Reduces the chances that you will make errors in using Git
+  - Direct integration to GitHub, makes it easier for authentication
+:::
+
+# Setting up GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img} for R Café
+
+## Setting up GitHub Desktop ![](imgs/intro_github/github-desktop-icon.png){.inline-img}
+
+::: callout-note
+### Checklist
+
+- Sign in to your account in GitHub Desktop
+- Clone R Cafe into your computer/laptop. [Link](https://github.com/OUCRU-Modelling/R-cafe){target="_blank"}
+- Create your own branch
+- Publish (push) your branch
+:::
+
+Refer to the handouts for instructions
 
 ## R and RStudio {auto-animate="true"}
 
@@ -99,6 +170,7 @@ R-cafe repo: <https://github.com/OUCRU-Modelling/R-cafe>
 
 An **R project** is a directory with `.Rproj` file, signaling RStudio to manage the project settings accordingly.
 
+::: {.fragment}
 The process of creating an R project is as followed
 
 -   In the menu **`File` \> `New Project…`**
@@ -108,6 +180,7 @@ The process of creating an R project is as followed
 -   Click **`Browse`** and click on your project directory
 
 -   Click **`Create Project`**
+:::
 
 ## RStudio interface {auto-animate="true"}
 
@@ -190,6 +263,8 @@ Which creates `renv.lock` file and a folder `renv` in your project
 ## Why use renv? {auto-animate="true"}
 
 ::: medium-text-size
+
+::: incremental
 -   Encapsulate the development environment of your R projects (R version, packages used and their versions) in a file called `renv.lock`
 
 -   Ensure collaborators to replicate your R project's development environment by simply running `renv::restore()`
@@ -197,11 +272,17 @@ Which creates `renv.lock` file and a folder `renv` in your project
 -   Isolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under
 
     -   `path_to_project/renv/library/{R-version}/{device-architecture}/`
+    
+:::
+
+::: fragment
 
 ::: callout-tip
 ### What are packages? 
 
 An R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process.
+:::
+
 :::
 
 :::
@@ -407,11 +488,16 @@ The in-class excercise (@sec-inclass) will demonstrate one use case for function
 ::: medium-text-size
 **Some criteria for a good function**
 
+::: incremental
+
 -   **Modularity** - each function should focus on ***one task*** (e.g. you can have a function to import data, another to model the data, another to visualize data but [**not**]{.underline} a function doing all of those 3 tasks)
 
 -   **Concise -** the content of a function should not be too lengthy. If a function starts to have \> 30 lines of code, it may be an indication that the modularity rule is violated.
 
 -   **Readability** - function's name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented.
+
+:::
+
 :::
 
 ## Functions {auto-animate="true"}
@@ -574,7 +660,7 @@ arg
 ![](imgs/r_foundation/scope_fig.png){width="544"}
 
 
-## Scope {auto-animate="true"}
+## Scope {.scrollable auto-animate="true"}
 **Explanation**
 ```{r}
 #| error: true
@@ -598,7 +684,7 @@ example_func <- function(arg){
 example_func(60) 
 # value for argument should only accessible within function 
 arg  
-# refers to global variabl example_var here 
+# refers to global variable example_var here 
 paste0("Value of variable example_var ", example_var)
 ```
 
@@ -609,11 +695,14 @@ paste0("Value of variable example_var ", example_var)
 
 To put simply
 
+::: incremental
 -   By default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is [**not**]{.underline} recommended).
 
 -   **global variables** can be accessed anywhere within the session.
 
 -   **local variables** are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function.
+:::
+
 :::
 
 ## Packages {auto-animate="true"}
@@ -644,7 +733,7 @@ install.packages("readxl")
 
 ::: callout-note
 ### Update `renv.lock`
-To update your `renv.lock` after changing development environment, run the code renv::snapshot()
+To update your `renv.lock` after changing development environment, run the code `renv::snapshot()`
 :::
 :::
 
@@ -691,12 +780,13 @@ In your R project, navigate to the template code file `day1/inclass.R`.
 
 Then run all the code in the file, this should create a dataset `covid_cases`.
 
-You will also write the solution for your in-class exercise here.
+This is also where you will write the solution for in-class exercise.
 
 ## Create function {auto-animate="true"}
 ::: medium-text-size
 ***Dataset***
 Given a dataset with number of reported cases for 211 countries
+
 Where each column following the format `cases_{country_code}` represents the number of newly reported Covid cases on the day shown in `date` columns
 
 ```{r echo=FALSE, warning=FALSE}
@@ -720,6 +810,7 @@ head(covid_cases)
 ## Create function {.scrollable auto-animate="true"}
 ::: medium-text-size
 ***Goal*** Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.
+
 Given the code to compute basic stats for case reports in China (`cases_chn`) is as followed
 
 ```{r}
@@ -818,7 +909,7 @@ Some useful import functions
 | `readRDS()`    | `base`   | import `.rds` files                  |
 | `load()`       | `base`   | import `.rda` files                  |
 
-## Data import {auto-animate="true"}
+## Data import {.scrollable auto-animate="true"}
 
 ::: medium-text-size
 `rio` - support data import for multiple data format
