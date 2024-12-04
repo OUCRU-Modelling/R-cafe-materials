@@ -1,0 +1,95 @@
+---
+title: "Outline day 1"
+author: 
+- name: Tran Thai Hung
+  affiliations:
+    - OUCRU biostistics
+date: 'last-modified'
+date-format: '[Last version:] MMMM DD, YYYY'
+format: 
+  pdf: 
+    pdf-engine: pdflatex
+    colorlinks: true
+    link-citations: true
+    header-includes:
+      - \usepackage{float}
+      - \floatplacement{table}{H}
+  html: default
+  docx: 
+    csl: HandsOn3.csl
+toc: TRUE
+lof: TRUE
+lot: FALSE
+number-sections: FALSE
+
+thanks: "Please do not circulate."
+keywords: "git, github, rproject"
+---
+
+# 1. Set up
+
+## 1.1 Git vs Github
+
+- Difference between Git and GitHub.
+- Why version control is important for collaboration.
+- Hands-on: Creating and cloning repositories.
+
+## 1.2 Rproject / Project Environment
+
+- Overview of RStudio projects.
+- Benefits of using a project environment.
+- Setting up your first R project.
+
+# 2. R Foundations
+
+## 2.1 Rscript
+
+- What is an R script?
+- How to create and run scripts in RStudio.
+
+## 2.2 Variable/Classes/Special Values
+
+- Variables and data types (numeric, character, logical, etc.).
+- Special values (e.g., `NA`, `NaN`, `Inf`, `NULL`).
+
+## 2.3 Functions
+
+- Creating and using functions.
+- Built-in vs custom functions.
+
+## 2.4 Scope
+
+- Local vs global scope.
+- The environment in R.
+
+## 2.5 Packages
+
+- Installing and loading packages.
+- Exploring CRAN, Bioconductor, and GitHub.
+
+# 3. In-class Exercise
+
+- Practice using what we've learned so far.
+- Tasks involving creating variables, using functions, and exploring packages.
+
+# 4. Data Manipulation in R
+
+## 4.1 Data Import/Export
+
+- Reading data from CSV, Excel, and other formats.
+- Writing data to files.
+
+## 4.2 Clean Column Names
+
+- Standardizing column names using `janitor::clean_names()`.
+
+## 4.3 Simple Data Extraction
+
+- Selecting rows and columns.
+
+
+## 4.4 Data Summary
+
+- Summarizing data with `summary` and `skim`.
+
+
