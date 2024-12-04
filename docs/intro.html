@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -491,11 +492,13 @@
 <section id="r-and-rstudio-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">R and RStudio</h2>
 <p><strong>Why use R?</strong></p>
+<div>
 <ul>
-<li><p><strong>Cost</strong>: R is free and open-source.</p></li>
-<li><p><strong>Reproducibility</strong>: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.</p></li>
-<li><p><strong>Community</strong>: R has a large, collaborative user base, with new tools and packages for analysis developed constantly.</p></li>
+<li class="fragment"><p><strong>Cost</strong>: R is free and open-source.</p></li>
+<li class="fragment"><p><strong>Reproducibility</strong>: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.</p></li>
+<li class="fragment"><p><strong>Community</strong>: R has a large, collaborative user base, with new tools and packages for analysis developed constantly.</p></li>
 </ul>
+</div>
 </section></section>
 <section>
 <section id="r-project" class="title-slide slide level1 center">
@@ -601,8 +604,7 @@
 <li><code>path_to_project/renv/library/{R-version}/{device-architecture}/</code></li>
 </ul></li>
 </ul>
-</div>
-<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
@@ -612,6 +614,7 @@
 </div>
 <div class="callout-content">
 <p>An R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process.</p>
+</div>
 </div>
 </div>
 </div>
@@ -631,18 +634,18 @@
 <h2 data-id="quarto-animate-title">R script</h2>
 <p><strong><em>Example:</em></strong> Some R codes and comment</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># this is a comment, and the following code will print Hello world in the console</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">print</span>(<span class="st">"Hello world"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># this is a comment, and the following code will print Hello world in the console</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">print</span>(<span class="st">"Hello world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Hello world"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># you can also perform computations in R</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># you can also perform computations in R</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co"># In R, you can denote </span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co"># - multiplication as *</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="co"># - power as **</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="co"># - devision as /</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="co"># - e5 is the shorthand notation for *10**5</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="dv">12</span><span class="sc">*</span><span class="fl">10e5</span> <span class="sc">+</span> <span class="dv">313</span><span class="sc">**</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">11890</span><span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="dv">12</span><span class="sc">*</span><span class="fl">10e5</span> <span class="sc">+</span> <span class="dv">313</span><span class="sc">**</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">11890</span><span class="sc">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 12092024</code></pre>
 </div>
@@ -655,16 +658,16 @@
 <p>In R, a variable can be created by assigning an object to it using <code>&lt;-</code></p>
 <p>As previously mentioned, an object can be a number, string, vector of characters, etc.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># assigning 3.14 to the variable pi_numb</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># assigning 3.14 to the variable pi_numb</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>pi_numb <span class="ot">&lt;-</span> <span class="fl">3.14</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="co"># which can then be referenced </span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>pi_numb</span></code></pre></div>
+<span id="cb6-4"><a href="#cb6-4"></a>pi_numb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.14</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># object can also be a text/characters</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># object can also be a text/characters</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>greeting <span class="ot">&lt;-</span> <span class="st">"Hello World"</span> <span class="co"># note that it must be contained within quotation marks</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>greeting</span></code></pre></div>
+<span id="cb8-3"><a href="#cb8-3"></a>greeting</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Hello World"</code></pre>
 </div>
@@ -675,14 +678,14 @@
 <h2 data-id="quarto-animate-title">Variable</h2>
 <p>Value of a variable can also be overridden</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>var <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>var</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>var <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># override variable</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># override variable</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>var <span class="ot">&lt;-</span> <span class="st">"new value"</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>var</span></code></pre></div>
+<span id="cb12-3"><a href="#cb12-3"></a>var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "new value"</code></pre>
 </div>
@@ -764,6 +767,7 @@
 </section>
 <section id="special-values" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Special values</h2>
+<div class="medium-text-size">
 <table>
 <colgroup>
 <col style="width: 11%">
@@ -794,30 +798,31 @@
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="functions" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Functions</h2>
 <p>A function is a <strong>reusable</strong> sequence of code.</p>
 <p>It can be created using the syntax</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb14-1" class="hljs-ln-code"><a href="#cb14-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb14-1" class="hljs-ln-code"><a href="#cb14-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
 <span id="cb14-2" class="hljs-ln-code"><a href="#cb14-2"></a></span>
 <span id="cb14-3" class="hljs-ln-code"><a href="#cb14-3"></a><span class="co"># function content</span></span>
 <span id="cb14-4" class="hljs-ln-code"><a href="#cb14-4"></a></span>
-<span id="cb14-5" class="hljs-ln-code"><a href="#cb14-5"></a>}</span></code></pre></div>
+<span id="cb14-5" class="hljs-ln-code"><a href="#cb14-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="functions-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Functions</h2>
 <p><strong><em>Example:</em></strong> a simple function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a href="#cb15-1"></a>print_hello <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a href="#cb15-1"></a>print_hello <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
 <span id="cb15-2" class="hljs-ln-code"><a href="#cb15-2"></a>  <span class="fu">print</span>(<span class="st">"Hello world"</span>)</span>
 <span id="cb15-3" class="hljs-ln-code"><a href="#cb15-3"></a>  <span class="fu">print</span>(<span class="st">"This is R Cafe course"</span>)</span>
 <span id="cb15-4" class="hljs-ln-code"><a href="#cb15-4"></a>}</span>
 <span id="cb15-5" class="hljs-ln-code"><a href="#cb15-5"></a></span>
 <span id="cb15-6" class="hljs-ln-code"><a href="#cb15-6"></a><span class="co"># defined function can then be called as followed</span></span>
-<span id="cb15-7" class="hljs-ln-code"><a href="#cb15-7"></a><span class="fu">print_hello</span>()</span></code></pre></div>
+<span id="cb15-7" class="hljs-ln-code"><a href="#cb15-7"></a><span class="fu">print_hello</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Hello world"
 [1] "This is R Cafe course"</code></pre>
@@ -829,24 +834,24 @@
 <p>Functions can also have arguments, which creates reusable code with <strong>dynamic inputs and outputs</strong></p>
 <p>A function with arguments as followed. Note that you can include as many arguments as you want</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(argument_1, argument_2){</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(argument_1, argument_2){</span>
 <span id="cb17-2" class="hljs-ln-code"><a href="#cb17-2"></a>  <span class="co"># function content</span></span>
 <span id="cb17-3" class="hljs-ln-code"><a href="#cb17-3"></a>  <span class="co"># values of argument can be accessed simply calling argument name</span></span>
-<span id="cb17-4" class="hljs-ln-code"><a href="#cb17-4"></a>}</span></code></pre></div>
+<span id="cb17-4" class="hljs-ln-code"><a href="#cb17-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="functions-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Functions</h2>
 <p><strong><em>Example:</em></strong> simple function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>compute_power <span class="ot">&lt;-</span> <span class="cf">function</span>(base, power){</span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>compute_power <span class="ot">&lt;-</span> <span class="cf">function</span>(base, power){</span>
 <span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  <span class="co"># return a raised to the power of b</span></span>
 <span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>  base<span class="sc">**</span>power</span>
 <span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>}</span>
 <span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a></span>
 <span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a><span class="co"># output can be assigned to a variable</span></span>
 <span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a>output <span class="ot">&lt;-</span> <span class="fu">compute_power</span>(<span class="at">base =</span> <span class="dv">5</span>, <span class="at">power =</span> <span class="dv">2</span>)</span>
-<span id="cb18-8" class="hljs-ln-code"><a href="#cb18-8"></a>output</span></code></pre></div>
+<span id="cb18-8" class="hljs-ln-code"><a href="#cb18-8"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>
@@ -866,19 +871,19 @@
 <p>You can provide value for each argument <u>without specifying the name</u> but it must follow the same order in the function definition.</p>
 <p>However, <strong>it is generally recommended to include the name of the argument</strong> for better readability. When argument name is specified, <u>order no longer matter</u>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">compute_power</span>(<span class="dv">5</span>, <span class="dv">2</span>) </span></code></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">compute_power</span>(<span class="dv">5</span>, <span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">compute_power</span>(<span class="dv">2</span>, <span class="dv">5</span>) <span class="co"># expect different result (2^5)</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">compute_power</span>(<span class="dv">2</span>, <span class="dv">5</span>) <span class="co"># expect different result (2^5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 32</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">compute_power</span>(<span class="at">base =</span> <span class="dv">5</span>, <span class="at">power =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">compute_power</span>(<span class="at">base =</span> <span class="dv">5</span>, <span class="at">power =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">compute_power</span>(<span class="at">power =</span> <span class="dv">2</span>, <span class="at">base =</span> <span class="dv">5</span>) <span class="co"># expect same result</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">compute_power</span>(<span class="at">power =</span> <span class="dv">2</span>, <span class="at">base =</span> <span class="dv">5</span>) <span class="co"># expect same result</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>
@@ -892,14 +897,285 @@
 <div class="medium-text-size">
 <p><strong>When to create a function?</strong></p>
 <p>A general rule is when you start to <u>copy-paste a sequence of code multiple times</u> (usually &gt;3), you should make a function for it</p>
-<p><strong><em>Exercise</em></strong></p>
-<p>Given a dataset with number of reported cases for 211 countries</p>
+<p>The in-class excercise (<a href="#/sec-inclass">Section&nbsp;6</a>) will demonstrate one use case for function</p>
 </div>
+</section>
+<section id="functions-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Functions</h2>
+<div class="medium-text-size">
+<p><strong>Some criteria for a good function</strong></p>
+<ul>
+<li><p><strong>Modularity</strong> - each function should focus on <strong><em>one task</em></strong> (e.g.&nbsp;you can have a function to import data, another to model the data, another to visualize data but <u><strong>not</strong></u> a function doing all of those 3 tasks)</p></li>
+<li><p><strong>Concise -</strong> the content of a function should not be too lengthy. If a function starts to have &gt; 30 lines of code, it may be an indication that the modularity rule is violated.</p></li>
+<li><p><strong>Readability</strong> - function’s name should clearly describe its purpose (e.g.&nbsp;compute_min, plot_case, etc.), and the content should be properly commented and documented.</p></li>
+</ul>
+</div>
+</section>
+<section id="functions-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Functions</h2>
+<div class="medium-text-size">
+<p>R is a functional programming language, which means you will encounter a lot of functions while coding in R.</p>
+<p>To assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use <code>?</code> or <code>help()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a><span class="co"># look up documentation for `sqrt` function</span></span>
+<span id="cb28-2" class="hljs-ln-code"><a href="#cb28-2"></a>?sqrt</span>
+<span id="cb28-3" class="hljs-ln-code"><a href="#cb28-3"></a><span class="fu">help</span>(sqrt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that the built-in documentation only helps when you <u>already know which function you want to ask about</u>. If you are looking for a function to achieve a specific task, it is better to start with <strong>search engine</strong> (Google, Bing, etc.), <strong>forums/Q&amp;A sites</strong> (Github discussions, StackOverflow, etc.) or even ChatGPT.</p>
+</div>
+</section>
+<section id="functions-8" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Functions</h2>
+<div class="medium-text-size">
+<p>The documentation that show up when calling <code>help()</code> or <code>?</code> are usually generated from something called roxygen documentation.</p>
+<p>To create a roxygen documentation, place the cursor within the function and from the menu, click <code>Code</code> &gt; <code>Insert Roxygen Skeleton</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb29-1" class="hljs-ln-code"><a href="#cb29-1"></a><span class="co">#' Compute power</span></span>
+<span id="cb29-2" class="hljs-ln-code"><a href="#cb29-2"></a><span class="co">#' </span></span>
+<span id="cb29-3" class="hljs-ln-code"><a href="#cb29-3"></a><span class="co">#' Takes two arguments, `base` and `power` then return base raised to given power</span></span>
+<span id="cb29-4" class="hljs-ln-code"><a href="#cb29-4"></a><span class="co">#'</span></span>
+<span id="cb29-5" class="hljs-ln-code"><a href="#cb29-5"></a><span class="co">#' @param base - a numeric value for base number</span></span>
+<span id="cb29-6" class="hljs-ln-code"><a href="#cb29-6"></a><span class="co">#' @param power - a numeric value for power</span></span>
+<span id="cb29-7" class="hljs-ln-code"><a href="#cb29-7"></a><span class="co">#'</span></span>
+<span id="cb29-8" class="hljs-ln-code"><a href="#cb29-8"></a><span class="co">#' @return numeric value for base^power</span></span>
+<span id="cb29-9" class="hljs-ln-code"><a href="#cb29-9"></a><span class="co">#' @examples</span></span>
+<span id="cb29-10" class="hljs-ln-code"><a href="#cb29-10"></a><span class="co">#' compute_power(3,4)</span></span>
+<span id="cb29-11" class="hljs-ln-code"><a href="#cb29-11"></a>compute_power <span class="ot">&lt;-</span> <span class="cf">function</span>(base, power){</span>
+<span id="cb29-12" class="hljs-ln-code"><a href="#cb29-12"></a>  <span class="co"># return a raised to the power of b</span></span>
+<span id="cb29-13" class="hljs-ln-code"><a href="#cb29-13"></a>  base<span class="sc">**</span>power</span>
+<span id="cb29-14" class="hljs-ln-code"><a href="#cb29-14"></a>}</span>
+<span id="cb29-15" class="hljs-ln-code"><a href="#cb29-15"></a></span>
+<span id="cb29-16" class="hljs-ln-code"><a href="#cb29-16"></a><span class="fu">compute_power</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<section id="scope" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scope</h2>
+<p><strong>Brainstorming</strong> Read the code and guess the answer for 3 Questions below</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb38-1" class="hljs-ln-code"><a href="#cb38-1"></a>example_var <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb38-2" class="hljs-ln-code"><a href="#cb38-2"></a></span>
+<span id="cb38-3" class="hljs-ln-code"><a href="#cb38-3"></a>example_func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg){</span>
+<span id="cb38-4" class="hljs-ln-code"><a href="#cb38-4"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var))</span>
+<span id="cb38-5" class="hljs-ln-code"><a href="#cb38-5"></a>  </span>
+<span id="cb38-6" class="hljs-ln-code"><a href="#cb38-6"></a>  example_var <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb38-7" class="hljs-ln-code"><a href="#cb38-7"></a>  </span>
+<span id="cb38-8" class="hljs-ln-code"><a href="#cb38-8"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var after assignment: "</span>, example_var))</span>
+<span id="cb38-9" class="hljs-ln-code"><a href="#cb38-9"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of function argument: "</span>, arg)) </span>
+<span id="cb38-10" class="hljs-ln-code"><a href="#cb38-10"></a>}</span>
+<span id="cb38-11" class="hljs-ln-code"><a href="#cb38-11"></a></span>
+<span id="cb38-12" class="hljs-ln-code"><a href="#cb38-12"></a><span class="co"># Q1: What will the 2 print statements show?</span></span>
+<span id="cb38-13" class="hljs-ln-code"><a href="#cb38-13"></a><span class="fu">example_func</span>(<span class="dv">60</span>) </span>
+<span id="cb38-14" class="hljs-ln-code"><a href="#cb38-14"></a><span class="co"># Q2: What will be the value for example_var here?</span></span>
+<span id="cb38-15" class="hljs-ln-code"><a href="#cb38-15"></a><span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var)</span>
+<span id="cb38-16" class="hljs-ln-code"><a href="#cb38-16"></a><span class="co"># Q3: What will be the value for arg here?</span></span>
+<span id="cb38-17" class="hljs-ln-code"><a href="#cb38-17"></a>arg  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="scope-1" class="slide level2 scrollable" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scope</h2>
+<p><strong>Output</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>example_var <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a></span>
+<span id="cb39-3"><a href="#cb39-3"></a>example_func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg){</span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var))</span>
+<span id="cb39-5"><a href="#cb39-5"></a>  </span>
+<span id="cb39-6"><a href="#cb39-6"></a>  example_var <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>  </span>
+<span id="cb39-8"><a href="#cb39-8"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var after assignment: "</span>, example_var))</span>
+<span id="cb39-9"><a href="#cb39-9"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of function argument: "</span>, arg)) </span>
+<span id="cb39-10"><a href="#cb39-10"></a>}</span>
+<span id="cb39-11"><a href="#cb39-11"></a></span>
+<span id="cb39-12"><a href="#cb39-12"></a><span class="co"># Q1: What will the 2 print statements show?</span></span>
+<span id="cb39-13"><a href="#cb39-13"></a><span class="fu">example_func</span>(<span class="dv">60</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Value of variable example_var: 10"
+[1] "Value of variable example_var after assignment: 20"
+[1] "Value of function argument: 60"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Q2: What will be the value for example_var here?</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Value of variable example_var: 10"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Q3: What will be the value for arg here?</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>arg  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'arg' not found</code></pre>
+</div>
+</div>
+</section>
+<section id="scope-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scope</h2>
+
+<img data-src="imgs/r_foundation/scope_fig.png" width="544" class="r-stretch"></section>
+<section id="scope-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scope</h2>
+<p><strong>Explanation</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># this is a global variable since it is not created in any local environment</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>example_var <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a></span>
+<span id="cb45-4"><a href="#cb45-4"></a>example_func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg){</span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="co"># global_var</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Global variable can be accessed within function "</span>, example_var))</span>
+<span id="cb45-7"><a href="#cb45-7"></a>  </span>
+<span id="cb45-8"><a href="#cb45-8"></a>  <span class="co"># this is creating a local variable named example_var</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>  <span class="co"># it will not affect example_var</span></span>
+<span id="cb45-10"><a href="#cb45-10"></a>  example_var <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb45-11"><a href="#cb45-11"></a>  </span>
+<span id="cb45-12"><a href="#cb45-12"></a>  <span class="co"># this example_var refers to the local variable example_var</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var after assignment"</span>, example_var))</span>
+<span id="cb45-14"><a href="#cb45-14"></a>  <span class="co"># note that argument is also only accessible within the function</span></span>
+<span id="cb45-15"><a href="#cb45-15"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Function argument "</span>, arg))</span>
+<span id="cb45-16"><a href="#cb45-16"></a>}</span>
+<span id="cb45-17"><a href="#cb45-17"></a></span>
+<span id="cb45-18"><a href="#cb45-18"></a><span class="fu">example_func</span>(<span class="dv">60</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Global variable can be accessed within function 10"
+[1] "Value of variable example_var after assignment20"
+[1] "Function argument 60"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># value for argument should only accessible within function </span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>arg  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'arg' not found</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># refers to global variabl example_var here </span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">paste0</span>(<span class="st">"Value of variable example_var "</span>, example_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Value of variable example_var 10"</code></pre>
+</div>
+</div>
+</section>
+<section id="scope-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scope</h2>
+<div class="medium-text-size">
+<p><strong>Scope</strong> refers to where variables can be accessed or modified.</p>
+<p>To put simply</p>
+<ul>
+<li><p>By default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is <u><strong>not</strong></u> recommended).</p></li>
+<li><p><strong>global variables</strong> can be accessed anywhere within the session.</p></li>
+<li><p><strong>local variables</strong> are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function.</p></li>
+</ul>
+</div>
+</section>
+<section id="packages" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Packages</h2>
+<div class="medium-text-size">
+<p>2 options to install an R packages</p>
+<ul>
+<li><p>Via RStudio interface.</p>
+<ul>
+<li><p>In the <code>File/Plots/Packages/Help</code> panel</p></li>
+<li><p>Click <code>Packages</code> &gt; <code>Install</code></p></li>
+<li><p>Type name of the packages to be installed separated by <code>,</code></p></li>
+<li><p>Click install</p></li>
+</ul></li>
+<li><p>Using R code <code>install.packages("package_name")</code></p></li>
+</ul>
+</div>
+</section>
+<section id="packages-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Packages</h2>
+<div class="medium-text-size">
+<p><strong><em>Example:</em></strong> Download package for reading Excel files</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb51-1" class="hljs-ln-code"><a href="#cb51-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Update <code>renv.lock</code></strong></p>
+</div>
+<div class="callout-content">
+<p>To update your <code>renv.lock</code> after changing development environment, run the code renv::snapshot()</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="packages-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Packages</h2>
+<p>To use a package, you must first load it to R using <code>library()</code> function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb52-1" class="hljs-ln-code"><a href="#cb52-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb52-2" class="hljs-ln-code"><a href="#cb52-2"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/linelist_raw.xlsx"</span>)</span>
+<span id="cb52-3" class="hljs-ln-code"><a href="#cb52-3"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["case_id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["generation"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["infection date"],"name":[3],"type":["dttm"],"align":["right"]},{"label":["date onset"],"name":[4],"type":["chr"],"align":["left"]},{"label":["hosp date"],"name":[5],"type":["dttm"],"align":["right"]},{"label":["date_of_outcome"],"name":[6],"type":["dttm"],"align":["right"]},{"label":["outcome"],"name":[7],"type":["chr"],"align":["left"]},{"label":["gender"],"name":[8],"type":["chr"],"align":["left"]},{"label":["hospital"],"name":[9],"type":["chr"],"align":["left"]},{"label":["lon"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["lat"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["infector"],"name":[12],"type":["chr"],"align":["left"]},{"label":["source"],"name":[13],"type":["chr"],"align":["left"]},{"label":["age"],"name":[14],"type":["chr"],"align":["left"]},{"label":["age_unit"],"name":[15],"type":["chr"],"align":["left"]},{"label":["row_num"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["wt_kg"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["ht_cm"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["ct_blood"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["fever"],"name":[20],"type":["chr"],"align":["left"]},{"label":["chills"],"name":[21],"type":["chr"],"align":["left"]},{"label":["cough"],"name":[22],"type":["chr"],"align":["left"]},{"label":["aches"],"name":[23],"type":["chr"],"align":["left"]},{"label":["vomit"],"name":[24],"type":["chr"],"align":["left"]},{"label":["temp"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["time_admission"],"name":[26],"type":["chr"],"align":["left"]},{"label":["merged_header"],"name":[27],"type":["chr"],"align":["left"]},{"label":["...28"],"name":[28],"type":["chr"],"align":["left"]}],"data":[{"1":"5fe599","2":"4","3":"2014-05-08","4":"2014-05-13","5":"2014-05-15","6":"<NA>","7":"NA","8":"m","9":"Other","10":"-13.21574","11":"8.468973","12":"f547d6","13":"other","14":"2","15":"years","16":"1","17":"27","18":"48","19":"22","20":"no","21":"no","22":"yes","23":"no","24":"yes","25":"36.8","26":"NA","27":"a","28":"b"},{"1":"8689b7","2":"4","3":"<NA>","4":"2014-05-13","5":"2014-05-14","6":"2014-05-18","7":"Recover","8":"f","9":"NA","10":"-13.21523","11":"8.451719","12":"NA","13":"NA","14":"3","15":"years","16":"2","17":"25","18":"59","19":"22","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"36.9","26":"09:36","27":"a","28":"b"},{"1":"11f8ea","2":"2","3":"<NA>","4":"2014-05-16","5":"2014-05-18","6":"2014-05-30","7":"Recover","8":"m","9":"St. Mark's Maternity Hospital (SMMH)","10":"-13.21291","11":"8.464817","12":"NA","13":"NA","14":"56","15":"years","16":"3","17":"91","18":"238","19":"21","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"36.9","26":"16:48","27":"a","28":"b"},{"1":"b8812a","2":"3","3":"2014-05-04","4":"2014-05-18","5":"2014-05-20","6":"<NA>","7":"NA","8":"f","9":"Port Hospital","10":"-13.23637","11":"8.475476","12":"f90f5f","13":"other","14":"18","15":"years","16":"4","17":"41","18":"135","19":"23","20":"no","21":"no","22":"no","23":"no","24":"no","25":"36.8","26":"11:22","27":"a","28":"b"},{"1":"893f25","2":"3","3":"2014-05-18","4":"2014-05-21","5":"2014-05-22","6":"2014-05-29","7":"Recover","8":"m","9":"Military Hospital","10":"-13.22286","11":"8.460824","12":"11f8ea","13":"other","14":"3","15":"years","16":"5","17":"36","18":"71","19":"23","20":"no","21":"no","22":"yes","23":"no","24":"yes","25":"36.9","26":"12:60","27":"a","28":"b"},{"1":"be99c8","2":"3","3":"2014-05-03","4":"2014-05-22","5":"2014-05-23","6":"2014-05-24","7":"Recover","8":"f","9":"Port Hospital","10":"-13.22263","11":"8.461831","12":"aec8ec","13":"other","14":"16","15":"years","16":"6","17":"56","18":"116","19":"21","20":"no","21":"no","22":"yes","23":"no","24":"yes","25":"37.6","26":"14:13","27":"a","28":"b"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="packages-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Packages</h2>
+<p>Similar to functions, you can also look up documentation for packages using <code>?</code> or <code>help()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb53-1" class="hljs-ln-code"><a href="#cb53-1"></a><span class="co"># --- look up documentation for package ---</span></span>
+<span id="cb53-2" class="hljs-ln-code"><a href="#cb53-2"></a>?readxl</span>
+<span id="cb53-3" class="hljs-ln-code"><a href="#cb53-3"></a><span class="fu">help</span>(readxl)</span>
+<span id="cb53-4" class="hljs-ln-code"><a href="#cb53-4"></a></span>
+<span id="cb53-5" class="hljs-ln-code"><a href="#cb53-5"></a><span class="co"># --- look up documentation for function of the package ---</span></span>
+<span id="cb53-6" class="hljs-ln-code"><a href="#cb53-6"></a>?readxl<span class="sc">::</span>read_excel</span>
+<span id="cb53-7" class="hljs-ln-code"><a href="#cb53-7"></a><span class="fu">help</span>(read_excel, <span class="at">package=</span> readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="sec-inclass" class="title-slide slide level1 center">
+<h1>In-class exercise</h1>
+
+</section>
+<section id="goal" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Goal</h2>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>In this exercise, you will:</p>
+<ul>
+<li><p>Create a function from the given code</p></li>
+<li><p>Push your code to Github</p></li>
+<li><p>Comment code</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="code-file" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Code file</h2>
+<p>In your R project, navigate to the template code file <code>day1/inclass.R</code>.</p>
+<p>Then run all the code in the file, this should create a dataset <code>covid_cases</code>.</p>
+<p>You will also write the solution for your in-class exercise here.</p>
+</section>
+<section id="create-function" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Create function</h2>
+<div class="medium-text-size">
+<p><strong><em>Dataset</em></strong> Given a dataset with number of reported cases for 211 countries Where each column following the format <code>cases_{country_code}</code> represents the number of newly reported Covid cases on the day shown in <code>date</code> columns</p>
 <div class="cell">
 
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a><span class="fu">head</span>(covid_cases)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb54-1" class="hljs-ln-code"><a href="#cb54-1"></a><span class="fu">head</span>(covid_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -909,24 +1185,24 @@
 </div>
 </div>
 </div>
+</div>
 </section>
-<section id="functions-6" class="slide level2 scrollable" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Functions</h2>
+<section id="create-function-1" class="slide level2 scrollable" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Create function</h2>
 <div class="medium-text-size">
-<p><strong><em>Exercise:</em></strong> Create a function that allow users to choose compute basic statistics for number cases of each country.</p>
-<p>Given the code to compute basic stats for case reports in China (<code>cases_chn</code>) is as followed</p>
+<p><strong><em>Goal</em></strong> Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country. Given the code to compute basic stats for case reports in China (<code>cases_chn</code>) is as followed</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb29-1" class="hljs-ln-code"><a href="#cb29-1"></a>case_col <span class="ot">&lt;-</span> <span class="st">"cases_chn"</span></span>
-<span id="cb29-2" class="hljs-ln-code"><a href="#cb29-2"></a></span>
-<span id="cb29-3" class="hljs-ln-code"><a href="#cb29-3"></a>basic_stats <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb29-4" class="hljs-ln-code"><a href="#cb29-4"></a>  <span class="at">min =</span>  <span class="fu">min</span>(covid_cases[[case_col]]),</span>
-<span id="cb29-5" class="hljs-ln-code"><a href="#cb29-5"></a>  <span class="at">q1 =</span> <span class="fu">quantile</span>(covid_cases[[case_col]], <span class="fl">0.25</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
-<span id="cb29-6" class="hljs-ln-code"><a href="#cb29-6"></a>  <span class="at">median =</span> <span class="fu">median</span>(covid_cases[[case_col]]),</span>
-<span id="cb29-7" class="hljs-ln-code"><a href="#cb29-7"></a>  <span class="at">q3 =</span> <span class="fu">quantile</span>(covid_cases[[case_col]], <span class="fl">0.75</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
-<span id="cb29-8" class="hljs-ln-code"><a href="#cb29-8"></a>  <span class="at">max =</span> <span class="fu">max</span>(covid_cases[[case_col]])</span>
-<span id="cb29-9" class="hljs-ln-code"><a href="#cb29-9"></a>)</span>
-<span id="cb29-10" class="hljs-ln-code"><a href="#cb29-10"></a></span>
-<span id="cb29-11" class="hljs-ln-code"><a href="#cb29-11"></a>basic_stats</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb55-1" class="hljs-ln-code"><a href="#cb55-1"></a>case_col <span class="ot">&lt;-</span> <span class="st">"cases_chn"</span></span>
+<span id="cb55-2" class="hljs-ln-code"><a href="#cb55-2"></a></span>
+<span id="cb55-3" class="hljs-ln-code"><a href="#cb55-3"></a>basic_stats <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb55-4" class="hljs-ln-code"><a href="#cb55-4"></a>  <span class="at">min =</span>  <span class="fu">min</span>(covid_cases[[case_col]]),</span>
+<span id="cb55-5" class="hljs-ln-code"><a href="#cb55-5"></a>  <span class="at">q1 =</span> <span class="fu">quantile</span>(covid_cases[[case_col]], <span class="fl">0.25</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
+<span id="cb55-6" class="hljs-ln-code"><a href="#cb55-6"></a>  <span class="at">median =</span> <span class="fu">median</span>(covid_cases[[case_col]]),</span>
+<span id="cb55-7" class="hljs-ln-code"><a href="#cb55-7"></a>  <span class="at">q3 =</span> <span class="fu">quantile</span>(covid_cases[[case_col]], <span class="fl">0.75</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
+<span id="cb55-8" class="hljs-ln-code"><a href="#cb55-8"></a>  <span class="at">max =</span> <span class="fu">max</span>(covid_cases[[case_col]])</span>
+<span id="cb55-9" class="hljs-ln-code"><a href="#cb55-9"></a>)</span>
+<span id="cb55-10" class="hljs-ln-code"><a href="#cb55-10"></a></span>
+<span id="cb55-11" class="hljs-ln-code"><a href="#cb55-11"></a>basic_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    min      q1  median      q3     max 
     0.0    65.5   128.0   950.5 19461.0 </code></pre>
@@ -947,247 +1223,51 @@
 </div>
 </div>
 </section>
-<section id="functions-7" class="slide level2 scrollable" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Functions</h2>
+<section id="suggested-solution" class="slide level2 scrollable" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Suggested solution</h2>
 <p><strong><em>Exercise:</em></strong> Suggested solution</p>
-<div class="cell" data-fold="true">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb31-1" class="hljs-ln-code"><a href="#cb31-1"></a>compute_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colname){</span>
-<span id="cb31-2" class="hljs-ln-code"><a href="#cb31-2"></a>  <span class="fu">return</span>(</span>
-<span id="cb31-3" class="hljs-ln-code"><a href="#cb31-3"></a>    <span class="fu">c</span>(</span>
-<span id="cb31-4" class="hljs-ln-code"><a href="#cb31-4"></a>      <span class="at">min =</span> <span class="fu">min</span>(data[[colname]]),</span>
-<span id="cb31-5" class="hljs-ln-code"><a href="#cb31-5"></a>      <span class="at">q1 =</span> <span class="fu">quantile</span>(data[[colname]], <span class="fl">0.25</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
-<span id="cb31-6" class="hljs-ln-code"><a href="#cb31-6"></a>      <span class="at">median =</span> <span class="fu">median</span>(data[[colname]]),</span>
-<span id="cb31-7" class="hljs-ln-code"><a href="#cb31-7"></a>      <span class="at">q3 =</span> <span class="fu">quantile</span>(data[[colname]], <span class="fl">0.75</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
-<span id="cb31-8" class="hljs-ln-code"><a href="#cb31-8"></a>      <span class="at">max =</span> <span class="fu">max</span>(data[[colname]])</span>
-<span id="cb31-9" class="hljs-ln-code"><a href="#cb31-9"></a>    )</span>
-<span id="cb31-10" class="hljs-ln-code"><a href="#cb31-10"></a>  )</span>
-<span id="cb31-11" class="hljs-ln-code"><a href="#cb31-11"></a>}</span>
-<span id="cb31-12" class="hljs-ln-code"><a href="#cb31-12"></a><span class="fu">compute_stats</span>(covid_cases, <span class="at">colname =</span> <span class="st">"cases_chn"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    min      q1  median      q3     max 
-    0.0    65.5   128.0   950.5 19461.0 </code></pre>
-</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb57-1" class="hljs-ln-code"><a href="#cb57-1"></a>compute_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colname){</span>
+<span id="cb57-2" class="hljs-ln-code"><a href="#cb57-2"></a>  <span class="fu">return</span>(</span>
+<span id="cb57-3" class="hljs-ln-code"><a href="#cb57-3"></a>    <span class="fu">c</span>(</span>
+<span id="cb57-4" class="hljs-ln-code"><a href="#cb57-4"></a>      <span class="at">min =</span> <span class="fu">min</span>(data[[colname]]),</span>
+<span id="cb57-5" class="hljs-ln-code"><a href="#cb57-5"></a>      <span class="at">q1 =</span> <span class="fu">quantile</span>(data[[colname]], <span class="fl">0.25</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
+<span id="cb57-6" class="hljs-ln-code"><a href="#cb57-6"></a>      <span class="at">median =</span> <span class="fu">median</span>(data[[colname]]),</span>
+<span id="cb57-7" class="hljs-ln-code"><a href="#cb57-7"></a>      <span class="at">q3 =</span> <span class="fu">quantile</span>(data[[colname]], <span class="fl">0.75</span>, <span class="at">names=</span><span class="cn">FALSE</span>),</span>
+<span id="cb57-8" class="hljs-ln-code"><a href="#cb57-8"></a>      <span class="at">max =</span> <span class="fu">max</span>(data[[colname]])</span>
+<span id="cb57-9" class="hljs-ln-code"><a href="#cb57-9"></a>    )</span>
+<span id="cb57-10" class="hljs-ln-code"><a href="#cb57-10"></a>  )</span>
+<span id="cb57-11" class="hljs-ln-code"><a href="#cb57-11"></a>}</span>
+<span id="cb57-12" class="hljs-ln-code"><a href="#cb57-12"></a><span class="fu">compute_stats</span>(covid_cases, <span class="at">colname =</span> <span class="st">"cases_chn"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
-<section id="functions-8" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Functions</h2>
-<div class="medium-text-size">
-<p><strong>Some criteria for a good function</strong></p>
+<section id="navigating-github-desktop-github" class="slide level2">
+<h2>Navigating Github Desktop &amp; Github</h2>
+<p>Once you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><p><strong>Modularity</strong> - each function should focus on <strong><em>one task</em></strong> (e.g.&nbsp;you can have a function to import data, another to model the data, another to visualize data but <u><strong>not</strong></u> a function doing all of those 3 tasks)</p></li>
-<li><p><strong>Concise -</strong> the content of a function should not be too lengthy. If a function starts to have &gt; 30 lines of code, it may be an indication that the modularity rule is violated.</p></li>
-<li><p><strong>Readability</strong> - function’s name should clearly describe its purpose (e.g.&nbsp;compute_min, plot_case, etc.), and the content should be properly commented and documented.</p></li>
+<li><p>Push your code to Github using Github Desktop</p></li>
+<li><p>Create an issue on Github once you have had your code on Github</p></li>
+<li><p>Create a comment on Github for at least one other participant’s code</p></li>
 </ul>
 </div>
-</section>
-<section id="functions-9" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Functions</h2>
-<div class="medium-text-size">
-<p>R is a functional programming language, which means you will encounter a lot of functions while coding in R.</p>
-<p>To assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use <code>?</code> or <code>help()</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb33-1" class="hljs-ln-code"><a href="#cb33-1"></a><span class="co"># look up documentation for `sqrt` function</span></span>
-<span id="cb33-2" class="hljs-ln-code"><a href="#cb33-2"></a>?sqrt</span>
-<span id="cb33-3" class="hljs-ln-code"><a href="#cb33-3"></a><span class="fu">help</span>(sqrt)</span></code></pre></div>
 </div>
-<p>Note that the built-in documentation only helps when you <u>already know which function you want to ask about</u>. If you are looking for a function to achieve a specific task, it is better to start with <strong>search engine</strong> (Google, Bing, etc.), <strong>forums/Q&amp;A sites</strong> (Github discussions, StackOverflow, etc.) or even ChatGPT.</p>
-</div>
-</section>
-<section id="functions-10" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Functions</h2>
-<div class="medium-text-size">
-<p>The documentation that show up when calling <code>help()</code> or <code>?</code> are usually generated from something called roxygen documentation.</p>
-<p>To create a roxygen documentation, place the cursor within the function and from the menu, click <code>Code</code> &gt; <code>Insert Roxygen Skeleton</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a href="#cb34-1"></a><span class="co">#' Compute power</span></span>
-<span id="cb34-2" class="hljs-ln-code"><a href="#cb34-2"></a><span class="co">#' </span></span>
-<span id="cb34-3" class="hljs-ln-code"><a href="#cb34-3"></a><span class="co">#' Takes two arguments, `base` and `power` then return base raised to given power</span></span>
-<span id="cb34-4" class="hljs-ln-code"><a href="#cb34-4"></a><span class="co">#'</span></span>
-<span id="cb34-5" class="hljs-ln-code"><a href="#cb34-5"></a><span class="co">#' @param base - a numeric value for base number</span></span>
-<span id="cb34-6" class="hljs-ln-code"><a href="#cb34-6"></a><span class="co">#' @param power - a numeric value for power</span></span>
-<span id="cb34-7" class="hljs-ln-code"><a href="#cb34-7"></a><span class="co">#'</span></span>
-<span id="cb34-8" class="hljs-ln-code"><a href="#cb34-8"></a><span class="co">#' @return numeric value for base^power</span></span>
-<span id="cb34-9" class="hljs-ln-code"><a href="#cb34-9"></a><span class="co">#' @examples</span></span>
-<span id="cb34-10" class="hljs-ln-code"><a href="#cb34-10"></a><span class="co">#' compute_power(3,4)</span></span>
-<span id="cb34-11" class="hljs-ln-code"><a href="#cb34-11"></a>compute_power <span class="ot">&lt;-</span> <span class="cf">function</span>(base, power){</span>
-<span id="cb34-12" class="hljs-ln-code"><a href="#cb34-12"></a>  <span class="co"># return a raised to the power of b</span></span>
-<span id="cb34-13" class="hljs-ln-code"><a href="#cb34-13"></a>  base<span class="sc">**</span>power</span>
-<span id="cb34-14" class="hljs-ln-code"><a href="#cb34-14"></a>}</span>
-<span id="cb34-15" class="hljs-ln-code"><a href="#cb34-15"></a></span>
-<span id="cb34-16" class="hljs-ln-code"><a href="#cb34-16"></a><span class="fu">compute_power</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 25</code></pre>
-</div>
-</div>
-</div>
-</section>
-
-
-
-<section id="scope" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Scope</h2>
-<p><strong>Brainstorming</strong></p>
-<p>Read the code and guess the answer for 3 Questions below</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb43-1" class="hljs-ln-code"><a href="#cb43-1"></a>example_var <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb43-2" class="hljs-ln-code"><a href="#cb43-2"></a></span>
-<span id="cb43-3" class="hljs-ln-code"><a href="#cb43-3"></a>example_func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg){</span>
-<span id="cb43-4" class="hljs-ln-code"><a href="#cb43-4"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var))</span>
-<span id="cb43-5" class="hljs-ln-code"><a href="#cb43-5"></a>  </span>
-<span id="cb43-6" class="hljs-ln-code"><a href="#cb43-6"></a>  example_var <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb43-7" class="hljs-ln-code"><a href="#cb43-7"></a>  </span>
-<span id="cb43-8" class="hljs-ln-code"><a href="#cb43-8"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var after assignment: "</span>, example_var))</span>
-<span id="cb43-9" class="hljs-ln-code"><a href="#cb43-9"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of function argument: "</span>, arg)) </span>
-<span id="cb43-10" class="hljs-ln-code"><a href="#cb43-10"></a>}</span>
-<span id="cb43-11" class="hljs-ln-code"><a href="#cb43-11"></a></span>
-<span id="cb43-12" class="hljs-ln-code"><a href="#cb43-12"></a><span class="co"># Q1: What will the 2 print statements show?</span></span>
-<span id="cb43-13" class="hljs-ln-code"><a href="#cb43-13"></a><span class="fu">example_func</span>(<span class="dv">60</span>) </span>
-<span id="cb43-14" class="hljs-ln-code"><a href="#cb43-14"></a><span class="co"># Q2: What will be the value for example_var here?</span></span>
-<span id="cb43-15" class="hljs-ln-code"><a href="#cb43-15"></a><span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var)</span>
-<span id="cb43-16" class="hljs-ln-code"><a href="#cb43-16"></a><span class="co"># Q3: What will be the value for arg here?</span></span>
-<span id="cb43-17" class="hljs-ln-code"><a href="#cb43-17"></a>arg  </span></code></pre></div>
-</div>
-</section>
-<section id="scope-1" class="slide level2 scrollable" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Scope</h2>
-<p><strong>Answer</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>example_var <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a></span>
-<span id="cb44-3"><a href="#cb44-3"></a>example_func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg){</span>
-<span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var))</span>
-<span id="cb44-5"><a href="#cb44-5"></a>  </span>
-<span id="cb44-6"><a href="#cb44-6"></a>  example_var <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb44-7"><a href="#cb44-7"></a>  </span>
-<span id="cb44-8"><a href="#cb44-8"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var after assignment: "</span>, example_var))</span>
-<span id="cb44-9"><a href="#cb44-9"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of function argument: "</span>, arg)) </span>
-<span id="cb44-10"><a href="#cb44-10"></a>}</span>
-<span id="cb44-11"><a href="#cb44-11"></a></span>
-<span id="cb44-12"><a href="#cb44-12"></a><span class="co"># Q1: What will the 2 print statements show?</span></span>
-<span id="cb44-13"><a href="#cb44-13"></a><span class="fu">example_func</span>(<span class="dv">60</span>) </span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Value of variable example_var: 10"
-[1] "Value of variable example_var after assignment: 20"
-[1] "Value of function argument: 60"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Q2: What will be the value for example_var here?</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">paste0</span>(<span class="st">"Value of variable example_var: "</span>, example_var)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Value of variable example_var: 10"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Q3: What will be the value for arg here?</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a>arg  </span></code></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'arg' not found</code></pre>
-</div>
-</div>
-</section>
-<section id="scope-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Scope</h2>
-
-<img data-src="imgs/r_foundation/scope_fig.png" width="544" class="r-stretch"></section>
-<section id="scope-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Scope</h2>
-<p><strong>Explanation</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># this is a global variable since it is not created in any local environment</span></span>
-<span id="cb50-2"><a href="#cb50-2"></a>example_var <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb50-3"><a href="#cb50-3"></a></span>
-<span id="cb50-4"><a href="#cb50-4"></a>example_func <span class="ot">&lt;-</span> <span class="cf">function</span>(arg){</span>
-<span id="cb50-5"><a href="#cb50-5"></a>  <span class="co"># global_var</span></span>
-<span id="cb50-6"><a href="#cb50-6"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Global variable can be accessed within function "</span>, example_var))</span>
-<span id="cb50-7"><a href="#cb50-7"></a>  </span>
-<span id="cb50-8"><a href="#cb50-8"></a>  <span class="co"># this is creating a local variable named example_var</span></span>
-<span id="cb50-9"><a href="#cb50-9"></a>  <span class="co"># it will not affect example_var</span></span>
-<span id="cb50-10"><a href="#cb50-10"></a>  example_var <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb50-11"><a href="#cb50-11"></a>  </span>
-<span id="cb50-12"><a href="#cb50-12"></a>  <span class="co"># this example_var refers to the local variable example_var</span></span>
-<span id="cb50-13"><a href="#cb50-13"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Value of variable example_var after assignment"</span>, example_var))</span>
-<span id="cb50-14"><a href="#cb50-14"></a>  <span class="co"># note that argument is also only accessible within the function</span></span>
-<span id="cb50-15"><a href="#cb50-15"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Function argument "</span>, arg))</span>
-<span id="cb50-16"><a href="#cb50-16"></a>}</span>
-<span id="cb50-17"><a href="#cb50-17"></a></span>
-<span id="cb50-18"><a href="#cb50-18"></a><span class="fu">example_func</span>(<span class="dv">60</span>) </span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Global variable can be accessed within function 10"
-[1] "Value of variable example_var after assignment20"
-[1] "Function argument 60"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># value for argument should only accessible within function </span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>arg  </span></code></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'arg' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># refers to global variabl example_var here </span></span>
-<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">paste0</span>(<span class="st">"Value of variable example_var "</span>, example_var)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Value of variable example_var 10"</code></pre>
-</div>
-</div>
-</section>
-<section id="scope-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Scope</h2>
-<p><strong>Scope</strong> refers to where variables can be accessed or modified.</p>
-<p>To put simply</p>
-<ul>
-<li><p>By default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is <u><strong>not</strong></u> recommended).</p></li>
-<li><p><strong>global variables</strong> can be accessed anywhere within the session.</p></li>
-<li><p><strong>local variables</strong> are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function.</p></li>
-</ul>
-</section>
-<section id="packages" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Packages</h2>
-<div class="medium-text-size">
-<p>2 options to install an R packages</p>
-<ul>
-<li><p>Via RStudio interface.</p>
-<ul>
-<li><p>In the <code>File/Plots/Packages/Help</code> panel</p></li>
-<li><p>Click <code>Packages</code> &gt; <code>Install</code></p></li>
-<li><p>Type name of the packages to be installed separated by <code>,</code></p></li>
-<li><p>Click install</p></li>
-</ul></li>
-<li><p>Using R code</p></li>
-</ul>
-<p><strong><em>Example:</em></strong> Download package for reading Excel files</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb56-1" class="hljs-ln-code"><a href="#cb56-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span></code></pre></div>
-</div>
-</div>
-</section>
-<section id="packages-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Packages</h2>
-<p>To use a package, you must first load it to R using <code>library()</code> function</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb57-1" class="hljs-ln-code"><a href="#cb57-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb57-2" class="hljs-ln-code"><a href="#cb57-2"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/linelist_raw.xlsx"</span>)</span>
-<span id="cb57-3" class="hljs-ln-code"><a href="#cb57-3"></a><span class="fu">head</span>(data)</span></code></pre></div>
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["case_id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["generation"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["infection date"],"name":[3],"type":["dttm"],"align":["right"]},{"label":["date onset"],"name":[4],"type":["chr"],"align":["left"]},{"label":["hosp date"],"name":[5],"type":["dttm"],"align":["right"]},{"label":["date_of_outcome"],"name":[6],"type":["dttm"],"align":["right"]},{"label":["outcome"],"name":[7],"type":["chr"],"align":["left"]},{"label":["gender"],"name":[8],"type":["chr"],"align":["left"]},{"label":["hospital"],"name":[9],"type":["chr"],"align":["left"]},{"label":["lon"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["lat"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["infector"],"name":[12],"type":["chr"],"align":["left"]},{"label":["source"],"name":[13],"type":["chr"],"align":["left"]},{"label":["age"],"name":[14],"type":["chr"],"align":["left"]},{"label":["age_unit"],"name":[15],"type":["chr"],"align":["left"]},{"label":["row_num"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["wt_kg"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["ht_cm"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["ct_blood"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["fever"],"name":[20],"type":["chr"],"align":["left"]},{"label":["chills"],"name":[21],"type":["chr"],"align":["left"]},{"label":["cough"],"name":[22],"type":["chr"],"align":["left"]},{"label":["aches"],"name":[23],"type":["chr"],"align":["left"]},{"label":["vomit"],"name":[24],"type":["chr"],"align":["left"]},{"label":["temp"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["time_admission"],"name":[26],"type":["chr"],"align":["left"]},{"label":["merged_header"],"name":[27],"type":["chr"],"align":["left"]},{"label":["...28"],"name":[28],"type":["chr"],"align":["left"]}],"data":[{"1":"5fe599","2":"4","3":"2014-05-08","4":"2014-05-13","5":"2014-05-15","6":"<NA>","7":"NA","8":"m","9":"Other","10":"-13.21574","11":"8.468973","12":"f547d6","13":"other","14":"2","15":"years","16":"1","17":"27","18":"48","19":"22","20":"no","21":"no","22":"yes","23":"no","24":"yes","25":"36.8","26":"NA","27":"a","28":"b"},{"1":"8689b7","2":"4","3":"<NA>","4":"2014-05-13","5":"2014-05-14","6":"2014-05-18","7":"Recover","8":"f","9":"NA","10":"-13.21523","11":"8.451719","12":"NA","13":"NA","14":"3","15":"years","16":"2","17":"25","18":"59","19":"22","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"36.9","26":"09:36","27":"a","28":"b"},{"1":"11f8ea","2":"2","3":"<NA>","4":"2014-05-16","5":"2014-05-18","6":"2014-05-30","7":"Recover","8":"m","9":"St. Mark's Maternity Hospital (SMMH)","10":"-13.21291","11":"8.464817","12":"NA","13":"NA","14":"56","15":"years","16":"3","17":"91","18":"238","19":"21","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"36.9","26":"16:48","27":"a","28":"b"},{"1":"b8812a","2":"3","3":"2014-05-04","4":"2014-05-18","5":"2014-05-20","6":"<NA>","7":"NA","8":"f","9":"Port Hospital","10":"-13.23637","11":"8.475476","12":"f90f5f","13":"other","14":"18","15":"years","16":"4","17":"41","18":"135","19":"23","20":"no","21":"no","22":"no","23":"no","24":"no","25":"36.8","26":"11:22","27":"a","28":"b"},{"1":"893f25","2":"3","3":"2014-05-18","4":"2014-05-21","5":"2014-05-22","6":"2014-05-29","7":"Recover","8":"m","9":"Military Hospital","10":"-13.22286","11":"8.460824","12":"11f8ea","13":"other","14":"3","15":"years","16":"5","17":"36","18":"71","19":"23","20":"no","21":"no","22":"yes","23":"no","24":"yes","25":"36.9","26":"12:60","27":"a","28":"b"},{"1":"be99c8","2":"3","3":"2014-05-03","4":"2014-05-22","5":"2014-05-23","6":"2014-05-24","7":"Recover","8":"f","9":"Port Hospital","10":"-13.22263","11":"8.461831","12":"aec8ec","13":"other","14":"16","15":"years","16":"6","17":"56","18":"116","19":"21","20":"no","21":"no","22":"yes","23":"no","24":"yes","25":"37.6","26":"14:13","27":"a","28":"b"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-</section>
-<section id="packages-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Packages</h2>
-<p>Similar to functions, you can also look up documentation for packages using <code>?</code> or <code>help()</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb58-1" class="hljs-ln-code"><a href="#cb58-1"></a><span class="co"># --- look up documentation for package ---</span></span>
-<span id="cb58-2" class="hljs-ln-code"><a href="#cb58-2"></a>?readxl</span>
-<span id="cb58-3" class="hljs-ln-code"><a href="#cb58-3"></a><span class="fu">help</span>(readxl)</span>
-<span id="cb58-4" class="hljs-ln-code"><a href="#cb58-4"></a></span>
-<span id="cb58-5" class="hljs-ln-code"><a href="#cb58-5"></a><span class="co"># --- look up documentation for function of the package ---</span></span>
-<span id="cb58-6" class="hljs-ln-code"><a href="#cb58-6"></a>?readxl<span class="sc">::</span>read_excel</span>
-<span id="cb58-7" class="hljs-ln-code"><a href="#cb58-7"></a><span class="fu">help</span>(read_excel, <span class="at">package=</span> readxl)</span></code></pre></div>
 </div>
 </section></section>
 <section>
-<section id="data-management-in-r" class="title-slide slide level1 center">
-<h1>Data management in R</h1>
+<section id="data-manipulation-in-r" class="title-slide slide level1 center">
+<h1>Data manipulation in R</h1>
 
 </section>
 <section id="data-import" class="slide level2" data-auto-animate="true">
@@ -1231,8 +1311,8 @@
 <p><code>rio</code> - support data import for multiple data format</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb59-1" class="hljs-ln-code"><a href="#cb59-1"></a><span class="fu">library</span>(rio)</span>
-<span id="cb59-2" class="hljs-ln-code"><a href="#cb59-2"></a><span class="fu">import</span>(<span class="st">"data/linelist_raw.xlsx"</span>, <span class="at">skip =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb58-1" class="hljs-ln-code"><a href="#cb58-1"></a><span class="fu">library</span>(rio)</span>
+<span id="cb58-2" class="hljs-ln-code"><a href="#cb58-2"></a><span class="fu">import</span>(<span class="st">"data/linelist_raw.xlsx"</span>, <span class="at">skip =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1282,7 +1362,7 @@
 <h2 data-id="quarto-animate-title">Clean column names</h2>
 <p>The thing we usually do first after importing data is check the column names, to do that we use function <code>colnames()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb60-1" class="hljs-ln-code"><a href="#cb60-1"></a><span class="fu">colnames</span>(data)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb59-1" class="hljs-ln-code"><a href="#cb59-1"></a><span class="fu">colnames</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "case_id"         "generation"      "infection date"  "date onset"     
  [5] "hosp date"       "date_of_outcome" "outcome"         "gender"         
@@ -1301,9 +1381,9 @@
 <p>To quickly resolve this, package <code>janitor</code> offers <code>clean_names()</code> function to automatically fix the naming</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb62-1" class="hljs-ln-code"><a href="#cb62-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb62-2" class="hljs-ln-code"><a href="#cb62-2"></a>data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(data)</span>
-<span id="cb62-3" class="hljs-ln-code"><a href="#cb62-3"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb61-1" class="hljs-ln-code"><a href="#cb61-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb61-2" class="hljs-ln-code"><a href="#cb61-2"></a>data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(data)</span>
+<span id="cb61-3" class="hljs-ln-code"><a href="#cb61-3"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1323,8 +1403,8 @@
 <li><p>To extract all cols, left <code>row</code> blank</p></li>
 </ul>
 <div class="cell" data-df-print="kable">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="co"># get the cell at row 5, column 2</span></span>
-<span id="cb63-2"><a href="#cb63-2"></a>data[<span class="dv">5</span> ,<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># get the cell at row 5, column 2</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a>data[<span class="dv">5</span> ,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1333,8 +1413,8 @@
   </script>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co"># column can also be accessed using column name</span></span>
-<span id="cb64-2"><a href="#cb64-2"></a>data[<span class="dv">5</span> , <span class="st">"hosp_date"</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="co"># column can also be accessed using column name</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a>data[<span class="dv">5</span> , <span class="st">"hosp_date"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1343,8 +1423,8 @@
   </script>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># get all values in the 5th row</span></span>
-<span id="cb65-2"><a href="#cb65-2"></a>data[<span class="dv">5</span>, ]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co"># get all values in the 5th row</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a>data[<span class="dv">5</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1353,8 +1433,8 @@
   </script>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># extract specific columns</span></span>
-<span id="cb66-2"><a href="#cb66-2"></a>data[, <span class="fu">c</span>(<span class="st">"case_id"</span>, <span class="st">"infection_date"</span>, <span class="st">"date_onset"</span>, <span class="st">"hosp_date"</span>)] </span></code></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># extract specific columns</span></span>
+<span id="cb65-2"><a href="#cb65-2"></a>data[, <span class="fu">c</span>(<span class="st">"case_id"</span>, <span class="st">"infection_date"</span>, <span class="st">"date_onset"</span>, <span class="st">"hosp_date"</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1363,8 +1443,8 @@
   </script>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="co"># extract first 10 rows from specific columns</span></span>
-<span id="cb67-2"><a href="#cb67-2"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="fu">c</span>(<span class="st">"case_id"</span>, <span class="st">"infection_date"</span>, <span class="st">"date_onset"</span>, <span class="st">"hosp_date"</span>)] </span></code></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># extract first 10 rows from specific columns</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="fu">c</span>(<span class="st">"case_id"</span>, <span class="st">"infection_date"</span>, <span class="st">"date_onset"</span>, <span class="st">"hosp_date"</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1380,7 +1460,7 @@
 <h2 data-id="quarto-animate-title">Data summary</h2>
 <p>In base R, function <code>summary()</code> is used to have the basic statistics of each variables in the dataset</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb68-1" class="hljs-ln-code"><a href="#cb68-1"></a><span class="fu">summary</span>(data)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb67-1" class="hljs-ln-code"><a href="#cb67-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   case_id            generation   infection_date                  
  Length:6611        Min.   : 0.0   Min.   :2012-04-09 00:00:00.00  
@@ -1454,8 +1534,8 @@
 <div class="medium-text-size">
 <p>However, function <code>skim()</code> from package <code>skimr</code> can return a better table output with tables grouped by class of data</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb70-1" class="hljs-ln-code"><a href="#cb70-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb70-2" class="hljs-ln-code"><a href="#cb70-2"></a><span class="fu">skim</span>(data)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb69-1" class="hljs-ln-code"><a href="#cb69-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb69-2" class="hljs-ln-code"><a href="#cb69-2"></a><span class="fu">skim</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table>
 <caption>Data summary</caption>
@@ -2197,6 +2277,44 @@
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
       });
       function tippyHover(el, contentFn) {
         const config = {
