@@ -252,13 +252,13 @@ Some rules of thumb for naming files and folders:
 
 ## Set up renv {auto-animate="true"}
 
-To use renv for your project
+To use renv for your project. Run the following line of code in your console
 
--   Click `Tools` \> `Project Options…` \> `Environments`
+```{r, eval=FALSE}
+renv::init()
+```
 
--   Tick `Use renv with this project`
-
-Which creates `renv.lock` file and a folder `renv` in your project
+Which will create `renv.lock` and `renv` folder under your project
 
 ## Why use renv? {auto-animate="true"}
 
@@ -772,7 +772,7 @@ In this exercise, you will:
 
 - Push your code to Github
 
-- Comment code
+- Commenting collaborators' code on Github
 :::
 
 ## Code file {auto-animate="true"}
@@ -891,9 +891,7 @@ Once you have created the function, complete the following tasks on Github Deskt
 ::: callout-note
 - Push your code to Github using Github Desktop
 
-- Create an issue on Github once you have had your code on Github
-
-- Create a comment on Github for at least one other participant's code
+- Create an issue on Github to comment on at least 1 other participant's code
 :::
 
 # Data manipulation in R
