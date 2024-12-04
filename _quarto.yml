@@ -10,6 +10,8 @@ website:
         text: Home
       - href: slides/intro.qmd
         text: Foundations of R
+      - href: slides/tidyverse.qmd
+        text: R programming with tidyverse
 
 execute: 
   echo: TRUE
