@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.57">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.55">
 
-  <title>rcafe – Introduction to Quarto</title>
+  <title>R Café – R programming with tidyverse</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -94,13 +94,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
-  <link rel="stylesheet" href="../../styles.css">
-  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-codewindow/codewindow.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -386,172 +385,233 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+  <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to Quarto</h1>
+  <h1 class="title">R programming with <code>tidyverse</code></h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="quarto-markdown-vs-output" class="slide level2">
-<h2>Quarto markdown vs output</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="codewindow quarto">
-<p>index.qmd</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Hello, Quarto"</span></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-10-28</span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Thinh Ong</span></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://drthinhong.com/</span></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">    orcid: 0000-0001-6772-9291</span></span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="an">navbar:</span><span class="co"> false</span></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to Quarto</span></span>
-<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a>Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. </span>
-<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Header Levels</span></span>
-<span id="cb1-18"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a aria-hidden="true" tabindex="-1"></a>Quarto supports multiple header levels to create a hierarchical structure in your document. For example:</span>
-<span id="cb1-20"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Level 1 header: <span class="in">`# Header`</span></span>
-<span id="cb1-22"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Level 2 header: <span class="in">`## Subheader`</span></span>
-<span id="cb1-23"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Level 3 header: <span class="in">`### Sub-subheader`</span></span>
-<span id="cb1-24"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a aria-hidden="true" tabindex="-1"></a><span class="fu">### Nested Headers</span></span>
-<span id="cb1-26"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a aria-hidden="true" tabindex="-1"></a>Using headers, you can create nested sections to structure your document in a clear and organized way.</span>
-<span id="cb1-28"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Inline Text Formatting</span></span>
-<span id="cb1-30"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a aria-hidden="true" tabindex="-1"></a>You can format your text inline to add emphasis or other styling options.</span>
-<span id="cb1-32"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Bold text**: `**bold**`</span>
-<span id="cb1-34"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Italic text*: `*italic*`</span>
-<span id="cb1-35"><a aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inline <span class="in">`code`</span>: `<span class="in">` `</span>code` ``</span>
-<span id="cb1-36"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Blockquotes can be used to highlight important information or quotes by adding </span><span class="in">`&gt; `</span><span class="at"> at the beginning of a line.</span></span>
-<span id="cb1-38"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Lists</span></span>
-<span id="cb1-40"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a aria-hidden="true" tabindex="-1"></a>Quarto supports both ordered and unordered lists.</span>
-<span id="cb1-42"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a aria-hidden="true" tabindex="-1"></a><span class="fu">### Unordered List</span></span>
-<span id="cb1-44"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a aria-hidden="true" tabindex="-1"></a>To create an unordered list, use an asterisk <span class="in">`*`</span> before each item:</span>
-<span id="cb1-46"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>First item</span>
-<span id="cb1-48"><a aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Second item</span>
-<span id="cb1-49"><a aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Third item</span>
-<span id="cb1-50"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a aria-hidden="true" tabindex="-1"></a><span class="fu">### Ordered List</span></span>
-<span id="cb1-52"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a aria-hidden="true" tabindex="-1"></a>To create an ordered list, use numbers before each item:</span>
-<span id="cb1-54"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>First item</span>
-<span id="cb1-56"><a aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Second item</span>
-<span id="cb1-57"><a aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Third item</span>
-<span id="cb1-58"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Links and images</span></span>
-<span id="cb1-60"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://example.com&gt;</span></span>
-<span id="cb1-62"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">linked phrase</span><span class="co">](http://example.com)</span></span>
-<span id="cb1-64"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a aria-hidden="true" tabindex="-1"></a><span class="al">![optional caption text](../oucru-logo.png)</span></span>
-<span id="cb1-66"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Tables</span></span>
-<span id="cb1-68"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a aria-hidden="true" tabindex="-1"></a>| First Header | Second Header |</span>
-<span id="cb1-70"><a aria-hidden="true" tabindex="-1"></a>|--------------|---------------|</span>
-<span id="cb1-71"><a aria-hidden="true" tabindex="-1"></a>| Content Cell | Content Cell  |</span>
-<span id="cb1-72"><a aria-hidden="true" tabindex="-1"></a>| Content Cell | Content Cell  |</span>
-<span id="cb1-73"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Code block</span></span>
-<span id="cb1-75"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a aria-hidden="true" tabindex="-1"></a>Quarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:</span>
-<span id="cb1-77"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-79"><a aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 4</span></span>
-<span id="cb1-80"><a aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 3</span></span>
-<span id="cb1-81"><a aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: "100%"</span></span>
-<span id="cb1-82"><a aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- c(1, 2, 3, 4, 5)</span></span>
-<span id="cb1-83"><a aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;- c(1, 4, 9, 16, 25)</span></span>
-<span id="cb1-84"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a aria-hidden="true" tabindex="-1"></a><span class="in">plot(x, y, type = "o", col = "blue", main = "Simple plot", xlab = "x", ylab = "y")</span></span>
-<span id="cb1-86"><a aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-87"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a aria-hidden="true" tabindex="-1"></a><span class="fu">## Footnotes</span></span>
-<span id="cb1-89"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a aria-hidden="true" tabindex="-1"></a>Footnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^<span class="co">[</span><span class="ot">This is an example footnote.</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="codewindow html">
-<p>index.html <iframe class="slide-deck" src="quarto-example.html" style="width: 100%; height: 484.47px;"></iframe></p>
-</div>
-</div></div>
+<section id="session-overview" class="slide level2 scrollable">
+<h2>Session overview</h2>
+<p>What will be covered:</p>
+<ul>
+<li><strong>Stepping into the <code>tidyverse</code></strong>
+<ul>
+<li>What is <code>tidyverse</code>?</li>
+<li>Why should we use it?</li>
+<li>How do we use it?</li>
+</ul></li>
+<li><strong><code>tidyverse</code> style vs.&nbsp;base R style</strong>
+<ul>
+<li>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></li>
+<li>Piping with <code>%&gt;%</code> and <code>|&gt;</code></li>
+</ul></li>
+<li><strong><code>ggplot2</code> for data visualization</strong>
+<ul>
+<li>Grammar of graphics</li>
+<li>The typical flow</li>
+</ul></li>
+<li><strong>Whole game</strong></li>
+</ul>
 </section>
-<section id="yaml-header" class="slide level2">
-<h2>YAML header</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="codewindow quarto">
-<p>index.qmd</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Hello, Quarto"</span></span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-10-28</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Thinh Ong</span></span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://drthinhong.com/</span></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">    orcid: 0000-0001-6772-9291</span></span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="an">navbar:</span><span class="co"> false</span></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="codewindow html">
-<p>index.html <iframe class="slide-deck" src="quarto-example.html#header-levels" style="width: 100%; height: 484.47px;"></iframe></p>
-</div>
-</div></div>
+<section>
+<section id="stepping-into-the-tidyverse" class="title-slide slide level1 center">
+<h1>Stepping into the <code>tidyverse</code></h1>
+
 </section>
-<section id="markdown-syntax" class="slide level2">
-<h2>Markdown syntax</h2>
+<section id="what-is-tidyverse" class="slide level2">
+<h2>What is <code>tidyverse</code>?</h2>
+<ul>
+<li><code>tidyverse</code> is a <strong>collection of R packages</strong> built for data science</li>
+<li>All packages shared the same principle of <strong>tidy data</strong> (this will be very apparent later on!)</li>
+<li>Consists of 8 core packages, and a dozen more packages for specific purposes</li>
+</ul>
+</section>
+<section id="what-is-tidyverse-1" class="slide level2">
+<h2>What is <code>tidyverse</code>?</h2>
+
+<img data-src="imgs/tidyverse/tidy-packages.png" class="r-stretch"></section>
+<section id="why-tidyverse" class="slide level2 scrollable">
+<h2>Why <code>tidyverse</code>?</h2>
+<ul>
+<li>Every function under <code>tidyverse</code> <strong>shares consistent structure and pattern</strong>. Making it very easy to implement and edit your R code</li>
+<li><em>In general</em>, your R code <em>might</em> look cleaner and easier to follow, compared to base R</li>
+<li>You just need to install everything once, instead of different packages for different things</li>
+<li>With piping, you eliminate the need of intermediary objects and nesting of functions (examples later)</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><em>This is all subjective and your experience with <code>tidyverse</code> may varies</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="why-tidyverse-1" class="slide level2">
+<h2>Why <code>tidyverse</code>?</h2>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><code>tidyverse</code> is not a replacement of base R. <strong>It is a collection of packages</strong></li>
+<li>You don’t have to use <code>tidyverse</code> when using R</li>
+<li><code>tidyverse</code> has most functions for data science needs. Though, there are times base R will be needed, and might be better</li>
+<li>Understanding the principles and goals of <code>tidyverse</code> will better your knowledge on good coding practices and R</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-use-tidyverse" class="slide level2">
+<h2>How to use <code>tidyverse</code></h2>
+<p>Start by installing it!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><em>Most</em> packages will be installed. You might need some more packages, but generally it should cover most of your needs.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-use-tidyverse-1" class="slide level2">
+<h2>How to use <code>tidyverse</code></h2>
+<p>Then load it into your R environment!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>You can load specific packages like <code>library(dplyr)</code>, but it doesn’t matter in most cases.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-use-tidyverse-2" class="slide level2">
+<h2>How to use <code>tidyverse</code></h2>
+<p>Run this example code below to make sure everything is running ok</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">group_by</span>(clarity) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_price =</span> <span class="fu">mean</span>(price)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> clarity, <span class="at">y =</span> mean_price)) <span class="sc">+</span></span>
+<span id="cb3-6"><a></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Free R tip</strong>: type <code>?function_name</code> for help on how to use a function <strong>and see which package is it coming from</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-use-tidyverse-2-output" class="slide level2 output-location-slide"><h2>How to use <code>tidyverse</code></h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tidyverse_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="how-to-use-tidyverse-3" class="slide level2">
+<h2>How to use <code>tidyverse</code></h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Free R tip</strong>: add “tidyverse” into your Google searches when looking for R issues</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="tidyverse-style-vs.-base-r-style" class="title-slide slide level1 center">
+<h1><code>tidyverse</code> style vs.&nbsp;base R style</h1>
+
+</section>
+<section id="vectorisation-with-map-vs.-apply" class="slide level2">
+<h2>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></h2>
+<ul>
+<li>Recall what is “vectorisation”</li>
+<li><strong>Most things in R are vectors</strong></li>
+</ul>
+</section>
+<section id="vectorisation-with-map-vs.-apply-1" class="slide level2">
+<h2>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></h2>
+<p>Vectorisation vs.&nbsp;looping</p>
 
 <div class="quarto-auto-generated-content">
-<p><img src="../oucru-logo.png" class="slide-logo"></p>
+<p><img src="imgs/oucru-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-codewindow/codewindow.js"></script>
-  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -736,7 +796,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealCodewindow, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -745,6 +805,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

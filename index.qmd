@@ -1,11 +1,62 @@
 ---
-title: "rcafe"
+title: "Welcome to R Café - Pilot phase"
+format: html
 ---
 
-This is a Quarto website.
+## Duration
+3 weeks of study + 1 week of extra content (if any) and closing remarks
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Structure
+- 3-hour face-to-face sessions per day, 1 day per week
+- Take home exercises given between face-to-face sessions
 
-```{r}
-1 + 1
-```
+## R Café helpful shortcuts
+- [Teams Tech support channel](https://teams.microsoft.com/l/channel/19%3AGyu0GBNtFFuDmjrVqXsrTYScHLPgP5bpTDLOoaJEeaE1%40thread.tacv2/Tech%20support?groupId=6abc7e7a-0132-4ec2-afa7-393d89c247d8&tenantId=22514748-bbda-4cb8-9795-bfa3fbeec018&ngc=true&allowXTenantAccess=true)
+- [Main GitHub repository](https://github.com/OUCRU-Modelling/R-cafe)
+- [Theoretical slides](https://oucru-modelling.github.io/R-cafe-materials/)
+- Current instructor roster:
+	- Thinh Ong Phuc (thinhop\@oucru.org)
+	- Anh Phan Truong Quynh (anhptq\@oucru.org)
+	- Hung Tran Thai (hungtt\@oucru.org)
+	- Tuyen Huynh (tuyenhn\@oucru.org)
+	- Hai Ho Bich (haihb\@oucru.org)
+
+## Agenda
+1. [TBD (day 1)](slides/intro.qmd){target="_blank"}
+	- **Part 1**: Setup (45') - *Tuyen & QA*
+		- What is R Café & Agenda (5')
+		- [Brief introduction to Git, GitHub, and GitHub Desktop](slides/intro_github.qmd) (20')
+			- Goal: Publish your own branch on R Café's GitHub repository
+		- Rstudio (20')
+			- Goal: Create RStudio project
+			- Goal: Everyone create and push their first commit onto their own branch
+		- Navigate GitHub
+	- **Part 2**: Foundations of R (60') - *QA*
+		- Variables & Functions & Packages (with outline)
+		- Exercises
+			- Goal: Create a function and push to GitHub
+			- Goal: Create issues and comment on each other's issues on GitHub
+	- **Break** (15')
+	- **Part 3**: Data manipulation in R (45') - *QA*
+		- Data management
+		- Take-home exercises setup
+
+2. R programming with `tidyverse` (day 2)
+3. Quarto & Markdown (and related) (day 3)
+
+## Take-home exercises
+1. Initial Data Analysis - IDA (with `skimr`)
+	- Generate questions around your data
+	- Customize your summary table output
+	- Simple visualization data, e.g. histogram
+	- Calculate statistics, e.g. correlation, collinearity
+2. Data transformation
+	- Handle missing data
+	- Reformat
+	- Factor your data (with `forcats`)
+	- Tricky data types: Datetime, String
+3. Analysis with `gtsummary`
+	- Demographic summary
+	- Statistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.
+4. Generate report with Quarto
+	- Citation (inline footnote and reference)

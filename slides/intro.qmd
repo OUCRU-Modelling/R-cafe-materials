@@ -650,13 +650,13 @@ To update your `renv.lock` after changing development environment, run the code 
 
 ## Packages {auto-animate="true"}
 
-{{< downloadthis data/linelisting_raw.xlsx dname="linelisting_raw" label="linelisting_raw.xlsx" type=light >}}
+{{< downloadthis ../data/linelist_raw.xlsx dname="linelist_raw" label="linelist_raw.xlsx" type=light >}}
 
 To use a package, you must first load it to R using `library()` function
 
 ```{r}
 library(readxl)
-data <- read_excel("data/linelist_raw.xlsx")
+data <- read_excel("../data/linelist_raw.xlsx")
 head(data)
 ```
 
@@ -826,7 +826,7 @@ Some useful import functions
 
 ```{r}
 library(rio)
-import("data/linelist_raw.xlsx", skip = 2)
+import("../data/linelist_raw.xlsx", skip = 2)
 ```
 
 ## Data export {auto-animate="true"}

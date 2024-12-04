@@ -1,758 +1,366 @@
 [
   {
-    "objectID": "slides/quarto/basic-quarto.html",
-    "href": "slides/quarto/basic-quarto.html",
-    "title": "Basic quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+    "objectID": "slides/intro_github.html#git-vs.-github",
+    "href": "slides/intro_github.html#git-vs.-github",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git  vs. GitHub ",
+    "text": "Git  vs. GitHub \n\n\nGit is a version control system, its purpose is to keep track of changes of files within a repository and provide the capability to revert to previous version\nGitHub is a cloud-based service to host Git repository, its main purpose is to store and/or share your Git project with collaborators"
   },
   {
-    "objectID": "slides/quarto/basic-quarto.html#quarto",
-    "href": "slides/quarto/basic-quarto.html#quarto",
-    "title": "Basic quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+    "objectID": "slides/intro_github.html#local-vs.-remote",
+    "href": "slides/intro_github.html#local-vs.-remote",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Local vs. Remote",
+    "text": "Local vs. Remote\n\n\nLocal means your physical computer. When we say local we are talking about what’s happening directly on your computer\nRemote can mean a computing cloud, a server, or someone else’s computer. When we say remote we are talking about what’s happening not on your computer, i.e. remotely."
   },
   {
-    "objectID": "slides/quarto/basic-quarto.html#bullets",
-    "href": "slides/quarto/basic-quarto.html#bullets",
-    "title": "Basic quarto",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+    "objectID": "slides/intro_github.html#git-and-github-1",
+    "href": "slides/intro_github.html#git-and-github-1",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\nGit is a software that works locally. You don’t need GitHub for Git to work. You can use Git as-is\nGitHub acts as a remote server for Git, so that you can share your project and collaborate with others remotely\nA repository is a place where Git tracks all of your changes to files and folders. GitHub stores a copy of your repository whenever you push to it"
   },
   {
-    "objectID": "slides/quarto/basic-quarto.html#code",
-    "href": "slides/quarto/basic-quarto.html#code",
-    "title": "Basic quarto",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2"
+    "objectID": "slides/intro_github.html#git-and-github-2",
+    "href": "slides/intro_github.html#git-and-github-2",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\n\n\n\n\nTerminologies\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
   },
   {
-    "objectID": "slides/quarto/index.html",
-    "href": "slides/quarto/index.html",
-    "title": "Test",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "objectID": "slides/intro_github.html#git-and-github-3",
+    "href": "slides/intro_github.html#git-and-github-3",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub"
   },
   {
-    "objectID": "slides/quarto/index.html#slide-1",
-    "href": "slides/quarto/index.html#slide-1",
-    "title": "Quarto",
-    "section": "Slide 1",
-    "text": "Slide 1\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "objectID": "slides/intro_github.html#git-and-github-4",
+    "href": "slides/intro_github.html#git-and-github-4",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\n\n\n\n\nImportant\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
   },
   {
-    "objectID": "slides/quarto/index.html#slide-2",
-    "href": "slides/quarto/index.html#slide-2",
-    "title": "Quarto",
-    "section": "Slide 2",
-    "text": "Slide 2\n\n\n\nindex.qmd\n---\ntitle: \"Basic quarto\"\nformat: html\n---\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see &lt;https://quarto.org/docs/presentations/&gt;.\n\n## Bullets\n\nWhen you click the **Render** button a document will be generated that includes:\n\n-   Content authored with markdown\n-   Output from executable code\n\n## Code\n\nWhen you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n```{r}\n1 + 1\n```\n\n\n\nindex.html"
+    "objectID": "slides/intro_github.html#github-desktop-1",
+    "href": "slides/intro_github.html#github-desktop-1",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "GitHub Desktop ",
+    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "objectID": "slides/intro_github.html#github-desktop-2",
+    "href": "slides/intro_github.html#github-desktop-2",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "GitHub Desktop ",
+    "text": "GitHub Desktop \n\n\nGitHub Desktop is a software that makes it easier for you to use Git. It is a software built by GitHub, again, separate from Git\nAdvantages:\n\nSimplifies everything and only provide commonly used functionalities of Git\nReduces the chances that you will make errors in using Git\nDirect integration to GitHub, makes it easier for authentication"
   },
   {
-    "objectID": "slides/quarto-intro/quarto-example.html",
-    "href": "slides/quarto-intro/quarto-example.html",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#quarto",
-    "href": "slides/quarto-intro/quarto-example.html#quarto",
-    "title": "Basic quarto",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#bullets",
-    "href": "slides/quarto-intro/quarto-example.html#bullets",
-    "title": "Basic quarto",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#code",
-    "href": "slides/quarto-intro/quarto-example.html#code",
-    "title": "Basic quarto",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html",
-    "href": "slides/quarto-intro/index.html",
-    "title": "Introduction to Quarto",
-    "section": "",
-    "text": "index.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#quarto",
-    "href": "slides/quarto-intro/index.html#quarto",
-    "title": "Introduction to Quarto",
-    "section": "Quarto",
-    "text": "Quarto\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Code Block Example: Simple Plot\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#yaml-header",
-    "href": "slides/quarto-intro/index.html#yaml-header",
-    "title": "Introduction to Quarto",
-    "section": "YAML header",
-    "text": "YAML header\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnavbar: false\n---\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#markdown-syntax",
-    "href": "slides/quarto-intro/index.html#markdown-syntax",
-    "title": "Introduction to Quarto",
-    "section": "Markdown syntax",
-    "text": "Markdown syntax"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#header-levels",
-    "href": "slides/quarto-intro/quarto-example.html#header-levels",
-    "title": "Hello, Quarto",
-    "section": "2 Header Levels",
-    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#inline-text-formatting",
-    "href": "slides/quarto-intro/quarto-example.html#inline-text-formatting",
-    "title": "Hello, Quarto",
-    "section": "3 Inline Text Formatting",
-    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#lists",
-    "href": "slides/quarto-intro/quarto-example.html#lists",
-    "title": "Hello, Quarto",
-    "section": "4 Lists",
-    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#code-block-example-simple-plot",
-    "href": "slides/quarto-intro/quarto-example.html#code-block-example-simple-plot",
-    "title": "Hello, Quarto",
-    "section": "5 Code Block Example: Simple Plot",
-    "text": "5 Code Block Example: Simple Plot\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#footnotes",
-    "href": "slides/quarto-intro/quarto-example.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
-    "href": "slides/quarto-intro/quarto-example.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#quarto-markdown-to-output",
-    "href": "slides/quarto-intro/index.html#quarto-markdown-to-output",
-    "title": "Introduction to Quarto",
-    "section": "Quarto markdown to output",
-    "text": "Quarto markdown to output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Code Block Example: Simple Plot\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#introduction-to-quarto",
-    "href": "slides/quarto-intro/index.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "Introduction to Quarto",
-    "text": "Introduction to Quarto\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#header-levels",
-    "href": "slides/quarto-intro/index.html#header-levels",
-    "title": "Hello, Quarto",
-    "section": "Header Levels",
-    "text": "Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\nNested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#inline-text-formatting",
-    "href": "slides/quarto-intro/index.html#inline-text-formatting",
-    "title": "Hello, Quarto",
-    "section": "Inline Text Formatting",
-    "text": "Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#lists",
-    "href": "slides/quarto-intro/index.html#lists",
-    "title": "Hello, Quarto",
-    "section": "Lists",
-    "text": "Lists\nQuarto supports both ordered and unordered lists.\nUnordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\nOrdered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#code-block-example-simple-plot",
-    "href": "slides/quarto-intro/index.html#code-block-example-simple-plot",
-    "title": "Hello, Quarto",
-    "section": "Code Block Example: Simple Plot",
-    "text": "Code Block Example: Simple Plot\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#footnotes",
-    "href": "slides/quarto-intro/index.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\nFootnotes can be added inline to provide additional information or references. Here’s an example of a footnote in Quarto: 1"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#html-output",
-    "href": "slides/quarto-intro/index.html#html-output",
-    "title": "Introduction to Quarto",
-    "section": "HTML output",
-    "text": "HTML output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png){fig-alt=\"OUCRU logo\"}\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#tables",
-    "href": "slides/quarto-intro/quarto-example.html#tables",
-    "title": "Hello, Quarto",
-    "section": "6 Tables",
-    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#links-and-images",
-    "href": "slides/quarto-intro/quarto-example.html#links-and-images",
-    "title": "Hello, Quarto",
-    "section": "5 Links and images",
-    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
-  },
-  {
-    "objectID": "slides/quarto-intro/quarto-example.html#code-block",
-    "href": "slides/quarto-intro/quarto-example.html#code-block",
-    "title": "Hello, Quarto",
-    "section": "7 Code block",
-    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
-  },
-  {
-    "objectID": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
-    "href": "slides/quarto-intro/index.html#quarto-markdown-vs-output",
-    "title": "Introduction to Quarto",
-    "section": "Quarto markdown vs output",
-    "text": "Quarto markdown vs output\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2024-10-28\nauthor:\n  - name: Thinh Ong\n    url: https://drthinhong.com/\n    orcid: 0000-0001-6772-9291\nformat: html\nnumber-sections: true\nnavbar: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](../oucru-logo.png)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+    "objectID": "slides/intro_github.html#setting-up-github-desktop",
+    "href": "slides/intro_github.html#setting-up-github-desktop",
+    "title": "Brief introduction to Git, GitHub, and GitHub Desktop",
+    "section": "Setting up GitHub Desktop ",
+    "text": "Setting up GitHub Desktop \n\n\n\n\n\n\nChecklist\n\n\n\nSign in to your account in GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\n\nRefer to the handouts for instructions"
   },
   {
     "objectID": "intro.html#about-the-course",
     "href": "intro.html#about-the-course",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "About the course",
     "text": "About the course\nThis course is a pilot phase of a future course “R-cafe: R for reproducible research”\nIn this pilot phase, the following topics will be covered\n\nFoundations of R - introduction to working with RStudio, R and Github\nTidyverse - introduce important tools for cleaning data in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
   },
   {
     "objectID": "intro.html#about-the-course-1",
     "href": "intro.html#about-the-course-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "About the course",
     "text": "About the course\nBy the end of this course, you will be able to conduct an end-to-end data analysis process on a dummy data and create a report using R and RMarkdown/Quarto\nTeaching team:\n\nHai Ho Bich (haihb@oucru.org)\nThinh Ong Phuc (thinhop@oucru.org)\nTuyen Huynh Ngoc (tuyenhn@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)"
   },
   {
-    "objectID": "intro.html#foundation-of-r",
-    "href": "intro.html#foundation-of-r",
-    "title": "Foundation of R",
-    "section": "Foundation of R",
-    "text": "Foundation of R\n\n\n\n\n\n\nOverview\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
+    "objectID": "slides/intro.html#overview",
+    "href": "slides/intro.html#overview",
+    "title": "Foundations of R",
+    "section": "Overview",
+    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
   },
   {
     "objectID": "intro.html#prerequisite",
     "href": "intro.html#prerequisite",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Prerequisite",
     "text": "Prerequisite\n\n\n\n\n\n\nBefore this lesson, you should have:\n\n\n\nR and RStudio installed\na Github account, Github Desktop installed"
   },
   {
     "objectID": "intro.html#r-and-rstudio",
     "href": "intro.html#r-and-rstudio",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "R and RStudio",
     "text": "R and RStudio\nR is a programming language for statistical computing and data visualization.\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
   },
   {
     "objectID": "intro.html#r-and-rstudio-1",
     "href": "intro.html#r-and-rstudio-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "R and RStudio",
     "text": "R and RStudio\nWhy use R?\n\n\nCost: R is free and open-source.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly."
   },
   {
     "objectID": "intro.html#create-project-in-rstudio",
     "href": "intro.html#create-project-in-rstudio",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Create Project in RStudio",
-    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick Existing Directory > Browse\nClick Browse and click on your project directory\nClick Create Project"
+    "text": "Create Project in RStudio\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick Existing Directory > Browse\nClick Browse and click on your project directory\nClick Create Project"
   },
   {
     "objectID": "intro.html#rstudio-interface",
     "href": "intro.html#rstudio-interface",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "RStudio interface",
     "text": "RStudio interface"
   },
   {
     "objectID": "intro.html#rstudio-interface-1",
     "href": "intro.html#rstudio-interface-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "RStudio interface",
     "text": "RStudio interface\n\nConsists of 4 main panes\n\nSource code: Show the content of a source code file\nConsole: Show the executed code lines and their output\nDefined variables: Show the currently defined variables\nFiles/Plot/Package/Help:\n\nFiles: for files nagivation\nPlots: show plot output\nPackages: show all the installed packages and packages being used (packages in use will have a ✓)\nHelp: show documentations for functions or packages"
   },
   {
     "objectID": "intro.html#project-structure",
     "href": "intro.html#project-structure",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Project structure",
     "text": "Project structure\nA minimal R project structure will have the following format\n└── my_project\n    ├── output\n    ├── data\n    │   ├── raw\n    │   └── processed\n    └── analysis.R \nWhere\n\ndata folder contains data to be analyzed\noutput stores code output (plot, figures, etc.)\nanalysis.R is the file containing R code. There can be multiple .R files under 1 project."
   },
   {
     "objectID": "intro.html#project-structure-1",
     "href": "intro.html#project-structure-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Project structure",
     "text": "Project structure\n\nNaming convention\nSome rules of thumb for naming files and folders:\n\nDo not use diacritics (e.g. Vietnamese accent marks).\nDo not use overly long names, keep it short but meaningful.\nDo not include special characters such as /, \\, &, ,, (, )... in names. It’s best to use only letters and numbers.\nAvoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., dataSoiHcm) or PascalCase (capitalize the first letter of all words, e.g., DataSoiHcm).\nDo not include spaces (\" \") in names. Instead, you can use camelCase, or replace spaces with - or _. For example, instead of naming a file data soi HCM 2023.xlsx, you could name it dataSoiHcm2023.xlsx, data-soi-hcm-2023.xlsx, or data_soi_hcm_2023.xlsx."
   },
   {
     "objectID": "intro.html#set-up-renv",
     "href": "intro.html#set-up-renv",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Set up renv",
-    "text": "Set up renv\nTo use renv for your project\n\nClick Tools > Project Options… > Environments\nTick Use renv with this project\n\nWhich creates renv.lock file and a folder renv in your project"
+    "text": "Set up renv\nTo use renv for your project\n\nClick Tools &gt; Project Options… &gt; Environments\nTick Use renv with this project\n\nWhich creates renv.lock file and a folder renv in your project"
   },
   {
     "objectID": "intro.html#why-use-renv",
     "href": "intro.html#why-use-renv",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Why use renv?",
     "text": "Why use renv?\n\n\nEncapsulate the development environment of your R projects (R version, packages used and their versions) in a file called renv.lock\nEnsure collaborators to replicate your R project’s development environment by simply running renv::restore()\nIsolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under\n\npath_to_project/renv/library/{R-version}/{device-architecture}/\n\n\n\n\n\n\n\n\nWhat are packages?\n\n\nAn R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process."
   },
   {
     "objectID": "intro.html#r-script",
     "href": "intro.html#r-script",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "R script",
-    "text": "R script\nTo create an R script in RStudio, in the menu section, click File > New File > R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
+    "text": "R script\nTo create an R script in RStudio, in the menu section, click File &gt; New File &gt; R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
   },
   {
     "objectID": "intro.html#r-script-1",
     "href": "intro.html#r-script-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "R script",
     "text": "R script\nExample: Some R codes and comment\n\n# this is a comment, and the following code will print Hello world in the console\nprint(\"Hello world\")\n\n[1] \"Hello world\"\n\n# you can also perform computations in R\n# In R, you can denote \n# - multiplication as *\n# - power as **\n# - devision as /\n# - e5 is the shorthand notation for *10**5\n12*10e5 + 313**2 - 11890/2\n\n[1] 12092024"
   },
   {
     "objectID": "intro.html#variable",
     "href": "intro.html#variable",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Variable",
-    "text": "Variable\n\nIn R, a variable is a name used to store an object, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.\nIn R, a variable can be created by assigning an object to it using <-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb <- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting <- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\""
+    "text": "Variable\n\nEverything you store in R - datasets, a vector of names, a total population number, even outputs such as graphs - are objects which can be assigned to a variable and can be referenced in later commands.\nIn R, a variable can be created by assigning an object to it using <-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb <- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting <- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\"\n\n# or vector of numbers/ characters\nnumb_list <- c(1,2,3,4,5)\nnumb_list\n\n[1] 1 2 3 4 5\n\nanother_numb_list <- c(1:5) \nanother_numb_list\n\n[1] 1 2 3 4 5\n\nchar_list <- c(\"R\", \"Python\", \"Java\", \"JavaScript\", \"C++\")\nchar_list\n\n[1] \"R\"          \"Python\"     \"Java\"       \"JavaScript\" \"C++\""
   },
   {
     "objectID": "intro.html#variable-1",
     "href": "intro.html#variable-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Variable",
-    "text": "Variable\nValue of a variable can also be overridden\n\nvar <- 5\nvar\n\n[1] 5\n\n# override variable\nvar <- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 3.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
+    "text": "Variable\nvalue of a variable can also be overridden\n\nvar <- 5\nvar\n\n[1] 5\n\n# override variable\nvar <- \"new value\"\nvar\n\n[1] \"new value\""
   },
   {
     "objectID": "intro.html#classes",
     "href": "intro.html#classes",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Classes",
     "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object. There are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
   },
   {
     "objectID": "intro.html#functions",
     "href": "intro.html#functions",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name <- function(){\n\n# function content\n\n}"
+    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name &lt;- function(){\n\n# function content\n\n}"
   },
   {
     "objectID": "intro.html#functions-1",
     "href": "intro.html#functions-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nExample: a simple function\n\nprint_hello <- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
+    "text": "Functions\nExample: a simple function\n\nprint_hello &lt;- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
   },
   {
     "objectID": "intro.html#functions-2",
     "href": "intro.html#functions-2",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nFunctions can also have arguments, which creates reusable code with dynamic inputs and outputs\nA function with arguments as followed. Note that you can include as many arguments as you want\n\nfunction_name <- function(argument_1, argument_2){\n  # function content\n  # values of argument can be accessed simply calling argument name\n}"
+    "text": "Functions\nFunctions can also have parameters, which creates reusable code with dynamic inputs and outputs\nA function with parameters as followed. Note that you can include as many parameters as you want\n\nfunction_name <- function(parameter_1, parameter_2){\n  # function content\n  # values of parameters can be accessed simply calling parameter name\n}"
   },
   {
     "objectID": "intro.html#functions-3",
     "href": "intro.html#functions-3",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\nExample: simple function\n\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\n# output can be assigned to a variable\noutput <- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
+    "text": "Functions\nExample: simple function\n\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "intro.html#functions-4",
     "href": "intro.html#functions-4",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Functions",
     "text": "Functions\n\n\n\n\n\n\nNote\n\n\nYou can provide value for each argument without specifying the name but it must follow the same order in the function definition.\nHowever, it is generally recommended to include the name of the argument for better readability. When argument name is specified, order no longer matter.\n\ncompute_power(5, 2) \n\n[1] 25\n\ncompute_power(2, 5) # expect different result (2^5)\n\n[1] 32\n\ncompute_power(base = 5, power = 2)\n\n[1] 25\n\ncompute_power(power = 2, base = 5) # expect same result\n\n[1] 25"
   },
   {
     "objectID": "intro.html#functions-5",
     "href": "intro.html#functions-5",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Functions",
-    "text": "Functions\n\nWhen to create a function?\nA general rule is when you start to copy-paste a sequence of code multiple times (usually >3), you should make a function for it\nThe in-class excercise (Section 6) will demonstrate one use case for function"
+    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code > Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "intro.html#scope",
     "href": "intro.html#scope",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Scope",
     "text": "Scope\nBrainstorming Read the code and guess the answer for 3 Questions below\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n# Q3: What will be the value for arg here?\narg"
   },
   {
     "objectID": "intro.html#scope-1",
     "href": "intro.html#scope-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Scope",
-    "text": "Scope\nOutput\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n\n[1] \"Value of variable example_var: 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Value of function argument: 60\"\n\n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\"\n\n# Q3: What will be the value for arg here?\narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found"
+    "text": "Scope\n\n# this is a global variable since it is not created in any local environment\nglobal_var <- 10\n\nexample_func <- function(param){\n  print(paste0(\"Global variable can be accessed within function \", global_var))\n  \n  # this is creating a local variable named global_var\n  # it will not affect global_var\n  global_var <- 20\n  \n  # note that parameters is also only accessible within the function\n  print(paste0(\"Function parameter \", param))\n}\n\nexample_func(60)\n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Function parameter 60\"\n\nprint(paste0(\"The global variable is not modified \", global_var))\n\n[1] \"The global variable is not modified 10\""
   },
   {
     "objectID": "intro.html#packages",
     "href": "intro.html#packages",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Packages",
-    "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages > Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code install.packages(\"package_name\")"
+    "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages > Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")"
   },
   {
     "objectID": "intro.html#packages-1",
     "href": "intro.html#packages-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Packages",
-    "text": "Packages\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")\n\n\n\n\n\n\n\nUpdate renv.lock\n\n\nTo update your renv.lock after changing development environment, run the code renv::snapshot()"
+    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"data/linelist_raw.xlsx\")\nhead(data)"
   },
   {
     "objectID": "intro.html#packages-2",
     "href": "intro.html#packages-2",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Packages",
     "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"data/linelist_raw.xlsx\")\nhead(data)"
   },
   {
     "objectID": "intro.html#git-and-github",
     "href": "intro.html#git-and-github",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Git and Github",
-    "text": "Git and Github\nGit is a distributed version control system, its purpose is to keep track of changes of files under a git repository and provide the capability to revert to previous version.\nGithub is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators.\nGithub Desktop is an application that allows users to push their changes from local changes to Github"
+    "text": "Git and Github\nGit is a distributed version control system, its purpose is to keep track of changes of files under a git repository and provide the capability to revert to previous version.\nGithub is a cloud-based service to host git repository, its main purpose is to store and/or share your project to collaborators."
   },
   {
     "objectID": "intro.html#set-up-version-control-in-rstudio",
     "href": "intro.html#set-up-version-control-in-rstudio",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Set up version control in RStudio",
     "text": "Set up version control in RStudio\nIn the menu\n\nClick Tools > Project Options > Git/SVN\nAt Version Control System, select Git in the drop down\nClick OK"
   },
   {
     "objectID": "intro.html#github-desktop",
     "href": "intro.html#github-desktop",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Github Desktop",
     "text": "Github Desktop\nTo be updated"
   },
   {
     "objectID": "intro.html#recap",
     "href": "intro.html#recap",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Recap",
     "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nHow to upload your project to Github using Github Desktop\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nPerform data import, export, overview in R"
   },
   {
     "objectID": "intro.html#exercise",
     "href": "intro.html#exercise",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Exercise",
-    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\nWrite a function for the given snippet of code\n\nUpload the code to github\nPeer reviews"
+    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\n\nUpload the code to github\nPeer reviews"
   },
   {
     "objectID": "intro.html#data-import",
     "href": "intro.html#data-import",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Data import",
     "text": "Data import\nSome useful import functions\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nread_excel()\nreadxl\nimport Excel (.xlsx, .xls) files\n\n\nread_csv()\nreadr\nimport .csv files\n\n\nreadRDS()\nbase\nimport .rds files\n\n\nload()\nbase\nimport .rda files"
   },
   {
     "objectID": "intro.html#data-import-1",
     "href": "intro.html#data-import-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Data import",
-    "text": "Data import\n\nrio - support data import for multiple data format\n\n\nlibrary(rio)\nimport(\"data/linelist_raw.xlsx\", skip = 2)"
+    "text": "Data import\n\nrio - support data import for multiple data format\n\nlibrary(rio)\nimport(\"data/linelist_raw.xlsx\", skip = 2)"
   },
   {
     "objectID": "intro.html#data-export",
     "href": "intro.html#data-export",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Data export",
     "text": "Data export\nSome useful export function in R\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nwrite_xlsx()\nwritexl\nexport data as Excel files\n\n\nwrite.csv()\nutils\nexport data as .csv files\n\n\nsaveRDS()\nbase\nexport data as .rds files\n\n\nsave()\nbase\nexport data .rda files"
   },
   {
     "objectID": "intro.html#clean-column-names",
     "href": "intro.html#clean-column-names",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Clean column names",
     "text": "Clean column names\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
   },
   {
     "objectID": "intro.html#data-summary",
     "href": "intro.html#data-summary",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Data summary",
     "text": "Data summary\nIn base R, function summary() is used to have the basic statistics of each variables in the dataset\n\nsummary(data)\n\n   case_id            generation   infection_date                  \n Length:6611        Min.   : 0.0   Min.   :2012-04-09 00:00:00.00  \n Class :character   1st Qu.:13.0   1st Qu.:2014-08-25 00:00:00.00  \n Mode  :character   Median :16.0   Median :2014-10-04 00:00:00.00  \n                    Mean   :16.6   Mean   :2014-08-17 15:30:00.42  \n                    3rd Qu.:20.0   3rd Qu.:2014-11-26 00:00:00.00  \n                    Max.   :37.0   Max.   :2015-04-27 00:00:00.00  \n                    NA's   :7      NA's   :2322                    \n  date_onset          hosp_date                     \n Length:6611        Min.   :2012-04-20 00:00:00.00  \n Class :character   1st Qu.:2014-09-07 00:00:00.00  \n Mode  :character   Median :2014-10-15 00:00:00.00  \n                    Mean   :2014-08-31 05:10:56.32  \n                    3rd Qu.:2014-12-10 00:00:00.00  \n                    Max.   :2015-04-30 00:00:00.00  \n                    NA's   :7                       \n date_of_outcome                   outcome             gender         \n Min.   :2012-05-14 00:00:00.0   Length:6611        Length:6611       \n 1st Qu.:2014-09-14 00:00:00.0   Class :character   Class :character  \n Median :2014-10-26 00:00:00.0   Mode  :character   Mode  :character  \n Mean   :2014-09-11 00:04:09.4                                        \n 3rd Qu.:2014-12-21 00:00:00.0                                        \n Max.   :2015-06-04 00:00:00.0                                        \n NA's   :1068                                                         \n   hospital              lon              lat          infector        \n Length:6611        Min.   :-13.27   Min.   :8.446   Length:6611       \n Class :character   1st Qu.:-13.25   1st Qu.:8.461   Class :character  \n Mode  :character   Median :-13.23   Median :8.469   Mode  :character  \n                    Mean   :-13.23   Mean   :8.470                     \n                    3rd Qu.:-13.22   3rd Qu.:8.480                     \n                    Max.   :-13.21   Max.   :8.492                     \n                    NA's   :7        NA's   :7                         \n    source              age              age_unit            row_num    \n Length:6611        Length:6611        Length:6611        Min.   :   1  \n Class :character   Class :character   Class :character   1st Qu.:1648  \n Mode  :character   Mode  :character   Mode  :character   Median :3241  \n                                                          Mean   :3241  \n                                                          3rd Qu.:4836  \n                                                          Max.   :6481  \n                                                                        \n     wt_kg            ht_cm          ct_blood        fever          \n Min.   :-11.00   Min.   :  4.0   Min.   :16.00   Length:6611       \n 1st Qu.: 41.00   1st Qu.: 91.0   1st Qu.:20.00   Class :character  \n Median : 54.00   Median :130.0   Median :22.00   Mode  :character  \n Mean   : 52.69   Mean   :125.2   Mean   :21.26                     \n 3rd Qu.: 66.00   3rd Qu.:159.0   3rd Qu.:22.00                     \n Max.   :111.00   Max.   :295.0   Max.   :26.00                     \n NA's   :7        NA's   :7       NA's   :7                         \n    chills             cough              aches              vomit          \n Length:6611        Length:6611        Length:6611        Length:6611       \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n                                                                            \n      temp      time_admission     merged_header          x28           \n Min.   :35.2   Length:6611        Length:6611        Length:6611       \n 1st Qu.:38.3   Class :character   Class :character   Class :character  \n Median :38.8   Mode  :character   Mode  :character   Mode  :character  \n Mean   :38.6                                                           \n 3rd Qu.:39.2                                                           \n Max.   :40.8                                                           \n NA's   :158"
   },
   {
     "objectID": "intro.html#data-summary-1",
     "href": "intro.html#data-summary-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Data summary",
     "text": "Data summary\n\nHowever, function skim() from package skimr can return a better table output with tables grouped by class of data\n\nlibrary(skimr)\nskim(data)\n\n\nData summary\n\n\nName\ndata\n\n\nNumber of rows\n6611\n\n\nNumber of columns\n28\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n17\n\n\nnumeric\n8\n\n\nPOSIXct\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\ncase_id\n137\n0.98\n6\n6\n0\n5888\n0\n\n\ndate_onset\n293\n0.96\n10\n10\n0\n580\n0\n\n\noutcome\n1500\n0.77\n5\n7\n0\n2\n0\n\n\ngender\n324\n0.95\n1\n1\n0\n2\n0\n\n\nhospital\n1512\n0.77\n5\n36\n0\n13\n0\n\n\ninfector\n2323\n0.65\n6\n6\n0\n2697\n0\n\n\nsource\n2323\n0.65\n5\n7\n0\n2\n0\n\n\nage\n107\n0.98\n1\n2\n0\n75\n0\n\n\nage_unit\n7\n1.00\n5\n6\n0\n2\n0\n\n\nfever\n258\n0.96\n2\n3\n0\n2\n0\n\n\nchills\n258\n0.96\n2\n3\n0\n2\n0\n\n\ncough\n258\n0.96\n2\n3\n0\n2\n0\n\n\naches\n258\n0.96\n2\n3\n0\n2\n0\n\n\nvomit\n258\n0.96\n2\n3\n0\n2\n0\n\n\ntime_admission\n844\n0.87\n5\n5\n0\n1091\n0\n\n\nmerged_header\n0\n1.00\n1\n1\n0\n1\n0\n\n\nx28\n0\n1.00\n1\n1\n0\n1\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ngeneration\n7\n1.00\n16.60\n5.71\n0.00\n13.00\n16.00\n20.00\n37.00\n▁▆▇▂▁\n\n\nlon\n7\n1.00\n-13.23\n0.02\n-13.27\n-13.25\n-13.23\n-13.22\n-13.21\n▅▃▃▅▇\n\n\nlat\n7\n1.00\n8.47\n0.01\n8.45\n8.46\n8.47\n8.48\n8.49\n▅▇▇▇▆\n\n\nrow_num\n0\n1.00\n3240.91\n1857.83\n1.00\n1647.50\n3241.00\n4836.50\n6481.00\n▇▇▇▇▇\n\n\nwt_kg\n7\n1.00\n52.69\n18.59\n-11.00\n41.00\n54.00\n66.00\n111.00\n▁▃▇▅▁\n\n\nht_cm\n7\n1.00\n125.25\n49.57\n4.00\n91.00\n130.00\n159.00\n295.00\n▂▅▇▂▁\n\n\nct_blood\n7\n1.00\n21.26\n1.67\n16.00\n20.00\n22.00\n22.00\n26.00\n▁▃▇▃▁\n\n\ntemp\n158\n0.98\n38.60\n0.95\n35.20\n38.30\n38.80\n39.20\n40.80\n▁▂▂▇▁\n\n\n\nVariable type: POSIXct\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ninfection_date\n2322\n0.65\n2012-04-09\n2015-04-27\n2014-10-04\n538\n\n\nhosp_date\n7\n1.00\n2012-04-20\n2015-04-30\n2014-10-15\n570\n\n\ndate_of_outcome\n1068\n0.84\n2012-05-14\n2015-06-04\n2014-10-26\n575"
   },
   {
     "objectID": "intro.html#clean-column-names-1",
     "href": "intro.html#clean-column-names-1",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Clean column names",
-    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
+    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
   },
   {
     "objectID": "intro.html#upcoming-lessons",
     "href": "intro.html#upcoming-lessons",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Upcoming lessons",
     "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
   },
   {
     "objectID": "intro.html#overview",
     "href": "intro.html#overview",
-    "title": "Foundations of R",
+    "title": "Foundation of R",
     "section": "Overview",
-    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nGithub Desktop\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R"
-  },
-  {
-    "objectID": "intro.html#functions-6",
-    "href": "intro.html#functions-6",
-    "title": "Foundations of R",
-    "section": "Functions",
-    "text": "Functions\n\nSome criteria for a good function\n\nModularity - each function should focus on one task (e.g. you can have a function to import data, another to model the data, another to visualize data but not a function doing all of those 3 tasks)\nConcise - the content of a function should not be too lengthy. If a function starts to have > 30 lines of code, it may be an indication that the modularity rule is violated.\nReadability - function’s name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented."
-  },
-  {
-    "objectID": "intro.html#functions-7",
-    "href": "intro.html#functions-7",
-    "title": "Foundations of R",
-    "section": "Functions",
-    "text": "Functions\n\nR is a functional programming language, which means you will encounter a lot of functions while coding in R.\nTo assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use ? or help()\n\n# look up documentation for `sqrt` function\n?sqrt\nhelp(sqrt)\n\nNote that the built-in documentation only helps when you already know which function you want to ask about. If you are looking for a function to achieve a specific task, it is better to start with search engine (Google, Bing, etc.), forums/Q&A sites (Github discussions, StackOverflow, etc.) or even ChatGPT."
-  },
-  {
-    "objectID": "intro.html#functions-8",
-    "href": "intro.html#functions-8",
-    "title": "Foundations of R",
-    "section": "Functions",
-    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code > Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
-  },
-  {
-    "objectID": "intro.html#functions-9",
-    "href": "intro.html#functions-9",
-    "title": "Foundations of R",
-    "section": "Functions",
-    "text": "Functions\n\nExercise: Create a function that allow users to choose compute basic statistics for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
-  },
-  {
-    "objectID": "intro.html#function-set.seed",
-    "href": "intro.html#function-set.seed",
-    "title": "Foundations of R",
-    "section": "Function set.seed()",
-    "text": "Function set.seed()\n\nset.seed() is essential to ensure reproducibility for processes that uses a random number generator\nA seed is an input value to generate the “random data”. By specifying the same seed, we can ensure the number generator always return the same result.\n\n# Set seed \nset.seed(123)\n\n# Generate sample data\nsample_data <- rnorm(10, mean = 50, sd = 10)  \nsample_data\n\n [1] 44.39524 47.69823 65.58708 50.70508 51.29288 67.15065 54.60916 37.34939\n [9] 43.13147 45.54338"
-  },
-  {
-    "objectID": "intro.html#vectorization",
-    "href": "intro.html#vectorization",
-    "title": "Foundations of R",
-    "section": "Vectorization",
-    "text": "Vectorization\n\nVectorization refers to performing an operation on all items of a vector at once instead of going through each item in a loop.\nCode using vectorized functions are also much cleaner than using for loop\nExample: Given a vector of numeric, and square all the odd numbers while divide even numbers by 2\n\nnon_vectorized <- function(numbs){\n  for (i in 1:length(numbs)){ # go through each number in numbs\n    if (numbs[i] %%2 == 0){\n      numbs[i] <- numbs[i]/2\n    }else{\n      numbs[i] <- numbs[i]**2\n    }\n  }\n  \n  numbs\n}\n\nvectorized <- function(numbs){\n  numbs <- ifelse(numbs %%2 == 0, numbs/2, numbs**2)\n  \n  numbs\n}"
-  },
-  {
-    "objectID": "intro.html#vectorization-1",
-    "href": "intro.html#vectorization-1",
-    "title": "Foundations of R",
-    "section": "Vectorization",
-    "text": "Vectorization\nExample: Compare run time between 2 approahces\n\n# non vectorization approach\nsystem.time(\n  non_vectorized(c(1:100000))\n)\n\n   user  system elapsed \n  0.012   0.000   0.013 \n\n# vectorized approach\nsystem.time(\n  vectorized(c(1:100000))\n)\n\n   user  system elapsed \n  0.002   0.001   0.003"
-  },
-  {
-    "objectID": "intro.html#simple-data-extraction",
-    "href": "intro.html#simple-data-extraction",
-    "title": "Foundations of R",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n\n\n  \n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n\n\n  \n\n\n# get all values in the 5th row\ndata[5, ]\n\n\n\n  \n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")] \n\n\n\n  \n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
-  },
-  {
-    "objectID": "intro.html#simple-data-extraction-1",
-    "href": "intro.html#simple-data-extraction-1",
-    "title": "Foundations of R",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n\n\n  \n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]"
-  },
-  {
-    "objectID": "intro.html#simple-data-extraction-2",
-    "href": "intro.html#simple-data-extraction-2",
-    "title": "Foundations of R",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n\n\n  \n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n\n\n  \n\n\n# get all values in the 5th row\ndata[5, ]"
-  },
-  {
-    "objectID": "intro.html#simple-data-extraction-3",
-    "href": "intro.html#simple-data-extraction-3",
-    "title": "Foundations of R",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n\n\n  \n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n\n\n  \n\n\n# get all values in the 5th row\ndata[5, ]\n\n\n\n  \n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
-  },
-  {
-    "objectID": "intro.html#simple-data-extraction-4",
-    "href": "intro.html#simple-data-extraction-4",
-    "title": "Foundations of R",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n\n\n  \n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n\n\n  \n\n\n# get all values in the 5th row\ndata[5, ]\n\n\n\n  \n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")] \n\n\n\n  \n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
-  },
-  {
-    "objectID": "intro.html#git-and-github-1",
-    "href": "intro.html#git-and-github-1",
-    "title": "Foundations of R",
-    "section": "Git and Github",
-    "text": "Git and Github\npush, pull, commit, branch"
-  },
-  {
-    "objectID": "intro.html#clone-r-cafe-repository",
-    "href": "intro.html#clone-r-cafe-repository",
-    "title": "Foundations of R",
-    "section": "Clone R-cafe repository",
-    "text": "Clone R-cafe repository\nR-cafe repo: https://github.com/OUCRU-Modelling/R-cafe"
-  },
-  {
-    "objectID": "intro.html#sec-file-naming",
-    "href": "intro.html#sec-file-naming",
-    "title": "Foundations of R",
-    "section": "Naming convention",
-    "text": "Naming convention\n\n\n\n\n\n\n\nNote\n\n\nSome rules of thumb for naming files and folders:\n\nDo not use diacritics (e.g. Vietnamese accent marks).\nDo not use overly long names, keep it short but meaningful.\nDo not include special characters such as /, \\, &, ,, (, )... in names. It’s best to use only letters and numbers.\nAvoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., dataSoiHcm) or PascalCase (capitalize the first letter of all words, e.g., DataSoiHcm).\nDo not include spaces (\" \") in names. Instead, you can use camelCase, or replace spaces with - or _. For example, instead of naming a file data soi HCM 2023.xlsx, you could name it dataSoiHcm2023.xlsx, data-soi-hcm-2023.xlsx, or data_soi_hcm_2023.xlsx."
-  },
-  {
-    "objectID": "intro.html#special-values",
-    "href": "intro.html#special-values",
-    "title": "Foundations of R",
-    "section": "Special values",
-    "text": "Special values\n\n\n\n\n\n\n\n\nValue\nDescription\n\n\n\n\nNA\nStands for Not Available. Indicates missing values.\n\n\nNULL\nIndicates undefined/abscence of value. (e.g. numb <- NULL indicates value for variable numb is undefined)\n\n\nNaN\nStands for Not a Number. Indicates unrepresentable number (e.g. result for 0/0 )\n\n\nInf/-Inf\nInfinity/Negative infinity"
-  },
-  {
-    "objectID": "intro.html#functions-10",
-    "href": "intro.html#functions-10",
-    "title": "Foundations of R",
-    "section": "Functions",
-    "text": "Functions\nExercise: Suggested solution\n\ncompute_stats <- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0"
-  },
-  {
-    "objectID": "intro.html#scope-2",
-    "href": "intro.html#scope-2",
-    "title": "Foundations of R",
-    "section": "Scope",
-    "text": "Scope"
-  },
-  {
-    "objectID": "intro.html#scope-3",
-    "href": "intro.html#scope-3",
-    "title": "Foundations of R",
-    "section": "Scope",
-    "text": "Scope\nExplanation\n\n# this is a global variable since it is not created in any local environment\nexample_var <- 10\n\nexample_func <- function(arg){\n  # global_var\n  print(paste0(\"Global variable can be accessed within function \", example_var))\n  \n  # this is creating a local variable named example_var\n  # it will not affect example_var\n  example_var <- 20\n  \n  # this example_var refers to the local variable example_var\n  print(paste0(\"Value of variable example_var after assignment\", example_var))\n  # note that argument is also only accessible within the function\n  print(paste0(\"Function argument \", arg))\n}\n\nexample_func(60) \n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Value of variable example_var after assignment20\"\n[1] \"Function argument 60\"\n\n# value for argument should only accessible within function \narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found\n\n# refers to global variabl example_var here \npaste0(\"Value of variable example_var \", example_var)\n\n[1] \"Value of variable example_var 10\""
-  },
-  {
-    "objectID": "intro.html#scope-4",
-    "href": "intro.html#scope-4",
-    "title": "Foundations of R",
-    "section": "Scope",
-    "text": "Scope\n\nScope refers to where variables can be accessed or modified.\nTo put simply\n\nBy default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is not recommended).\nglobal variables can be accessed anywhere within the session.\nlocal variables are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function."
-  },
-  {
-    "objectID": "intro.html#goal",
-    "href": "intro.html#goal",
-    "title": "Foundations of R",
-    "section": "Goal",
-    "text": "Goal\n\n\n\n\n\n\nNote\n\n\nIn this exercise, you will:\n\nCreate a function from the given code\nPush your code to Github\nComment code"
-  },
-  {
-    "objectID": "intro.html#create-your-first-function",
-    "href": "intro.html#create-your-first-function",
-    "title": "Foundations of R",
-    "section": "Create your first function",
-    "text": "Create your first function\nDataset Given a dataset with number of reported cases for 211 countries Where each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns :::\n\n\n\n\nhead(covid_cases)"
-  },
-  {
-    "objectID": "intro.html#functions-11",
-    "href": "intro.html#functions-11",
-    "title": "Foundations of R",
-    "section": "Functions",
-    "text": "Functions\n\nExercise: Create a function that allow users to choose compute basic statistics for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
-  },
-  {
-    "objectID": "intro.html#functions-12",
-    "href": "intro.html#functions-12",
-    "title": "Foundations of R",
-    "section": "Functions",
-    "text": "Functions\nExercise: Suggested solution\n\ncompute_stats <- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0"
-  },
-  {
-    "objectID": "intro.html#create-function",
-    "href": "intro.html#create-function",
-    "title": "Foundations of R",
-    "section": "Create function",
-    "text": "Create function\n\nDataset Given a dataset with number of reported cases for 211 countries Where each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns\n\n\n\n\nhead(covid_cases)"
-  },
-  {
-    "objectID": "intro.html#create-function-1",
-    "href": "intro.html#create-function-1",
-    "title": "Foundations of R",
-    "section": "Create function",
-    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country. Given the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
-  },
-  {
-    "objectID": "intro.html#suggested-solution",
-    "href": "intro.html#suggested-solution",
-    "title": "Foundations of R",
-    "section": "Suggested solution",
-    "text": "Suggested solution\nExercise: Suggested solution\n\n\nCode\ncompute_stats <- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")"
-  },
-  {
-    "objectID": "intro.html#packages-3",
-    "href": "intro.html#packages-3",
-    "title": "Foundations of R",
-    "section": "Packages",
-    "text": "Packages\nSimilar to functions, you can also look up documentation for packages using ? or help()\n\n# --- look up documentation for package ---\n?readxl\nhelp(readxl)\n\n# --- look up documentation for function of the package ---\n?readxl::read_excel\nhelp(read_excel, package= readxl)"
-  },
-  {
-    "objectID": "intro.html#push-your-code-to-github",
-    "href": "intro.html#push-your-code-to-github",
-    "title": "Foundations of R",
-    "section": "Push your code to Github",
-    "text": "Push your code to Github\nOnce you"
-  },
-  {
-    "objectID": "intro.html#code-file",
-    "href": "intro.html#code-file",
-    "title": "Foundations of R",
-    "section": "Code file",
-    "text": "Code file\nIn your R project, navigate to the template code file day1/inclass.R.\nThen run all the code in the file, this should create a dataset covid_cases.\nYou will also write the solution for your in-class exercise here."
-  },
-  {
-    "objectID": "intro.html#navigating-github-desktop-github",
-    "href": "intro.html#navigating-github-desktop-github",
-    "title": "Foundations of R",
-    "section": "Navigating Github Desktop & Github",
-    "text": "Navigating Github Desktop & Github\nOnce you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)\n\n\n\n\n\n\nNote\n\n\n\nPush your code to Github using Github Desktop\nCreate an issue on Github once you have had your code on Github\nCreate a comment on Github for at least one other participant’s code"
+    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R\nGithub"
   }
 ]
