@@ -1,5 +1,5 @@
 ---
-title: "R café: day 1"
+title: "Getting started with R and Git"
 # title-slide-attributes:
 #   data-background-image: imgs/intro_github/git-suite.jpeg
 #   data-background-size: contain
@@ -15,13 +15,13 @@ format:
 
 ## About the course {auto-animate="true"}
 
-This course is a pilot phase of a future course "***R-cafe:** R for reproducible research*"
+Welcome to "***R-cafe:** R for reproducible research*"
 
-In this pilot phase, the following topics will be covered
+In this course, the following topics will be covered
 
--   **Foundations of R** - introduction to working with RStudio, R and Github
+-   **Foundations of R** - Introduction to working with RStudio, R and Github
 
--   **Tidyverse** - introduce important tools for cleaning data in R
+-   **Tidyverse** - Introduce important tools for data science in R
 
 -   **Markdown/Quarto and \`gtsummary\`** - introduce gtsummary for analysis and creating report with Markdown/Quarto
 
@@ -52,7 +52,7 @@ Teaching team:
 ## Overview
 
 ::: callout-note
--   Github Desktop
+-   Brief introduction to Git, GitHub, and GitHub Desktop
 
 -   Intro to RStudio
 
