@@ -11,9 +11,9 @@ format: html
 - Take home exercises given between face-to-face sessions
 
 ## R Café helpful shortcuts
-- [Teams Tech support channel](https://teams.microsoft.com/l/channel/19%3AGyu0GBNtFFuDmjrVqXsrTYScHLPgP5bpTDLOoaJEeaE1%40thread.tacv2/Tech%20support?groupId=6abc7e7a-0132-4ec2-afa7-393d89c247d8&tenantId=22514748-bbda-4cb8-9795-bfa3fbeec018&ngc=true&allowXTenantAccess=true)
-- [Main GitHub repository](https://github.com/OUCRU-Modelling/R-cafe)
-- [Theoretical slides](https://oucru-modelling.github.io/R-cafe-materials/)
+- [Teams Tech support channel](https://teams.microsoft.com/l/channel/19%3AGyu0GBNtFFuDmjrVqXsrTYScHLPgP5bpTDLOoaJEeaE1%40thread.tacv2/Tech%20support?groupId=6abc7e7a-0132-4ec2-afa7-393d89c247d8&tenantId=22514748-bbda-4cb8-9795-bfa3fbeec018&ngc=true&allowXTenantAccess=true){target="_blank"}
+- [Main GitHub repository](https://github.com/OUCRU-Modelling/R-cafe){target="_blank"}
+- [Theoretical slides](https://oucru-modelling.github.io/R-cafe-materials/){target="_blank"}
 - Current instructor roster:
 	- Thinh Ong Phuc (thinhop\@oucru.org)
 	- Anh Phan Truong Quynh (anhptq\@oucru.org)
@@ -25,7 +25,7 @@ format: html
 1. [TBD (day 1)](slides/intro.qmd){target="_blank"}
 	- **Part 1**: Setup (45') - *Tuyen & QA*
 		- What is R Café & Agenda (5')
-		- [Brief introduction to Git, GitHub, and GitHub Desktop](slides/intro_github.qmd) (20')
+		- [Brief introduction to Git, GitHub, and GitHub Desktop](slides/intro_github.qmd){target="_blank"} (20')
 			- Goal: Publish your own branch on R Café's GitHub repository
 		- Rstudio (20')
 			- Goal: Create RStudio project

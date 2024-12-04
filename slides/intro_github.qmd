@@ -9,7 +9,7 @@ format:
     df-print: paged
     slide-number: true
     logo: "imgs/oucru-logo.png"
-css: /styles.css
+css: ../styles.css
 ---
 
 # Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
