@@ -1,0 +1,137 @@
+---
+title: "Commit, push and create issue"
+author: 
+- name: Tran Thai Hung
+  affiliations:
+    - OUCRU biostatistics
+date: 'last-modified'
+date-format: '[Last version:] MMMM DD, YYYY'
+format: 
+  pdf: 
+    pdf-engine: pdflatex
+    colorlinks: true
+    link-citations: true
+    header-includes:
+      - \usepackage{float}
+      - \floatplacement{table}{H}
+  html: default
+  docx: 
+    csl: HandsOn3.csl
+toc: TRUE
+lof: TRUE
+lot: FALSE
+number-sections: TRUE
+
+thanks: "Please do not circulate."
+abstract: "In this example, we will create a new simple script file in day1 folder of our project then commit and push it to github. After that we will create an issue related to this script and resolve the issue"
+keywords: "commit, push, issue, git, github"
+---
+
+# Steps to commit and push to Github using Github desktop
+## **Working on local repository**
+### **Create a new R script**
+   - Open Rstudio
+   - In the menu, `File` -> `New File` -> `R script`
+   
+![Create New R script](figure\fig_1.png)
+   
+
+### **Write down your work in script and save**.
+   - Type your work in `Source code` section -> click on `save` icon or `Ctrl + S`
+
+![Write down your work](figure\fig_2.png)
+
+
+### **Save in local repository directory and name the file**  
+   - Click `Browse` and select your project directory
+   - Name your file in `File name` -> click `save`
+   
+![Select the directory](figure\fig_3.png)
+
+## **Commit and push your work**
+### **Commit your work**
+   - Open Github desktop. 
+   - Tick files which you would like to commit in the `Changes` section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.
+   - Fill in the summary of your commit in the `Summary required`. Add more details in the `Description`.
+   - Click on `Commit to [your branch]`. Always check whether you commit to correct branch.
+   
+![Select files, add summary, description](figure\fig_4.png)
+
+### **Push to your branch on Github**
+  - Double check if your `Current branch` is correct. Now, click on `Push origin` to push to your branch. 
+   
+![Push to your branch](figure\fig_4_1.png)
+
+### **Check your changes on your Github branch**
+   1. Select your branch on Github
+   2. You will see a notification of your push from local repository
+   3. Show you how many commit you ahead of or behind main
+   4. You can compare your branch with other branch or main and make pull request. You could ignore this for now.
+   5. Click on day1 to view our example_commit_push_issue.R script
+
+![View our push on Github branch](figure\fig_5.png) 
+
+   6. View our example_commit_push_issue.R
+   
+![View our script on Github branch](figure\fig_6.png) 
+
+
+# **Steps to create an issue and resolve issues on Github**
+## **Create an issue on Github**
+### **Select the reference in new issue**
+   - Click on the number of the line in the code
+   - Click `...` -> select `Reference in new issue`
+
+![Select the place where you want to refer to](figure\fig_7.png) 
+
+### **Put more information to your issue and submit issue**
+   - Fill in the title in `Add a title`
+   - The link to the error place will automatically appear in `Add a description`. You might write more detail about the errors in this section as below
+   - Select the person you would like assign this issue by select `Assignees` or quickly assign it to yourself by `assign yourself`
+   - Classify the issue by `Labels`
+   - Click `Submit new issue`
+
+![Add information and submit issue](figure\fig_7_1.png) 
+
+### **View the open issues**
+   - Select `Issues` -> `Open`. You might see the one who is responsible for this issue in `Assignee` tab.
+   - Select the issue you would like to view `Typo in example_push_commit_issue.R file`.
+
+![View the open issue](figure\fig_8.png) 
+
+### **View the detail of an issue**
+   - You might see the title of the issue, the reference links to the errors, and the detail of the issue.
+   - Navigate the place of `error` by clicking the reference link
+   
+![View the details of issue](figure\fig_9.png) 
+
+## **Resolve the issue**
+### **Clone the branch you would like to fix the issue**
+   - Refer to Steps to Clone a Repository on Github in Github note 1
+   
+### **Fix the code locally**
+   - Open the example_push_commit_issue.R file  
+   - Make correction to the code and make a comment. 
+   
+![Resolve issue in local cloned repository](figure\fig_10.png) 
+
+### **Commit the corrections using Github desktop**
+   - Open the Github desktop. You will see the changes now. The red lines are old version. The green lines are current version.
+   - Commit and push the corrections
+   
+![Commit and push the correction](figure\fig_11.png)    
+
+### **Check the branch again**
+
+![View the code on github](figure\fig_12.png)  
+
+### **Comment and close the issue**
+   - Go back to the issue. Select `Issues` -> `Open` -> `Typo in example_push_commit_issue.R file`
+   - Add comments in `Add a comment` -> Click on `Close with comment`. (If the issue has not been resolved, we can click `Comment` to discuss with other collaborators)
+
+![Close and comment issue on Github](figure\fig_13.png)  
+
+### **View closed issue**
+   - We can always view the old closed issue by clicking `Issues` -> `Closed`
+
+![View the closed issues on github](figure\fig_14.png)  
