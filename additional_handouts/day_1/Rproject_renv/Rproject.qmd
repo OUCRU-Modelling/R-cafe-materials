@@ -3,7 +3,7 @@ title: "Rproject setup"
 author: 
 - name: Tran Thai Hung
   affiliations:
-    - OUCRU biostistics
+    - OUCRU biostatistics
 date: 'last-modified'
 date-format: '[Last version:] MMMM DD, YYYY'
 format: 
