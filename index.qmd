@@ -1,5 +1,5 @@
 ---
-title: "Welcome to R Café - Pilot phase"
+title: "Welcome to R Café"
 format: html
 ---
 
