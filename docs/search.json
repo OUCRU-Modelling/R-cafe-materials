@@ -147,6 +147,41 @@
     "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nHandle missing data\nReformat\nFactor your data (with forcats)\nTricky data types: Datetime, String\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
   },
   {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory\n\n\n\n\n\n\n\n\n\nOpen Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "title": "Commit, push and create issue",
+    "section": "2.1 Create an issue on Github",
+    "text": "2.1 Create an issue on Github\n\n2.1.1 Select the reference in new issue\n\nClick on the number of the line in the code\nClick ... -&gt; select Reference in new issue\n\n\n\n\nSelect the place where you want to refer to\n\n\n\n\n2.1.2 Put more information to your issue and submit issue\n\nFill in the title in Add a title\nThe link to the error place will automatically appear in Add a description. You might write more detail about the errors in this section as below\nSelect the person you would like assign this issue by select Assignees or quickly assign it to yourself by assign yourself\nClassify the issue by Labels\nClick Submit new issue\n\n\n\n\nAdd information and submit issue\n\n\n\n\n2.1.3 View the open issues\n\nSelect Issues -&gt; Open. You might see the one who is responsible for this issue in Assignee tab.\nSelect the issue you would like to view Typo in example_push_commit_issue.R file.\n\n\n\n\nView the open issue\n\n\n\n\n2.1.4 View the detail of an issue\n\nYou might see the title of the issue, the reference links to the errors, and the detail of the issue.\nNavigate the place of error by clicking the reference link\n\n\n\n\nView the details of issue"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "title": "Commit, push and create issue",
+    "section": "2.2 Resolve the issue",
+    "text": "2.2 Resolve the issue\n\n2.2.1 Clone the branch you would like to fix the issue\n\nRefer to Steps to Clone a Repository on Github in Github note 1\n\n\n\n2.2.2 Fix the code locally\n\nOpen the example_push_commit_issue.R file\n\nMake correction to the code and make a comment.\n\n\n\n\nResolve issue in local cloned repository\n\n\n\n\n2.2.3 Commit the corrections using Github desktop\n\nOpen the Github desktop. You will see the changes now. The red lines are old version. The green lines are current version.\nCommit and push the corrections\n\n\n\n\nCommit and push the correction\n\n\n\n\n2.2.4 Check the branch again\n\n\n\nView the code on github\n\n\n\n\n2.2.5 Comment and close the issue\n\nGo back to the issue. Select Issues -&gt; Open -&gt; Typo in example_push_commit_issue.R file\nAdd comments in Add a comment -&gt; Click on Close with comment. (If the issue has not been resolved, we can click Comment to discuss with other collaborators)\n\n\n\n\nClose and comment issue on Github\n\n\n\n\n2.2.6 View closed issue\n\nWe can always view the old closed issue by clicking Issues -&gt; Closed\n\n\n\n\nView the closed issues on github"
+  },
+  {
     "objectID": "additional_handouts/day_1/outline/outline.html",
     "href": "additional_handouts/day_1/outline/outline.html",
     "title": "Outline day 1",
