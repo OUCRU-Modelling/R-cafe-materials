@@ -1,0 +1,138 @@
+---
+title: "R programming with `tidyverse`"
+format: 
+  revealjs:
+    df-print: paged
+    slide-number: true
+    logo: "imgs/oucru-logo.png"
+---
+
+## Session overview {.scrollable}
+
+What will be covered:
+
+- **Stepping into the `tidyverse`**
+    - What is `tidyverse`?
+    - Why should we use it?
+    - How do we use it?
+- **`tidyverse` style vs. base R style**
+    - Vectors and vectorisation
+    - Vectorisation with `map()` vs. `*apply()`
+    - Piping with `%>%` and `|>`
+- **`ggplot2` for data visualization**
+    - Grammar of graphics
+    - The typical flow
+- **Whole game**
+
+
+# Stepping into the `tidyverse`
+
+## What is `tidyverse`?
+
+- `tidyverse` is a **collection of R packages** built for data science
+- All packages shared the same principle of **tidy data** (this will be very apparent later on!)
+- Consists of 8 core packages, and a dozen more packages for various specific purposes
+
+## What is `tidyverse`?
+
+![](imgs/tidyverse/tidy-packages.png)
+
+
+## Why `tidyverse`? {.scrollable}
+
+- Every function under `tidyverse` **shares a consistent structure and pattern**. Making it very easy to implement and edit your R code
+- *In general*, your R code *may* look cleaner and easier to follow, compared to base R
+- You just need to install everything once, instead of different packages for different things
+- With piping, you eliminate the need of intermediary objects and nesting of functions (examples later)
+
+::: callout-note
+*This is all subjective and your experience with `tidyverse` may varies*
+:::
+
+## Why `tidyverse`?
+
+::: callout-important
+### Takeaway points
+
+1. `tidyverse` is not a replacement of base R. **It is just a collection of R packages**
+2. You don't have to use `tidyverse` when using R
+3. `tidyverse` has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster
+4. Understanding the principles and goals of `tidyverse` will better your knowledge on good coding practices and R
+:::
+
+## How to use `tidyverse`
+
+Start by installing it!
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+::: callout-note
+*Most* packages will be installed. You might need some more packages, but generally it should cover most of your needs.
+:::
+
+
+## How to use `tidyverse`
+
+Then load it into your R environment!
+
+```{r}
+library(tidyverse)
+```
+
+:::callout-tip
+You can load specific packages like `library(dplyr)`, but it doesn't matter in most cases.
+:::
+
+## How to use `tidyverse`
+
+Run this example code below to make sure everything is running normally
+
+```{r}
+#| echo: true
+#| output-location: slide
+diamonds %>%
+  group_by(clarity) %>%
+  summarise(mean_price = mean(price)) %>%
+  ungroup() %>%
+  ggplot(aes(x = clarity, y = mean_price)) +
+  geom_col()
+```
+
+::: callout-tip
+### Free R tip
+type `?function_name` for help on how to use a function **and see which package is it coming from**
+:::
+
+## How to use `tidyverse`
+::: callout-tip
+### Free R tip
+add "tidyverse" into your Google searches when looking for R issues
+:::
+
+# `tidyverse` style vs. base R style
+
+## Vectors and vectorisation
+
+### What is a vector?
+
+- A vector is a **container of elements of similar classes**
+  - For example, in math, $[1 2 3]$ is a vector of 3 integers
+- Most things in R are vectors
+  - For example, `c(1, 2, 3)` is a vector of 3 `numeric` elements, 
+  - `c("ab", "cd", "ef")` is a vector of 3 `character` elements
+
+### For-loops
+
+- In programming, we typically use for-loops to iterate through elements within a vector
+
+
+## Vectorisation with `map()` vs. `*apply()`
+
+- Recall what is "vectorisation"
+
+## Vectorisation with `map()` vs. `*apply()`
+
+Vectorisation vs. looping

@@ -9,7 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - href: slides/intro.qmd
-        text: Foundations of R
+        text: Getting started with R and Git
       - href: slides/tidyverse.qmd
         text: R programming with tidyverse
 

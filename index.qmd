@@ -1,5 +1,5 @@
 ---
-title: "Welcome to R Café - Pilot phase"
+title: "Welcome to R Café"
 format: html
 ---
 
@@ -25,7 +25,7 @@ format: html
 1. [Getting started with R and Git (day 1)](slides/intro.qmd){target="_blank"}
 	- **Part 1**: Setup (45') - *Tuyen & QA*
 		- What is R Café & Agenda (5')
-		- [Brief introduction to Git, GitHub, and GitHub Desktop](slides/intro_github.qmd){target="_blank"} (20')
+		- Brief introduction to Git, GitHub, and GitHub Desktop
 			- Goal: Publish your own branch on R Café's GitHub repository
 		- Rstudio (20')
 			- Goal: Create RStudio project

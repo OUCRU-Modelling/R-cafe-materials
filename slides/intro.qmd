@@ -1,5 +1,5 @@
 ---
-title: "Getting started with R and Git"
+title: "Welcome to R Café"
 # title-slide-attributes:
 #   data-background-image: imgs/intro_github/git-suite.jpeg
 #   data-background-size: contain
@@ -19,17 +19,15 @@ Welcome to "***R-cafe:** R for reproducible research*"
 
 In this course, the following topics will be covered
 
--   **Foundations of R** - Introduction to working with RStudio, R and Github
-
--   **Tidyverse** - Introduce important tools for data science in R
-
--   **Markdown/Quarto and \`gtsummary\`** - introduce gtsummary for analysis and creating report with Markdown/Quarto
+1. **Getting started with R and Git** - Introduction to working with RStudio, R and Github
+2. **R programming with `tidyverse`** - Introduce important tools for data science in R
+3. **Markdown/Quarto and \`gtsummary\`** - introduce gtsummary for analysis and creating report with Markdown/Quarto
 
 ## About the course {auto-animate="true"}
 
-By the end of this course, you will be able to conduct an end-to-end data analysis process on a dummy data and create a report using R and RMarkdown/Quarto
+By the end of this course, you will be able to conduct an end-to-end data analysis process on a practical dummy dataset, and create a report using R and RMarkdown/Quarto
 
-Teaching team:
+**Teaching team**:
 
 -   Hai Ho Bich (haihb\@oucru.org)
 -   Thinh Ong Phuc (thinhop\@oucru.org)
@@ -39,13 +37,12 @@ Teaching team:
 
 # Set up
 
-## Prerequisite
+## Prerequisites
 
 ::: callout-tip
 ## Before this lesson, you should have:
 
 -   R and RStudio installed
-
 -   a Github account, Github Desktop installed
 :::
 
@@ -53,11 +50,8 @@ Teaching team:
 
 ::: callout-note
 -   Brief introduction to Git, GitHub, and GitHub Desktop
-
 -   Intro to RStudio
-
 -   R project (create R project, set up renv)
-
 -   Intro to R
 :::
 
@@ -105,6 +99,8 @@ Teaching team:
 ## Git ![](imgs/intro_github/git-icon.png){.inline-img} and GitHub ![](imgs/intro_github/github-icon.png){.inline-img}
 
 ::: callout-important
+### Takeaway points
+
 - **Git is a standalone software**, which works fully locally.  You can use Git without GitHub
 - **GitHub is a platform** for collaboration. It uses Git as the [version control system]{.underline}
 :::

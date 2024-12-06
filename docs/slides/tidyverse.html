@@ -411,6 +411,7 @@
 </ul></li>
 <li><strong><code>tidyverse</code> style vs.&nbsp;base R style</strong>
 <ul>
+<li>Vectors and vectorisation</li>
 <li>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></li>
 <li>Piping with <code>%&gt;%</code> and <code>|&gt;</code></li>
 </ul></li>
@@ -432,7 +433,7 @@
 <ul>
 <li><code>tidyverse</code> is a <strong>collection of R packages</strong> built for data science</li>
 <li>All packages shared the same principle of <strong>tidy data</strong> (this will be very apparent later on!)</li>
-<li>Consists of 8 core packages, and a dozen more packages for specific purposes</li>
+<li>Consists of 8 core packages, and a dozen more packages for various specific purposes</li>
 </ul>
 </section>
 <section id="what-is-tidyverse-1" class="slide level2">
@@ -442,8 +443,8 @@
 <section id="why-tidyverse" class="slide level2 scrollable">
 <h2>Why <code>tidyverse</code>?</h2>
 <ul>
-<li>Every function under <code>tidyverse</code> <strong>shares consistent structure and pattern</strong>. Making it very easy to implement and edit your R code</li>
-<li><em>In general</em>, your R code <em>might</em> look cleaner and easier to follow, compared to base R</li>
+<li>Every function under <code>tidyverse</code> <strong>shares a consistent structure and pattern</strong>. Making it very easy to implement and edit your R code</li>
+<li><em>In general</em>, your R code <em>may</em> look cleaner and easier to follow, compared to base R</li>
 <li>You just need to install everything once, instead of different packages for different things</li>
 <li>With piping, you eliminate the need of intermediary objects and nesting of functions (examples later)</li>
 </ul>
@@ -469,13 +470,13 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>Takeaway points</strong></p>
 </div>
 <div class="callout-content">
 <ol type="1">
-<li><code>tidyverse</code> is not a replacement of base R. <strong>It is a collection of packages</strong></li>
+<li><code>tidyverse</code> is not a replacement of base R. <strong>It is just a collection of R packages</strong></li>
 <li>You don’t have to use <code>tidyverse</code> when using R</li>
-<li><code>tidyverse</code> has most functions for data science needs. Though, there are times base R will be needed, and might be better</li>
+<li><code>tidyverse</code> has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster</li>
 <li>Understanding the principles and goals of <code>tidyverse</code> will better your knowledge on good coding practices and R</li>
 </ol>
 </div>
@@ -524,7 +525,7 @@
 </section>
 <section id="how-to-use-tidyverse-2" class="slide level2">
 <h2>How to use <code>tidyverse</code></h2>
-<p>Run this example code below to make sure everything is running ok</p>
+<p>Run this example code below to make sure everything is running normally</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>diamonds <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">group_by</span>(clarity) <span class="sc">%&gt;%</span></span>
@@ -540,10 +541,10 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Free R tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Free R tip</strong>: type <code>?function_name</code> for help on how to use a function <strong>and see which package is it coming from</strong></p>
+<p>type <code>?function_name</code> for help on how to use a function <strong>and see which package is it coming from</strong></p>
 </div>
 </div>
 </div>
@@ -564,10 +565,10 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Free R tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Free R tip</strong>: add “tidyverse” into your Google searches when looking for R issues</p>
+<p>add “tidyverse” into your Google searches when looking for R issues</p>
 </div>
 </div>
 </div>
@@ -577,11 +578,29 @@
 <h1><code>tidyverse</code> style vs.&nbsp;base R style</h1>
 
 </section>
+<section id="vectors-and-vectorisation" class="slide level2">
+<h2>Vectors and vectorisation</h2>
+<h3 id="what-is-a-vector">What is a vector?</h3>
+<ul>
+<li>A vector is a <strong>container of elements of similar classes</strong>
+<ul>
+<li>For example, in math, <span class="math inline">\([1 2 3]\)</span> is a vector of 3 integers</li>
+</ul></li>
+<li>Most things in R are vectors
+<ul>
+<li>For example, <code>c(1, 2, 3)</code> is a vector of 3 <code>numeric</code> elements,</li>
+<li><code>c("ab", "cd", "ef")</code> is a vector of 3 <code>character</code> elements</li>
+</ul></li>
+</ul>
+<h3 id="for-loops">For-loops</h3>
+<ul>
+<li>In programming, we typically use for-loops to iterate through elements within a vector</li>
+</ul>
+</section>
 <section id="vectorisation-with-map-vs.-apply" class="slide level2">
 <h2>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></h2>
 <ul>
 <li>Recall what is “vectorisation”</li>
-<li><strong>Most things in R are vectors</strong></li>
 </ul>
 </section>
 <section id="vectorisation-with-map-vs.-apply-1" class="slide level2">
