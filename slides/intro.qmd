@@ -142,11 +142,16 @@ We strongly recommend **to not use Git through its CLI**. It is not fun and **yo
 
 Refer to the handouts for instructions
 
+# R and RStudio
 ## R and RStudio {auto-animate="true"}
 
+::: fragment
 **R** is a programming language for statistical computing and data visualization.
+:::
 
+::: fragment
 **RStudio** is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE).
+:::
 
 ## R and RStudio {auto-animate="true"}
 
@@ -706,6 +711,10 @@ To put simply
 ## Packages {auto-animate="true"}
 
 ::: medium-text-size
+::: fragment
+Packages are shareable bundle of functions (and sometimes include built-in dataset). We will frequently use available packages to assist us during coding process.
+:::
+::: fragment
 2 options to install an R packages
 
 -   Via RStudio interface.
@@ -719,6 +728,8 @@ To put simply
     -   Click install
 
 -   Using R code `install.packages("package_name")`
+:::
+
 :::
 
 ## Packages {auto-animate="true"}
@@ -736,8 +747,6 @@ To update your `renv.lock` after changing development environment, run the code 
 :::
 
 ## Packages {auto-animate="true"}
-
-{{< downloadthis ../data/linelist_raw.xlsx dname="linelist_raw" label="linelist_raw.xlsx" type=light >}}
 
 To use a package, you must first load it to R using `library()` function
 
@@ -913,7 +922,7 @@ Some useful import functions
 
 ```{r}
 library(rio)
-import("../data/linelist_raw.xlsx", skip = 2)
+data <- import("../data/linelist_raw.xlsx")
 ```
 
 ## Data export {auto-animate="true"}

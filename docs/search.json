@@ -340,7 +340,7 @@
     "href": "slides/intro.html#github-desktop-1",
     "title": "Welcome to R Café",
     "section": "GitHub Desktop ",
-    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
+    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nDanger\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
   },
   {
     "objectID": "slides/intro.html#github-desktop-2",
@@ -361,21 +361,21 @@
     "href": "slides/intro.html#r-and-rstudio",
     "title": "Welcome to R Café",
     "section": "R and RStudio",
-    "text": "R and RStudio\nR is a programming language for statistical computing and data visualization.\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
+    "text": "R and RStudio\n\nR is a programming language for statistical computing and data visualization.\n\n\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
   },
   {
     "objectID": "slides/intro.html#r-and-rstudio-1",
     "href": "slides/intro.html#r-and-rstudio-1",
     "title": "Welcome to R Café",
     "section": "R and RStudio",
-    "text": "R and RStudio\nWhy use R?\n\n\nCost: R is free and open-source.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly."
+    "text": "R and RStudio\n\nR is a programming language for statistical computing and data visualization.\n\n\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
   },
   {
     "objectID": "slides/intro.html#create-project-in-rstudio",
     "href": "slides/intro.html#create-project-in-rstudio",
     "title": "Welcome to R Café",
     "section": "Create Project in RStudio",
-    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File &gt; New Project…\nClick Existing Directory &gt; Browse\nClick Browse and click on your project directory\nClick Create Project"
+    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick Existing Directory > Browse\nClick Browse and click on your project directory\nClick Create Project"
   },
   {
     "objectID": "slides/intro.html#rstudio-interface",
@@ -424,7 +424,7 @@
     "href": "slides/intro.html#r-script",
     "title": "Welcome to R Café",
     "section": "R script",
-    "text": "R script\nTo create an R script in RStudio, in the menu section, click File &gt; New File &gt; R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
+    "text": "R script\nTo create an R script in RStudio, in the menu section, click File > New File > R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
   },
   {
     "objectID": "slides/intro.html#r-script-1",
@@ -438,56 +438,56 @@
     "href": "slides/intro.html#variable",
     "title": "Welcome to R Café",
     "section": "Variable",
-    "text": "Variable\n\nIn R, a variable is a name used to store an object, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.\nIn R, a variable can be created by assigning an object to it using &lt;-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb &lt;- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting &lt;- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\""
+    "text": "Variable\n\nIn R, a variable is a name used to store an object, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.\nIn R, a variable can be created by assigning an object to it using <-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb <- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting <- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\""
   },
   {
     "objectID": "slides/intro.html#variable-1",
     "href": "slides/intro.html#variable-1",
     "title": "Welcome to R Café",
     "section": "Variable",
-    "text": "Variable\nValue of a variable can also be overridden\n\nvar &lt;- 5\nvar\n\n[1] 5\n\n# override variable\nvar &lt;- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 5.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
+    "text": "Variable\nValue of a variable can also be overridden\n\nvar <- 5\nvar\n\n[1] 5\n\n# override variable\nvar <- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 6.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
   },
   {
     "objectID": "slides/intro.html#classes",
     "href": "slides/intro.html#classes",
     "title": "Welcome to R Café",
     "section": "Classes",
-    "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object. There are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
+    "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object (to check the class of a variable, run class(variable)).\nThere are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
   },
   {
     "objectID": "slides/intro.html#special-values",
     "href": "slides/intro.html#special-values",
     "title": "Welcome to R Café",
     "section": "Special values",
-    "text": "Special values\n\n\n\n\n\n\n\n\nValue\nDescription\n\n\n\n\nNA\nStands for Not Available. Indicates missing values.\n\n\nNULL\nIndicates undefined/abscence of value. (e.g. numb &lt;- NULL indicates value for variable numb is undefined)\n\n\nNaN\nStands for Not a Number. Indicates unrepresentable number (e.g. result for 0/0 )\n\n\nInf/-Inf\nInfinity/Negative infinity"
+    "text": "Special values\n\n\n\n\n\n\n\n\nValue\nDescription\n\n\n\n\nNA\nStands for Not Available. Indicates missing values.\n\n\nNULL\nIndicates undefined/abscence of value. (e.g. numb <- NULL indicates value for variable numb is undefined)\n\n\nNaN\nStands for Not a Number. Indicates unrepresentable number (e.g. result for 0/0 )\n\n\nInf/-Inf\nInfinity/Negative infinity"
   },
   {
     "objectID": "slides/intro.html#functions",
     "href": "slides/intro.html#functions",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name &lt;- function(){\n\n# function content\n\n}"
+    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name <- function(){\n\n# function content\n\n}"
   },
   {
     "objectID": "slides/intro.html#functions-1",
     "href": "slides/intro.html#functions-1",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\nExample: a simple function\n\nprint_hello &lt;- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
+    "text": "Functions\nExample: a simple function\n\nprint_hello <- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
   },
   {
     "objectID": "slides/intro.html#functions-2",
     "href": "slides/intro.html#functions-2",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\nFunctions can also have arguments, which creates reusable code with dynamic inputs and outputs\nA function with arguments as followed. Note that you can include as many arguments as you want\n\nfunction_name &lt;- function(argument_1, argument_2){\n  # function content\n  # values of argument can be accessed simply calling argument name\n}"
+    "text": "Functions\nFunctions can also have arguments, which creates reusable code with dynamic inputs and outputs\nA function with arguments as followed. Note that you can include as many arguments as you want\n\nfunction_name <- function(argument_1, argument_2){\n  # function content\n  # values of argument can be accessed simply calling argument name\n}"
   },
   {
     "objectID": "slides/intro.html#functions-3",
     "href": "slides/intro.html#functions-3",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\nExample: simple function\n\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\n# output can be assigned to a variable\noutput &lt;- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
+    "text": "Functions\nExample: simple function\n\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\n# output can be assigned to a variable\noutput <- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
   },
   {
     "objectID": "slides/intro.html#functions-4",
@@ -501,14 +501,14 @@
     "href": "slides/intro.html#functions-5",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\n\nWhen to create a function?\nA general rule is when you start to copy-paste a sequence of code multiple times (usually &gt;3), you should make a function for it\nThe in-class excercise (Section 8) will demonstrate one use case for function"
+    "text": "Functions\n\nWhen to create a function?\nA general rule is when you start to copy-paste a sequence of code multiple times (usually >3), you should make a function for it\nThe in-class excercise (Section 9) will demonstrate one use case for function"
   },
   {
     "objectID": "slides/intro.html#functions-6",
     "href": "slides/intro.html#functions-6",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\n\nSome criteria for a good function\n\n\nModularity - each function should focus on one task (e.g. you can have a function to import data, another to model the data, another to visualize data but not a function doing all of those 3 tasks)\nConcise - the content of a function should not be too lengthy. If a function starts to have &gt; 30 lines of code, it may be an indication that the modularity rule is violated.\nReadability - function’s name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented."
+    "text": "Functions\n\nSome criteria for a good function\n\n\nModularity - each function should focus on one task (e.g. you can have a function to import data, another to model the data, another to visualize data but not a function doing all of those 3 tasks)\nConcise - the content of a function should not be too lengthy. If a function starts to have > 30 lines of code, it may be an indication that the modularity rule is violated.\nReadability - function’s name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented."
   },
   {
     "objectID": "slides/intro.html#functions-7",
@@ -522,21 +522,21 @@
     "href": "slides/intro.html#functions-8",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code &gt; Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
+    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code > Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "slides/intro.html#scope",
     "href": "slides/intro.html#scope",
     "title": "Welcome to R Café",
     "section": "Scope",
-    "text": "Scope\nBrainstorming Read the code and guess the answer for 3 Questions below\n\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var &lt;- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n# Q3: What will be the value for arg here?\narg"
+    "text": "Scope\nBrainstorming Read the code and guess the answer for 3 Questions below\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n# Q3: What will be the value for arg here?\narg"
   },
   {
     "objectID": "slides/intro.html#scope-1",
     "href": "slides/intro.html#scope-1",
     "title": "Welcome to R Café",
     "section": "Scope",
-    "text": "Scope\nOutput\n\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var &lt;- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n\n[1] \"Value of variable example_var: 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Value of function argument: 60\"\n\n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\"\n\n# Q3: What will be the value for arg here?\narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found"
+    "text": "Scope\nOutput\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n\n[1] \"Value of variable example_var: 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Value of function argument: 60\"\n\n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\"\n\n# Q3: What will be the value for arg here?\narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found"
   },
   {
     "objectID": "slides/intro.html#scope-2",
@@ -550,7 +550,7 @@
     "href": "slides/intro.html#scope-3",
     "title": "Welcome to R Café",
     "section": "Scope",
-    "text": "Scope\nExplanation\n\n# this is a global variable since it is not created in any local environment\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  # global_var\n  print(paste0(\"Global variable can be accessed within function \", example_var))\n  \n  # this is creating a local variable named example_var\n  # it will not affect example_var\n  example_var &lt;- 20\n  \n  # this example_var refers to the local variable example_var\n  print(paste0(\"Value of variable example_var after assignment\", example_var))\n  # note that argument is also only accessible within the function\n  print(paste0(\"Function argument \", arg))\n}\n\nexample_func(60) \n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Value of variable example_var after assignment20\"\n[1] \"Function argument 60\"\n\n# value for argument should only accessible within function \narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found\n\n# refers to global variable example_var here \npaste0(\"Value of variable example_var \", example_var)\n\n[1] \"Value of variable example_var 10\""
+    "text": "Scope\nExplanation\n\n# this is a global variable since it is not created in any local environment\nexample_var <- 10\n\nexample_func <- function(arg){\n  # global_var\n  print(paste0(\"Global variable can be accessed within function \", example_var))\n  \n  # this is creating a local variable named example_var\n  # it will not affect example_var\n  example_var <- 20\n  \n  # this example_var refers to the local variable example_var\n  print(paste0(\"Value of variable example_var after assignment\", example_var))\n  # note that argument is also only accessible within the function\n  print(paste0(\"Function argument \", arg))\n}\n\nexample_func(60) \n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Value of variable example_var after assignment20\"\n[1] \"Function argument 60\"\n\n# value for argument should only accessible within function \narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found\n\n# refers to global variable example_var here \npaste0(\"Value of variable example_var \", example_var)\n\n[1] \"Value of variable example_var 10\""
   },
   {
     "objectID": "slides/intro.html#scope-4",
@@ -564,7 +564,7 @@
     "href": "slides/intro.html#packages",
     "title": "Welcome to R Café",
     "section": "Packages",
-    "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages &gt; Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code install.packages(\"package_name\")"
+    "text": "Packages\n\n\nPackages are shareable bundle of functions (and sometimes include built-in dataset). We will frequently use available packages to assist us during coding process.\n\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages > Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code install.packages(\"package_name\")"
   },
   {
     "objectID": "slides/intro.html#packages-1",
@@ -578,7 +578,7 @@
     "href": "slides/intro.html#packages-2",
     "title": "Welcome to R Café",
     "section": "Packages",
-    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata &lt;- read_excel(\"../data/linelist_raw.xlsx\")\nhead(data)"
+    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"../data/linelist_raw.xlsx\")\nhead(data)"
   },
   {
     "objectID": "slides/intro.html#packages-3",
@@ -606,21 +606,21 @@
     "href": "slides/intro.html#create-function",
     "title": "Welcome to R Café",
     "section": "Create function",
-    "text": "Create function\n\nDataset Given a dataset with number of reported cases for 211 countries\nWhere each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns\n\nhead(covid_cases)"
+    "text": "Create function\n\nDataset Given a dataset with number of reported cases for 211 countries and archipelagos\nWhere each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns\n\n\n\n\nhead(covid_cases)"
   },
   {
     "objectID": "slides/intro.html#create-function-1",
     "href": "slides/intro.html#create-function-1",
     "title": "Welcome to R Café",
     "section": "Create function",
-    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col &lt;- \"cases_chn\"\n\nbasic_stats &lt;- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
+    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
   },
   {
     "objectID": "slides/intro.html#suggested-solution",
     "href": "slides/intro.html#suggested-solution",
     "title": "Welcome to R Café",
     "section": "Suggested solution",
-    "text": "Suggested solution\nExercise: Suggested solution\n\n\nCode\ncompute_stats &lt;- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")"
+    "text": "Suggested solution\nExercise: Suggested solution\n\n\nCode\ncompute_stats <- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")"
   },
   {
     "objectID": "slides/intro.html#navigating-github-desktop-github",
@@ -641,7 +641,7 @@
     "href": "slides/intro.html#data-import-1",
     "title": "Welcome to R Café",
     "section": "Data import",
-    "text": "Data import\n\nrio - support data import for multiple data format\n\n\nlibrary(rio)\nimport(\"../data/linelist_raw.xlsx\", skip = 2)"
+    "text": "Data import\n\nrio - support data import for multiple data format\n\n\nlibrary(rio)\ndata <- import(\"../data/linelist_raw.xlsx\")"
   },
   {
     "objectID": "slides/intro.html#data-export",
@@ -662,14 +662,14 @@
     "href": "slides/intro.html#clean-column-names-1",
     "title": "Welcome to R Café",
     "section": "Clean column names",
-    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\n\nlibrary(janitor)\ndata &lt;- clean_names(data)\nhead(data)"
+    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
   },
   {
     "objectID": "slides/intro.html#simple-data-extraction",
     "href": "slides/intro.html#simple-data-extraction",
     "title": "Welcome to R Café",
     "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n\n  \n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n\n  \n\n\n# get all values in the 5th row\ndata[5, ]\n\n\n  \n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")] \n\n\n  \n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n[1] 3"
   },
   {
     "objectID": "slides/intro.html#data-summary",
@@ -698,5 +698,47 @@
     "title": "Welcome to R Café",
     "section": "Upcoming lessons",
     "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-1",
+    "href": "slides/intro.html#simple-data-extraction-1",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n[1] \"2014-05-22 UTC\""
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-2",
+    "href": "slides/intro.html#simple-data-extraction-2",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get all values in the 5th row\ndata[5, ]"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-3",
+    "href": "slides/intro.html#simple-data-extraction-3",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-4",
+    "href": "slides/intro.html#simple-data-extraction-4",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+  },
+  {
+    "objectID": "slides/intro.html#take-home-exercise",
+    "href": "slides/intro.html#take-home-exercise",
+    "title": "Welcome to R Café",
+    "section": "Take home exercise",
+    "text": "Take home exercise\nBefore the next lesson (23rd Dec, 2024), please complete all the tasks for Day 1 - Take home exercise"
+  },
+  {
+    "objectID": "slides/intro.html#r-and-rstudio-2",
+    "href": "slides/intro.html#r-and-rstudio-2",
+    "title": "Welcome to R Café",
+    "section": "R and RStudio",
+    "text": "R and RStudio\nWhy use R?\n\n\nCost: R is free and open-source.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly."
   }
 ]
