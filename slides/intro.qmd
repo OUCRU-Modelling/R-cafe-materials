@@ -358,7 +358,9 @@ Additionally, variable name needs to be [**concise**]{.underline} and beware of 
 ## Classes {.scrollable auto-animate="true"}
 
 ::: medium-text-size
-All the objects stored in R have a class which tells R how to handle the object. There are many possible classes, but common ones include
+All the objects stored in R have a class which tells R how to handle the object (to check the class of a variable, run `class(variable)`). 
+
+There are many possible classes, but common ones include
 
 +--------------+-----------------------------------------------------------------------------------------------------------+------------------------------------+
 | Classes      | Explanation                                                                                               | Examples                           |
@@ -785,7 +787,7 @@ This is also where you will write the solution for in-class exercise.
 ## Create function {auto-animate="true"}
 ::: medium-text-size
 ***Dataset***
-Given a dataset with number of reported cases for 211 countries
+Given a dataset with number of reported cases for 211 countries and archipelagos
 
 Where each column following the format `cases_{country_code}` represents the number of newly reported Covid cases on the day shown in `date` columns
 
@@ -962,19 +964,68 @@ Data cell(s) can be extracted using the syntax `data[row, col]`
 
 ```{r}
 #| df-print: kable
-
 # get the cell at row 5, column 2
 data[5 ,2]
+```
+:::
 
+## Simple data extraction {.scrollable auto-animate="true"}
+
+::: medium-text-size
+Data cell(s) can be extracted using the syntax `data[row, col]`
+
+-   To extract all rows, left `col` blank
+
+-   To extract all cols, left `row` blank
+
+```{r}
+#| df-print: kable
 # column can also be accessed using column name
 data[5 , "hosp_date"]
+```
+:::
 
+## Simple data extraction {.scrollable auto-animate="true"}
+
+::: medium-text-size
+Data cell(s) can be extracted using the syntax `data[row, col]`
+
+-   To extract all rows, left `col` blank
+
+-   To extract all cols, left `row` blank
+
+```{r}
+#| df-print: kable
 # get all values in the 5th row
 data[5, ]
+```
+:::
 
+## Simple data extraction {.scrollable auto-animate="true"}
+::: medium-text-size
+Data cell(s) can be extracted using the syntax `data[row, col]`
+
+-   To extract all rows, left `col` blank
+
+-   To extract all cols, left `row` blank
+
+```{r}
+#| df-print: kable
 # extract specific columns
 data[, c("case_id", "infection_date", "date_onset", "hosp_date")] 
+```
+:::
 
+## Simple data extraction {.scrollable auto-animate="true"}
+::: medium-text-size
+Data cell(s) can be extracted using the syntax `data[row, col]`
+
+-   To extract all rows, left `col` blank
+
+-   To extract all cols, left `row` blank
+
+```{r}
+#| df-print: kable
 # extract first 10 rows from specific columns
 data[1:10, c("case_id", "infection_date", "date_onset", "hosp_date")] 
 ```
@@ -1012,6 +1063,9 @@ After today, you have learnt to:
 -   How to look up documentations for functions and packages
 
 -   Perform data import, export, overview in R
+
+## Take home exercise
+Before the next lesson (23rd Dec, 2024), please complete all the tasks for [Day 1 - Take home exercise](../takehome_exercises/day1.html)
 
 ## Exercise {.scrollable auto-animate="true" visibility="hidden"}
 

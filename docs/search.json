@@ -137,7 +137,7 @@
     "href": "slides/intro.html#github-desktop-1",
     "title": "Getting started with R and Git",
     "section": "GitHub Desktop ",
-    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
+    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nDanger\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
   },
   {
     "objectID": "slides/intro.html#github-desktop-2",
@@ -172,7 +172,7 @@
     "href": "slides/intro.html#create-project-in-rstudio",
     "title": "Getting started with R and Git",
     "section": "Create Project in RStudio",
-    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File &gt; New Project…\nClick Existing Directory &gt; Browse\nClick Browse and click on your project directory\nClick Create Project"
+    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick Existing Directory > Browse\nClick Browse and click on your project directory\nClick Create Project"
   },
   {
     "objectID": "slides/intro.html#rstudio-interface",
@@ -221,7 +221,7 @@
     "href": "slides/intro.html#r-script",
     "title": "Getting started with R and Git",
     "section": "R script",
-    "text": "R script\nTo create an R script in RStudio, in the menu section, click File &gt; New File &gt; R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
+    "text": "R script\nTo create an R script in RStudio, in the menu section, click File > New File > R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
   },
   {
     "objectID": "slides/intro.html#r-script-1",
@@ -235,56 +235,56 @@
     "href": "slides/intro.html#variable",
     "title": "Getting started with R and Git",
     "section": "Variable",
-    "text": "Variable\n\nIn R, a variable is a name used to store an object, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.\nIn R, a variable can be created by assigning an object to it using &lt;-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb &lt;- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting &lt;- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\""
+    "text": "Variable\n\nIn R, a variable is a name used to store an object, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.\nIn R, a variable can be created by assigning an object to it using <-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb <- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting <- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\""
   },
   {
     "objectID": "slides/intro.html#variable-1",
     "href": "slides/intro.html#variable-1",
     "title": "Getting started with R and Git",
     "section": "Variable",
-    "text": "Variable\nValue of a variable can also be overridden\n\nvar &lt;- 5\nvar\n\n[1] 5\n\n# override variable\nvar &lt;- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 5.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
+    "text": "Variable\nValue of a variable can also be overridden\n\nvar <- 5\nvar\n\n[1] 5\n\n# override variable\nvar <- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 5.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
   },
   {
     "objectID": "slides/intro.html#classes",
     "href": "slides/intro.html#classes",
     "title": "Getting started with R and Git",
     "section": "Classes",
-    "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object. There are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
+    "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object (to check the class of a variable, run class(variable)).\nThere are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
   },
   {
     "objectID": "slides/intro.html#special-values",
     "href": "slides/intro.html#special-values",
     "title": "Getting started with R and Git",
     "section": "Special values",
-    "text": "Special values\n\n\n\n\n\n\n\n\nValue\nDescription\n\n\n\n\nNA\nStands for Not Available. Indicates missing values.\n\n\nNULL\nIndicates undefined/abscence of value. (e.g. numb &lt;- NULL indicates value for variable numb is undefined)\n\n\nNaN\nStands for Not a Number. Indicates unrepresentable number (e.g. result for 0/0 )\n\n\nInf/-Inf\nInfinity/Negative infinity"
+    "text": "Special values\n\n\n\n\n\n\n\n\nValue\nDescription\n\n\n\n\nNA\nStands for Not Available. Indicates missing values.\n\n\nNULL\nIndicates undefined/abscence of value. (e.g. numb <- NULL indicates value for variable numb is undefined)\n\n\nNaN\nStands for Not a Number. Indicates unrepresentable number (e.g. result for 0/0 )\n\n\nInf/-Inf\nInfinity/Negative infinity"
   },
   {
     "objectID": "slides/intro.html#functions",
     "href": "slides/intro.html#functions",
     "title": "Getting started with R and Git",
     "section": "Functions",
-    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name &lt;- function(){\n\n# function content\n\n}"
+    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name <- function(){\n\n# function content\n\n}"
   },
   {
     "objectID": "slides/intro.html#functions-1",
     "href": "slides/intro.html#functions-1",
     "title": "Getting started with R and Git",
     "section": "Functions",
-    "text": "Functions\nExample: a simple function\n\nprint_hello &lt;- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
+    "text": "Functions\nExample: a simple function\n\nprint_hello <- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
   },
   {
     "objectID": "slides/intro.html#functions-2",
     "href": "slides/intro.html#functions-2",
     "title": "Getting started with R and Git",
     "section": "Functions",
-    "text": "Functions\nFunctions can also have arguments, which creates reusable code with dynamic inputs and outputs\nA function with arguments as followed. Note that you can include as many arguments as you want\n\nfunction_name &lt;- function(argument_1, argument_2){\n  # function content\n  # values of argument can be accessed simply calling argument name\n}"
+    "text": "Functions\nFunctions can also have arguments, which creates reusable code with dynamic inputs and outputs\nA function with arguments as followed. Note that you can include as many arguments as you want\n\nfunction_name <- function(argument_1, argument_2){\n  # function content\n  # values of argument can be accessed simply calling argument name\n}"
   },
   {
     "objectID": "slides/intro.html#functions-3",
     "href": "slides/intro.html#functions-3",
     "title": "Getting started with R and Git",
     "section": "Functions",
-    "text": "Functions\nExample: simple function\n\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\n# output can be assigned to a variable\noutput &lt;- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
+    "text": "Functions\nExample: simple function\n\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\n# output can be assigned to a variable\noutput <- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
   },
   {
     "objectID": "slides/intro.html#functions-4",
@@ -298,14 +298,14 @@
     "href": "slides/intro.html#functions-5",
     "title": "Getting started with R and Git",
     "section": "Functions",
-    "text": "Functions\n\nWhen to create a function?\nA general rule is when you start to copy-paste a sequence of code multiple times (usually &gt;3), you should make a function for it\nThe in-class excercise (Section 8) will demonstrate one use case for function"
+    "text": "Functions\n\nWhen to create a function?\nA general rule is when you start to copy-paste a sequence of code multiple times (usually >3), you should make a function for it\nThe in-class excercise (Section 8) will demonstrate one use case for function"
   },
   {
     "objectID": "slides/intro.html#functions-6",
     "href": "slides/intro.html#functions-6",
     "title": "Getting started with R and Git",
     "section": "Functions",
-    "text": "Functions\n\nSome criteria for a good function\n\n\nModularity - each function should focus on one task (e.g. you can have a function to import data, another to model the data, another to visualize data but not a function doing all of those 3 tasks)\nConcise - the content of a function should not be too lengthy. If a function starts to have &gt; 30 lines of code, it may be an indication that the modularity rule is violated.\nReadability - function’s name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented."
+    "text": "Functions\n\nSome criteria for a good function\n\n\nModularity - each function should focus on one task (e.g. you can have a function to import data, another to model the data, another to visualize data but not a function doing all of those 3 tasks)\nConcise - the content of a function should not be too lengthy. If a function starts to have > 30 lines of code, it may be an indication that the modularity rule is violated.\nReadability - function’s name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented."
   },
   {
     "objectID": "slides/intro.html#functions-7",
@@ -319,21 +319,21 @@
     "href": "slides/intro.html#functions-8",
     "title": "Getting started with R and Git",
     "section": "Functions",
-    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code &gt; Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power &lt;- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
+    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code > Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power <- function(base, power){\n  # return a raised to the power of b\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
   },
   {
     "objectID": "slides/intro.html#scope",
     "href": "slides/intro.html#scope",
     "title": "Getting started with R and Git",
     "section": "Scope",
-    "text": "Scope\nBrainstorming Read the code and guess the answer for 3 Questions below\n\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var &lt;- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n# Q3: What will be the value for arg here?\narg"
+    "text": "Scope\nBrainstorming Read the code and guess the answer for 3 Questions below\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n# Q3: What will be the value for arg here?\narg"
   },
   {
     "objectID": "slides/intro.html#scope-1",
     "href": "slides/intro.html#scope-1",
     "title": "Getting started with R and Git",
     "section": "Scope",
-    "text": "Scope\nOutput\n\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var &lt;- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n\n[1] \"Value of variable example_var: 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Value of function argument: 60\"\n\n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\"\n\n# Q3: What will be the value for arg here?\narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found"
+    "text": "Scope\nOutput\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n\n[1] \"Value of variable example_var: 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Value of function argument: 60\"\n\n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\"\n\n# Q3: What will be the value for arg here?\narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found"
   },
   {
     "objectID": "slides/intro.html#scope-2",
@@ -347,7 +347,7 @@
     "href": "slides/intro.html#scope-3",
     "title": "Getting started with R and Git",
     "section": "Scope",
-    "text": "Scope\nExplanation\n\n# this is a global variable since it is not created in any local environment\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  # global_var\n  print(paste0(\"Global variable can be accessed within function \", example_var))\n  \n  # this is creating a local variable named example_var\n  # it will not affect example_var\n  example_var &lt;- 20\n  \n  # this example_var refers to the local variable example_var\n  print(paste0(\"Value of variable example_var after assignment\", example_var))\n  # note that argument is also only accessible within the function\n  print(paste0(\"Function argument \", arg))\n}\n\nexample_func(60) \n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Value of variable example_var after assignment20\"\n[1] \"Function argument 60\"\n\n# value for argument should only accessible within function \narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found\n\n# refers to global variable example_var here \npaste0(\"Value of variable example_var \", example_var)\n\n[1] \"Value of variable example_var 10\""
+    "text": "Scope\nExplanation\n\n# this is a global variable since it is not created in any local environment\nexample_var <- 10\n\nexample_func <- function(arg){\n  # global_var\n  print(paste0(\"Global variable can be accessed within function \", example_var))\n  \n  # this is creating a local variable named example_var\n  # it will not affect example_var\n  example_var <- 20\n  \n  # this example_var refers to the local variable example_var\n  print(paste0(\"Value of variable example_var after assignment\", example_var))\n  # note that argument is also only accessible within the function\n  print(paste0(\"Function argument \", arg))\n}\n\nexample_func(60) \n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Value of variable example_var after assignment20\"\n[1] \"Function argument 60\"\n\n# value for argument should only accessible within function \narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found\n\n# refers to global variable example_var here \npaste0(\"Value of variable example_var \", example_var)\n\n[1] \"Value of variable example_var 10\""
   },
   {
     "objectID": "slides/intro.html#scope-4",
@@ -361,7 +361,7 @@
     "href": "slides/intro.html#packages",
     "title": "Getting started with R and Git",
     "section": "Packages",
-    "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages &gt; Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code install.packages(\"package_name\")"
+    "text": "Packages\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages > Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code install.packages(\"package_name\")"
   },
   {
     "objectID": "slides/intro.html#packages-1",
@@ -375,7 +375,7 @@
     "href": "slides/intro.html#packages-2",
     "title": "Getting started with R and Git",
     "section": "Packages",
-    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata &lt;- read_excel(\"../data/linelist_raw.xlsx\")\nhead(data)"
+    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"../data/linelist_raw.xlsx\")\nhead(data)"
   },
   {
     "objectID": "slides/intro.html#packages-3",
@@ -403,21 +403,21 @@
     "href": "slides/intro.html#create-function",
     "title": "Getting started with R and Git",
     "section": "Create function",
-    "text": "Create function\n\nDataset Given a dataset with number of reported cases for 211 countries\nWhere each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns\n\nhead(covid_cases)"
+    "text": "Create function\n\nDataset Given a dataset with number of reported cases for 211 countries and archipelagos\nWhere each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns\n\n\n\n\nhead(covid_cases)"
   },
   {
     "objectID": "slides/intro.html#create-function-1",
     "href": "slides/intro.html#create-function-1",
     "title": "Getting started with R and Git",
     "section": "Create function",
-    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col &lt;- \"cases_chn\"\n\nbasic_stats &lt;- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
+    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
   },
   {
     "objectID": "slides/intro.html#suggested-solution",
     "href": "slides/intro.html#suggested-solution",
     "title": "Getting started with R and Git",
     "section": "Suggested solution",
-    "text": "Suggested solution\nExercise: Suggested solution\n\n\nCode\ncompute_stats &lt;- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")"
+    "text": "Suggested solution\nExercise: Suggested solution\n\n\nCode\ncompute_stats <- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")"
   },
   {
     "objectID": "slides/intro.html#navigating-github-desktop-github",
@@ -459,14 +459,14 @@
     "href": "slides/intro.html#clean-column-names-1",
     "title": "Getting started with R and Git",
     "section": "Clean column names",
-    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\n\nlibrary(janitor)\ndata &lt;- clean_names(data)\nhead(data)"
+    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
   },
   {
     "objectID": "slides/intro.html#simple-data-extraction",
     "href": "slides/intro.html#simple-data-extraction",
     "title": "Getting started with R and Git",
     "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n\n  \n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n\n  \n\n\n# get all values in the 5th row\ndata[5, ]\n\n\n  \n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")] \n\n\n  \n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]"
   },
   {
     "objectID": "slides/intro.html#data-summary",
@@ -719,5 +719,124 @@
     "title": "R programming with tidyverse",
     "section": "Vectorisation with map() vs. *apply()",
     "text": "Vectorisation with map() vs. *apply()\nVectorisation vs. looping"
+  },
+  {
+    "objectID": "takehome_exercises/day1.html",
+    "href": "takehome_exercises/day1.html",
+    "title": "Day 1 - Take home exercise",
+    "section": "",
+    "text": "Data covid_cases.rds under R-cafe/day1/data/covid_cases.rds is used for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
+  },
+  {
+    "objectID": "takehome_exercises/day1.html#work-space",
+    "href": "takehome_exercises/day1.html#work-space",
+    "title": "Day 1 - Take home exercise",
+    "section": "Work space",
+    "text": "Work space\nBefore working on this exercise, you should have completed the following checklist\n\n\n\n\n\n\nChecklist\n\n\n\nOn Github Desktop\n\nCloned R-cafe repository\nCreated your own branch on the repository\nCheckout your own branch\n\nOn RStudio\n\nMake an R project from cloned R-cafe directory\nHave renv setup\n\n\n\n\n\n\n\n\n\nAnswer script\n\n\n\nYou are expected to save your answer under R-cafe/day1/takehome.R"
+  },
+  {
+    "objectID": "takehome_exercises/day1.html#exercises",
+    "href": "takehome_exercises/day1.html#exercises",
+    "title": "Day 1 - Take home exercise",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 1: Data import\nRead data from R-cafe/day1/data/covid_cases.rds\n\n\nTask 2: Simple computations using dataset\nCompute the following\n\nThe earliest and latest date of data report in the dataset and assign them to 2 variables first_report_date, last_report_date\nCreate new column case_global for covid_cases, which represents the total cases across every country per report day.\nCreate new column percent_chn in covid_cases, which represents the percentage of global cases that China’s cases account for per report day.\n\n\n\n\n\n\n\nTip: compute sum of each row\n\n\n\n\n\nUse function rowSums() to compute sum of case columns row wise\nExample\n\nexample_table <- data.frame(\n  a = c(1:3), b = c(4:6)\n)\n# show example_table\nexample_table\n\n\n\n  \n\n\n# see output of rowSums\nrowSums(example_table)\n\n[1] 5 7 9\n\n\n\n\n\n\n\n\n\n\n\nTip: create new column/ update column values\n\n\n\n\n\nTo create/update a column, use the syntax data[[\"colname\"]] <- values_for_col where length of values_for_col must be equal to number of rows\nExample\n\nexample_table <- data.frame(\n  a = c(1:3), b = c(4:6)\n)\n\n# create new column new_col\nexample_table[[\"new_col\"]] <- c(7,9,11)\nexample_table\n\n\n\n  \n\n\n\n\n\n\n\n\nTask 3: Create a function\nComplete the following:\n\nCreate a function compute_percent that\n\ntakes the dataset and the country code (i.e. the 3 characters after cases_ in column name) as input.\nreturn the percentage of the global cases that the given country’s cases account for per report day.\n\nUse that function to create 3 new columns for covid_cases: percent_vnm, percent_use, percent_sgp\nPrint the final covid_cases selecting only the following columns date, percent_chn, percent_vnm, percent_use, percent_sgp\n\n\n\n\n\n\n\nTip: joining strings\n\n\n\n\n\nUse function paste() to join multiple strings together\nExample\n\n# joining 2 strings\npaste(\"cases_\", \"chn\", sep = \"\")\n\n[1] \"cases_chn\"\n\n# joining 3 strings\npaste(\"hello\", \"world,\", \"welcome to R-cafe\", sep = \" \")\n\n[1] \"hello world, welcome to R-cafe\"\n\n\n\n\n\n\n\nTask 4: Generate data summary\nComplete the following:\n\nUse the function skim() from package skimr to generate summary for the following countries: China, Vietnam, USA, Singapore\nDescribe notable observations from each country from the result of skim()\n\n\n\nTask 5: Peer review\nComplete the following:\n\nPush your solution to Github with the commit message \"day 1 take home solution your_name\"\nCreate an issue commenting on at least 1 other participant’s solution"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Rstudio\nIn the menu, File -> New File -> R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -> click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -> click save\n\n\n\n\nSelect the directory\n\n\n\n\n\n\n\n\n\nOpen Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "title": "Commit, push and create issue",
+    "section": "2.1 Create an issue on Github",
+    "text": "2.1 Create an issue on Github\n\n2.1.1 Select the reference in new issue\n\nClick on the number of the line in the code\nClick ... -> select Reference in new issue\n\n\n\n\nSelect the place where you want to refer to\n\n\n\n\n2.1.2 Put more information to your issue and submit issue\n\nFill in the title in Add a title\nThe link to the error place will automatically appear in Add a description. You might write more detail about the errors in this section as below\nSelect the person you would like assign this issue by select Assignees or quickly assign it to yourself by assign yourself\nClassify the issue by Labels\nClick Submit new issue\n\n\n\n\nAdd information and submit issue\n\n\n\n\n2.1.3 View the open issues\n\nSelect Issues -> Open. You might see the one who is responsible for this issue in Assignee tab.\nSelect the issue you would like to view Typo in example_push_commit_issue.R file.\n\n\n\n\nView the open issue\n\n\n\n\n2.1.4 View the detail of an issue\n\nYou might see the title of the issue, the reference links to the errors, and the detail of the issue.\nNavigate the place of error by clicking the reference link\n\n\n\n\nView the details of issue"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "title": "Commit, push and create issue",
+    "section": "2.2 Resolve the issue",
+    "text": "2.2 Resolve the issue\n\n2.2.1 Clone the branch you would like to fix the issue\n\nRefer to Steps to Clone a Repository on Github in Github note 1\n\n\n\n2.2.2 Fix the code locally\n\nOpen the example_push_commit_issue.R file\n\nMake correction to the code and make a comment.\n\n\n\n\nResolve issue in local cloned repository\n\n\n\n\n2.2.3 Commit the corrections using Github desktop\n\nOpen the Github desktop. You will see the changes now. The red lines are old version. The green lines are current version.\nCommit and push the corrections\n\n\n\n\nCommit and push the correction\n\n\n\n\n2.2.4 Check the branch again\n\n\n\nView the code on github\n\n\n\n\n2.2.5 Comment and close the issue\n\nGo back to the issue. Select Issues -> Open -> Typo in example_push_commit_issue.R file\nAdd comments in Add a comment -> Click on Close with comment. (If the issue has not been resolved, we can click Comment to discuss with other collaborators)\n\n\n\n\nClose and comment issue on Github\n\n\n\n\n2.2.6 View closed issue\n\nWe can always view the old closed issue by clicking Issues -> Closed\n\n\n\n\nView the closed issues on github"
+  },
+  {
+    "objectID": "slides/intro.html",
+    "href": "slides/intro.html",
+    "title": "Getting started with R and Git",
+    "section": "",
+    "text": "Welcome to “R-cafe: R for reproducible research”\nIn this course, the following topics will be covered\n\nFoundations of R - Introduction to working with RStudio, R and Github\nTidyverse - Introduce important tools for data science in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
+  },
+  {
+    "objectID": "slides/intro.html#function-set.seed",
+    "href": "slides/intro.html#function-set.seed",
+    "title": "Getting started with R and Git",
+    "section": "Function set.seed()",
+    "text": "Function set.seed()\n\nset.seed() is essential to ensure reproducibility for processes that uses a random number generator\nA seed is an input value to generate the “random data”. By specifying the same seed, we can ensure the number generator always return the same result.\n\n# Set seed \nset.seed(123)\n\n# Generate sample data\nsample_data <- rnorm(10, mean = 50, sd = 10)  \nsample_data\n\n [1] 44.39524 47.69823 65.58708 50.70508 51.29288 67.15065 54.60916 37.34939\n [9] 43.13147 45.54338"
+  },
+  {
+    "objectID": "slides/intro.html#vectorization",
+    "href": "slides/intro.html#vectorization",
+    "title": "Getting started with R and Git",
+    "section": "Vectorization",
+    "text": "Vectorization\n\nVectorization refers to performing an operation on all items of a vector at once instead of going through each item in a loop.\nCode using vectorized functions are also much cleaner than using for loop\nExample: Given a vector of numeric, and square all the odd numbers while divide even numbers by 2\n\nnon_vectorized <- function(numbs){\n  for (i in 1:length(numbs)){ # go through each number in numbs\n    if (numbs[i] %%2 == 0){\n      numbs[i] <- numbs[i]/2\n    }else{\n      numbs[i] <- numbs[i]**2\n    }\n  }\n  \n  numbs\n}\n\nvectorized <- function(numbs){\n  numbs <- ifelse(numbs %%2 == 0, numbs/2, numbs**2)\n  \n  numbs\n}"
+  },
+  {
+    "objectID": "slides/intro.html#vectorization-1",
+    "href": "slides/intro.html#vectorization-1",
+    "title": "Getting started with R and Git",
+    "section": "Vectorization",
+    "text": "Vectorization\nExample: Compare run time between 2 approahces\n\n# non vectorization approach\nsystem.time(\n  non_vectorized(c(1:100000))\n)\n\n   user  system elapsed \n  0.013   0.000   0.013 \n\n# vectorized approach\nsystem.time(\n  vectorized(c(1:100000))\n)\n\n   user  system elapsed \n  0.002   0.000   0.003"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-1",
+    "href": "slides/intro.html#simple-data-extraction-1",
+    "title": "Getting started with R and Git",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-2",
+    "href": "slides/intro.html#simple-data-extraction-2",
+    "title": "Getting started with R and Git",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get all values in the 5th row\ndata[5, ]"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-3",
+    "href": "slides/intro.html#simple-data-extraction-3",
+    "title": "Getting started with R and Git",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-4",
+    "href": "slides/intro.html#simple-data-extraction-4",
+    "title": "Getting started with R and Git",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+  },
+  {
+    "objectID": "slides/intro.html#exercise",
+    "href": "slides/intro.html#exercise",
+    "title": "Getting started with R and Git",
+    "section": "Exercise",
+    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\nWrite a function for the given snippet of code\n\nUpload the code to github\nPeer reviews"
+  },
+  {
+    "objectID": "slides/intro.html#take-home-exercise",
+    "href": "slides/intro.html#take-home-exercise",
+    "title": "Getting started with R and Git",
+    "section": "Take home exercise",
+    "text": "Take home exercise\nBefore the next lesson (23rd Dec, 2024), please complete all the tasks for Day 1 - Take home exercise"
+  },
+  {
+    "objectID": "takehome_exercises/day1.html#preparation",
+    "href": "takehome_exercises/day1.html#preparation",
+    "title": "Day 1 - Take home exercise",
+    "section": "Preparation",
+    "text": "Preparation\nBefore working on this exercise, you should have completed the following checklist\n\n\n\n\n\n\nChecklist\n\n\n\nOn Github Desktop\n\nCloned R-cafe repository\nCreated your own branch on the repository\nCheckout your own branch\n\nOn RStudio\n\nMake an R project from cloned R-cafe directory\nHave renv setup\n\n\n\n\n\n\n\n\n\nAnswer script\n\n\n\nYou are expected to save your answer under R-cafe/day1/takehome.R"
   }
 ]
