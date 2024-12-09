@@ -148,6 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#task-1-data-import" id="toc-task-1-data-import" class="nav-link" data-scroll-target="#task-1-data-import">Task 1: Data import</a></li>
   <li><a href="#task-2-simple-computations-using-dataset" id="toc-task-2-simple-computations-using-dataset" class="nav-link" data-scroll-target="#task-2-simple-computations-using-dataset">Task 2: Simple computations using dataset</a></li>
   <li><a href="#task-3-create-a-function" id="toc-task-3-create-a-function" class="nav-link" data-scroll-target="#task-3-create-a-function">Task 3: Create a function</a></li>
+  <li><a href="#task-3.5-optional-create-a-function-from-given-code" id="toc-task-3.5-optional-create-a-function-from-given-code" class="nav-link" data-scroll-target="#task-3.5-optional-create-a-function-from-given-code">Task 3.5 (Optional) Create a function from given code</a></li>
   <li><a href="#task-4-generate-data-summary" id="toc-task-4-generate-data-summary" class="nav-link" data-scroll-target="#task-4-generate-data-summary">Task 4: Generate data summary</a></li>
   <li><a href="#task-5-peer-review" id="toc-task-5-peer-review" class="nav-link" data-scroll-target="#task-5-peer-review">Task 5: Peer review</a></li>
   </ul></li>
@@ -367,8 +368,8 @@ Tip: create new column/ update column values
 <li><p>takes the dataset and the <u><strong>country code</strong></u> (i.e.&nbsp;the 3 characters after <code>cases_</code> in column name) as input.</p></li>
 <li><p>return the percentage of the global cases that the given country’s cases account for per report day.</p></li>
 </ul></li>
-<li><p>Use that function to create 3 new columns for <code>covid_cases</code>: <code>percent_vnm</code>, <code>percent_use</code>, <code>percent_sgp</code></p></li>
-<li><p>Print the final <code>covid_cases</code> selecting only the following columns <code>date</code>, <code>percent_chn</code>, <code>percent_vnm</code>, <code>percent_use</code>, <code>percent_sgp</code></p></li>
+<li><p>Use that function to create 3 new columns for <code>covid_cases</code>: <code>percent_vnm</code>, <code>percent_usa</code>, <code>percent_sgp</code></p></li>
+<li><p>Print the final <code>covid_cases</code> selecting only the following columns <code>date</code>, <code>percent_chn</code>, <code>percent_vnm</code>, <code>percent_usa</code>, <code>percent_sgp</code></p></li>
 </ul>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -397,6 +398,48 @@ Tip: joining strings
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+<section id="task-3.5-optional-create-a-function-from-given-code" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.5-optional-create-a-function-from-given-code">Task 3.5 (Optional) Create a function from given code</h3>
+<p>Create a function that returns the <u>plot for number of cases reported for a country over time</u>, where users can</p>
+<ul>
+<li><p>Select the case column being plotted</p></li>
+<li><p>Change the country name displayed on the plot’s title</p></li>
+<li><p>Change the color of the bar chart and line chart</p></li>
+<li><p>Set the <strong>min</strong> and <strong>max</strong> date (x-axis limit) for the plot</p></li>
+</ul>
+<p>Given that the code to plot case reports for China is as followed</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment and run the following if you have not installed tidyverse or ggplot2</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plot_col <span class="ot">&lt;-</span> <span class="st">"cases_chn"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>country <span class="ot">&lt;-</span> <span class="st">"China"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>( <span class="co"># layer for bar chart</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>( <span class="co"># define columns for x, y axis</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> covid_cases<span class="sc">$</span>date, <span class="co"># this is equivalent to covid_cases[["date"]]</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> covid_cases[[plot_col]] </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      ), </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"cornflowerblue"</span> <span class="co"># choose color for bar chart</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="co"># layer for line chart</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>( <span class="co"># define columns for x, y axis</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> covid_cases<span class="sc">$</span>date, </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> covid_cases[[plot_col]] </span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      ), </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span> <span class="co"># choose color for line chart</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cases"</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">"Reported Covid cases for "</span>, country) <span class="co"># define title for the plot</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="day1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

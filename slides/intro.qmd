@@ -158,7 +158,7 @@ Refer to the handouts for instructions
 **Why use R?**
 
 ::: {.incremental}
--   **Cost**: R is free and open-source.
+-   **Cost**: R is free and cross-platform.
 
 -   **Reproducibility**: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.
 
@@ -450,7 +450,7 @@ function_name <- function(argument_1, argument_2){
 
 ```{r}
 compute_power <- function(base, power){
-  # return a raised to the power of b
+  # return `base` raised to the power of `power`
   base**power
 }
 
@@ -458,6 +458,30 @@ compute_power <- function(base, power){
 output <- compute_power(base = 5, power = 2)
 output
 ```
+
+## Functions {auto-animate="true"}
+
+::: medium-text-size
+**Implicit vs. explicit return** 
+
+- By default, R will implicitly [return the result of the last line of code in the function]{.underline} 
+
+- You can also explicitly specify the returned value using `return()`
+:::
+
+
+```{r}
+compute_power <- function(base, power){
+
+  # explicit return statement
+  return(base**power)
+}
+
+# output can be assigned to a variable
+output <- compute_power(base = 5, power = 2)
+output
+```
+
 
 ## Functions {auto-animate="true"}
 
@@ -516,7 +540,10 @@ To assist users, R also include a built-in documentation system that explains th
 help(sqrt)
 ```
 
+::: fragment
 Note that the built-in documentation only helps when you [already know which function you want to ask about]{.underline}. If you are looking for a function to achieve a specific task, it is better to start with **search engine** (Google, Bing, etc.), **forums/Q&A sites** (Github discussions, StackOverflow, etc.) or even ChatGPT.
+:::
+
 :::
 
 ## Functions {auto-animate="true"}
@@ -538,7 +565,7 @@ To create a roxygen documentation, place the cursor within the function and from
 #' @examples
 #' compute_power(3,4)
 compute_power <- function(base, power){
-  # return a raised to the power of b
+  # return `base` raised to the power of `power`
   base**power
 }
 
@@ -610,8 +637,9 @@ system.time(
 ```
 
 ## Scope {auto-animate="true"}
-
-**Brainstorming** Read the code and guess the answer for 3 Questions below
+::: medium-text-size
+**Discussion** Read the code and guess the answer for 3 Questions below
+:::
 
 ```{r, eval = FALSE}
 #| error: true
@@ -675,20 +703,20 @@ example_func <- function(arg){
   print(paste0("Global variable can be accessed within function ", example_var))
   
   # this is creating a local variable named example_var
-  # it will not affect example_var
+  # it will not affect the global variable example_var
   example_var <- 20
   
   # this example_var refers to the local variable example_var
-  print(paste0("Value of variable example_var after assignment", example_var))
+  print(paste0("Value of variable example_var after assignment: ", example_var))
   # note that argument is also only accessible within the function
-  print(paste0("Function argument ", arg))
+  print(paste0("Function argument: ", arg))
 }
 
 example_func(60) 
 # value for argument should only accessible within function 
 arg  
 # refers to global variable example_var here 
-paste0("Value of variable example_var ", example_var)
+paste0("Value of variable example_var: ", example_var)
 ```
 
 
@@ -701,7 +729,7 @@ To put simply
 ::: incremental
 -   By default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is [**not**]{.underline} recommended).
 
--   **global variables** can be accessed anywhere within the session.
+-   **global variables** can be accessed from both outside and inside the function (i.e. from global or local environment).
 
 -   **local variables** are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function.
 :::
@@ -1055,6 +1083,7 @@ skim(data)
 ```
 :::
 
+# Recap and Take home exercise
 ## Recap {auto-animate="true"}
 
 After today, you have learnt to:

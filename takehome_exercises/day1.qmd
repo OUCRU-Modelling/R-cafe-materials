@@ -124,9 +124,9 @@ Complete the following:
 
     -   return the percentage of the global cases that the given country's cases account for per report day.
 
--   Use that function to create 3 new columns for `covid_cases`: `percent_vnm`, `percent_use`, `percent_sgp`
+-   Use that function to create 3 new columns for `covid_cases`: `percent_vnm`, `percent_usa`, `percent_sgp`
 
--   Print the final `covid_cases` selecting only the following columns `date`, `percent_chn`, `percent_vnm`, `percent_use`, `percent_sgp`
+-   Print the final `covid_cases` selecting only the following columns `date`, `percent_chn`, `percent_vnm`, `percent_usa`, `percent_sgp`
 
 ::: {.callout-tip collapse="true"}
 ### Tip: joining strings
@@ -143,6 +143,63 @@ paste("cases_", "chn", sep = "")
 paste("hello", "world,", "welcome to R-cafe", sep = " ")
 ```
 :::
+
+### Task 3.5 (Optional) Create a function from given code
+
+Create a function that returns the [plot for number of cases reported for a country over time]{.underline}, where users can
+
+-   Select the case column being plotted
+
+-   Change the country name displayed on the plot's title
+
+-   Change the color of the bar chart and line chart
+
+-   Set the **min** and **max** date (x-axis limit) for the plot
+
+Given that the code to plot case reports for China is as followed
+```{r data prep for demonstration, include=FALSE}
+library(tidyverse)
+library(outbreaks)
+covid_cases <- sarscov2_who_2019 %>% 
+  select(date, matches("^cases_[[:alpha:]]{3}$")) %>% 
+  mutate_at(
+    # compute new cases per day from cumulative cases
+    vars(matches("^cases_[[:alpha:]]{3}$")), 
+    ~ c(0, diff(., differences = 1))
+  )
+```
+
+
+```{r}
+# Uncomment and run the following if you have not installed tidyverse or ggplot2
+# install.packages("tidyverse")
+library(ggplot2)
+plot_col <- "cases_chn"
+country <- "China"
+
+ggplot() +
+  geom_col( # layer for bar chart
+    aes( # define columns for x, y axis
+      x = covid_cases$date, # this is equivalent to covid_cases[["date"]]
+      y = covid_cases[[plot_col]] 
+      ), 
+    fill = "cornflowerblue" # choose color for bar chart
+  ) +
+  geom_line( # layer for line chart
+    aes( # define columns for x, y axis
+      x = covid_cases$date, 
+      y = covid_cases[[plot_col]] 
+      ), 
+    color = "red" # choose color for line chart
+  ) +
+  labs(
+    y = "Cases",
+    x = "Date",
+    title = paste0("Reported Covid cases for ", country) # define title for the plot
+  )
+```
+
+
 
 ### Task 4: Generate data summary
 
