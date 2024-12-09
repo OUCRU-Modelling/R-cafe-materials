@@ -14,6 +14,7 @@ format: html
 - [Teams Tech support channel](https://teams.microsoft.com/l/channel/19%3AGyu0GBNtFFuDmjrVqXsrTYScHLPgP5bpTDLOoaJEeaE1%40thread.tacv2/Tech%20support?groupId=6abc7e7a-0132-4ec2-afa7-393d89c247d8&tenantId=22514748-bbda-4cb8-9795-bfa3fbeec018&ngc=true&allowXTenantAccess=true){target="_blank"}
 - [Main GitHub repository](https://github.com/OUCRU-Modelling/R-cafe){target="_blank"}
 - [Theoretical slides](https://oucru-modelling.github.io/R-cafe-materials/){target="_blank"}
+- [Additional handouts and instructions](https://github.com/OUCRU-Modelling/R-cafe-materials/tree/main/additional_handouts/day_1){target="_blank"}
 - Current instructor roster:
 	- Thinh Ong Phuc (thinhop\@oucru.org)
 	- Anh Phan Truong Quynh (anhptq\@oucru.org)
