@@ -1,185 +1,507 @@
 [
   {
-    "objectID": "slides/tidyverse.html#session-overview",
-    "href": "slides/tidyverse.html#session-overview",
-    "title": "R programming with tidyverse",
-    "section": "Session overview",
-    "text": "Session overview\nWhat will be covered:\n\nStepping into the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\n\ntidyverse style vs. base R style\n\nVectors and vectorisation\nVectorisation with map() vs. *apply()\nPiping with %&gt;% and |&gt;\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
-  },
-  {
-    "objectID": "slides/tidyverse.html#what-is-tidyverse",
-    "href": "slides/tidyverse.html#what-is-tidyverse",
-    "title": "R programming with tidyverse",
-    "section": "What is tidyverse?",
-    "text": "What is tidyverse?\n\ntidyverse is a collection of R packages built for data science\nAll packages shared the same principle of tidy data (this will be very apparent later on!)\nConsists of 8 core packages, and a dozen more packages for various specific purposes"
-  },
-  {
-    "objectID": "slides/tidyverse.html#what-is-tidyverse-1",
-    "href": "slides/tidyverse.html#what-is-tidyverse-1",
-    "title": "R programming with tidyverse",
-    "section": "What is tidyverse?",
-    "text": "What is tidyverse?"
-  },
-  {
-    "objectID": "slides/tidyverse.html#why-tidyverse",
-    "href": "slides/tidyverse.html#why-tidyverse",
-    "title": "R programming with tidyverse",
-    "section": "Why tidyverse?",
-    "text": "Why tidyverse?\n\nEvery function under tidyverse shares a consistent structure and pattern. Making it very easy to implement and edit your R code\nIn general, your R code may look cleaner and easier to follow, compared to base R\nYou just need to install everything once, instead of different packages for different things\nWith piping, you eliminate the need of intermediary objects and nesting of functions (examples later)\n\n\n\n\n\n\n\nNote\n\n\n\nThis is all subjective and your experience with tidyverse may varies"
-  },
-  {
-    "objectID": "slides/tidyverse.html#why-tidyverse-1",
-    "href": "slides/tidyverse.html#why-tidyverse-1",
-    "title": "R programming with tidyverse",
-    "section": "Why tidyverse?",
-    "text": "Why tidyverse?\n\n\n\n\n\n\nTakeaway points\n\n\n\n\ntidyverse is not a replacement of base R. It is just a collection of R packages\nYou don’t have to use tidyverse when using R\ntidyverse has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster\nUnderstanding the principles and goals of tidyverse will better your knowledge on good coding practices and R"
-  },
-  {
-    "objectID": "slides/tidyverse.html#how-to-use-tidyverse",
-    "href": "slides/tidyverse.html#how-to-use-tidyverse",
-    "title": "R programming with tidyverse",
-    "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nStart by installing it!\n\ninstall.packages(\"tidyverse\")\n\n\n\n\n\n\n\nNote\n\n\n\nMost packages will be installed. You might need some more packages, but generally it should cover most of your needs."
-  },
-  {
-    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-1",
-    "href": "slides/tidyverse.html#how-to-use-tidyverse-1",
-    "title": "R programming with tidyverse",
-    "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nThen load it into your R environment!\n\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nWarning: package 'dplyr' was built under R version 4.3.1\n\n\nWarning: package 'stringr' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can load specific packages like library(dplyr), but it doesn’t matter in most cases."
-  },
-  {
-    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2",
-    "href": "slides/tidyverse.html#how-to-use-tidyverse-2",
-    "title": "R programming with tidyverse",
-    "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nRun this example code below to make sure everything is running normally\n\ndiamonds %>%\n  group_by(clarity) %>%\n  summarise(mean_price = mean(price)) %>%\n  ungroup() %>%\n  ggplot(aes(x = clarity, y = mean_price)) +\n  geom_col()\n\n\n\n\n\n\n\n\n\n\nFree R tip\n\n\n\ntype ?function_name for help on how to use a function and see which package is it coming from"
-  },
-  {
-    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
-    "href": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
-    "title": "R programming with tidyverse",
-    "section": "How to use tidyverse",
-    "text": "How to use tidyverse"
-  },
-  {
-    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-3",
-    "href": "slides/tidyverse.html#how-to-use-tidyverse-3",
-    "title": "R programming with tidyverse",
-    "section": "How to use tidyverse",
-    "text": "How to use tidyverse\n\n\n\n\n\n\nFree R tip\n\n\n\nadd “tidyverse” into your Google searches when looking for R issues"
-  },
-  {
-    "objectID": "slides/tidyverse.html#vectors-and-vectorisation",
-    "href": "slides/tidyverse.html#vectors-and-vectorisation",
-    "title": "R programming with tidyverse",
-    "section": "Vectors and vectorisation",
-    "text": "Vectors and vectorisation\n\nWhat is a vector?\n\nA vector is a container of elements of similar classes\n\nFor example, in math, \\([1 2 3]\\) is a vector of 3 integers\n\nMost things in R are vectors\n\nFor example, c(1, 2, 3) is a vector of 3 numeric elements,\nc(\"ab\", \"cd\", \"ef\") is a vector of 3 character elements\n\n\n\n\nFor-loops\n\nIn programming, we typically use for-loops to iterate through elements within a vector"
-  },
-  {
-    "objectID": "slides/tidyverse.html#vectorisation-with-map-vs.-apply",
-    "href": "slides/tidyverse.html#vectorisation-with-map-vs.-apply",
-    "title": "R programming with tidyverse",
-    "section": "Vectorisation with map() vs. *apply()",
-    "text": "Vectorisation with map() vs. *apply()\n\nRecall what is “vectorisation”"
-  },
-  {
-    "objectID": "slides/tidyverse.html#vectorisation-with-map-vs.-apply-1",
-    "href": "slides/tidyverse.html#vectorisation-with-map-vs.-apply-1",
-    "title": "R programming with tidyverse",
-    "section": "Vectorisation with map() vs. *apply()",
-    "text": "Vectorisation with map() vs. *apply()\nVectorisation vs. looping"
-  },
-  {
-    "objectID": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
-    "href": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
-    "title": "Github note 1",
+    "objectID": "takehome_exercises/day1.html",
+    "href": "takehome_exercises/day1.html",
+    "title": "Day 1 - Take home exercise",
     "section": "",
-    "text": "1 Steps to Clone a Repository on GitHub\n\nVisit the GitHub repository you would like to clone\nFor example: https://github.com/OUCRU-Modelling/R-cafe.\nClick on Code → select HTTPS → copy the link in the URL.\n\n\n\n\nCopy the repository link\n\n\n\nOpen GitHub Desktop\nThen choose File → Clone repository.\n\n\n\n\nOpen cloning tab\n\n\n\nChoose URL\n\nPaste the copied link into the blank field below “Hub/cool-repo”.\n\nChange the local path to your preferred directory (or it will use the default directory).\n\nClick Clone.\n\n\n\n\n\nPaste the link\n\n\n\nVerify\nCheck if the repository has been cloned to the correct location.\n\n\n\n\nCheck local repository\n\n\n\n\n2 Steps to create a new branch\n\nCreate new branch\n\nClick on Current branch (main) -&gt; choose New branch\n\n\n\n\n\nCreate new branch\n\n\n\nName the new branch\n\nFill in the branch name (For example: “hungtt”) -&gt; choose Create branch\n\n\n\n\n\nName the new branch\n\n\n\nPublish your branch\n\nClick on Publish branch\n\n\n\n\n\nPublish branch\n\n\n\nCheck your branch on Github\n\nClick on main. You might see your branch name. If not, choose View all branches to find your branch.\n\n\n\n\n\nFind your branch"
+    "text": "Data covid_cases.rds under R-cafe/day1/data/covid_cases.rds is used for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
   },
   {
-    "objectID": "additional_handouts/day_1/Rproject_renv/Rproject.html",
-    "href": "additional_handouts/day_1/Rproject_renv/Rproject.html",
-    "title": "Rproject setup",
+    "objectID": "takehome_exercises/day1.html#dataset",
+    "href": "takehome_exercises/day1.html#dataset",
+    "title": "Day 1 - Take home exercise",
     "section": "",
-    "text": "1 Steps to setup Rproject\n\nOpen Rstudio\nIn the menu, File -&gt; New project...\n\n\n\n\nCreate New project\n\n\n\nChoose Existing Directory.\n\n\n\n\nExisting Directory\n\n\n\nCreate project at prefered directory\n\nClick Browse and select your project directory\nThen click Create project\n\n\n\n\n\nSelect the directory\n\n\n\nCheck your Rproject\n\nYour Rproject will be at your directory\n\n\n\n\n\nRproject"
+    "text": "Data covid_cases.rds under R-cafe/day1/data/covid_cases.rds is used for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "takehome_exercises/day1.html#preparation",
+    "href": "takehome_exercises/day1.html#preparation",
+    "title": "Day 1 - Take home exercise",
+    "section": "Preparation",
+    "text": "Preparation\nBefore working on this exercise, you should have completed the following checklist\n\n\n\n\n\n\nChecklist\n\n\n\nOn Github Desktop\n\nCloned R-cafe repository\nCreated your own branch on the repository\nCheckout your own branch\n\nOn RStudio\n\nMake an R project from cloned R-cafe directory\nHave renv setup\n\n\n\n\n\n\n\n\n\nAnswer script\n\n\n\nYou are expected to save your answer under R-cafe/day1/takehome.R"
+  },
+  {
+    "objectID": "takehome_exercises/day1.html#exercises",
+    "href": "takehome_exercises/day1.html#exercises",
+    "title": "Day 1 - Take home exercise",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 1: Data import\nRead data from R-cafe/day1/data/covid_cases.rds\n\n\nTask 2: Simple computations using dataset\nCompute the following\n\nThe earliest and latest date of data report in the dataset and assign them to 2 variables first_report_date, last_report_date\nCreate new column case_global for covid_cases, which represents the total cases across every country per report day.\nCreate new column percent_chn in covid_cases, which represents the percentage of global cases that China’s cases account for per report day.\n\n\n\n\n\n\n\nTip: compute sum of each row\n\n\n\n\n\nUse function rowSums() to compute sum of case columns row wise\nExample\n\nexample_table &lt;- data.frame(\n  a = c(1:3), b = c(4:6)\n)\n# show example_table\nexample_table\n\n\n  \n\n\n# see output of rowSums\nrowSums(example_table)\n\n[1] 5 7 9\n\n\n\n\n\n\n\n\n\n\n\nTip: create new column/ update column values\n\n\n\n\n\nTo create/update a column, use the syntax data[[\"colname\"]] &lt;- values_for_col where length of values_for_col must be equal to number of rows\nExample\n\nexample_table &lt;- data.frame(\n  a = c(1:3), b = c(4:6)\n)\n\n# create new column new_col\nexample_table[[\"new_col\"]] &lt;- c(7,9,11)\nexample_table\n\n\n  \n\n\n\n\n\n\n\n\nTask 3: Create a function\nComplete the following:\n\nCreate a function compute_percent that\n\ntakes the dataset and the country code (i.e. the 3 characters after cases_ in column name) as input.\nreturn the percentage of the global cases that the given country’s cases account for per report day.\n\nUse that function to create 3 new columns for covid_cases: percent_vnm, percent_usa, percent_sgp\nPrint the final covid_cases selecting only the following columns date, percent_chn, percent_vnm, percent_usa, percent_sgp\n\n\n\n\n\n\n\nTip: joining strings\n\n\n\n\n\nUse function paste() to join multiple strings together\nExample\n\n# joining 2 strings\npaste(\"cases_\", \"chn\", sep = \"\")\n\n[1] \"cases_chn\"\n\n# joining 3 strings\npaste(\"hello\", \"world,\", \"welcome to R-cafe\", sep = \" \")\n\n[1] \"hello world, welcome to R-cafe\"\n\n\n\n\n\n\n\nTask 3.5 (Optional) Create a function from given code\nCreate a function that returns the plot for number of cases reported for a country over time, where users can\n\nSelect the case column being plotted\nChange the country name displayed on the plot’s title\nChange the color of the bar chart and line chart\nSet the min and max date (x-axis limit) for the plot\n\nGiven that the code to plot case reports for China is as followed\n\n# Uncomment and run the following if you have not installed tidyverse or ggplot2\n# install.packages(\"tidyverse\")\nlibrary(ggplot2)\nplot_col &lt;- \"cases_chn\"\ncountry &lt;- \"China\"\n\nggplot() +\n  geom_col( # layer for bar chart\n    aes( # define columns for x, y axis\n      x = covid_cases$date, # this is equivalent to covid_cases[[\"date\"]]\n      y = covid_cases[[plot_col]] \n      ), \n    fill = \"cornflowerblue\" # choose color for bar chart\n  ) +\n  geom_line( # layer for line chart\n    aes( # define columns for x, y axis\n      x = covid_cases$date, \n      y = covid_cases[[plot_col]] \n      ), \n    color = \"red\" # choose color for line chart\n  ) +\n  labs(\n    y = \"Cases\",\n    x = \"Date\",\n    title = paste0(\"Reported Covid cases for \", country) # define title for the plot\n  )\n\n\n\n\n\n\n\n\n\n\nTask 4: Generate data summary\nComplete the following:\n\nUse the function skim() from package skimr to generate summary for the following countries: China, Vietnam, USA, Singapore\nDescribe notable observations from each country from the result of skim()\n\n\n\nTask 5: Peer review\nComplete the following:\n\nPush your solution to Github with the commit message \"day 1 take home solution your_name\"\nCreate an issue commenting on at least 1 other participant’s solution"
+  },
+  {
+    "objectID": "slides/intro.html#about-the-course",
+    "href": "slides/intro.html#about-the-course",
     "title": "Welcome to R Café",
-    "section": "",
-    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
+    "section": "About the course",
+    "text": "About the course\nWelcome to “R-cafe: R for reproducible research”\nIn this course, the following topics will be covered\n\nGetting started with R and Git - Introduction to working with RStudio, R and Github\nR programming with tidyverse - Introduce important tools for data science in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
   },
   {
-    "objectID": "index.html#duration",
-    "href": "index.html#duration",
+    "objectID": "slides/intro.html#about-the-course-1",
+    "href": "slides/intro.html#about-the-course-1",
     "title": "Welcome to R Café",
-    "section": "",
-    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
+    "section": "About the course",
+    "text": "About the course\nBy the end of this course, you will be able to conduct an end-to-end data analysis process on a practical dummy dataset, and create a report using R and RMarkdown/Quarto\nTeaching team:\n\nHai Ho Bich (haihb@oucru.org)\nThinh Ong Phuc (thinhop@oucru.org)\nTuyen Huynh Ngoc (tuyenhn@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)"
   },
   {
-    "objectID": "index.html#structure",
-    "href": "index.html#structure",
+    "objectID": "slides/intro.html#prerequisites",
+    "href": "slides/intro.html#prerequisites",
     "title": "Welcome to R Café",
-    "section": "Structure",
-    "text": "Structure\n\n3-hour face-to-face sessions per day, 1 day per week\nTake home exercises given between face-to-face sessions"
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\n\n\n\n\n\nBefore this lesson, you should have:\n\n\n\nR and RStudio installed\na Github account, Github Desktop installed"
   },
   {
-    "objectID": "index.html#r-café-helpful-shortcuts",
-    "href": "index.html#r-café-helpful-shortcuts",
+    "objectID": "slides/intro.html#overview",
+    "href": "slides/intro.html#overview",
     "title": "Welcome to R Café",
-    "section": "R Café helpful shortcuts",
-    "text": "R Café helpful shortcuts\n\nTeams Tech support channel\nMain GitHub repository\nTheoretical slides\nCurrent instructor roster:\n\nThinh Ong Phuc (thinhop@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)\nTuyen Huynh (tuyenhn@oucru.org)\nHai Ho Bich (haihb@oucru.org)"
+    "section": "Overview",
+    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nBrief introduction to Git, GitHub, and GitHub Desktop\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R"
   },
   {
-    "objectID": "index.html#agenda",
-    "href": "index.html#agenda",
+    "objectID": "slides/intro.html#git-vs.-github",
+    "href": "slides/intro.html#git-vs.-github",
     "title": "Welcome to R Café",
-    "section": "Agenda",
-    "text": "Agenda\n\nGetting started with R and Git (day 1)\n\nPart 1: Setup (45’) - Tuyen & QA\n\nWhat is R Café & Agenda (5’)\nBrief introduction to Git, GitHub, and GitHub Desktop\n\nGoal: Publish your own branch on R Café’s GitHub repository\n\nRstudio (20’)\n\nGoal: Create RStudio project\nGoal: Everyone create and push their first commit onto their own branch\n\nNavigate GitHub\n\nPart 2: Foundations of R (60’) - QA\n\nVariables & Functions & Packages (with outline)\nExercises\n\nGoal: Create a function and push to GitHub\nGoal: Create issues and comment on each other’s issues on GitHub\n\n\nBreak (15’)\nPart 3: Data manipulation in R (45’) - QA\n\nData management\nTake-home exercises setup\n\n\nR programming with tidyverse (day 2)\nQuarto & Markdown (and related) (day 3)"
+    "section": "Git  vs. GitHub ",
+    "text": "Git  vs. GitHub \n\n\nGit is a version control system, its purpose is to keep track of changes of files within a repository and provide the capability to revert to previous version\nGitHub is a cloud-based service to host Git repository, its main purpose is to store and/or share your Git project with collaborators"
   },
   {
-    "objectID": "index.html#take-home-exercises",
-    "href": "index.html#take-home-exercises",
+    "objectID": "slides/intro.html#local-vs.-remote",
+    "href": "slides/intro.html#local-vs.-remote",
     "title": "Welcome to R Café",
-    "section": "Take-home exercises",
-    "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nHandle missing data\nReformat\nFactor your data (with forcats)\nTricky data types: Datetime, String\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
+    "section": "Local vs. Remote",
+    "text": "Local vs. Remote\n\n\nLocal means your physical computer. When we say local we are talking about what’s happening directly on your computer\nRemote can mean a computing cloud, a server, or someone else’s computer. When we say remote we are talking about what’s happening not on your computer, i.e. remotely."
   },
   {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
-    "title": "Commit, push and create issue",
-    "section": "",
-    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory\n\n\n\n\n\n\n\n\n\nOpen Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
+    "objectID": "slides/intro.html#git-and-github-1",
+    "href": "slides/intro.html#git-and-github-1",
+    "title": "Welcome to R Café",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\nGit is a software that works locally. You don’t need GitHub for Git to work. You can use Git as-is\nGitHub acts as a remote server for Git, so that you can share your project and collaborate with others remotely\nA repository is a place where Git tracks all of your changes to files and folders. GitHub stores a copy of your repository whenever you push to it"
   },
   {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
-    "title": "Commit, push and create issue",
-    "section": "",
-    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory"
+    "objectID": "slides/intro.html#git-and-github-2",
+    "href": "slides/intro.html#git-and-github-2",
+    "title": "Welcome to R Café",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\n\n\n\n\nTerminologies\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
   },
   {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
-    "title": "Commit, push and create issue",
-    "section": "",
-    "text": "Open Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
+    "objectID": "slides/intro.html#git-and-github-3",
+    "href": "slides/intro.html#git-and-github-3",
+    "title": "Welcome to R Café",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub"
   },
   {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
-    "title": "Commit, push and create issue",
-    "section": "2.1 Create an issue on Github",
-    "text": "2.1 Create an issue on Github\n\n2.1.1 Select the reference in new issue\n\nClick on the number of the line in the code\nClick ... -&gt; select Reference in new issue\n\n\n\n\nSelect the place where you want to refer to\n\n\n\n\n2.1.2 Put more information to your issue and submit issue\n\nFill in the title in Add a title\nThe link to the error place will automatically appear in Add a description. You might write more detail about the errors in this section as below\nSelect the person you would like assign this issue by select Assignees or quickly assign it to yourself by assign yourself\nClassify the issue by Labels\nClick Submit new issue\n\n\n\n\nAdd information and submit issue\n\n\n\n\n2.1.3 View the open issues\n\nSelect Issues -&gt; Open. You might see the one who is responsible for this issue in Assignee tab.\nSelect the issue you would like to view Typo in example_push_commit_issue.R file.\n\n\n\n\nView the open issue\n\n\n\n\n2.1.4 View the detail of an issue\n\nYou might see the title of the issue, the reference links to the errors, and the detail of the issue.\nNavigate the place of error by clicking the reference link\n\n\n\n\nView the details of issue"
+    "objectID": "slides/intro.html#git-and-github-4",
+    "href": "slides/intro.html#git-and-github-4",
+    "title": "Welcome to R Café",
+    "section": "Git  and GitHub ",
+    "text": "Git  and GitHub \n\n\n\n\n\n\nTakeaway points\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
   },
   {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
-    "title": "Commit, push and create issue",
-    "section": "2.2 Resolve the issue",
-    "text": "2.2 Resolve the issue\n\n2.2.1 Clone the branch you would like to fix the issue\n\nRefer to Steps to Clone a Repository on Github in Github note 1\n\n\n\n2.2.2 Fix the code locally\n\nOpen the example_push_commit_issue.R file\n\nMake correction to the code and make a comment.\n\n\n\n\nResolve issue in local cloned repository\n\n\n\n\n2.2.3 Commit the corrections using Github desktop\n\nOpen the Github desktop. You will see the changes now. The red lines are old version. The green lines are current version.\nCommit and push the corrections\n\n\n\n\nCommit and push the correction\n\n\n\n\n2.2.4 Check the branch again\n\n\n\nView the code on github\n\n\n\n\n2.2.5 Comment and close the issue\n\nGo back to the issue. Select Issues -&gt; Open -&gt; Typo in example_push_commit_issue.R file\nAdd comments in Add a comment -&gt; Click on Close with comment. (If the issue has not been resolved, we can click Comment to discuss with other collaborators)\n\n\n\n\nClose and comment issue on Github\n\n\n\n\n2.2.6 View closed issue\n\nWe can always view the old closed issue by clicking Issues -&gt; Closed\n\n\n\n\nView the closed issues on github"
+    "objectID": "slides/intro.html#github-desktop-1",
+    "href": "slides/intro.html#github-desktop-1",
+    "title": "Welcome to R Café",
+    "section": "GitHub Desktop ",
+    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
+  },
+  {
+    "objectID": "slides/intro.html#github-desktop-2",
+    "href": "slides/intro.html#github-desktop-2",
+    "title": "Welcome to R Café",
+    "section": "GitHub Desktop ",
+    "text": "GitHub Desktop \n\n\nGitHub Desktop is a software that makes it easier for you to use Git. It is a software built by GitHub, again, separate from Git\nAdvantages:\n\nSimplifies everything and only provide commonly used functionalities of Git\nReduces the chances that you will make errors in using Git\nDirect integration to GitHub, makes it easier for authentication"
+  },
+  {
+    "objectID": "slides/intro.html#setting-up-github-desktop",
+    "href": "slides/intro.html#setting-up-github-desktop",
+    "title": "Welcome to R Café",
+    "section": "Setting up GitHub Desktop ",
+    "text": "Setting up GitHub Desktop \n\n\n\n\n\n\nChecklist\n\n\n\nSign in to your account in GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\n\nRefer to the handouts for instructions"
+  },
+  {
+    "objectID": "slides/intro.html#r-and-rstudio-1",
+    "href": "slides/intro.html#r-and-rstudio-1",
+    "title": "Welcome to R Café",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\nR is a programming language for statistical computing and data visualization.\n\n\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
+  },
+  {
+    "objectID": "slides/intro.html#r-and-rstudio-2",
+    "href": "slides/intro.html#r-and-rstudio-2",
+    "title": "Welcome to R Café",
+    "section": "R and RStudio",
+    "text": "R and RStudio\nWhy use R?\n\n\nCost: R is free and cross-platform.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly."
+  },
+  {
+    "objectID": "slides/intro.html#create-project-in-rstudio",
+    "href": "slides/intro.html#create-project-in-rstudio",
+    "title": "Welcome to R Café",
+    "section": "Create Project in RStudio",
+    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File &gt; New Project…\nClick Existing Directory &gt; Browse\nClick Browse and click on your project directory\nClick Create Project"
+  },
+  {
+    "objectID": "slides/intro.html#rstudio-interface",
+    "href": "slides/intro.html#rstudio-interface",
+    "title": "Welcome to R Café",
+    "section": "RStudio interface",
+    "text": "RStudio interface"
+  },
+  {
+    "objectID": "slides/intro.html#rstudio-interface-1",
+    "href": "slides/intro.html#rstudio-interface-1",
+    "title": "Welcome to R Café",
+    "section": "RStudio interface",
+    "text": "RStudio interface\n\nConsists of 4 main panes\n\nSource code: Show the content of a source code file\nConsole: Show the executed code lines and their output\nDefined variables: Show the currently defined variables\nFiles/Plot/Package/Help:\n\nFiles: for files nagivation\nPlots: show plot output\nPackages: show all the installed packages and packages being used (packages in use will have a ✓)\nHelp: show documentations for functions or packages"
+  },
+  {
+    "objectID": "slides/intro.html#project-structure",
+    "href": "slides/intro.html#project-structure",
+    "title": "Welcome to R Café",
+    "section": "Project structure",
+    "text": "Project structure\nA minimal R project structure will have the following format\n└── my_project\n    ├── output\n    ├── data\n    │   ├── raw\n    │   └── processed\n    └── analysis.R \nWhere\n\ndata folder contains data to be analyzed\noutput stores code output (plot, figures, etc.)\nanalysis.R is the file containing R code. There can be multiple .R files under 1 project."
+  },
+  {
+    "objectID": "slides/intro.html#sec-file-naming",
+    "href": "slides/intro.html#sec-file-naming",
+    "title": "Welcome to R Café",
+    "section": "Naming convention",
+    "text": "Naming convention\n\n\n\n\n\n\n\nNote\n\n\nSome rules of thumb for naming files and folders:\n\nDo not use diacritics (e.g. Vietnamese accent marks).\nDo not use overly long names, keep it short but meaningful.\nDo not include special characters such as /, \\, &, ,, (, )... in names. It’s best to use only letters and numbers.\nAvoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., dataSoiHcm) or PascalCase (capitalize the first letter of all words, e.g., DataSoiHcm).\nDo not include spaces (\" \") in names. Instead, you can use camelCase, or replace spaces with - or _. For example, instead of naming a file data soi HCM 2023.xlsx, you could name it dataSoiHcm2023.xlsx, data-soi-hcm-2023.xlsx, or data_soi_hcm_2023.xlsx."
+  },
+  {
+    "objectID": "slides/intro.html#set-up-renv",
+    "href": "slides/intro.html#set-up-renv",
+    "title": "Welcome to R Café",
+    "section": "Set up renv",
+    "text": "Set up renv\nTo use renv for your project. Run the following line of code in your console\n\nrenv::init()\n\nWhich will create renv.lock and renv folder under your project"
+  },
+  {
+    "objectID": "slides/intro.html#why-use-renv",
+    "href": "slides/intro.html#why-use-renv",
+    "title": "Welcome to R Café",
+    "section": "Why use renv?",
+    "text": "Why use renv?\n\n\n\nEncapsulate the development environment of your R projects (R version, packages used and their versions) in a file called renv.lock\nEnsure collaborators to replicate your R project’s development environment by simply running renv::restore()\nIsolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under\n\npath_to_project/renv/library/{R-version}/{device-architecture}/\n\n\n\n\n\n\n\n\n\n\nWhat are packages?\n\n\nAn R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process."
+  },
+  {
+    "objectID": "slides/intro.html#r-script",
+    "href": "slides/intro.html#r-script",
+    "title": "Welcome to R Café",
+    "section": "R script",
+    "text": "R script\nTo create an R script in RStudio, in the menu section, click File &gt; New File &gt; R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
+  },
+  {
+    "objectID": "slides/intro.html#r-script-1",
+    "href": "slides/intro.html#r-script-1",
+    "title": "Welcome to R Café",
+    "section": "R script",
+    "text": "R script\nExample: Some R codes and comment\n\n# this is a comment, and the following code will print Hello world in the console\nprint(\"Hello world\")\n\n[1] \"Hello world\"\n\n# you can also perform computations in R\n# In R, you can denote \n# - multiplication as *\n# - power as **\n# - devision as /\n# - e5 is the shorthand notation for *10**5\n12*10e5 + 313**2 - 11890/2\n\n[1] 12092024"
+  },
+  {
+    "objectID": "slides/intro.html#variable",
+    "href": "slides/intro.html#variable",
+    "title": "Welcome to R Café",
+    "section": "Variable",
+    "text": "Variable\n\nIn R, a variable is a name used to store an object, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.\nIn R, a variable can be created by assigning an object to it using &lt;-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb &lt;- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting &lt;- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\""
+  },
+  {
+    "objectID": "slides/intro.html#variable-1",
+    "href": "slides/intro.html#variable-1",
+    "title": "Welcome to R Café",
+    "section": "Variable",
+    "text": "Variable\nValue of a variable can also be overridden\n\nvar &lt;- 5\nvar\n\n[1] 5\n\n# override variable\nvar &lt;- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 6.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
+  },
+  {
+    "objectID": "slides/intro.html#classes",
+    "href": "slides/intro.html#classes",
+    "title": "Welcome to R Café",
+    "section": "Classes",
+    "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object (to check the class of a variable, run class(variable)).\nThere are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
+  },
+  {
+    "objectID": "slides/intro.html#special-values",
+    "href": "slides/intro.html#special-values",
+    "title": "Welcome to R Café",
+    "section": "Special values",
+    "text": "Special values\n\n\n\n\n\n\n\n\nValue\nDescription\n\n\n\n\nNA\nStands for Not Available. Indicates missing values.\n\n\nNULL\nIndicates undefined/abscence of value. (e.g. numb &lt;- NULL indicates value for variable numb is undefined)\n\n\nNaN\nStands for Not a Number. Indicates unrepresentable number (e.g. result for 0/0 )\n\n\nInf/-Inf\nInfinity/Negative infinity"
+  },
+  {
+    "objectID": "slides/intro.html#functions",
+    "href": "slides/intro.html#functions",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name &lt;- function(){\n\n# function content\n\n}"
+  },
+  {
+    "objectID": "slides/intro.html#functions-1",
+    "href": "slides/intro.html#functions-1",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\nExample: a simple function\n\nprint_hello &lt;- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
+  },
+  {
+    "objectID": "slides/intro.html#functions-2",
+    "href": "slides/intro.html#functions-2",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\nFunctions can also have arguments, which creates reusable code with dynamic inputs and outputs\nA function with arguments as followed. Note that you can include as many arguments as you want\n\nfunction_name &lt;- function(argument_1, argument_2){\n  # function content\n  # values of argument can be accessed simply calling argument name\n}"
+  },
+  {
+    "objectID": "slides/intro.html#functions-3",
+    "href": "slides/intro.html#functions-3",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\nExample: simple function\n\ncompute_power &lt;- function(base, power){\n  # return `base` raised to the power of `power`\n  base**power\n}\n\n# output can be assigned to a variable\noutput &lt;- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
+  },
+  {
+    "objectID": "slides/intro.html#functions-4",
+    "href": "slides/intro.html#functions-4",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\n\nImplicit vs. explicit return\n\nBy default, R will implicitly return the result of the last line of code in the function\nYou can also explicitly specify the returned value using return()\n\n\n\ncompute_power &lt;- function(base, power){\n\n  # explicit return statement\n  return(base**power)\n}\n\n# output can be assigned to a variable\noutput &lt;- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
+  },
+  {
+    "objectID": "slides/intro.html#functions-5",
+    "href": "slides/intro.html#functions-5",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\n\n\n\n\n\n\nNote\n\n\nYou can provide value for each argument without specifying the name but it must follow the same order in the function definition.\nHowever, it is generally recommended to include the name of the argument for better readability. When argument name is specified, order no longer matter.\n\ncompute_power(5, 2) \n\n[1] 25\n\ncompute_power(2, 5) # expect different result (2^5)\n\n[1] 32\n\ncompute_power(base = 5, power = 2)\n\n[1] 25\n\ncompute_power(power = 2, base = 5) # expect same result\n\n[1] 25"
+  },
+  {
+    "objectID": "slides/intro.html#functions-6",
+    "href": "slides/intro.html#functions-6",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\n\nWhen to create a function?\nA general rule is when you start to copy-paste a sequence of code multiple times (usually &gt;3), you should make a function for it\nThe in-class excercise (Section 9) will demonstrate one use case for function"
+  },
+  {
+    "objectID": "slides/intro.html#functions-7",
+    "href": "slides/intro.html#functions-7",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\n\nSome criteria for a good function\n\n\nModularity - each function should focus on one task (e.g. you can have a function to import data, another to model the data, another to visualize data but not a function doing all of those 3 tasks)\nConcise - the content of a function should not be too lengthy. If a function starts to have &gt; 30 lines of code, it may be an indication that the modularity rule is violated.\nReadability - function’s name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented."
+  },
+  {
+    "objectID": "slides/intro.html#functions-8",
+    "href": "slides/intro.html#functions-8",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\n\nR is a functional programming language, which means you will encounter a lot of functions while coding in R.\nTo assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use ? or help()\n\n# look up documentation for `sqrt` function\n?sqrt\nhelp(sqrt)\n\n\nNote that the built-in documentation only helps when you already know which function you want to ask about. If you are looking for a function to achieve a specific task, it is better to start with search engine (Google, Bing, etc.), forums/Q&A sites (Github discussions, StackOverflow, etc.) or even ChatGPT."
+  },
+  {
+    "objectID": "slides/intro.html#functions-9",
+    "href": "slides/intro.html#functions-9",
+    "title": "Welcome to R Café",
+    "section": "Functions",
+    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code &gt; Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power &lt;- function(base, power){\n  # return `base` raised to the power of `power`\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
+  },
+  {
+    "objectID": "slides/intro.html#scope",
+    "href": "slides/intro.html#scope",
+    "title": "Welcome to R Café",
+    "section": "Scope",
+    "text": "Scope\n\nDiscussion Read the code and guess the answer for 3 Questions below\n\n\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var &lt;- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n# Q3: What will be the value for arg here?\narg"
+  },
+  {
+    "objectID": "slides/intro.html#scope-1",
+    "href": "slides/intro.html#scope-1",
+    "title": "Welcome to R Café",
+    "section": "Scope",
+    "text": "Scope\nOutput\n\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var &lt;- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n\n[1] \"Value of variable example_var: 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Value of function argument: 60\"\n\n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\"\n\n# Q3: What will be the value for arg here?\narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found"
+  },
+  {
+    "objectID": "slides/intro.html#scope-2",
+    "href": "slides/intro.html#scope-2",
+    "title": "Welcome to R Café",
+    "section": "Scope",
+    "text": "Scope"
+  },
+  {
+    "objectID": "slides/intro.html#scope-3",
+    "href": "slides/intro.html#scope-3",
+    "title": "Welcome to R Café",
+    "section": "Scope",
+    "text": "Scope\nExplanation\n\n# this is a global variable since it is not created in any local environment\nexample_var &lt;- 10\n\nexample_func &lt;- function(arg){\n  # global_var\n  print(paste0(\"Global variable can be accessed within function \", example_var))\n  \n  # this is creating a local variable named example_var\n  # it will not affect the global variable example_var\n  example_var &lt;- 20\n  \n  # this example_var refers to the local variable example_var\n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  # note that argument is also only accessible within the function\n  print(paste0(\"Function argument: \", arg))\n}\n\nexample_func(60) \n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Function argument: 60\"\n\n# value for argument should only accessible within function \narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found\n\n# refers to global variable example_var here \npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\""
+  },
+  {
+    "objectID": "slides/intro.html#scope-4",
+    "href": "slides/intro.html#scope-4",
+    "title": "Welcome to R Café",
+    "section": "Scope",
+    "text": "Scope\n\nScope refers to where variables can be accessed or modified.\nTo put simply\n\n\nBy default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is not recommended).\nglobal variables can be accessed from both outside and inside the function (i.e. from global or local environment).\nlocal variables are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function."
+  },
+  {
+    "objectID": "slides/intro.html#packages",
+    "href": "slides/intro.html#packages",
+    "title": "Welcome to R Café",
+    "section": "Packages",
+    "text": "Packages\n\n\nPackages are shareable bundle of functions (and sometimes include built-in dataset). We will frequently use available packages to assist us during coding process.\n\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages &gt; Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code install.packages(\"package_name\")"
+  },
+  {
+    "objectID": "slides/intro.html#packages-1",
+    "href": "slides/intro.html#packages-1",
+    "title": "Welcome to R Café",
+    "section": "Packages",
+    "text": "Packages\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")\n\n\n\n\n\n\n\nUpdate renv.lock\n\n\nTo update your renv.lock after changing development environment, run the code renv::snapshot()"
+  },
+  {
+    "objectID": "slides/intro.html#packages-2",
+    "href": "slides/intro.html#packages-2",
+    "title": "Welcome to R Café",
+    "section": "Packages",
+    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata &lt;- read_excel(\"../data/linelist_raw.xlsx\")\nhead(data)"
+  },
+  {
+    "objectID": "slides/intro.html#packages-3",
+    "href": "slides/intro.html#packages-3",
+    "title": "Welcome to R Café",
+    "section": "Packages",
+    "text": "Packages\nSimilar to functions, you can also look up documentation for packages using ? or help()\n\n# --- look up documentation for package ---\n?readxl\nhelp(readxl)\n\n# --- look up documentation for function of the package ---\n?readxl::read_excel\nhelp(read_excel, package= readxl)"
+  },
+  {
+    "objectID": "slides/intro.html#goal",
+    "href": "slides/intro.html#goal",
+    "title": "Welcome to R Café",
+    "section": "Goal",
+    "text": "Goal\n\n\n\n\n\n\nNote\n\n\nIn this exercise, you will:\n\nCreate a function from the given code\nPush your code to Github\nCommenting collaborators’ code on Github"
+  },
+  {
+    "objectID": "slides/intro.html#code-file",
+    "href": "slides/intro.html#code-file",
+    "title": "Welcome to R Café",
+    "section": "Code file",
+    "text": "Code file\nIn your R project, navigate to the template code file day1/inclass.R.\nThen run all the code in the file, this should create a dataset covid_cases.\nThis is also where you will write the solution for in-class exercise."
+  },
+  {
+    "objectID": "slides/intro.html#create-function",
+    "href": "slides/intro.html#create-function",
+    "title": "Welcome to R Café",
+    "section": "Create function",
+    "text": "Create function\n\nDataset Given a dataset with number of reported cases for 211 countries and archipelagos\nWhere each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns\n\nhead(covid_cases)"
+  },
+  {
+    "objectID": "slides/intro.html#create-function-1",
+    "href": "slides/intro.html#create-function-1",
+    "title": "Welcome to R Café",
+    "section": "Create function",
+    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col &lt;- \"cases_chn\"\n\nbasic_stats &lt;- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
+  },
+  {
+    "objectID": "slides/intro.html#suggested-solution",
+    "href": "slides/intro.html#suggested-solution",
+    "title": "Welcome to R Café",
+    "section": "Suggested solution",
+    "text": "Suggested solution\nExercise: Suggested solution\n\n\nCode\ncompute_stats &lt;- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")"
+  },
+  {
+    "objectID": "slides/intro.html#navigating-github-desktop-github",
+    "href": "slides/intro.html#navigating-github-desktop-github",
+    "title": "Welcome to R Café",
+    "section": "Navigating Github Desktop & Github",
+    "text": "Navigating Github Desktop & Github\nOnce you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)\n\n\n\n\n\n\nNote\n\n\n\nPush your code to Github using Github Desktop\nCreate an issue on Github to comment on at least 1 other participant’s code"
+  },
+  {
+    "objectID": "slides/intro.html#data-import",
+    "href": "slides/intro.html#data-import",
+    "title": "Welcome to R Café",
+    "section": "Data import",
+    "text": "Data import\nSome useful import functions\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nread_excel()\nreadxl\nimport Excel (.xlsx, .xls) files\n\n\nread_csv()\nreadr\nimport .csv files\n\n\nreadRDS()\nbase\nimport .rds files\n\n\nload()\nbase\nimport .rda files"
+  },
+  {
+    "objectID": "slides/intro.html#data-import-1",
+    "href": "slides/intro.html#data-import-1",
+    "title": "Welcome to R Café",
+    "section": "Data import",
+    "text": "Data import\n\nrio - support data import for multiple data format\n\n\nlibrary(rio)\ndata &lt;- import(\"../data/linelist_raw.xlsx\")"
+  },
+  {
+    "objectID": "slides/intro.html#data-export",
+    "href": "slides/intro.html#data-export",
+    "title": "Welcome to R Café",
+    "section": "Data export",
+    "text": "Data export\nSome useful export function in R\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nwrite_xlsx()\nwritexl\nexport data as Excel files\n\n\nwrite.csv()\nutils\nexport data as .csv files\n\n\nsaveRDS()\nbase\nexport data as .rds files\n\n\nsave()\nbase\nexport data .rda files"
+  },
+  {
+    "objectID": "slides/intro.html#clean-column-names",
+    "href": "slides/intro.html#clean-column-names",
+    "title": "Welcome to R Café",
+    "section": "Clean column names",
+    "text": "Clean column names\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
+  },
+  {
+    "objectID": "slides/intro.html#clean-column-names-1",
+    "href": "slides/intro.html#clean-column-names-1",
+    "title": "Welcome to R Café",
+    "section": "Clean column names",
+    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\n\nlibrary(janitor)\ndata &lt;- clean_names(data)\nhead(data)"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction",
+    "href": "slides/intro.html#simple-data-extraction",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n[1] 3"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-1",
+    "href": "slides/intro.html#simple-data-extraction-1",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n[1] \"2014-05-22 UTC\""
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-2",
+    "href": "slides/intro.html#simple-data-extraction-2",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get all values in the 5th row\ndata[5, ]"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-3",
+    "href": "slides/intro.html#simple-data-extraction-3",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+  },
+  {
+    "objectID": "slides/intro.html#simple-data-extraction-4",
+    "href": "slides/intro.html#simple-data-extraction-4",
+    "title": "Welcome to R Café",
+    "section": "Simple data extraction",
+    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
+  },
+  {
+    "objectID": "slides/intro.html#data-summary",
+    "href": "slides/intro.html#data-summary",
+    "title": "Welcome to R Café",
+    "section": "Data summary",
+    "text": "Data summary\nIn base R, function summary() is used to have the basic statistics of each variables in the dataset\n\nsummary(data)\n\n   case_id            generation   infection_date                  \n Length:6611        Min.   : 0.0   Min.   :2012-04-09 00:00:00.00  \n Class :character   1st Qu.:13.0   1st Qu.:2014-08-25 00:00:00.00  \n Mode  :character   Median :16.0   Median :2014-10-04 00:00:00.00  \n                    Mean   :16.6   Mean   :2014-08-17 15:30:00.42  \n                    3rd Qu.:20.0   3rd Qu.:2014-11-26 00:00:00.00  \n                    Max.   :37.0   Max.   :2015-04-27 00:00:00.00  \n                    NA's   :7      NA's   :2322                    \n  date_onset          hosp_date                     \n Length:6611        Min.   :2012-04-20 00:00:00.00  \n Class :character   1st Qu.:2014-09-07 00:00:00.00  \n Mode  :character   Median :2014-10-15 00:00:00.00  \n                    Mean   :2014-08-31 05:10:56.32  \n                    3rd Qu.:2014-12-10 00:00:00.00  \n                    Max.   :2015-04-30 00:00:00.00  \n                    NA's   :7                       \n date_of_outcome                   outcome             gender         \n Min.   :2012-05-14 00:00:00.0   Length:6611        Length:6611       \n 1st Qu.:2014-09-14 00:00:00.0   Class :character   Class :character  \n Median :2014-10-26 00:00:00.0   Mode  :character   Mode  :character  \n Mean   :2014-09-11 00:04:09.4                                        \n 3rd Qu.:2014-12-21 00:00:00.0                                        \n Max.   :2015-06-04 00:00:00.0                                        \n NA's   :1068                                                         \n   hospital              lon              lat          infector        \n Length:6611        Min.   :-13.27   Min.   :8.446   Length:6611       \n Class :character   1st Qu.:-13.25   1st Qu.:8.461   Class :character  \n Mode  :character   Median :-13.23   Median :8.469   Mode  :character  \n                    Mean   :-13.23   Mean   :8.470                     \n                    3rd Qu.:-13.22   3rd Qu.:8.480                     \n                    Max.   :-13.21   Max.   :8.492                     \n                    NA's   :7        NA's   :7                         \n    source              age              age_unit            row_num    \n Length:6611        Length:6611        Length:6611        Min.   :   1  \n Class :character   Class :character   Class :character   1st Qu.:1648  \n Mode  :character   Mode  :character   Mode  :character   Median :3241  \n                                                          Mean   :3241  \n                                                          3rd Qu.:4836  \n                                                          Max.   :6481  \n                                                                        \n     wt_kg            ht_cm          ct_blood        fever          \n Min.   :-11.00   Min.   :  4.0   Min.   :16.00   Length:6611       \n 1st Qu.: 41.00   1st Qu.: 91.0   1st Qu.:20.00   Class :character  \n Median : 54.00   Median :130.0   Median :22.00   Mode  :character  \n Mean   : 52.69   Mean   :125.2   Mean   :21.26                     \n 3rd Qu.: 66.00   3rd Qu.:159.0   3rd Qu.:22.00                     \n Max.   :111.00   Max.   :295.0   Max.   :26.00                     \n NA's   :7        NA's   :7       NA's   :7                         \n    chills             cough              aches              vomit          \n Length:6611        Length:6611        Length:6611        Length:6611       \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n                                                                            \n      temp      time_admission     merged_header          x28           \n Min.   :35.2   Length:6611        Length:6611        Length:6611       \n 1st Qu.:38.3   Class :character   Class :character   Class :character  \n Median :38.8   Mode  :character   Mode  :character   Mode  :character  \n Mean   :38.6                                                           \n 3rd Qu.:39.2                                                           \n Max.   :40.8                                                           \n NA's   :158"
+  },
+  {
+    "objectID": "slides/intro.html#data-summary-1",
+    "href": "slides/intro.html#data-summary-1",
+    "title": "Welcome to R Café",
+    "section": "Data summary",
+    "text": "Data summary\n\nHowever, function skim() from package skimr can return a better table output with tables grouped by class of data\n\nlibrary(skimr)\nskim(data)\n\n\nData summary\n\n\nName\ndata\n\n\nNumber of rows\n6611\n\n\nNumber of columns\n28\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n17\n\n\nnumeric\n8\n\n\nPOSIXct\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\ncase_id\n137\n0.98\n6\n6\n0\n5888\n0\n\n\ndate_onset\n293\n0.96\n10\n10\n0\n580\n0\n\n\noutcome\n1500\n0.77\n5\n7\n0\n2\n0\n\n\ngender\n324\n0.95\n1\n1\n0\n2\n0\n\n\nhospital\n1512\n0.77\n5\n36\n0\n13\n0\n\n\ninfector\n2323\n0.65\n6\n6\n0\n2697\n0\n\n\nsource\n2323\n0.65\n5\n7\n0\n2\n0\n\n\nage\n107\n0.98\n1\n2\n0\n75\n0\n\n\nage_unit\n7\n1.00\n5\n6\n0\n2\n0\n\n\nfever\n258\n0.96\n2\n3\n0\n2\n0\n\n\nchills\n258\n0.96\n2\n3\n0\n2\n0\n\n\ncough\n258\n0.96\n2\n3\n0\n2\n0\n\n\naches\n258\n0.96\n2\n3\n0\n2\n0\n\n\nvomit\n258\n0.96\n2\n3\n0\n2\n0\n\n\ntime_admission\n844\n0.87\n5\n5\n0\n1091\n0\n\n\nmerged_header\n0\n1.00\n1\n1\n0\n1\n0\n\n\nx28\n0\n1.00\n1\n1\n0\n1\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ngeneration\n7\n1.00\n16.60\n5.71\n0.00\n13.00\n16.00\n20.00\n37.00\n▁▆▇▂▁\n\n\nlon\n7\n1.00\n-13.23\n0.02\n-13.27\n-13.25\n-13.23\n-13.22\n-13.21\n▅▃▃▅▇\n\n\nlat\n7\n1.00\n8.47\n0.01\n8.45\n8.46\n8.47\n8.48\n8.49\n▅▇▇▇▆\n\n\nrow_num\n0\n1.00\n3240.91\n1857.83\n1.00\n1647.50\n3241.00\n4836.50\n6481.00\n▇▇▇▇▇\n\n\nwt_kg\n7\n1.00\n52.69\n18.59\n-11.00\n41.00\n54.00\n66.00\n111.00\n▁▃▇▅▁\n\n\nht_cm\n7\n1.00\n125.25\n49.57\n4.00\n91.00\n130.00\n159.00\n295.00\n▂▅▇▂▁\n\n\nct_blood\n7\n1.00\n21.26\n1.67\n16.00\n20.00\n22.00\n22.00\n26.00\n▁▃▇▃▁\n\n\ntemp\n158\n0.98\n38.60\n0.95\n35.20\n38.30\n38.80\n39.20\n40.80\n▁▂▂▇▁\n\n\n\nVariable type: POSIXct\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ninfection_date\n2322\n0.65\n2012-04-09\n2015-04-27\n2014-10-04\n538\n\n\nhosp_date\n7\n1.00\n2012-04-20\n2015-04-30\n2014-10-15\n570\n\n\ndate_of_outcome\n1068\n0.84\n2012-05-14\n2015-06-04\n2014-10-26\n575"
+  },
+  {
+    "objectID": "slides/intro.html#recap",
+    "href": "slides/intro.html#recap",
+    "title": "Welcome to R Café",
+    "section": "Recap",
+    "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nHow to upload your project to Github using Github Desktop\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nPerform data import, export, overview in R"
+  },
+  {
+    "objectID": "slides/intro.html#take-home-exercise",
+    "href": "slides/intro.html#take-home-exercise",
+    "title": "Welcome to R Café",
+    "section": "Take home exercise",
+    "text": "Take home exercise\nBefore the next lesson (23rd Dec, 2024), please complete all the tasks for Day 1 - Take home exercise"
+  },
+  {
+    "objectID": "slides/intro.html#upcoming-lessons",
+    "href": "slides/intro.html#upcoming-lessons",
+    "title": "Welcome to R Café",
+    "section": "Upcoming lessons",
+    "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
   },
   {
     "objectID": "additional_handouts/day_1/outline/outline.html",
@@ -266,549 +588,234 @@
     "text": "4.4 Data Summary\n\nSummarizing data with summary and skim."
   },
   {
-    "objectID": "slides/intro.html#about-the-course",
-    "href": "slides/intro.html#about-the-course",
-    "title": "Welcome to R Café",
-    "section": "About the course",
-    "text": "About the course\nWelcome to “R-cafe: R for reproducible research”\nIn this course, the following topics will be covered\n\nGetting started with R and Git - Introduction to working with RStudio, R and Github\nR programming with tidyverse - Introduce important tools for data science in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
-  },
-  {
-    "objectID": "slides/intro.html#about-the-course-1",
-    "href": "slides/intro.html#about-the-course-1",
-    "title": "Welcome to R Café",
-    "section": "About the course",
-    "text": "About the course\nBy the end of this course, you will be able to conduct an end-to-end data analysis process on a practical dummy dataset, and create a report using R and RMarkdown/Quarto\nTeaching team:\n\nHai Ho Bich (haihb@oucru.org)\nThinh Ong Phuc (thinhop@oucru.org)\nTuyen Huynh Ngoc (tuyenhn@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)"
-  },
-  {
-    "objectID": "slides/intro.html#prerequisites",
-    "href": "slides/intro.html#prerequisites",
-    "title": "Welcome to R Café",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\n\n\n\n\n\nBefore this lesson, you should have:\n\n\n\nR and RStudio installed\na Github account, Github Desktop installed"
-  },
-  {
-    "objectID": "slides/intro.html#overview",
-    "href": "slides/intro.html#overview",
-    "title": "Welcome to R Café",
-    "section": "Overview",
-    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nBrief introduction to Git, GitHub, and GitHub Desktop\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R"
-  },
-  {
-    "objectID": "slides/intro.html#git-vs.-github",
-    "href": "slides/intro.html#git-vs.-github",
-    "title": "Welcome to R Café",
-    "section": "Git  vs. GitHub ",
-    "text": "Git  vs. GitHub \n\n\nGit is a version control system, its purpose is to keep track of changes of files within a repository and provide the capability to revert to previous version\nGitHub is a cloud-based service to host Git repository, its main purpose is to store and/or share your Git project with collaborators"
-  },
-  {
-    "objectID": "slides/intro.html#local-vs.-remote",
-    "href": "slides/intro.html#local-vs.-remote",
-    "title": "Welcome to R Café",
-    "section": "Local vs. Remote",
-    "text": "Local vs. Remote\n\n\nLocal means your physical computer. When we say local we are talking about what’s happening directly on your computer\nRemote can mean a computing cloud, a server, or someone else’s computer. When we say remote we are talking about what’s happening not on your computer, i.e. remotely."
-  },
-  {
-    "objectID": "slides/intro.html#git-and-github-1",
-    "href": "slides/intro.html#git-and-github-1",
-    "title": "Welcome to R Café",
-    "section": "Git  and GitHub ",
-    "text": "Git  and GitHub \n\n\nGit is a software that works locally. You don’t need GitHub for Git to work. You can use Git as-is\nGitHub acts as a remote server for Git, so that you can share your project and collaborate with others remotely\nA repository is a place where Git tracks all of your changes to files and folders. GitHub stores a copy of your repository whenever you push to it"
-  },
-  {
-    "objectID": "slides/intro.html#git-and-github-2",
-    "href": "slides/intro.html#git-and-github-2",
-    "title": "Welcome to R Café",
-    "section": "Git  and GitHub ",
-    "text": "Git  and GitHub \n\n\n\n\n\n\nTerminologies\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
-  },
-  {
-    "objectID": "slides/intro.html#git-and-github-3",
-    "href": "slides/intro.html#git-and-github-3",
-    "title": "Welcome to R Café",
-    "section": "Git  and GitHub ",
-    "text": "Git  and GitHub"
-  },
-  {
-    "objectID": "slides/intro.html#git-and-github-4",
-    "href": "slides/intro.html#git-and-github-4",
-    "title": "Welcome to R Café",
-    "section": "Git  and GitHub ",
-    "text": "Git  and GitHub \n\n\n\n\n\n\nTakeaway points\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
-  },
-  {
-    "objectID": "slides/intro.html#github-desktop-1",
-    "href": "slides/intro.html#github-desktop-1",
-    "title": "Welcome to R Café",
-    "section": "GitHub Desktop ",
-    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nDanger\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
-  },
-  {
-    "objectID": "slides/intro.html#github-desktop-2",
-    "href": "slides/intro.html#github-desktop-2",
-    "title": "Welcome to R Café",
-    "section": "GitHub Desktop ",
-    "text": "GitHub Desktop \n\n\nGitHub Desktop is a software that makes it easier for you to use Git. It is a software built by GitHub, again, separate from Git\nAdvantages:\n\nSimplifies everything and only provide commonly used functionalities of Git\nReduces the chances that you will make errors in using Git\nDirect integration to GitHub, makes it easier for authentication"
-  },
-  {
-    "objectID": "slides/intro.html#setting-up-github-desktop",
-    "href": "slides/intro.html#setting-up-github-desktop",
-    "title": "Welcome to R Café",
-    "section": "Setting up GitHub Desktop ",
-    "text": "Setting up GitHub Desktop \n\n\n\n\n\n\nChecklist\n\n\n\nSign in to your account in GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\n\nRefer to the handouts for instructions"
-  },
-  {
-    "objectID": "slides/intro.html#r-and-rstudio",
-    "href": "slides/intro.html#r-and-rstudio",
-    "title": "Welcome to R Café",
-    "section": "R and RStudio",
-    "text": "R and RStudio\n\nR is a programming language for statistical computing and data visualization.\n\n\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
-  },
-  {
-    "objectID": "slides/intro.html#r-and-rstudio-1",
-    "href": "slides/intro.html#r-and-rstudio-1",
-    "title": "Welcome to R Café",
-    "section": "R and RStudio",
-    "text": "R and RStudio\n\nR is a programming language for statistical computing and data visualization.\n\n\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
-  },
-  {
-    "objectID": "slides/intro.html#create-project-in-rstudio",
-    "href": "slides/intro.html#create-project-in-rstudio",
-    "title": "Welcome to R Café",
-    "section": "Create Project in RStudio",
-    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File > New Project…\nClick Existing Directory > Browse\nClick Browse and click on your project directory\nClick Create Project"
-  },
-  {
-    "objectID": "slides/intro.html#rstudio-interface",
-    "href": "slides/intro.html#rstudio-interface",
-    "title": "Welcome to R Café",
-    "section": "RStudio interface",
-    "text": "RStudio interface"
-  },
-  {
-    "objectID": "slides/intro.html#rstudio-interface-1",
-    "href": "slides/intro.html#rstudio-interface-1",
-    "title": "Welcome to R Café",
-    "section": "RStudio interface",
-    "text": "RStudio interface\n\nConsists of 4 main panes\n\nSource code: Show the content of a source code file\nConsole: Show the executed code lines and their output\nDefined variables: Show the currently defined variables\nFiles/Plot/Package/Help:\n\nFiles: for files nagivation\nPlots: show plot output\nPackages: show all the installed packages and packages being used (packages in use will have a ✓)\nHelp: show documentations for functions or packages"
-  },
-  {
-    "objectID": "slides/intro.html#project-structure",
-    "href": "slides/intro.html#project-structure",
-    "title": "Welcome to R Café",
-    "section": "Project structure",
-    "text": "Project structure\nA minimal R project structure will have the following format\n└── my_project\n    ├── output\n    ├── data\n    │   ├── raw\n    │   └── processed\n    └── analysis.R \nWhere\n\ndata folder contains data to be analyzed\noutput stores code output (plot, figures, etc.)\nanalysis.R is the file containing R code. There can be multiple .R files under 1 project."
-  },
-  {
-    "objectID": "slides/intro.html#sec-file-naming",
-    "href": "slides/intro.html#sec-file-naming",
-    "title": "Welcome to R Café",
-    "section": "Naming convention",
-    "text": "Naming convention\n\n\n\n\n\n\n\nNote\n\n\nSome rules of thumb for naming files and folders:\n\nDo not use diacritics (e.g. Vietnamese accent marks).\nDo not use overly long names, keep it short but meaningful.\nDo not include special characters such as /, \\, &, ,, (, )... in names. It’s best to use only letters and numbers.\nAvoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., dataSoiHcm) or PascalCase (capitalize the first letter of all words, e.g., DataSoiHcm).\nDo not include spaces (\" \") in names. Instead, you can use camelCase, or replace spaces with - or _. For example, instead of naming a file data soi HCM 2023.xlsx, you could name it dataSoiHcm2023.xlsx, data-soi-hcm-2023.xlsx, or data_soi_hcm_2023.xlsx."
-  },
-  {
-    "objectID": "slides/intro.html#set-up-renv",
-    "href": "slides/intro.html#set-up-renv",
-    "title": "Welcome to R Café",
-    "section": "Set up renv",
-    "text": "Set up renv\nTo use renv for your project. Run the following line of code in your console\n\nrenv::init()\n\nWhich will create renv.lock and renv folder under your project"
-  },
-  {
-    "objectID": "slides/intro.html#why-use-renv",
-    "href": "slides/intro.html#why-use-renv",
-    "title": "Welcome to R Café",
-    "section": "Why use renv?",
-    "text": "Why use renv?\n\n\n\nEncapsulate the development environment of your R projects (R version, packages used and their versions) in a file called renv.lock\nEnsure collaborators to replicate your R project’s development environment by simply running renv::restore()\nIsolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under\n\npath_to_project/renv/library/{R-version}/{device-architecture}/\n\n\n\n\n\n\n\n\n\n\nWhat are packages?\n\n\nAn R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process."
-  },
-  {
-    "objectID": "slides/intro.html#r-script",
-    "href": "slides/intro.html#r-script",
-    "title": "Welcome to R Café",
-    "section": "R script",
-    "text": "R script\nTo create an R script in RStudio, in the menu section, click File > New File > R Script\nR script is where you store your R code and comments.\nComments are notes to explain your code to other developers (or your future self, when you revisit the code). To comment in R simply add # at the start of your note."
-  },
-  {
-    "objectID": "slides/intro.html#r-script-1",
-    "href": "slides/intro.html#r-script-1",
-    "title": "Welcome to R Café",
-    "section": "R script",
-    "text": "R script\nExample: Some R codes and comment\n\n# this is a comment, and the following code will print Hello world in the console\nprint(\"Hello world\")\n\n[1] \"Hello world\"\n\n# you can also perform computations in R\n# In R, you can denote \n# - multiplication as *\n# - power as **\n# - devision as /\n# - e5 is the shorthand notation for *10**5\n12*10e5 + 313**2 - 11890/2\n\n[1] 12092024"
-  },
-  {
-    "objectID": "slides/intro.html#variable",
-    "href": "slides/intro.html#variable",
-    "title": "Welcome to R Café",
-    "section": "Variable",
-    "text": "Variable\n\nIn R, a variable is a name used to store an object, such as a dataset, vector, number, or graph. Once assigned to a variable, the object can be easily referenced and reused in future commands.\nIn R, a variable can be created by assigning an object to it using <-\nAs previously mentioned, an object can be a number, string, vector of characters, etc.\n\n# assigning 3.14 to the variable pi_numb\npi_numb <- 3.14\n# which can then be referenced \npi_numb\n\n[1] 3.14\n\n# object can also be a text/characters\ngreeting <- \"Hello World\" # note that it must be contained within quotation marks\ngreeting\n\n[1] \"Hello World\""
-  },
-  {
-    "objectID": "slides/intro.html#variable-1",
-    "href": "slides/intro.html#variable-1",
-    "title": "Welcome to R Café",
-    "section": "Variable",
-    "text": "Variable\nValue of a variable can also be overridden\n\nvar <- 5\nvar\n\n[1] 5\n\n# override variable\nvar <- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 6.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
-  },
-  {
-    "objectID": "slides/intro.html#classes",
-    "href": "slides/intro.html#classes",
-    "title": "Welcome to R Café",
-    "section": "Classes",
-    "text": "Classes\n\nAll the objects stored in R have a class which tells R how to handle the object (to check the class of a variable, run class(variable)).\nThere are many possible classes, but common ones include\n\n\n\n\n\n\n\n\nClasses\nExplanation\nExamples\n\n\n\n\nnumeric\nfor numerical data, including decimals\n3.14, -1000, 10, 2e6, etc.\n\n\nlogical\nfor boolean data (TRUE/FALSE) without quotation marks\nTRUE or FALSE\n\n\ncharacter\nfor text/characters data (also referred to as string)\n\"Hello world\", \"R Cafe\", etc.\n\n\nDate\ndata classified as Date can be displayed and manipulated in special ways\n2024-12-09 , s, etc.\n\n\nfactor\nfor categorical data\ngender: female or male,\neconomic status,\ndistrict, ethnicity, etc.\n\n\ndata.frame\ncommon way for R to store dataset.\nConsists of vectors (columns, each column must be of a specific class) of data bounded together.\n\n\n\ntibble\nan “enhanced” version of data.frame which is less prone to error and printed more nicely in the console"
-  },
-  {
-    "objectID": "slides/intro.html#special-values",
-    "href": "slides/intro.html#special-values",
-    "title": "Welcome to R Café",
-    "section": "Special values",
-    "text": "Special values\n\n\n\n\n\n\n\n\nValue\nDescription\n\n\n\n\nNA\nStands for Not Available. Indicates missing values.\n\n\nNULL\nIndicates undefined/abscence of value. (e.g. numb <- NULL indicates value for variable numb is undefined)\n\n\nNaN\nStands for Not a Number. Indicates unrepresentable number (e.g. result for 0/0 )\n\n\nInf/-Inf\nInfinity/Negative infinity"
-  },
-  {
-    "objectID": "slides/intro.html#functions",
-    "href": "slides/intro.html#functions",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\nA function is a reusable sequence of code.\nIt can be created using the syntax\n\nfunction_name <- function(){\n\n# function content\n\n}"
-  },
-  {
-    "objectID": "slides/intro.html#functions-1",
-    "href": "slides/intro.html#functions-1",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\nExample: a simple function\n\nprint_hello <- function(){\n  print(\"Hello world\")\n  print(\"This is R Cafe course\")\n}\n\n# defined function can then be called as followed\nprint_hello()\n\n[1] \"Hello world\"\n[1] \"This is R Cafe course\""
-  },
-  {
-    "objectID": "slides/intro.html#functions-2",
-    "href": "slides/intro.html#functions-2",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\nFunctions can also have arguments, which creates reusable code with dynamic inputs and outputs\nA function with arguments as followed. Note that you can include as many arguments as you want\n\nfunction_name <- function(argument_1, argument_2){\n  # function content\n  # values of argument can be accessed simply calling argument name\n}"
-  },
-  {
-    "objectID": "slides/intro.html#functions-3",
-    "href": "slides/intro.html#functions-3",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\nExample: simple function\n\ncompute_power <- function(base, power){\n  # return `base` raised to the power of `power`\n  base**power\n}\n\n# output can be assigned to a variable\noutput <- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
-  },
-  {
-    "objectID": "slides/intro.html#functions-4",
-    "href": "slides/intro.html#functions-4",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\n\nImplicit vs. explicit return\n\nBy default, R will implicitly return the result of the last line of code in the function\nYou can also explicitly specify the returned value using return()\n\n\n\ncompute_power <- function(base, power){\n\n  # explicit return statement\n  return(base**power)\n}\n\n# output can be assigned to a variable\noutput <- compute_power(base = 5, power = 2)\noutput\n\n[1] 25"
-  },
-  {
-    "objectID": "slides/intro.html#functions-5",
-    "href": "slides/intro.html#functions-5",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\n\n\n\n\n\n\nNote\n\n\nYou can provide value for each argument without specifying the name but it must follow the same order in the function definition.\nHowever, it is generally recommended to include the name of the argument for better readability. When argument name is specified, order no longer matter.\n\ncompute_power(5, 2) \n\n[1] 25\n\ncompute_power(2, 5) # expect different result (2^5)\n\n[1] 32\n\ncompute_power(base = 5, power = 2)\n\n[1] 25\n\ncompute_power(power = 2, base = 5) # expect same result\n\n[1] 25"
-  },
-  {
-    "objectID": "slides/intro.html#functions-6",
-    "href": "slides/intro.html#functions-6",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\n\nWhen to create a function?\nA general rule is when you start to copy-paste a sequence of code multiple times (usually >3), you should make a function for it\nThe in-class excercise (Section 9) will demonstrate one use case for function"
-  },
-  {
-    "objectID": "slides/intro.html#functions-7",
-    "href": "slides/intro.html#functions-7",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\n\nSome criteria for a good function\n\n\nModularity - each function should focus on one task (e.g. you can have a function to import data, another to model the data, another to visualize data but not a function doing all of those 3 tasks)\nConcise - the content of a function should not be too lengthy. If a function starts to have > 30 lines of code, it may be an indication that the modularity rule is violated.\nReadability - function’s name should clearly describe its purpose (e.g. compute_min, plot_case, etc.), and the content should be properly commented and documented."
-  },
-  {
-    "objectID": "slides/intro.html#functions-8",
-    "href": "slides/intro.html#functions-8",
-    "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\n\nR is a functional programming language, which means you will encounter a lot of functions while coding in R.\nTo assist users, R also include a built-in documentation system that explains the purpose and usage of each function. To look up a function, use ? or help()\n\n# look up documentation for `sqrt` function\n?sqrt\nhelp(sqrt)\n\n\nNote that the built-in documentation only helps when you already know which function you want to ask about. If you are looking for a function to achieve a specific task, it is better to start with search engine (Google, Bing, etc.), forums/Q&A sites (Github discussions, StackOverflow, etc.) or even ChatGPT."
-  },
-  {
-    "objectID": "slides/intro.html#scope",
-    "href": "slides/intro.html#scope",
-    "title": "Welcome to R Café",
-    "section": "Scope",
-    "text": "Scope\n\nDiscussion Read the code and guess the answer for 3 Questions below\n\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n# Q3: What will be the value for arg here?\narg"
-  },
-  {
-    "objectID": "slides/intro.html#scope-1",
-    "href": "slides/intro.html#scope-1",
-    "title": "Welcome to R Café",
-    "section": "Scope",
-    "text": "Scope\nOutput\n\nexample_var <- 10\n\nexample_func <- function(arg){\n  print(paste0(\"Value of variable example_var: \", example_var))\n  \n  example_var <- 20\n  \n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  print(paste0(\"Value of function argument: \", arg)) \n}\n\n# Q1: What will the 2 print statements show?\nexample_func(60) \n\n[1] \"Value of variable example_var: 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Value of function argument: 60\"\n\n# Q2: What will be the value for example_var here?\npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\"\n\n# Q3: What will be the value for arg here?\narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found"
-  },
-  {
-    "objectID": "slides/intro.html#scope-2",
-    "href": "slides/intro.html#scope-2",
-    "title": "Welcome to R Café",
-    "section": "Scope",
-    "text": "Scope"
-  },
-  {
-    "objectID": "slides/intro.html#scope-3",
-    "href": "slides/intro.html#scope-3",
-    "title": "Welcome to R Café",
-    "section": "Scope",
-    "text": "Scope\nExplanation\n\n# this is a global variable since it is not created in any local environment\nexample_var <- 10\n\nexample_func <- function(arg){\n  # global_var\n  print(paste0(\"Global variable can be accessed within function \", example_var))\n  \n  # this is creating a local variable named example_var\n  # it will not affect the global variable example_var\n  example_var <- 20\n  \n  # this example_var refers to the local variable example_var\n  print(paste0(\"Value of variable example_var after assignment: \", example_var))\n  # note that argument is also only accessible within the function\n  print(paste0(\"Function argument: \", arg))\n}\n\nexample_func(60) \n\n[1] \"Global variable can be accessed within function 10\"\n[1] \"Value of variable example_var after assignment: 20\"\n[1] \"Function argument: 60\"\n\n# value for argument should only accessible within function \narg  \n\nError in eval(expr, envir, enclos): object 'arg' not found\n\n# refers to global variable example_var here \npaste0(\"Value of variable example_var: \", example_var)\n\n[1] \"Value of variable example_var: 10\""
-  },
-  {
-    "objectID": "slides/intro.html#scope-4",
-    "href": "slides/intro.html#scope-4",
-    "title": "Welcome to R Café",
-    "section": "Scope",
-    "text": "Scope\n\nScope refers to where variables can be accessed or modified.\nTo put simply\n\n\nBy default, variables can be modified only in the environment in which it was created (unless they were forced to, but it is not recommended).\nglobal variables can be accessed from both outside and inside the function (i.e. from global or local environment).\nlocal variables are variables defined in a local environment and can only be accessed within that local environment. The most common local environment you will encounter is environment within a function."
-  },
-  {
-    "objectID": "slides/intro.html#packages",
-    "href": "slides/intro.html#packages",
-    "title": "Welcome to R Café",
-    "section": "Packages",
-    "text": "Packages\n\n\nPackages are shareable bundle of functions (and sometimes include built-in dataset). We will frequently use available packages to assist us during coding process.\n\n\n2 options to install an R packages\n\nVia RStudio interface.\n\nIn the File/Plots/Packages/Help panel\nClick Packages > Install\nType name of the packages to be installed separated by ,\nClick install\n\nUsing R code install.packages(\"package_name\")"
-  },
-  {
-    "objectID": "slides/intro.html#packages-1",
-    "href": "slides/intro.html#packages-1",
-    "title": "Welcome to R Café",
-    "section": "Packages",
-    "text": "Packages\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")\n\n\n\n\n\n\n\nUpdate renv.lock\n\n\nTo update your renv.lock after changing development environment, run the code renv::snapshot()"
-  },
-  {
-    "objectID": "slides/intro.html#packages-2",
-    "href": "slides/intro.html#packages-2",
-    "title": "Welcome to R Café",
-    "section": "Packages",
-    "text": "Packages\nTo use a package, you must first load it to R using library() function\n\nlibrary(readxl)\ndata <- read_excel(\"../data/linelist_raw.xlsx\")\nhead(data)"
-  },
-  {
-    "objectID": "slides/intro.html#packages-3",
-    "href": "slides/intro.html#packages-3",
-    "title": "Welcome to R Café",
-    "section": "Packages",
-    "text": "Packages\nSimilar to functions, you can also look up documentation for packages using ? or help()\n\n# --- look up documentation for package ---\n?readxl\nhelp(readxl)\n\n# --- look up documentation for function of the package ---\n?readxl::read_excel\nhelp(read_excel, package= readxl)"
-  },
-  {
-    "objectID": "slides/intro.html#goal",
-    "href": "slides/intro.html#goal",
-    "title": "Welcome to R Café",
-    "section": "Goal",
-    "text": "Goal\n\n\n\n\n\n\nNote\n\n\nIn this exercise, you will:\n\nCreate a function from the given code\nPush your code to Github\nCommenting collaborators’ code on Github"
-  },
-  {
-    "objectID": "slides/intro.html#code-file",
-    "href": "slides/intro.html#code-file",
-    "title": "Welcome to R Café",
-    "section": "Code file",
-    "text": "Code file\nIn your R project, navigate to the template code file day1/inclass.R.\nThen run all the code in the file, this should create a dataset covid_cases.\nThis is also where you will write the solution for in-class exercise."
-  },
-  {
-    "objectID": "slides/intro.html#create-function",
-    "href": "slides/intro.html#create-function",
-    "title": "Welcome to R Café",
-    "section": "Create function",
-    "text": "Create function\n\nDataset Given a dataset with number of reported cases for 211 countries and archipelagos\nWhere each column following the format cases_{country_code} represents the number of newly reported Covid cases on the day shown in date columns\n\n\n\n\nhead(covid_cases)"
-  },
-  {
-    "objectID": "slides/intro.html#create-function-1",
-    "href": "slides/intro.html#create-function-1",
-    "title": "Welcome to R Café",
-    "section": "Create function",
-    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col <- \"cases_chn\"\n\nbasic_stats <- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
-  },
-  {
-    "objectID": "slides/intro.html#suggested-solution",
-    "href": "slides/intro.html#suggested-solution",
-    "title": "Welcome to R Café",
-    "section": "Suggested solution",
-    "text": "Suggested solution\nExercise: Suggested solution\n\n\nCode\ncompute_stats <- function(data, colname){\n  return(\n    c(\n      min = min(data[[colname]]),\n      q1 = quantile(data[[colname]], 0.25, names=FALSE),\n      median = median(data[[colname]]),\n      q3 = quantile(data[[colname]], 0.75, names=FALSE),\n      max = max(data[[colname]])\n    )\n  )\n}\ncompute_stats(covid_cases, colname = \"cases_chn\")"
-  },
-  {
-    "objectID": "slides/intro.html#navigating-github-desktop-github",
-    "href": "slides/intro.html#navigating-github-desktop-github",
-    "title": "Welcome to R Café",
-    "section": "Navigating Github Desktop & Github",
-    "text": "Navigating Github Desktop & Github\nOnce you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)\n\n\n\n\n\n\nNote\n\n\n\nPush your code to Github using Github Desktop\nCreate an issue on Github to comment on at least 1 other participant’s code"
-  },
-  {
-    "objectID": "slides/intro.html#data-import",
-    "href": "slides/intro.html#data-import",
-    "title": "Welcome to R Café",
-    "section": "Data import",
-    "text": "Data import\nSome useful import functions\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nread_excel()\nreadxl\nimport Excel (.xlsx, .xls) files\n\n\nread_csv()\nreadr\nimport .csv files\n\n\nreadRDS()\nbase\nimport .rds files\n\n\nload()\nbase\nimport .rda files"
-  },
-  {
-    "objectID": "slides/intro.html#data-import-1",
-    "href": "slides/intro.html#data-import-1",
-    "title": "Welcome to R Café",
-    "section": "Data import",
-    "text": "Data import\n\nrio - support data import for multiple data format\n\n\nlibrary(rio)\ndata <- import(\"../data/linelist_raw.xlsx\")"
-  },
-  {
-    "objectID": "slides/intro.html#data-export",
-    "href": "slides/intro.html#data-export",
-    "title": "Welcome to R Café",
-    "section": "Data export",
-    "text": "Data export\nSome useful export function in R\n\n\n\nFunction\nPackage\nDescription\n\n\n\n\nwrite_xlsx()\nwritexl\nexport data as Excel files\n\n\nwrite.csv()\nutils\nexport data as .csv files\n\n\nsaveRDS()\nbase\nexport data as .rds files\n\n\nsave()\nbase\nexport data .rda files"
-  },
-  {
-    "objectID": "slides/intro.html#clean-column-names",
-    "href": "slides/intro.html#clean-column-names",
-    "title": "Welcome to R Café",
-    "section": "Clean column names",
-    "text": "Clean column names\nThe thing we usually do first after importing data is check the column names, to do that we use function colnames()\n\ncolnames(data)\n\n [1] \"case_id\"         \"generation\"      \"infection date\"  \"date onset\"     \n [5] \"hosp date\"       \"date_of_outcome\" \"outcome\"         \"gender\"         \n [9] \"hospital\"        \"lon\"             \"lat\"             \"infector\"       \n[13] \"source\"          \"age\"             \"age_unit\"        \"row_num\"        \n[17] \"wt_kg\"           \"ht_cm\"           \"ct_blood\"        \"fever\"          \n[21] \"chills\"          \"cough\"           \"aches\"           \"vomit\"          \n[25] \"temp\"            \"time_admission\"  \"merged_header\"   \"...28\""
-  },
-  {
-    "objectID": "slides/intro.html#clean-column-names-1",
-    "href": "slides/intro.html#clean-column-names-1",
-    "title": "Welcome to R Café",
-    "section": "Clean column names",
-    "text": "Clean column names\n\nYou may notice some names go against the “rule of thumb” for naming\nTo quickly resolve this, package janitor offers clean_names() function to automatically fix the naming\n\n\nlibrary(janitor)\ndata <- clean_names(data)\nhead(data)"
-  },
-  {
-    "objectID": "slides/intro.html#simple-data-extraction",
-    "href": "slides/intro.html#simple-data-extraction",
-    "title": "Welcome to R Café",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get the cell at row 5, column 2\ndata[5 ,2]\n\n[1] 3"
-  },
-  {
-    "objectID": "slides/intro.html#data-summary",
-    "href": "slides/intro.html#data-summary",
-    "title": "Welcome to R Café",
-    "section": "Data summary",
-    "text": "Data summary\nIn base R, function summary() is used to have the basic statistics of each variables in the dataset\n\nsummary(data)\n\n   case_id            generation   infection_date                  \n Length:6611        Min.   : 0.0   Min.   :2012-04-09 00:00:00.00  \n Class :character   1st Qu.:13.0   1st Qu.:2014-08-25 00:00:00.00  \n Mode  :character   Median :16.0   Median :2014-10-04 00:00:00.00  \n                    Mean   :16.6   Mean   :2014-08-17 15:30:00.42  \n                    3rd Qu.:20.0   3rd Qu.:2014-11-26 00:00:00.00  \n                    Max.   :37.0   Max.   :2015-04-27 00:00:00.00  \n                    NA's   :7      NA's   :2322                    \n  date_onset          hosp_date                     \n Length:6611        Min.   :2012-04-20 00:00:00.00  \n Class :character   1st Qu.:2014-09-07 00:00:00.00  \n Mode  :character   Median :2014-10-15 00:00:00.00  \n                    Mean   :2014-08-31 05:10:56.32  \n                    3rd Qu.:2014-12-10 00:00:00.00  \n                    Max.   :2015-04-30 00:00:00.00  \n                    NA's   :7                       \n date_of_outcome                   outcome             gender         \n Min.   :2012-05-14 00:00:00.0   Length:6611        Length:6611       \n 1st Qu.:2014-09-14 00:00:00.0   Class :character   Class :character  \n Median :2014-10-26 00:00:00.0   Mode  :character   Mode  :character  \n Mean   :2014-09-11 00:04:09.4                                        \n 3rd Qu.:2014-12-21 00:00:00.0                                        \n Max.   :2015-06-04 00:00:00.0                                        \n NA's   :1068                                                         \n   hospital              lon              lat          infector        \n Length:6611        Min.   :-13.27   Min.   :8.446   Length:6611       \n Class :character   1st Qu.:-13.25   1st Qu.:8.461   Class :character  \n Mode  :character   Median :-13.23   Median :8.469   Mode  :character  \n                    Mean   :-13.23   Mean   :8.470                     \n                    3rd Qu.:-13.22   3rd Qu.:8.480                     \n                    Max.   :-13.21   Max.   :8.492                     \n                    NA's   :7        NA's   :7                         \n    source              age              age_unit            row_num    \n Length:6611        Length:6611        Length:6611        Min.   :   1  \n Class :character   Class :character   Class :character   1st Qu.:1648  \n Mode  :character   Mode  :character   Mode  :character   Median :3241  \n                                                          Mean   :3241  \n                                                          3rd Qu.:4836  \n                                                          Max.   :6481  \n                                                                        \n     wt_kg            ht_cm          ct_blood        fever          \n Min.   :-11.00   Min.   :  4.0   Min.   :16.00   Length:6611       \n 1st Qu.: 41.00   1st Qu.: 91.0   1st Qu.:20.00   Class :character  \n Median : 54.00   Median :130.0   Median :22.00   Mode  :character  \n Mean   : 52.69   Mean   :125.2   Mean   :21.26                     \n 3rd Qu.: 66.00   3rd Qu.:159.0   3rd Qu.:22.00                     \n Max.   :111.00   Max.   :295.0   Max.   :26.00                     \n NA's   :7        NA's   :7       NA's   :7                         \n    chills             cough              aches              vomit          \n Length:6611        Length:6611        Length:6611        Length:6611       \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n                                                                            \n      temp      time_admission     merged_header          x28           \n Min.   :35.2   Length:6611        Length:6611        Length:6611       \n 1st Qu.:38.3   Class :character   Class :character   Class :character  \n Median :38.8   Mode  :character   Mode  :character   Mode  :character  \n Mean   :38.6                                                           \n 3rd Qu.:39.2                                                           \n Max.   :40.8                                                           \n NA's   :158"
-  },
-  {
-    "objectID": "slides/intro.html#data-summary-1",
-    "href": "slides/intro.html#data-summary-1",
-    "title": "Welcome to R Café",
-    "section": "Data summary",
-    "text": "Data summary\n\nHowever, function skim() from package skimr can return a better table output with tables grouped by class of data\n\nlibrary(skimr)\nskim(data)\n\n\nData summary\n\n\nName\ndata\n\n\nNumber of rows\n6611\n\n\nNumber of columns\n28\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n17\n\n\nnumeric\n8\n\n\nPOSIXct\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\ncase_id\n137\n0.98\n6\n6\n0\n5888\n0\n\n\ndate_onset\n293\n0.96\n10\n10\n0\n580\n0\n\n\noutcome\n1500\n0.77\n5\n7\n0\n2\n0\n\n\ngender\n324\n0.95\n1\n1\n0\n2\n0\n\n\nhospital\n1512\n0.77\n5\n36\n0\n13\n0\n\n\ninfector\n2323\n0.65\n6\n6\n0\n2697\n0\n\n\nsource\n2323\n0.65\n5\n7\n0\n2\n0\n\n\nage\n107\n0.98\n1\n2\n0\n75\n0\n\n\nage_unit\n7\n1.00\n5\n6\n0\n2\n0\n\n\nfever\n258\n0.96\n2\n3\n0\n2\n0\n\n\nchills\n258\n0.96\n2\n3\n0\n2\n0\n\n\ncough\n258\n0.96\n2\n3\n0\n2\n0\n\n\naches\n258\n0.96\n2\n3\n0\n2\n0\n\n\nvomit\n258\n0.96\n2\n3\n0\n2\n0\n\n\ntime_admission\n844\n0.87\n5\n5\n0\n1091\n0\n\n\nmerged_header\n0\n1.00\n1\n1\n0\n1\n0\n\n\nx28\n0\n1.00\n1\n1\n0\n1\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ngeneration\n7\n1.00\n16.60\n5.71\n0.00\n13.00\n16.00\n20.00\n37.00\n▁▆▇▂▁\n\n\nlon\n7\n1.00\n-13.23\n0.02\n-13.27\n-13.25\n-13.23\n-13.22\n-13.21\n▅▃▃▅▇\n\n\nlat\n7\n1.00\n8.47\n0.01\n8.45\n8.46\n8.47\n8.48\n8.49\n▅▇▇▇▆\n\n\nrow_num\n0\n1.00\n3240.91\n1857.83\n1.00\n1647.50\n3241.00\n4836.50\n6481.00\n▇▇▇▇▇\n\n\nwt_kg\n7\n1.00\n52.69\n18.59\n-11.00\n41.00\n54.00\n66.00\n111.00\n▁▃▇▅▁\n\n\nht_cm\n7\n1.00\n125.25\n49.57\n4.00\n91.00\n130.00\n159.00\n295.00\n▂▅▇▂▁\n\n\nct_blood\n7\n1.00\n21.26\n1.67\n16.00\n20.00\n22.00\n22.00\n26.00\n▁▃▇▃▁\n\n\ntemp\n158\n0.98\n38.60\n0.95\n35.20\n38.30\n38.80\n39.20\n40.80\n▁▂▂▇▁\n\n\n\nVariable type: POSIXct\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ninfection_date\n2322\n0.65\n2012-04-09\n2015-04-27\n2014-10-04\n538\n\n\nhosp_date\n7\n1.00\n2012-04-20\n2015-04-30\n2014-10-15\n570\n\n\ndate_of_outcome\n1068\n0.84\n2012-05-14\n2015-06-04\n2014-10-26\n575"
-  },
-  {
-    "objectID": "slides/intro.html#recap",
-    "href": "slides/intro.html#recap",
-    "title": "Welcome to R Café",
-    "section": "Recap",
-    "text": "Recap\nAfter today, you have learnt to:\n\nCreate an R project and set up a project environment\nHow to upload your project to Github using Github Desktop\nUnderstand R variables and classes, functions, packages\nHow to look up documentations for functions and packages\nPerform data import, export, overview in R"
-  },
-  {
-    "objectID": "slides/intro.html#upcoming-lessons",
-    "href": "slides/intro.html#upcoming-lessons",
-    "title": "Welcome to R Café",
-    "section": "Upcoming lessons",
-    "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
-  },
-  {
-    "objectID": "slides/intro.html#simple-data-extraction-1",
-    "href": "slides/intro.html#simple-data-extraction-1",
-    "title": "Welcome to R Café",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# column can also be accessed using column name\ndata[5 , \"hosp_date\"]\n\n[1] \"2014-05-22 UTC\""
-  },
-  {
-    "objectID": "slides/intro.html#simple-data-extraction-2",
-    "href": "slides/intro.html#simple-data-extraction-2",
-    "title": "Welcome to R Café",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# get all values in the 5th row\ndata[5, ]"
-  },
-  {
-    "objectID": "slides/intro.html#simple-data-extraction-3",
-    "href": "slides/intro.html#simple-data-extraction-3",
-    "title": "Welcome to R Café",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract specific columns\ndata[, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
-  },
-  {
-    "objectID": "slides/intro.html#simple-data-extraction-4",
-    "href": "slides/intro.html#simple-data-extraction-4",
-    "title": "Welcome to R Café",
-    "section": "Simple data extraction",
-    "text": "Simple data extraction\n\nData cell(s) can be extracted using the syntax data[row, col]\n\nTo extract all rows, left col blank\nTo extract all cols, left row blank\n\n\n# extract first 10 rows from specific columns\ndata[1:10, c(\"case_id\", \"infection_date\", \"date_onset\", \"hosp_date\")]"
-  },
-  {
-    "objectID": "slides/intro.html#take-home-exercise",
-    "href": "slides/intro.html#take-home-exercise",
-    "title": "Welcome to R Café",
-    "section": "Take home exercise",
-    "text": "Take home exercise\nBefore the next lesson (23rd Dec, 2024), please complete all the tasks for Day 1 - Take home exercise"
-  },
-  {
-    "objectID": "slides/intro.html#r-and-rstudio-2",
-    "href": "slides/intro.html#r-and-rstudio-2",
-    "title": "Welcome to R Café",
-    "section": "R and RStudio",
-    "text": "R and RStudio\nWhy use R?\n\n\nCost: R is free and cross-platform.\nReproducibility: Programming in R (as opposed to point-click tools such as Excel/Access) enhances reproducibility, error detection, and reduces manual workload.\nCommunity: R has a large, collaborative user base, with new tools and packages for analysis developed constantly."
-  },
-  {
-    "objectID": "takehome_exercises/day1.html",
-    "href": "takehome_exercises/day1.html",
-    "title": "Day 1 - Take home exercise",
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "title": "Commit, push and create issue",
     "section": "",
-    "text": "Data covid_cases.rds under R-cafe/day1/data/covid_cases.rds is used for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
+    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory\n\n\n\n\n\n\n\n\n\nOpen Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
   },
   {
-    "objectID": "takehome_exercises/day1.html#preparation",
-    "href": "takehome_exercises/day1.html#preparation",
-    "title": "Day 1 - Take home exercise",
-    "section": "Preparation",
-    "text": "Preparation\nBefore working on this exercise, you should have completed the following checklist\n\n\n\n\n\n\nChecklist\n\n\n\nOn Github Desktop\n\nCloned R-cafe repository\nCreated your own branch on the repository\nCheckout your own branch\n\nOn RStudio\n\nMake an R project from cloned R-cafe directory\nHave renv setup\n\n\n\n\n\n\n\n\n\nAnswer script\n\n\n\nYou are expected to save your answer under R-cafe/day1/takehome.R"
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory"
   },
   {
-    "objectID": "takehome_exercises/day1.html#exercises",
-    "href": "takehome_exercises/day1.html#exercises",
-    "title": "Day 1 - Take home exercise",
-    "section": "Exercises",
-    "text": "Exercises\n\nTask 1: Data import\nRead data from R-cafe/day1/data/covid_cases.rds\n\n\nTask 2: Simple computations using dataset\nCompute the following\n\nThe earliest and latest date of data report in the dataset and assign them to 2 variables first_report_date, last_report_date\nCreate new column case_global for covid_cases, which represents the total cases across every country per report day.\nCreate new column percent_chn in covid_cases, which represents the percentage of global cases that China’s cases account for per report day.\n\n\n\n\n\n\n\nTip: compute sum of each row\n\n\n\n\n\nUse function rowSums() to compute sum of case columns row wise\nExample\n\nexample_table <- data.frame(\n  a = c(1:3), b = c(4:6)\n)\n# show example_table\nexample_table\n\n\n\n  \n\n\n# see output of rowSums\nrowSums(example_table)\n\n[1] 5 7 9\n\n\n\n\n\n\n\n\n\n\n\nTip: create new column/ update column values\n\n\n\n\n\nTo create/update a column, use the syntax data[[\"colname\"]] <- values_for_col where length of values_for_col must be equal to number of rows\nExample\n\nexample_table <- data.frame(\n  a = c(1:3), b = c(4:6)\n)\n\n# create new column new_col\nexample_table[[\"new_col\"]] <- c(7,9,11)\nexample_table\n\n\n\n  \n\n\n\n\n\n\n\n\nTask 3: Create a function\nComplete the following:\n\nCreate a function compute_percent that\n\ntakes the dataset and the country code (i.e. the 3 characters after cases_ in column name) as input.\nreturn the percentage of the global cases that the given country’s cases account for per report day.\n\nUse that function to create 3 new columns for covid_cases: percent_vnm, percent_usa, percent_sgp\nPrint the final covid_cases selecting only the following columns date, percent_chn, percent_vnm, percent_usa, percent_sgp\n\n\n\n\n\n\n\nTip: joining strings\n\n\n\n\n\nUse function paste() to join multiple strings together\nExample\n\n# joining 2 strings\npaste(\"cases_\", \"chn\", sep = \"\")\n\n[1] \"cases_chn\"\n\n# joining 3 strings\npaste(\"hello\", \"world,\", \"welcome to R-cafe\", sep = \" \")\n\n[1] \"hello world, welcome to R-cafe\"\n\n\n\n\n\n\n\nTask 3.5 (Optional) Create a function from given code\nCreate a function that returns the plot for number of cases reported for a country over time, where users can\n\nSelect the case column being plotted\nChange the country name displayed on the plot’s title\nChange the color of the bar chart and line chart\nSet the min and max date (x-axis limit) for the plot\n\nGiven that the code to plot case reports for China is as followed\n\n# Uncomment and run the following if you have not installed tidyverse or ggplot2\n# install.packages(\"tidyverse\")\nlibrary(ggplot2)\nplot_col <- \"cases_chn\"\ncountry <- \"China\"\n\nggplot() +\n  geom_col( # layer for bar chart\n    aes( # define columns for x, y axis\n      x = covid_cases$date, # this is equivalent to covid_cases[[\"date\"]]\n      y = covid_cases[[plot_col]] \n      ), \n    fill = \"cornflowerblue\" # choose color for bar chart\n  ) +\n  geom_line( # layer for line chart\n    aes( # define columns for x, y axis\n      x = covid_cases$date, \n      y = covid_cases[[plot_col]] \n      ), \n    color = \"red\" # choose color for line chart\n  ) +\n  labs(\n    y = \"Cases\",\n    x = \"Date\",\n    title = paste0(\"Reported Covid cases for \", country) # define title for the plot\n  )\n\n\n\n\n\n\nTask 4: Generate data summary\nComplete the following:\n\nUse the function skim() from package skimr to generate summary for the following countries: China, Vietnam, USA, Singapore\nDescribe notable observations from each country from the result of skim()\n\n\n\nTask 5: Peer review\nComplete the following:\n\nPush your solution to Github with the commit message \"day 1 take home solution your_name\"\nCreate an issue commenting on at least 1 other participant’s solution"
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
   },
   {
-    "objectID": "slides/intro.html",
-    "href": "slides/intro.html",
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "title": "Commit, push and create issue",
+    "section": "2.1 Create an issue on Github",
+    "text": "2.1 Create an issue on Github\n\n2.1.1 Select the reference in new issue\n\nClick on the number of the line in the code\nClick ... -&gt; select Reference in new issue\n\n\n\n\nSelect the place where you want to refer to\n\n\n\n\n2.1.2 Put more information to your issue and submit issue\n\nFill in the title in Add a title\nThe link to the error place will automatically appear in Add a description. You might write more detail about the errors in this section as below\nSelect the person you would like assign this issue by select Assignees or quickly assign it to yourself by assign yourself\nClassify the issue by Labels\nClick Submit new issue\n\n\n\n\nAdd information and submit issue\n\n\n\n\n2.1.3 View the open issues\n\nSelect Issues -&gt; Open. You might see the one who is responsible for this issue in Assignee tab.\nSelect the issue you would like to view Typo in example_push_commit_issue.R file.\n\n\n\n\nView the open issue\n\n\n\n\n2.1.4 View the detail of an issue\n\nYou might see the title of the issue, the reference links to the errors, and the detail of the issue.\nNavigate the place of error by clicking the reference link\n\n\n\n\nView the details of issue"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "title": "Commit, push and create issue",
+    "section": "2.2 Resolve the issue",
+    "text": "2.2 Resolve the issue\n\n2.2.1 Clone the branch you would like to fix the issue\n\nRefer to Steps to Clone a Repository on Github in Github note 1\n\n\n\n2.2.2 Fix the code locally\n\nOpen the example_push_commit_issue.R file\n\nMake correction to the code and make a comment.\n\n\n\n\nResolve issue in local cloned repository\n\n\n\n\n2.2.3 Commit the corrections using Github desktop\n\nOpen the Github desktop. You will see the changes now. The red lines are old version. The green lines are current version.\nCommit and push the corrections\n\n\n\n\nCommit and push the correction\n\n\n\n\n2.2.4 Check the branch again\n\n\n\nView the code on github\n\n\n\n\n2.2.5 Comment and close the issue\n\nGo back to the issue. Select Issues -&gt; Open -&gt; Typo in example_push_commit_issue.R file\nAdd comments in Add a comment -&gt; Click on Close with comment. (If the issue has not been resolved, we can click Comment to discuss with other collaborators)\n\n\n\n\nClose and comment issue on Github\n\n\n\n\n2.2.6 View closed issue\n\nWe can always view the old closed issue by clicking Issues -&gt; Closed\n\n\n\n\nView the closed issues on github"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Welcome to R Café",
     "section": "",
-    "text": "Welcome to “R-cafe: R for reproducible research”\nIn this course, the following topics will be covered\n\nGetting started with R and Git - Introduction to working with RStudio, R and Github\nR programming with tidyverse - Introduce important tools for data science in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
+    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
   },
   {
-    "objectID": "slides/intro.html#functions-9",
-    "href": "slides/intro.html#functions-9",
+    "objectID": "index.html#duration",
+    "href": "index.html#duration",
     "title": "Welcome to R Café",
-    "section": "Functions",
-    "text": "Functions\n\nThe documentation that show up when calling help() or ? are usually generated from something called roxygen documentation.\nTo create a roxygen documentation, place the cursor within the function and from the menu, click Code > Insert Roxygen Skeleton\n\n#' Compute power\n#' \n#' Takes two arguments, `base` and `power` then return base raised to given power\n#'\n#' @param base - a numeric value for base number\n#' @param power - a numeric value for power\n#'\n#' @return numeric value for base^power\n#' @examples\n#' compute_power(3,4)\ncompute_power <- function(base, power){\n  # return `base` raised to the power of `power`\n  base**power\n}\n\ncompute_power(5, 2)\n\n[1] 25"
+    "section": "",
+    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
   },
   {
-    "objectID": "slides/intro.html#function-set.seed",
-    "href": "slides/intro.html#function-set.seed",
+    "objectID": "index.html#structure",
+    "href": "index.html#structure",
     "title": "Welcome to R Café",
-    "section": "Function set.seed()",
-    "text": "Function set.seed()\n\nset.seed() is essential to ensure reproducibility for processes that uses a random number generator\nA seed is an input value to generate the “random data”. By specifying the same seed, we can ensure the number generator always return the same result.\n\n# Set seed \nset.seed(123)\n\n# Generate sample data\nsample_data <- rnorm(10, mean = 50, sd = 10)  \nsample_data\n\n [1] 44.39524 47.69823 65.58708 50.70508 51.29288 67.15065 54.60916 37.34939\n [9] 43.13147 45.54338"
+    "section": "Structure",
+    "text": "Structure\n\n3-hour face-to-face sessions per day, 1 day per week\nTake home exercises given between face-to-face sessions"
   },
   {
-    "objectID": "slides/intro.html#vectorization",
-    "href": "slides/intro.html#vectorization",
+    "objectID": "index.html#r-café-helpful-shortcuts",
+    "href": "index.html#r-café-helpful-shortcuts",
     "title": "Welcome to R Café",
-    "section": "Vectorization",
-    "text": "Vectorization\n\nVectorization refers to performing an operation on all items of a vector at once instead of going through each item in a loop.\nCode using vectorized functions are also much cleaner than using for loop\nExample: Given a vector of numeric, and square all the odd numbers while divide even numbers by 2\n\nnon_vectorized <- function(numbs){\n  for (i in 1:length(numbs)){ # go through each number in numbs\n    if (numbs[i] %%2 == 0){\n      numbs[i] <- numbs[i]/2\n    }else{\n      numbs[i] <- numbs[i]**2\n    }\n  }\n  \n  numbs\n}\n\nvectorized <- function(numbs){\n  numbs <- ifelse(numbs %%2 == 0, numbs/2, numbs**2)\n  \n  numbs\n}"
+    "section": "R Café helpful shortcuts",
+    "text": "R Café helpful shortcuts\n\nTeams Tech support channel\nMain GitHub repository\nTheoretical slides\nAdditional handouts and instructions\nCurrent instructor roster:\n\nThinh Ong Phuc (thinhop@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)\nTuyen Huynh (tuyenhn@oucru.org)\nHai Ho Bich (haihb@oucru.org)"
   },
   {
-    "objectID": "slides/intro.html#vectorization-1",
-    "href": "slides/intro.html#vectorization-1",
+    "objectID": "index.html#agenda",
+    "href": "index.html#agenda",
     "title": "Welcome to R Café",
-    "section": "Vectorization",
-    "text": "Vectorization\nExample: Compare run time between 2 approahces\n\n# non vectorization approach\nsystem.time(\n  non_vectorized(c(1:100000))\n)\n\n   user  system elapsed \n  0.012   0.000   0.013 \n\n# vectorized approach\nsystem.time(\n  vectorized(c(1:100000))\n)\n\n   user  system elapsed \n  0.002   0.001   0.003"
+    "section": "Agenda",
+    "text": "Agenda\n\nGetting started with R and Git (day 1)\n\nPart 1: Setup (45’) - Tuyen & QA\n\nWhat is R Café & Agenda (5’)\nBrief introduction to Git, GitHub, and GitHub Desktop\n\nGoal: Publish your own branch on R Café’s GitHub repository\n\nRstudio (20’)\n\nGoal: Create RStudio project\nGoal: Everyone create and push their first commit onto their own branch\n\nNavigate GitHub\n\nPart 2: Foundations of R (60’) - QA\n\nVariables & Functions & Packages (with outline)\nExercises\n\nGoal: Create a function and push to GitHub\nGoal: Create issues and comment on each other’s issues on GitHub\n\n\nBreak (15’)\nPart 3: Data manipulation in R (45’) - QA\n\nData management\nTake-home exercises setup\n\n\nR programming with tidyverse (day 2)\nQuarto & Markdown (and related) (day 3)"
   },
   {
-    "objectID": "slides/intro.html#exercise",
-    "href": "slides/intro.html#exercise",
+    "objectID": "index.html#take-home-exercises",
+    "href": "index.html#take-home-exercises",
     "title": "Welcome to R Café",
-    "section": "Exercise",
-    "text": "Exercise\n\nCreate an R project\nInstall packages\n\nInstall package outbreak\n\nCreate your first R Script\n\nCreate an R script in your project\nIn your script, load package outbreaks\nLoad a dataset to R and perform data overview\nWrite a function for the given snippet of code\n\nUpload the code to github\nPeer reviews"
+    "section": "Take-home exercises",
+    "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nHandle missing data\nReformat\nFactor your data (with forcats)\nTricky data types: Datetime, String\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
   },
   {
-    "objectID": "slides/tidyverse.html",
-    "href": "slides/tidyverse.html",
+    "objectID": "additional_handouts/day_1/Rproject_renv/Rproject.html",
+    "href": "additional_handouts/day_1/Rproject_renv/Rproject.html",
+    "title": "Rproject setup",
+    "section": "",
+    "text": "1 Steps to setup Rproject\n\nOpen Rstudio\nIn the menu, File -&gt; New project...\n\n\n\n\nCreate New project\n\n\n\nChoose Existing Directory.\n\n\n\n\nExisting Directory\n\n\n\nCreate project at prefered directory\n\nClick Browse and select your project directory\nThen click Create project\n\n\n\n\n\nSelect the directory\n\n\n\nCheck your Rproject\n\nYour Rproject will be at your directory\n\n\n\n\n\nRproject"
+  },
+  {
+    "objectID": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
+    "href": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
+    "title": "Github note 1",
+    "section": "",
+    "text": "1 Steps to Clone a Repository on GitHub\n\nVisit the GitHub repository you would like to clone\nFor example: https://github.com/OUCRU-Modelling/R-cafe.\nClick on Code → select HTTPS → copy the link in the URL.\n\n\n\n\nCopy the repository link\n\n\n\nOpen GitHub Desktop\nThen choose File → Clone repository.\n\n\n\n\nOpen cloning tab\n\n\n\nChoose URL\n\nPaste the copied link into the blank field below “Hub/cool-repo”.\n\nChange the local path to your preferred directory (or it will use the default directory).\n\nClick Clone.\n\n\n\n\n\nPaste the link\n\n\n\nVerify\nCheck if the repository has been cloned to the correct location.\n\n\n\n\nCheck local repository\n\n\n\n\n2 Steps to create a new branch\n\nCreate new branch\n\nClick on Current branch (main) -&gt; choose New branch\n\n\n\n\n\nCreate new branch\n\n\n\nName the new branch\n\nFill in the branch name (For example: “hungtt”) -&gt; choose Create branch\n\n\n\n\n\nName the new branch\n\n\n\nPublish your branch\n\nClick on Publish branch\n\n\n\n\n\nPublish branch\n\n\n\nCheck your branch on Github\n\nClick on main. You might see your branch name. If not, choose View all branches to find your branch.\n\n\n\n\n\nFind your branch"
+  },
+  {
+    "objectID": "slides/tidyverse.html#session-overview",
+    "href": "slides/tidyverse.html#session-overview",
     "title": "R programming with tidyverse",
-    "section": "",
-    "text": "What will be covered:\n\nStepping into the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\n\ntidyverse style vs. base R style\n\nVectors and vectorisation\nVectorisation with map() vs. *apply()\nPiping with %>% and |>\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
+    "section": "Session overview",
+    "text": "Session overview\nWhat will be covered:\n\nStepping into the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\n\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map() vs. *apply()\nPiping with %&gt;% and |&gt;\ntidyverse style vs. base R style\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-tidyverse",
+    "href": "slides/tidyverse.html#what-is-tidyverse",
+    "title": "R programming with tidyverse",
+    "section": "What is tidyverse?",
+    "text": "What is tidyverse?\n\ntidyverse is a collection of R packages built for data science\nAll packages shared the same principle of tidy data (this will be very apparent later on!)\nConsists of 8 core packages, and a dozen more packages for various specific purposes"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-tidyverse-1",
+    "href": "slides/tidyverse.html#what-is-tidyverse-1",
+    "title": "R programming with tidyverse",
+    "section": "What is tidyverse?",
+    "text": "What is tidyverse?"
+  },
+  {
+    "objectID": "slides/tidyverse.html#why-tidyverse",
+    "href": "slides/tidyverse.html#why-tidyverse",
+    "title": "R programming with tidyverse",
+    "section": "Why tidyverse?",
+    "text": "Why tidyverse?\n\nEvery function in tidyverse shares a consistent structure and pattern. Making it very easy to implement and edit your R code\nOutputs are also easier to read and consistent\nIn general, your R code may look cleaner and easier to follow, compared to base R\nYou just need to install everything once, instead of different packages for different things\n\n\n\n\n\n\n\nNote\n\n\nThis is all subjective and your experience with tidyverse may varies"
+  },
+  {
+    "objectID": "slides/tidyverse.html#why-tidyverse-1",
+    "href": "slides/tidyverse.html#why-tidyverse-1",
+    "title": "R programming with tidyverse",
+    "section": "Why tidyverse?",
+    "text": "Why tidyverse?\n\n\n\n\n\n\nTakeaway points\n\n\n\ntidyverse is not a replacement of base R. It is just a collection of R packages\nYou don’t have to use tidyverse when using R\ntidyverse has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster\nUnderstanding the principles and goals of tidyverse will better your knowledge on good coding practices and R"
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\nStart by installing it!\n\ninstall.packages(\"tidyverse\")\n\n\n\n\n\n\n\nNote\n\n\nMost packages will be installed. You might need some more packages, but generally it should cover most of your needs."
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-1",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-1",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\nThen load it into your R environment!\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nTip\n\n\nYou can load specific packages like library(dplyr), but it doesn’t matter in most cases."
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-2",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\nRun this example code below to make sure everything is running normally\n\ndiamonds %&gt;%\n  group_by(clarity) %&gt;%\n  summarise(mean_price = mean(price)) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = clarity, y = mean_price)) +\n  geom_col()\n\n\n\n\n\n\n\n\nFree R tip\n\n\ntype ?function_name for help on how to use a function and see which package is it coming from"
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse"
+  },
+  {
+    "objectID": "slides/tidyverse.html#how-to-use-tidyverse-3",
+    "href": "slides/tidyverse.html#how-to-use-tidyverse-3",
+    "title": "R programming with tidyverse",
+    "section": "How to use tidyverse",
+    "text": "How to use tidyverse\n\n\n\n\n\n\nFree R tip\n\n\nadd “tidyverse” into your Google searches when looking for R issues"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-a-vector",
+    "href": "slides/tidyverse.html#what-is-a-vector",
+    "title": "R programming with tidyverse",
+    "section": "What is a vector?",
+    "text": "What is a vector?\n\n\nA vector is a container of elements of similar classes\nIn math, \\([1\\space 2\\space 3]\\) is a vector of 3 integers\nIn R\n\nc(1, 2, 3) is a vector of 3 numeric elements\nc(\"ab\", \"cd\", \"ef\") is a vector of 3 character elements\nc(c(1, 2), c(2, 3), c(3, 4)) is a vector of 3 vector elements, each is a vector of 2 numeric elements"
+  },
+  {
+    "objectID": "slides/tidyverse.html#sidetrack",
+    "href": "slides/tidyverse.html#sidetrack",
+    "title": "R programming with tidyverse",
+    "section": "Sidetrack",
+    "text": "Sidetrack\n\n\nSee how confusing this looks?\n\n\nc(c(1, 2), c(2, 3), c(3, 4))\n\n[1] 1 2 2 3 3 4\n\n\n\n\n\nHow about now:\n\n\nc(\n  c(1, 2),\n  c(2, 3),\n  c(3, 4)\n)\n\n[1] 1 2 2 3 3 4\n\n\n\n\n\nSpending a few seconds to properly format your code can help both others and yourselves"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-a-vector-1",
+    "href": "slides/tidyverse.html#what-is-a-vector-1",
+    "title": "R programming with tidyverse",
+    "section": "What is a vector?",
+    "text": "What is a vector?\n\n\nIn R, vectors can also be named\n\n\nc(\"year_2000\" = 51, \"year_2001\" = 38, \"year_2002\" = 44)\n\nyear_2000 year_2001 year_2002 \n       51        38        44 \n\n\n\nThese are usually called lists"
+  },
+  {
+    "objectID": "slides/tidyverse.html#for-loops",
+    "href": "slides/tidyverse.html#for-loops",
+    "title": "R programming with tidyverse",
+    "section": "For-loops",
+    "text": "For-loops\n\nIn programming, we typically use for-loops to go through elements within a vector\nExample:\n\nWe have c(-24, 84, -20, -64) and we want to get the absolute of this vector\nWhat are the ways to solve this problem?"
+  },
+  {
+    "objectID": "slides/tidyverse.html#for-loops-1",
+    "href": "slides/tidyverse.html#for-loops-1",
+    "title": "R programming with tidyverse",
+    "section": "For-loops",
+    "text": "For-loops\n\nUsing for-loops:\n\n\ncovid_cases &lt;- read_rds(\"../data/covid_cases.rds\")\ncovid_cases"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation",
+    "href": "slides/tidyverse.html#vectorisation",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation",
+    "text": "Vectorisation\n\nPerform vectorisation with sapply():\n\n\nx &lt;- c(-24, 84, -20, -64)\nx &lt;- sapply(x, FUN = abs)\n\nx\n\n[1] 24 84 20 64"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation-1",
+    "href": "slides/tidyverse.html#vectorisation-1",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation",
+    "text": "Vectorisation\nUhhh… ok? We saved 1-2 lines of code? What’s the deal?"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation-2",
+    "href": "slides/tidyverse.html#vectorisation-2",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation",
+    "text": "Vectorisation\n\nR has a functional style, which means vectorisation fits better and is more intuitive\nOn a technical level:\n\nR itself might be slightly faster when doing vectorisation, compared to for-loops\nfor more complex and time-consuming functions, it is easier to paralellise with vectorisation"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation-with-map-vs.-apply",
+    "href": "slides/tidyverse.html#vectorisation-with-map-vs.-apply",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation with map() vs. *apply()",
+    "text": "Vectorisation with map() vs. *apply()\n\nRecall what is “vectorisation”"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation-with-map-vs.-apply-1",
+    "href": "slides/tidyverse.html#vectorisation-with-map-vs.-apply-1",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation with map() vs. *apply()",
+    "text": "Vectorisation with map() vs. *apply()\nVectorisation vs. looping"
   }
 ]
