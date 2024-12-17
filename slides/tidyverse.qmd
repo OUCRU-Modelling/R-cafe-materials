@@ -11,27 +11,67 @@ format:
 
 What will be covered:
 
-- **Stepping into the `tidyverse`**
+- **Into the `tidyverse`**
     - What is `tidyverse`?
     - Why should we use it?
     - How do we use it?
-- **`tidyverse` style vs. base R style**
+- **Vectorise R functions**
     - Vectors and vectorisation
     - Vectorisation with `map()` vs. `*apply()`
     - Piping with `%>%` and `|>`
+    - `tidyverse` style vs. base R style
 - **`ggplot2` for data visualization**
     - Grammar of graphics
     - The typical flow
 - **Whole game**
 
 
-# Stepping into the `tidyverse`
+# Into the `tidyverse`
 
 ## What is `tidyverse`?
 
 - `tidyverse` is a **collection of R packages** built for data science
-- All packages shared the same principle of **tidy data** (this will be very apparent later on!)
+- All packages shared the same principle of **tidy data**
 - Consists of 8 core packages, and a dozen more packages for various specific purposes
+
+## What is `tidyverse`?
+
+### Tidy data
+
+- A dataset with rows and columns
+- Each *column* is a *variable*
+- Each *row* is an *observation*
+- Each *cell* contains *1 value* only
+
+
+## What is `tidyverse`?
+
+### Tidy data {.scrollable}
+
+Which of these is a tidy data table
+
+```{r}
+#| echo: false
+tibble::tribble(
+  ~country, ~ code, ~ "2015", ~ "2016",
+  "Aruba", "ABW", 28419.264, 28449.713,
+  "Albania", "ALB", 3952.8036, 4124.055
+)
+```
+
+or
+
+```{r}
+#| echo: false
+tibble::tribble(
+  ~country, ~ code, ~ year, ~ gdp,
+  "Aruba", "ABW", 2015, 28419.2645,
+  "Aruba", "ABW", 2016, 28449.713,
+  "Albania", "ALB", 2015, 3952.8036,
+  "Albania", "ALB", 2016, 4124.055,
+)
+```
+
 
 ## What is `tidyverse`?
 
@@ -40,10 +80,10 @@ What will be covered:
 
 ## Why `tidyverse`? {.scrollable}
 
-- Every function under `tidyverse` **shares a consistent structure and pattern**. Making it very easy to implement and edit your R code
+- Every function in `tidyverse` **shares a consistent structure and pattern**. Making it very easy to implement and edit your R code
+- Outputs are also easier to read and consistent
 - *In general*, your R code *may* look cleaner and easier to follow, compared to base R
 - You just need to install everything once, instead of different packages for different things
-- With piping, you eliminate the need of intermediary objects and nesting of functions (examples later)
 
 ::: callout-note
 *This is all subjective and your experience with `tidyverse` may varies*
@@ -112,26 +152,98 @@ type `?function_name` for help on how to use a function **and see which package 
 add "tidyverse" into your Google searches when looking for R issues
 :::
 
-# `tidyverse` style vs. base R style
+# Vectorise R functions
 
-## Vectors and vectorisation
+## What is a vector?
 
-### What is a vector?
-
+:::{.incremental}
 - A vector is a **container of elements of similar classes**
-  - For example, in math, $[1 2 3]$ is a vector of 3 integers
-- Most things in R are vectors
-  - For example, `c(1, 2, 3)` is a vector of 3 `numeric` elements, 
+- In math, $[1\space 2\space 3]$ is a vector of 3 integers
+- In R
+  - `c(1, 2, 3)` is a vector of 3 `numeric` elements
   - `c("ab", "cd", "ef")` is a vector of 3 `character` elements
+  - `c(c(1, 2), c(2, 3), c(3, 4))` is a vector of 3 `vector` elements, each is a vector of 2 `numeric` elements
+:::
 
-### For-loops
+## Sidetrack
+:::{.fragment}
+- See how confusing this looks?
+```{r}
+c(c(1, 2), c(2, 3), c(3, 4))
+```
+:::
 
-- In programming, we typically use for-loops to iterate through elements within a vector
+:::{.fragment}
+- How about now:
+```{r}
+c(
+  c(1, 2),
+  c(2, 3),
+  c(3, 4)
+)
+```
+:::
+
+:::{.fragment}
+- Spending a few seconds to properly format your code can help both others and yourselves
+:::
+
+## What is a vector? {.scrollable}
+:::{.fragment}
+- In R, vectors can also be named
+
+```{r}
+c("year_2000" = 51, "year_2001" = 38, "year_2002" = 44)
+```
+
+- These are usually called `list`s
+:::
+
+## For-loops
+
+- In programming, we typically use for-loops to go through elements within a vector
+- Example:
+  - We have `c(-24, 84, -20, -64)` and we want to get the absolute of this vector
+  - What are the ways to solve this problem?
+
+
+## For-loops
+
+- Using for-loops:
+```{r}
+covid_cases <- read_rds("../data/covid_cases.rds")
+covid_cases
+```
+
+
+## Vectorisation
+
+- Perform vectorisation with `sapply()`:
+```{r}
+x <- c(-24, 84, -20, -64)
+x <- sapply(x, FUN = abs)
+
+x
+```
+
+
+## Vectorisation
+
+Uhhh... ok? We saved 1-2 lines of code? What's the deal?
+
+
+## Vectorisation
+
+- R has a **functional** style, which means vectorisation fits better and is more intuitive
+- On a technical level:
+  - R itself *might be slightly* faster when doing vectorisation, compared to for-loops
+  - for more complex and time-consuming functions, it is easier to **paralellise** with vectorisation
 
 
 ## Vectorisation with `map()` vs. `*apply()`
 
 - Recall what is "vectorisation"
+
 
 ## Vectorisation with `map()` vs. `*apply()`
 
