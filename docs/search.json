@@ -683,18 +683,32 @@
     "href": "slides/tidyverse.html#session-overview",
     "title": "R programming with tidyverse",
     "section": "Session overview",
-    "text": "Session overview\nWhat will be covered:\n\nStepping into the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\n\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map() vs. *apply()\nPiping with %&gt;% and |&gt;\ntidyverse style vs. base R style\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
+    "text": "Session overview\nWhat will be covered:\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\n\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map() vs. *apply()\nPiping with %&gt;% and |&gt;\ntidyverse style vs. base R style\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
   },
   {
     "objectID": "slides/tidyverse.html#what-is-tidyverse",
     "href": "slides/tidyverse.html#what-is-tidyverse",
     "title": "R programming with tidyverse",
     "section": "What is tidyverse?",
-    "text": "What is tidyverse?\n\ntidyverse is a collection of R packages built for data science\nAll packages shared the same principle of tidy data (this will be very apparent later on!)\nConsists of 8 core packages, and a dozen more packages for various specific purposes"
+    "text": "What is tidyverse?\n\ntidyverse is a collection of R packages built for data science\nAll packages shared the same principle of tidy data\nConsists of 8 core packages, and a dozen more packages for various specific purposes"
   },
   {
     "objectID": "slides/tidyverse.html#what-is-tidyverse-1",
     "href": "slides/tidyverse.html#what-is-tidyverse-1",
+    "title": "R programming with tidyverse",
+    "section": "What is tidyverse?",
+    "text": "What is tidyverse?\nTidy data\n\nA dataset with rows and columns\nEach column is a variable\nEach row is an observation\nEach cell contains 1 value only"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-tidyverse-2",
+    "href": "slides/tidyverse.html#what-is-tidyverse-2",
+    "title": "R programming with tidyverse",
+    "section": "What is tidyverse?",
+    "text": "What is tidyverse?\nTidy data\nWhich of these is a tidy data table\n\n\n\n  \n\n\n\nor"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-tidyverse-3",
+    "href": "slides/tidyverse.html#what-is-tidyverse-3",
     "title": "R programming with tidyverse",
     "section": "What is tidyverse?",
     "text": "What is tidyverse?"
