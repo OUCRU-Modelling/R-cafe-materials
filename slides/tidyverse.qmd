@@ -44,9 +44,9 @@ What will be covered:
 - Each *cell* contains *1 value* only
 
 
-## What is `tidyverse`?
+## What is `tidyverse`?  {.scrollable}
 
-### Tidy data {.scrollable}
+### Tidy data 
 
 Which of these is a tidy data table
 
