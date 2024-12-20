@@ -683,7 +683,7 @@
     "href": "slides/tidyverse.html#session-overview",
     "title": "R programming with tidyverse",
     "section": "Session overview",
-    "text": "Session overview\nWhat will be covered:\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\n\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map() vs. *apply()\nPiping with %&gt;% and |&gt;\ntidyverse style vs. base R style\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
+    "text": "Session overview\nWhat will be covered:\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\nPiping with %&gt;%\n\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map() vs. *apply()\ntidyverse style vs. base R style\n\nggplot2 for data visualization\n\nGrammar of graphics\nThe typical flow\n\nWhole game"
   },
   {
     "objectID": "slides/tidyverse.html#what-is-tidyverse",
@@ -718,7 +718,7 @@
     "href": "slides/tidyverse.html#why-tidyverse",
     "title": "R programming with tidyverse",
     "section": "Why tidyverse?",
-    "text": "Why tidyverse?\n\nEvery function in tidyverse shares a consistent structure and pattern. Making it very easy to implement and edit your R code\nOutputs are also easier to read and consistent\nIn general, your R code may look cleaner and easier to follow, compared to base R\nYou just need to install everything once, instead of different packages for different things\n\n\n\n\n\n\n\nNote\n\n\nThis is all subjective and your experience with tidyverse may varies"
+    "text": "Why tidyverse?\n\n\nEvery function in tidyverse shares a consistent structure and pattern. Making it very easy to implement and edit your R code\nOutputs are also easier to read and consistent\nIn general, your R code may look cleaner and easier to follow, compared to base R\nYou just need to install everything once, instead of different packages for different things\n\n\n\n\n\n\n\n\n\nNote\n\n\nThis is all subjective and your experience with tidyverse may varies"
   },
   {
     "objectID": "slides/tidyverse.html#why-tidyverse-1",
@@ -726,6 +726,13 @@
     "title": "R programming with tidyverse",
     "section": "Why tidyverse?",
     "text": "Why tidyverse?\n\n\n\n\n\n\nTakeaway points\n\n\n\ntidyverse is not a replacement of base R. It is just a collection of R packages\nYou don’t have to use tidyverse when using R\ntidyverse has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster\nUnderstanding the principles and goals of tidyverse will better your knowledge on good coding practices and R"
+  },
+  {
+    "objectID": "slides/tidyverse.html#why-tidyverse-2",
+    "href": "slides/tidyverse.html#why-tidyverse-2",
+    "title": "R programming with tidyverse",
+    "section": "Why tidyverse?",
+    "text": "Why tidyverse?\nCommonly used tidyverse functions:\n\n\ndplyr::select() to select columns from a tibble\ndplyr::mutate() to change and create columns in a tibble\ntidyr::pivot_longer() to transform a tibble from wide to long format (less columns, more rows)\ntidyr::pivot_wider() to transform a tibble from long to wide format (less rows, more columns)\ndplyr::group_by() and dplyr::summarise() to group data and summarise it using a function, e.g. mean, max, min, sum\n\n\n\n\n\n\n\n\n\nNote\n\n\ntibble is a type of dataframe that is used by all tidyverse functions"
   },
   {
     "objectID": "slides/tidyverse.html#how-to-use-tidyverse",
@@ -739,14 +746,14 @@
     "href": "slides/tidyverse.html#how-to-use-tidyverse-1",
     "title": "R programming with tidyverse",
     "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nThen load it into your R environment!\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nTip\n\n\nYou can load specific packages like library(dplyr), but it doesn’t matter in most cases."
+    "text": "How to use tidyverse\nThen load it into your R environment!\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nFree R tip\n\n\nYou can load specific packages like library(dplyr)"
   },
   {
     "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2",
     "href": "slides/tidyverse.html#how-to-use-tidyverse-2",
     "title": "R programming with tidyverse",
     "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nRun this example code below to make sure everything is running normally\n\ndiamonds %&gt;%\n  group_by(clarity) %&gt;%\n  summarise(mean_price = mean(price)) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(x = clarity, y = mean_price)) +\n  geom_col()\n\n\n\n\n\n\n\n\nFree R tip\n\n\ntype ?function_name for help on how to use a function and see which package is it coming from"
+    "text": "How to use tidyverse\nRun this example code below to make sure everything is running normally\n\nggplot(\n  data = ungroup(summarise(group_by(mtcars, gear), mean_mpg = mean(mpg))),\n  aes(x = gear, y = mean_mpg)\n) +\n  geom_col()\n\n\n\n\n\n\n\n\nFree R tips\n\n\n\ntype ?function_name for help on how to use a function and see which package is it coming from\nadd “tidyverse” into your Google searches when looking for R issues"
   },
   {
     "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
@@ -760,49 +767,133 @@
     "href": "slides/tidyverse.html#how-to-use-tidyverse-3",
     "title": "R programming with tidyverse",
     "section": "How to use tidyverse",
-    "text": "How to use tidyverse\n\n\n\n\n\n\nFree R tip\n\n\nadd “tidyverse” into your Google searches when looking for R issues"
+    "text": "How to use tidyverse\n\n\nOne of the main “unit” you will work with in R is a dataframe\nIn base R, this object has type of data.frame\n\n\n\n\nclass(mtcars)\n\n[1] \"data.frame\"\n\n\n\n\n\nIn the tidyverse, we work with something called a tibble (object type is called tbl_df)\n\n\nclass(as_tibble(mtcars))\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\n\n\n\nYou can see the differences more clearly in R"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with",
+    "href": "slides/tidyverse.html#piping-with",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\n\nLook back at the example code\n\n\nggplot(\n  data = ungroup(summarise(group_by(mtcars, gear), mean_mpg = mean(mpg))),\n  aes(x = gear, y = mean_mpg)\n) +\n  geom_col()\n\n\n\nHow easy is it to understand/follow this code?\nCan we improve readability?"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-1",
+    "href": "slides/tidyverse.html#piping-with-1",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\n\n\nTypically in R, we perform a sequence of operations on a dataset, changing it as we go\nR has a functional style, which means the structure is typically: new_data &lt;- function(data, extra_parameters)\n\nfunction describes your action, what you want to do\ndata is the data that you are execute the action on\nextra_parameters are (optional) settings that changes how the action is performed\nnew_data is the output, what you get after performing the action"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-2",
+    "href": "slides/tidyverse.html#piping-with-2",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\n\n\nThe example code can be rewritten as:\n\n\ngrouped_by_gear &lt;- group_by(mtcars, gear)\nmean_mpg_by_gear  &lt;- summarise(grouped_by_gear, mean_mpg = mean(mpg))\nungrouped_data &lt;- ungroup(mean_mpg_by_gear)\n\nggplot(\n  data = ungrouped_data,\n  aes(x = gear, y = mean_mpg)\n) +\n  geom_col()\n\n\n\n\nIs this a better way to write it? Can we improve it even further?\nIf we are performing a sequence of actions, each using the output of the previous action, we can use pipe"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-3",
+    "href": "slides/tidyverse.html#piping-with-3",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\n\n\nPipe is a powerful tool to express a sequence of actions (functions)\nIt helps you write code that is easier to read and understand\nIn R, you can pipe between functions using the %&gt;% or |&gt; operators\nRstudio shortcut: Cmd+Shift+M or Ctrl+Shift+M\n\n\n\n\n\n\n\n\n\n%&gt;% vs. |&gt;\n\n\n\n%&gt;% comes from the magrittr package which is used by all of tidyverse\n|&gt; comes from R since version 4.1.0. It functions largely the same as %&gt;% but not identical\nR Café will use %&gt;%"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-4",
+    "href": "slides/tidyverse.html#piping-with-4",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\n\nPipes transfer the data from its left-hand side (LHS) to the function on its right-hand side (RHS) as the first parameter of that function\nThe structure: new_data &lt;- data %&gt;% function(extra_parameters)"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-5",
+    "href": "slides/tidyverse.html#piping-with-5",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\nFor example:\n\ngroup_by(mtcars, gear)\n\nis exactly the same as\n\nmtcars %&gt;% group_by(gear)"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-6",
+    "href": "slides/tidyverse.html#piping-with-6",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\nAnother example:\n\nsummarise(group_by(mtcars, gear), mean_mpg = mean(mpg))\n\nis exactly the same as\n\nmtcars %&gt;% group_by(gear) %&gt;% summarise(mean_mpg = mean(mpg))\n\n\n\n\n\n\n\n\nNote\n\n\nEvery function under tidyverse will take the data as the first parameter, so everything can be piped!"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-7",
+    "href": "slides/tidyverse.html#piping-with-7",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\n\nUsing pipe, we can now rewrite the code as:\n\n\nmtcars %&gt;% \n  group_by(gear) %&gt;% \n  summarise(mean_mpg = mean(mpg)) %&gt;% \n  ungroup() %&gt;% \n  ggplot(aes(x = gear, y = mean_mpg)) +\n  geom_col()\n\n\nFor you, is it better/faster to understand what’s happening now?"
+  },
+  {
+    "objectID": "slides/tidyverse.html#piping-with-8",
+    "href": "slides/tidyverse.html#piping-with-8",
+    "title": "R programming with tidyverse",
+    "section": "Piping with %>%",
+    "text": "Piping with %&gt;%\nQuick comparison\n\nggplot(\n  data = ungroup(summarise(group_by(mtcars, gear), mean_mpg = mean(mpg))),\n  aes(x = gear, y = mean_mpg)\n) +\n  geom_col()\n\nvs.\n\nmtcars %&gt;% \n  group_by(gear) %&gt;% \n  summarise(mean_mpg = mean(mpg)) %&gt;% \n  ungroup() %&gt;% \n  ggplot(aes(x = gear, y = mean_mpg)) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/tidyverse.html#exercise-1",
+    "href": "slides/tidyverse.html#exercise-1",
+    "title": "R programming with tidyverse",
+    "section": "Exercise",
+    "text": "Exercise\n\nLoad the covid_cases dataset\n\n\n\n# read in data\ncovid_cases &lt;- read_rds(here::here(\"data/covid_cases.rds\"))\ncovid_cases\n\n\n  \n\n\n\n\n\n\nIs this a tidy data table?"
+  },
+  {
+    "objectID": "slides/tidyverse.html#exercise-2",
+    "href": "slides/tidyverse.html#exercise-2",
+    "title": "R programming with tidyverse",
+    "section": "Exercise",
+    "text": "Exercise\n\n\nRecall what is the tidy data standard\nWe want:\n\nEach column to represent a single variable. What are the variables here?\nVariables: date, country, cases or case_count\nSo, we want less columns more rows =&gt; pivot_longer()"
+  },
+  {
+    "objectID": "slides/tidyverse.html#exercise-3",
+    "href": "slides/tidyverse.html#exercise-3",
+    "title": "R programming with tidyverse",
+    "section": "Exercise",
+    "text": "Exercise\n\nCheck how to use pivot_longer()\n\n\n?pivot_longer\n\n\nMake the data “longer”\n\n\n\ncovid_cases &lt;- covid_cases %&gt;% \n  pivot_longer(\n    cols = -date, \n    names_to = \"country\", \n    names_pattern = \"cases_(.+)\",\n    values_to = \"cases\"\n  )\ncovid_cases"
   },
   {
     "objectID": "slides/tidyverse.html#what-is-a-vector",
     "href": "slides/tidyverse.html#what-is-a-vector",
     "title": "R programming with tidyverse",
     "section": "What is a vector?",
-    "text": "What is a vector?\n\n\nA vector is a container of elements of similar classes\nIn math, \\([1\\space 2\\space 3]\\) is a vector of 3 integers\nIn R\n\nc(1, 2, 3) is a vector of 3 numeric elements\nc(\"ab\", \"cd\", \"ef\") is a vector of 3 character elements\nc(c(1, 2), c(2, 3), c(3, 4)) is a vector of 3 vector elements, each is a vector of 2 numeric elements"
-  },
-  {
-    "objectID": "slides/tidyverse.html#sidetrack",
-    "href": "slides/tidyverse.html#sidetrack",
-    "title": "R programming with tidyverse",
-    "section": "Sidetrack",
-    "text": "Sidetrack\n\n\nSee how confusing this looks?\n\n\nc(c(1, 2), c(2, 3), c(3, 4))\n\n[1] 1 2 2 3 3 4\n\n\n\n\n\nHow about now:\n\n\nc(\n  c(1, 2),\n  c(2, 3),\n  c(3, 4)\n)\n\n[1] 1 2 2 3 3 4\n\n\n\n\n\nSpending a few seconds to properly format your code can help both others and yourselves"
+    "text": "What is a vector?\n\n\nA vector is a container of elements of similar classes\nIn math, \\([1\\space 2\\space 3]\\) is a vector of 3 integers\nIn R, you can define vectors by putting them inside c()\n\nc(1, 2, 3) is a vector of 3 numeric elements\nc(\"ab\", \"cd\", \"ef\") is a vector of 3 character elements\nc(c(1, 2), c(2, 3), c(3, 4)) is a vector of 3 vector elements, each is a vector of 2 numeric elements"
   },
   {
     "objectID": "slides/tidyverse.html#what-is-a-vector-1",
     "href": "slides/tidyverse.html#what-is-a-vector-1",
     "title": "R programming with tidyverse",
     "section": "What is a vector?",
-    "text": "What is a vector?\n\n\nIn R, vectors can also be named\n\n\nc(\"year_2000\" = 51, \"year_2001\" = 38, \"year_2002\" = 44)\n\nyear_2000 year_2001 year_2002 \n       51        38        44 \n\n\n\nThese are usually called lists"
+    "text": "What is a vector?\n\nQuestion: is 12 a vector?\n\n\n\nclass(12)\n\n[1] \"numeric\"\n\nclass(c(12))\n\n[1] \"numeric\"\n\nclass(c(12, 13, 14))\n\n[1] \"numeric\"\n\n\n\nIn R, most things are vectors. A single number by itself is also a vector\n12 itself is a vector that has one numeric element"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-a-vector-2",
+    "href": "slides/tidyverse.html#what-is-a-vector-2",
+    "title": "R programming with tidyverse",
+    "section": "What is a vector?",
+    "text": "What is a vector?\n\nConceptually, a data.frame (or a tibble) is a list of named vectors!\nYou can see it using the str() function\n\n\nstr(covid_cases)\n\ntibble [19,412 × 3] (S3: tbl_df/tbl/data.frame)\n $ date   : Date[1:19412], format: \"2020-01-20\" \"2020-01-20\" ...\n $ country: chr [1:19412] \"chn\" \"kor\" \"aus\" \"jpn\" ...\n $ cases  : num [1:19412] 0 0 0 0 0 0 0 0 0 0 ...\n\n\n\n\ncovid_cases has 3 vectors:\n\ndate is a vector of dates\ncountry is a vector of characters\ncases is a vector of numbers"
+  },
+  {
+    "objectID": "slides/tidyverse.html#what-is-a-vector-3",
+    "href": "slides/tidyverse.html#what-is-a-vector-3",
+    "title": "R programming with tidyverse",
+    "section": "What is a vector?",
+    "text": "What is a vector?\n\nYou can “access” these vectors with the $ operator\n\n\ncovid_cases$date[10000:10010]\n\n [1] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n [6] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n[11] \"2020-03-08\"\n\ncovid_cases$country[10000:10010]\n\n [1] \"spm\" \"esp\" \"ita\" \"deu\" \"fra\" \"gbr\" \"tur\" \"bel\" \"che\" \"nld\" \"prt\"\n\ncovid_cases$cases[10000:10010]\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n\n\n\nOr the tidyverse way with slice() and pull()\n\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(date)\n\n [1] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n [6] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n[11] \"2020-03-08\"\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(country)\n\n [1] \"spm\" \"esp\" \"ita\" \"deu\" \"fra\" \"gbr\" \"tur\" \"bel\" \"che\" \"nld\" \"prt\"\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(cases)\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n\n\none of the cases where using base R might be quicker and doesn’t sacrifice readability"
   },
   {
     "objectID": "slides/tidyverse.html#for-loops",
     "href": "slides/tidyverse.html#for-loops",
     "title": "R programming with tidyverse",
     "section": "For-loops",
-    "text": "For-loops\n\nIn programming, we typically use for-loops to go through elements within a vector\nExample:\n\nWe have c(-24, 84, -20, -64) and we want to get the absolute of this vector\nWhat are the ways to solve this problem?"
-  },
-  {
-    "objectID": "slides/tidyverse.html#for-loops-1",
-    "href": "slides/tidyverse.html#for-loops-1",
-    "title": "R programming with tidyverse",
-    "section": "For-loops",
-    "text": "For-loops\n\nUsing for-loops:\n\n\ncovid_cases &lt;- read_rds(\"../data/covid_cases.rds\")\ncovid_cases"
+    "text": "For-loops\n\n\nIn programming, we typically use for-loops to go through elements within a vector\nExample: We want to take the square of a vector\n\n\n\n\ndata &lt;- covid_cases$cases[10000:10010]\n\n# before\ndata\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\nidx &lt;- seq(1, length(data)) # create index vector from 1 to the length of data\nfor (i in idx) {\n  data[i] &lt;- data[i]^2\n}\n\n# after\ndata\n\n [1]       0    3136 1555009   24336    8649    1849       0    3600    3025\n[10]    3600      64"
   },
   {
     "objectID": "slides/tidyverse.html#vectorisation",
     "href": "slides/tidyverse.html#vectorisation",
     "title": "R programming with tidyverse",
     "section": "Vectorisation",
-    "text": "Vectorisation\n\nPerform vectorisation with sapply():\n\n\nx &lt;- c(-24, 84, -20, -64)\nx &lt;- sapply(x, FUN = abs)\n\nx\n\n[1] 24 84 20 64"
+    "text": "Vectorisation\n\n\nInstead of going through each element and apply an action, we can an action to all elements at once\nExample: Take the square root of a vector\n\n\n\n\n# before\ndata\n\n [1]       0    3136 1555009   24336    8649    1849       0    3600    3025\n[10]    3600      64\n\n# after\nsqrt(data)\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n\n\nMost functions in base R are already vectorised"
   },
   {
     "objectID": "slides/tidyverse.html#vectorisation-1",
@@ -817,6 +908,13 @@
     "title": "R programming with tidyverse",
     "section": "Vectorisation",
     "text": "Vectorisation\n\nR has a functional style, which means vectorisation fits better and is more intuitive\nOn a technical level:\n\nR itself might be slightly faster when doing vectorisation, compared to for-loops\nfor more complex and time-consuming functions, it is easier to paralellise with vectorisation"
+  },
+  {
+    "objectID": "slides/tidyverse.html#vectorisation-3",
+    "href": "slides/tidyverse.html#vectorisation-3",
+    "title": "R programming with tidyverse",
+    "section": "Vectorisation",
+    "text": "Vectorisation\n\nVectorisation shines when there are more complex actions, where you have to write your own functions"
   },
   {
     "objectID": "slides/tidyverse.html#vectorisation-with-map-vs.-apply",
