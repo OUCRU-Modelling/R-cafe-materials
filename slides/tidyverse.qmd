@@ -11,42 +11,45 @@ format:
 
 What will be covered:
 
-- **Into the `tidyverse`**
-    - What is `tidyverse`?
-    - Why should we use it?
-    - How do we use it?
-    - Piping with `%>%`
-- **Vectorise R functions**
-    - Vectors and vectorisation
-    - Vectorisation with `map()` vs. `*apply()`
-    - `tidyverse` style vs. base R style
-- **`ggplot2` for data visualisation**
-    - Grammar of graphics
-    - The typical flow
-- **Whole game**
+-   **Into the `tidyverse`**
+    -   What is `tidyverse`?
+    -   Why should we use it?
+    -   How do we use it?
+    -   Piping with `%>%`
+-   **Vectorise R functions**
+    -   Vectors and vectorisation
+    -   Vectorisation with `map()`
+    -   `tidyverse` style vs. base R style
+-   **`ggplot2` for data visualisation**
+    -   Grammar of graphics
+    
+## Session overview
 
+- Throughout this session:
+  - In-slide examples will be using the `mtcars` dataset (already in base R)
+  - Walk-through exercises will be using the `covid_cases` dataset
+  
 
 # Into the `tidyverse`
 
 ## What is `tidyverse`?
 
-- `tidyverse` is a **collection of R packages** built for data science
-- All packages shared the same principle of **tidy data**
-- Consists of 8 core packages, and a dozen more packages for various specific purposes
+-   `tidyverse` is a **collection of R packages** built for data science
+-   All packages shared the same principle of **tidy data**
+-   Consists of 8 core packages, and a dozen more packages for various specific purposes
 
 ## What is `tidyverse`?
 
 ### Tidy data
 
-- A dataset with rows and columns
-- Each *column* is a *variable*
-- Each *row* is an *observation*
-- Each *cell* contains *1 value* only
-
+-   A dataset with rows and columns
+-   Each *column* is a *variable*
+-   Each *row* is an *observation*
+-   Each *cell* contains *1 value* only
 
 ## What is `tidyverse`? {.scrollable}
 
-### Tidy data 
+### Tidy data
 
 Which of these is a tidy data table
 
@@ -72,19 +75,17 @@ tibble::tribble(
 )
 ```
 
-
 ## What is `tidyverse`?
 
 ![](imgs/tidyverse/tidy-packages.png)
 
-
 ## Why `tidyverse`? {.scrollable}
 
-:::{.incremental}
-- Every function in `tidyverse` **shares a consistent structure and pattern**. Making it very easy to implement and edit your R code
-- Outputs are also easier to read and consistent
-- *In general*, your R code *may* look cleaner and easier to follow, compared to base R
-- You just need to install everything once, instead of different packages for different things
+::: incremental
+-   Every function in `tidyverse` **shares a consistent structure and pattern**. Making it very easy to implement and edit your R code
+-   Outputs are also easier to read and consistent
+-   *In general*, your R code *may* look cleaner and easier to follow, compared to base R
+-   You just need to install everything once, instead of different packages for different things
 :::
 
 ::: {.callout-note .fragment}
@@ -96,26 +97,59 @@ tibble::tribble(
 ::: callout-important
 ### Takeaway points
 
-1. `tidyverse` is not a replacement of base R. **It is just a collection of R packages**
-2. You don't have to use `tidyverse` when using R
-3. `tidyverse` has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster
-4. Understanding the principles and goals of `tidyverse` will better your knowledge on good coding practices and R
+1.  `tidyverse` is not a replacement of base R. **It is just a collection of R packages**
+2.  You don't have to use `tidyverse` when using R
+3.  `tidyverse` has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster
+4.  Understanding the principles and goals of `tidyverse` will better your knowledge on good coding practices and R
 :::
 
 ## Why `tidyverse`? {.scrollable}
 
 ### Commonly used tidyverse functions:
-:::{.incremental}
-- `dplyr::select()` to select columns from a `tibble`
-- `dplyr::mutate()` to change and create columns in a `tibble`
-- `tidyr::pivot_longer()` to transform a `tibble` from wide to long format (less columns, more rows)
-- `tidyr::pivot_wider()` to transform a `tibble` from long to wide format (less rows, more columns)
-- `dplyr::group_by()` and `dplyr::summarise()` to group data and summarise it using a function, e.g. mean, max, min, sum
+
+::: {.incremental style="font-size: 75%;"}
+-   `dplyr::select()` to select columns from a `tibble`
+-   `dplyr::mutate()` to change and create columns in a `tibble`
+-   `tidyr::pivot_longer()` to transform a `tibble` from wide to long format (less columns, more rows)
+-   `tidyr::pivot_wider()` to transform a `tibble` from long to wide format (less rows, more columns)
+-   `dplyr::group_by()` and `dplyr::summarise()` to group data and summarise it using a function, e.g. mean, max, min, sum
 :::
 
 ::: {.callout-note .fragment}
 `tibble` is a type of dataframe that is used by all `tidyverse` functions
 :::
+
+
+## Why `tidyverse`? {.scrollable}
+
+::: incremental
+-   One of the main "unit" you will work with in R is a dataframe
+-   In base R, this object has type of `data.frame`
+:::
+
+::: fragment
+```{r}
+class(mtcars)
+```
+:::
+
+::: fragment
+-   In the `tidyverse`, we work with something called a `tibble` (object type is called `tbl_df`)
+
+```{r}
+#| echo: false
+library(tibble)
+```
+
+```{r}
+class(as_tibble(mtcars))
+```
+:::
+
+::: fragment
+-   You can see the differences more clearly in R
+:::
+
 
 ## How to use `tidyverse`
 
@@ -130,7 +164,6 @@ install.packages("tidyverse")
 *Most* packages will be installed. You might need some more packages, but generally it should cover most of your needs.
 :::
 
-
 ## How to use `tidyverse`
 
 Then load it into your R environment!
@@ -139,8 +172,9 @@ Then load it into your R environment!
 library(tidyverse)
 ```
 
-:::callout-tip
+::: callout-tip
 ### Free R tip
+
 You can load specific packages like `library(dplyr)`
 :::
 
@@ -160,40 +194,15 @@ ggplot(
 
 ::: callout-tip
 ### Free R tips
-- type `?function_name` for help on how to use a function **and see which package is it coming from**
-- add "tidyverse" into your Google searches when looking for R issues
-:::
 
-## How to use `tidyverse` {.scrollable}
-
-:::{.incremental}
-- One of the main "unit" you will work with in R is a dataframe
-- In base R, this object has type of `data.frame`
-:::
-
-:::{.fragment}
-```{r}
-class(mtcars)
-```
-
-:::
-
-:::{.fragment}
-- In the `tidyverse`, we work with something called a `tibble` (object type is called `tbl_df`)
-```{r}
-class(as_tibble(mtcars))
-```
-
-:::
-
-:::{.fragment}
-- You can see the differences more clearly in R
-
+-   type `?function_name` for help on how to use a function **and see which package is it coming from**
+-   add "tidyverse" into your Google searches when looking for R issues
 :::
 
 ## Piping with `%>%`
- 
-- Look back at the example code
+
+-   Look back at the example code
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -204,26 +213,27 @@ ggplot(
   geom_col()
 ```
 
-:::{.fragment}
-- How easy is it to understand/follow this code?
-- Can we improve readability?
+::: fragment
+-   How easy is it to understand/follow this code?
+-   Can we improve readability?
 :::
 
 ## Piping with `%>%` {.scrollable}
 
-:::{.incremental}
-- Typically in R, we perform a sequence of operations on a dataset, changing it as we go
-- R has a *functional style*, which means the structure is typically: `new_data <- function(data, extra_parameters)`
-  - `function` describes your **action**, what you want to do
-  - `data` is the data that you are execute the action on
-  - `extra_parameters` are (optional) **settings** that changes how the action is performed
-  - `new_data` is the **output**, what you get after performing the action
+::: incremental
+-   Typically in R, we perform a sequence of operations on a dataset, changing it as we go
+-   R has a *functional style*, which means the structure is typically: `new_data <- function(data, extra_arguments)`
+    -   `function` describes your **action**, what you want to do
+    -   `data` is the data that you are execute the action on
+    -   `extra_arguments` are (optional) **settings** that changes how the action is performed
+    -   `new_data` is the **output**, what you get after performing the action
 :::
 
 ## Piping with `%>%`
 
-:::{.fragment}
-- The example code can be rewritten as:
+::: fragment
+-   The example code can be rewritten as:
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -239,35 +249,37 @@ ggplot(
 ```
 :::
 
-:::{.fragment .incremental}
-- Is this a better way to write it? Can we improve it even further?
-- If we are performing a sequence of actions, each using the output of the previous action, we can use **pipe**
+::: {.fragment .incremental}
+-   Is this a better way to write it? Can we improve it even further?
+-   If we are performing a sequence of actions, each using the output of the previous action, we can use **pipe**
 :::
 
 ## Piping with `%>%` {.scrollable}
 
-:::{.incremental}
-- **Pipe** is a powerful tool to express a sequence of actions (functions)
-- It helps you write code that is easier to read and understand
-- In R, you can **pipe** between functions using the `%>%` or `|>` *operators*
-- Rstudio shortcut: **Cmd+Shift+M** or **Ctrl+Shift+M**
+::: incremental
+-   **Pipe** is a powerful tool to express a sequence of actions (functions)
+-   It helps you write code that is easier to read and understand
+-   In R, you can **pipe** between functions using the `%>%` or `|>` *operators*
+-   Rstudio shortcut: **Cmd+Shift+M** or **Ctrl+Shift+M**
 :::
 
-:::{.callout-note .fragment}
+::: {.callout-note .fragment}
 ### `%>%` vs. `|>`
-- `%>%` comes from the `magrittr` package which is used by all of `tidyverse`
-- `|>` comes from R since version 4.1.0. It functions largely the same as `%>%` but not identical
-- R Café will use `%>%`
+
+-   `%>%` comes from the `magrittr` package which is used by all of `tidyverse`
+-   `|>` comes from R since version 4.1.0. It functions largely the same as `%>%` but not identical
+-   R Café will use `%>%`
 :::
 
 ## Piping with `%>%`
 
-- Pipes transfer the data from its left-hand side (LHS) to the function on its right-hand side (RHS) **as the first parameter of that function**
-- The structure: `new_data <- data %>% function(extra_parameters)`
+-   Pipes transfer the data from its left-hand side (LHS) to the function on its right-hand side (RHS) **as the first argument of that function**
+-   The structure: `new_data <- data %>% function(extra_arguments)`
 
 ## Piping with `%>%`
 
 For example:
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -281,7 +293,6 @@ is exactly the same as
 #| eval: false
 mtcars %>% group_by(gear)
 ```
-
 
 ## Piping with `%>%`
 
@@ -302,12 +313,13 @@ mtcars %>% group_by(gear) %>% summarise(mean_mpg = mean(mpg))
 ```
 
 ::: {.callout-note .fragment}
-Every function under `tidyverse` will take the data as the first parameter, so everything can be piped!
+Every function under `tidyverse` will take the data as the first argument, so everything can be piped!
 :::
 
 ## Piping with `%>%`
 
-- Using pipe, we can now rewrite the code as:
+-   Using pipe, we can now rewrite the code as:
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -319,11 +331,12 @@ mtcars %>%
   geom_col()
 ```
 
-- For you, is it better/faster to understand what's happening now?
+-   For you, is it better/faster to understand what's happening now?
 
 ## Piping with `%>%`
 
 Quick comparison
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -335,6 +348,7 @@ ggplot(
 ```
 
 vs.
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -346,51 +360,50 @@ mtcars %>%
   geom_col()
 ```
 
-
 # Exercise
-::: {.callout-note}
-## Checklist
-- Load the `covid_cases` dataset
-- Have a look at the dataset, do you understand how is it structured? Does it follow the tidy data standard?
-- Use `tidyverse` to transform the data into a tidy `tibble`
+
+## Exercise
+
+::: callout-note
+### Checklist
+
+-   Load the `covid_cases` dataset
+-   Have a look at the dataset, do you understand how is it structured? Does it follow the tidy data standard?
+-   Use `tidyverse` to transform the data into a tidy `tibble`
 :::
 
 ## Exercise {.scrollable}
-- Load the `covid_cases` dataset
 
-:::{.fragment}
+-   Load the `covid_cases` dataset
+
+::: fragment
 ```{r}
 # read in data
-covid_cases <- read_rds(here::here("data/covid_cases.rds"))
+covid_cases <- read_rds("../data/covid_cases.rds")
 covid_cases
 ```
-
 :::
 
-:::{.fragment}
-- Is this a **tidy data** table?
+::: fragment
+-   Is this a **tidy data** table?
+:::
+
+## Exercise
+
+::: incremental
+-   Recall what is the tidy data standard
+-   We want:
+    -   Each column to represent a single variable. What are the variables here?
+    -   Variables: `date`, `country`, `cases` or `case_count`
+    -   So, we want less columns more rows: `pivot_longer()`
 :::
 
 ## Exercise {.scrollable}
-::: {.incremental}
-- Recall what is the tidy data standard
-- We want:
-  - Each column to represent a single variable. What are the variables here?
-  - Variables: `date`, `country`, `cases` or `case_count`
-  - So, we want less columns more rows => `pivot_longer()`
-:::
 
-## Exercise {.scrollable}
+-   How to use: `?pivot_longer()`
+-   Make the data "longer"
 
-- Check how to use `pivot_longer()`
-
-```{r}
-?pivot_longer
-```
-
-- Make the data "longer"
-
-:::{.fragment}
+::: fragment
 ```{r}
 covid_cases <- covid_cases %>% 
   pivot_longer(
@@ -407,50 +420,53 @@ covid_cases
 
 ## What is a vector?
 
-:::{.incremental}
-- A vector is a **container of elements of similar classes**
-- In math, $[1\space 2\space 3]$ is a vector of 3 integers
-- In R, you can define vectors by putting them inside `c()`
-  - `c(1, 2, 3)` is a vector of 3 `numeric` elements
-  - `c("ab", "cd", "ef")` is a vector of 3 `character` elements
-  - `c(c(1, 2), c(2, 3), c(3, 4))` is a vector of 3 `vector` elements, each is a vector of 2 `numeric` elements
+::: incremental
+-   A vector is a **container of elements of similar classes**
+-   In math, $[1\space 2\space 3]$ is a vector of 3 integers
+-   In R, you can define vectors by putting them inside `c()`
+    -   `c(1, 2, 3)` is a vector of 3 `numeric` elements
+    -   `c("ab", "cd", "ef")` is a vector of 3 `character` elements
+    -   `c(c(1, 2), c(2, 3), c(3, 4))` is a vector of 3 `vector` elements, each is a vector of 2 `numeric` elements
 :::
 
 ## What is a vector?
 
-- Question: is `12` a vector?
+-   Question: is `12` a vector?
 
-:::{.fragment}
+::: fragment
 ```{r}
 class(12)
 class(c(12))
 class(c(12, 13, 14))
 ```
 
-- In R, *most things* are vectors. A single number by itself is also a vector
-- `12` itself is a vector that has one numeric element
-
+-   In R, *most things* are vectors. A single number by itself is also a vector
+-   `12` itself is a vector that has one numeric element
 :::
 
 ## What is a vector? {.scrollable}
 
-- Conceptually, a `data.frame` (or a `tibble`) is a list of named vectors!
-- You can see it using the `str()` function
+::: incremental
+-   Conceptually, a `data.frame` (or a `tibble`) is a list of named vectors!
+-   You can see it using the `str()` function
+:::
+
+::: fragment
 ```{r}
 str(covid_cases)
 ```
-
-::: {.fragment}
-- `covid_cases` has 3 vectors:
-  - `date` is a vector of dates
-  - `country` is a vector of characters
-  - `cases` is a vector of numbers
 :::
 
+::: fragment
+-   `covid_cases` has 3 vectors:
+    -   `date` is a vector of dates
+    -   `country` is a vector of characters
+    -   `cases` is a vector of numbers
+:::
 
 ## What is a vector? {.scrollable}
 
-- You can "access" these vectors with the `$` operator
+-   You can access these vectors with the `$` operator
 
 ```{r}
 covid_cases$date[10000:10010]
@@ -458,8 +474,8 @@ covid_cases$country[10000:10010]
 covid_cases$cases[10000:10010]
 ```
 
-::: {.fragment}
-- Or the `tidyverse` way with `slice()` and `pull()` 
+:::: fragment
+-   Or the `tidyverse` way with `slice()` and `pull()`
 
 ```{r}
 covid_cases %>% slice(10000:10010) %>% pull(date)
@@ -467,20 +483,19 @@ covid_cases %>% slice(10000:10010) %>% pull(country)
 covid_cases %>% slice(10000:10010) %>% pull(cases)
 ```
 
-:::{style="font-size: 75%;"}
+::: {style="font-size: 75%;"}
 *one of the cases where using base R might be quicker and doesn't sacrifice readability*
 :::
-:::
-
+::::
 
 ## For-loops
 
-:::{.incremental}
-- In programming, we typically use for-loops to go through elements within a vector
-- Example: We want to take the square of a vector
+::: incremental
+-   In programming, we typically use for-loops to go through elements within a vector
+-   Example: We want to take the square of a vector
 :::
 
-:::{.fragment}
+::: fragment
 ```{r}
 data <- covid_cases$cases[10000:10010]
 
@@ -497,56 +512,185 @@ data
 ```
 :::
 
-## Vectorisation
+## Vectorisation {.scrollable}
 
-:::{.incremental}
-- Instead of going through each element and apply an action, we can an action to all elements at once
-- Example: Take the square root of a vector
+::: incremental
+-   Instead of going through each element and perform an action, we can *apply* an action to all elements at once
+-   Example: Take the square root of a vector
 :::
 
-:::{.fragment}
+::: fragment
 ```{r}
 # before
 data
 
 # after
 sqrt(data)
+
+# alternative using `sapply()`
+sapply(data, sqrt)
 ```
 
-- Most functions in base R are already vectorised
+:::: callout-note
+Most functions in base R are already vectorised
+::::
 :::
 
+## Vectorisation
+
+-   R has a **functional** style, which means vectorisation is more intuitive to write and read code
+-   On a technical level:
+    -   R itself *might be slightly* faster when doing vectorisation, compared to for-loops
+    -   for more complex and time-consuming functions, it is easier to **paralellise** with vectorisation
 
 ## Vectorisation
 
-Uhhh... ok? We saved 1-2 lines of code? What's the deal?
+-   Vectorisation shines when there are more complex actions, and you have to write your own functions
+-   Example: Assume that `data` is a vector of circle diameters, take its square roots and calculate the surface areas with vectorisation using `sapply()`
 
+::: fragment
+```{r}
+area_from_diameter <- function(d) {
+  return(3.14 * (sqrt(d) / 2)^2)
+}
+sapply(data, area_from_diameter)
+```
+:::
 
 ## Vectorisation
 
-- R has a **functional** style, which means vectorisation fits better, and is more intuitive and elegant
-- On a technical level:
-  - R itself *might be slightly* faster when doing vectorisation, compared to for-loops
-  - for more complex and time-consuming functions, it is easier to **paralellise** with vectorisation
+-   Vectorisation shines when there are more complex actions, and you have to write your own functions
+-   Example: Assume that `data` is a vector of circle diameters, calculate the surface areas with vectorisation using `sapply()`
 
-## Vectorisation
+```{r}
+# alternatively
+sapply(data, \(d) 3.14 * (sqrt(d) / 2)^2)
+```
 
-- Vectorisation shines when there are more complex actions, where you have to write your own functions
+## Vectorisation with `map()`
 
+- In the `tidyverse`, we can perform vectorisation with the `purrr::map()` *family*
+- Let's check how it works with `?purrr::map()`
 
-## Vectorisation with `map()` vs. `*apply()`
+::: fragment
+- Previous example using `map()`
 
-- Recall what is "vectorisation"
+```{r}
+map(data, \(d) 3.14 * (sqrt(d) / 2)^2) %>% list_c()
+```
+:::
 
+## Vectorisation with `map()`
 
-## Vectorisation with `map()` vs. `*apply()`
+- If you have 2 vectors that you want to go through at the same time, you can use `map2()`
+- Example: `data2` is a vector of side lengths of squares, I want the sum of surface areas from the circles and the squares
 
-Vectorisation vs. looping
+::: fragment
+```{r}
+data2 <- c(29, 37, 22, 35, 39, 29, 30, 33, 43, 36, 26)
 
+map2(data, data2, \(d, l) (3.14 * (sqrt(d) / 2)^2) + (l^2)) %>% list_c()
+```
+:::
+
+## Vectorisation with `map()` {.scrollable}
+
+- You can create new columns, or edit current columns, with complex actions when using `map()` with `mutate()`
+- Example: Using the `mtcars` dataset, create a new column called `hp_p_wt`, which is the horsepower per weight of each car **in kilograms**
+
+::: fragment
+```{r}
+mtcars %>% 
+  mutate(
+    hp_p_wt = map2(hp, wt, \(h, w) h / (w / 2.205)) %>% unlist(),
+    .before = mpg
+  )
+```
+:::
 
 
 # `ggplot2` for data visualisation
 
 ## Data visualisation
 
-- Now that we have the results of our study, we should visualise it to disseminate the information
+::: incremental
+-   Now that we have the results of our study, we should visualise it to disseminate the information
+-   In base R, we use `plot()` (and other functions) to draw figures
+-   In `tidyverse`, we use the `ggplot2` package
+:::
+
+## An example {.scrollable}
+
+-   Base R:
+
+```{r}
+#| output-location: fragment
+plot(
+  x = mtcars$wt,
+  y = mtcars$mpg,
+  xlab = "Weight (1000 lbs)",
+  ylab = "Miles Per Gallon",
+  main = "MPG vs. Weight",
+  pch = 19,       # Solid circle points
+  col = "blue"
+)
+```
+
+## An example {.scrollable}
+
+-   `ggplot2` :
+
+```{r}
+#| output-location: fragment
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "blue") +
+  scale_x_continuous("Weight (1000 lbs)") +
+  scale_y_continuous("Miles Per Gallon") +
+  ggtitle("MPG vs. Weight") + 
+  theme_bw()
+```
+
+## `ggplot2`
+
+-   `ggplot2` works directly with *tidy data* (same as everything under `tidyverse`)
+-   It is based on a concept called "grammar of graphics"
+-   Has intuitive and comprehensive documentation on how to use it effectively
+-   Provide *enough* flexibility for customisation
+
+## Grammar of graphics
+
+-   A framework to describe and construct graphics in a structured manner
+-   Has a layered approach, i.e. each component of a figure is a separate layer
+
+## Grammar of graphics
+
+![](imgs/tidyverse/grammar_of_graphics.png)
+
+## Grammar of graphics
+
+-   Look back at the example code:
+
+```{r}
+#| eval: false
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "blue") +
+  scale_x_continuous("Weight (1000 lbs)") +
+  scale_y_continuous("Miles Per Gallon") +
+  ggtitle("MPG vs. Weight") + 
+  theme_bw()
+```
+
+- Can you identify the different layers of this plot?
+
+## Grammar of graphics
+
+- Checkout the reference tab and cheatsheet for ggplot2 [here](https://ggplot2.tidyverse.org/)
+
+# Exercise
+
+::: callout-note
+## Checklist
+- Have a look at the `covid_cases` dataset: What would be a good visualisation?
+:::
+
+

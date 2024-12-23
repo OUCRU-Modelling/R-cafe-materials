@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.55">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>R Café – R programming with tidyverse</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -413,15 +413,23 @@
 <li><strong>Vectorise R functions</strong>
 <ul>
 <li>Vectors and vectorisation</li>
-<li>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></li>
+<li>Vectorisation with <code>map()</code></li>
 <li><code>tidyverse</code> style vs.&nbsp;base R style</li>
 </ul></li>
-<li><strong><code>ggplot2</code> for data visualization</strong>
+<li><strong><code>ggplot2</code> for data visualisation</strong>
 <ul>
 <li>Grammar of graphics</li>
-<li>The typical flow</li>
 </ul></li>
-<li><strong>Whole game</strong></li>
+</ul>
+</section>
+<section id="session-overview-1" class="slide level2">
+<h2>Session overview</h2>
+<ul>
+<li>Throughout this session:
+<ul>
+<li>In-slide examples will be using the <code>mtcars</code> dataset (already in base R)</li>
+<li>Walk-through exercises will be using the <code>covid_cases</code> dataset</li>
+</ul></li>
 </ul>
 </section>
 <section>
@@ -525,7 +533,7 @@
 <section id="why-tidyverse-2" class="slide level2 scrollable">
 <h2>Why <code>tidyverse</code>?</h2>
 <h3 id="commonly-used-tidyverse-functions">Commonly used tidyverse functions:</h3>
-<div>
+<div style="font-size: 75%;">
 <ul>
 <li class="fragment"><code>dplyr::select()</code> to select columns from a <code>tibble</code></li>
 <li class="fragment"><code>dplyr::mutate()</code> to change and create columns in a <code>tibble</code></li>
@@ -550,11 +558,44 @@
 </div>
 </div>
 </section>
+<section id="why-tidyverse-3" class="slide level2 scrollable">
+<h2>Why <code>tidyverse</code>?</h2>
+<div>
+<ul>
+<li class="fragment">One of the main “unit” you will work with in R is a dataframe</li>
+<li class="fragment">In base R, this object has type of <code>data.frame</code></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">class</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>In the <code>tidyverse</code>, we work with something called a <code>tibble</code> (object type is called <code>tbl_df</code>)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">class</span>(<span class="fu">as_tibble</span>(mtcars))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>You can see the differences more clearly in R</li>
+</ul>
+</div>
+</section>
 <section id="how-to-use-tidyverse" class="slide level2">
 <h2>How to use <code>tidyverse</code></h2>
 <p>Start by installing it!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -574,7 +615,7 @@
 <h2>How to use <code>tidyverse</code></h2>
 <p>Then load it into your R environment!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -594,11 +635,11 @@
 <h2>How to use <code>tidyverse</code></h2>
 <p>Run this example code below to make sure everything is running normally</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb3-2"><a></a>  <span class="at">data =</span> <span class="fu">ungroup</span>(<span class="fu">summarise</span>(<span class="fu">group_by</span>(mtcars, gear), <span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg))),</span>
-<span id="cb3-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> gear, <span class="at">y =</span> mean_mpg)</span>
-<span id="cb3-4"><a></a>) <span class="sc">+</span></span>
-<span id="cb3-5"><a></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb7-2"><a></a>  <span class="at">data =</span> <span class="fu">ungroup</span>(<span class="fu">summarise</span>(<span class="fu">group_by</span>(mtcars, gear), <span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg))),</span>
+<span id="cb7-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> gear, <span class="at">y =</span> mean_mpg)</span>
+<span id="cb7-4"><a></a>) <span class="sc">+</span></span>
+<span id="cb7-5"><a></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -622,44 +663,11 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="tidyverse_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+<p><img data-src="tidyverse_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </figure>
 </div>
 </div>
-</div></section><section id="how-to-use-tidyverse-3" class="slide level2 scrollable">
-<h2>How to use <code>tidyverse</code></h2>
-<div>
-<ul>
-<li class="fragment">One of the main “unit” you will work with in R is a dataframe</li>
-<li class="fragment">In base R, this object has type of <code>data.frame</code></li>
-</ul>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">class</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "data.frame"</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<ul>
-<li>In the <code>tidyverse</code>, we work with something called a <code>tibble</code> (object type is called <code>tbl_df</code>)</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">class</span>(<span class="fu">as_tibble</span>(mtcars))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<ul>
-<li>You can see the differences more clearly in R</li>
-</ul>
-</div>
-</section>
-<section id="piping-with" class="slide level2">
+</div></section><section id="piping-with" class="slide level2">
 <h2>Piping with <code>%&gt;%</code></h2>
 <ul>
 <li>Look back at the example code</li>
@@ -683,11 +691,11 @@
 <div>
 <ul>
 <li class="fragment">Typically in R, we perform a sequence of operations on a dataset, changing it as we go</li>
-<li class="fragment">R has a <em>functional style</em>, which means the structure is typically: <code>new_data &lt;- function(data, extra_parameters)</code>
+<li class="fragment">R has a <em>functional style</em>, which means the structure is typically: <code>new_data &lt;- function(data, extra_arguments)</code>
 <ul>
 <li class="fragment"><code>function</code> describes your <strong>action</strong>, what you want to do</li>
 <li class="fragment"><code>data</code> is the data that you are execute the action on</li>
-<li class="fragment"><code>extra_parameters</code> are (optional) <strong>settings</strong> that changes how the action is performed</li>
+<li class="fragment"><code>extra_arguments</code> are (optional) <strong>settings</strong> that changes how the action is performed</li>
 <li class="fragment"><code>new_data</code> is the <strong>output</strong>, what you get after performing the action</li>
 </ul></li>
 </ul>
@@ -751,8 +759,8 @@
 <section id="piping-with-4" class="slide level2">
 <h2>Piping with <code>%&gt;%</code></h2>
 <ul>
-<li>Pipes transfer the data from its left-hand side (LHS) to the function on its right-hand side (RHS) <strong>as the first parameter of that function</strong></li>
-<li>The structure: <code>new_data &lt;- data %&gt;% function(extra_parameters)</code></li>
+<li>Pipes transfer the data from its left-hand side (LHS) to the function on its right-hand side (RHS) <strong>as the first argument of that function</strong></li>
+<li>The structure: <code>new_data &lt;- data %&gt;% function(extra_arguments)</code></li>
 </ul>
 </section>
 <section id="piping-with-5" class="slide level2">
@@ -786,7 +794,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Every function under <code>tidyverse</code> will take the data as the first parameter, so everything can be piped!</p>
+<p>Every function under <code>tidyverse</code> will take the data as the first argument, so everything can be piped!</p>
 </div>
 </div>
 </div>
@@ -832,6 +840,10 @@
 <section>
 <section id="exercise" class="title-slide slide level1 center">
 <h1>Exercise</h1>
+
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -850,7 +862,7 @@
 </div>
 </div>
 </section>
-<section id="exercise-1" class="slide level2 scrollable">
+<section id="exercise-2" class="slide level2 scrollable">
 <h2>Exercise</h2>
 <ul>
 <li>Load the <code>covid_cases</code> dataset</li>
@@ -858,7 +870,7 @@
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># read in data</span></span>
-<span id="cb17-2"><a></a>covid_cases <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/covid_cases.rds"</span>))</span>
+<span id="cb17-2"><a></a>covid_cases <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"../data/covid_cases.rds"</span>)</span>
 <span id="cb17-3"><a></a>covid_cases</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div data-pagedtable="false">
@@ -875,7 +887,7 @@
 </ul>
 </div>
 </section>
-<section id="exercise-2" class="slide level2 scrollable">
+<section id="exercise-3" class="slide level2">
 <h2>Exercise</h2>
 <div>
 <ul>
@@ -884,32 +896,27 @@
 <ul>
 <li class="fragment">Each column to represent a single variable. What are the variables here?</li>
 <li class="fragment">Variables: <code>date</code>, <code>country</code>, <code>cases</code> or <code>case_count</code></li>
-<li class="fragment">So, we want less columns more rows =&gt; <code>pivot_longer()</code></li>
+<li class="fragment">So, we want less columns more rows: <code>pivot_longer()</code></li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="exercise-3" class="slide level2 scrollable">
+<section id="exercise-4" class="slide level2 scrollable">
 <h2>Exercise</h2>
 <ul>
-<li>Check how to use <code>pivot_longer()</code></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>?pivot_longer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
+<li>How to use: <code>?pivot_longer()</code></li>
 <li>Make the data “longer”</li>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>covid_cases <span class="ot">&lt;-</span> covid_cases <span class="sc">%&gt;%</span> </span>
-<span id="cb19-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb19-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>date, </span>
-<span id="cb19-4"><a></a>    <span class="at">names_to =</span> <span class="st">"country"</span>, </span>
-<span id="cb19-5"><a></a>    <span class="at">names_pattern =</span> <span class="st">"cases_(.+)"</span>,</span>
-<span id="cb19-6"><a></a>    <span class="at">values_to =</span> <span class="st">"cases"</span></span>
-<span id="cb19-7"><a></a>  )</span>
-<span id="cb19-8"><a></a>covid_cases</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>covid_cases <span class="ot">&lt;-</span> covid_cases <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb18-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>date, </span>
+<span id="cb18-4"><a></a>    <span class="at">names_to =</span> <span class="st">"country"</span>, </span>
+<span id="cb18-5"><a></a>    <span class="at">names_pattern =</span> <span class="st">"cases_(.+)"</span>,</span>
+<span id="cb18-6"><a></a>    <span class="at">values_to =</span> <span class="st">"cases"</span></span>
+<span id="cb18-7"><a></a>  )</span>
+<span id="cb18-8"><a></a>covid_cases</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
@@ -947,15 +954,15 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">class</span>(<span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">class</span>(<span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
@@ -968,17 +975,21 @@
 </section>
 <section id="what-is-a-vector-2" class="slide level2 scrollable">
 <h2>What is a vector?</h2>
+<div>
 <ul>
-<li>Conceptually, a <code>data.frame</code> (or a <code>tibble</code>) is a list of named vectors!</li>
-<li>You can see it using the <code>str()</code> function</li>
+<li class="fragment">Conceptually, a <code>data.frame</code> (or a <code>tibble</code>) is a list of named vectors!</li>
+<li class="fragment">You can see it using the <code>str()</code> function</li>
 </ul>
+</div>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">str</span>(covid_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">str</span>(covid_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [19,412 × 3] (S3: tbl_df/tbl/data.frame)
  $ date   : Date[1:19412], format: "2020-01-20" "2020-01-20" ...
  $ country: chr [1:19412] "chn" "kor" "aus" "jpn" ...
  $ cases  : num [1:19412] 0 0 0 0 0 0 0 0 0 0 ...</code></pre>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -995,20 +1006,20 @@
 <section id="what-is-a-vector-3" class="slide level2 scrollable">
 <h2>What is a vector?</h2>
 <ul>
-<li>You can “access” these vectors with the <code>$</code> operator</li>
+<li>You can access these vectors with the <code>$</code> operator</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>covid_cases<span class="sc">$</span>date[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>covid_cases<span class="sc">$</span>date[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08"
  [6] "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08"
 [11] "2020-03-08"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>covid_cases<span class="sc">$</span>country[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>covid_cases<span class="sc">$</span>country[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "spm" "esp" "ita" "deu" "fra" "gbr" "tur" "bel" "che" "nld" "prt"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>covid_cases<span class="sc">$</span>cases[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>covid_cases<span class="sc">$</span>cases[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
@@ -1018,17 +1029,17 @@
 <li>Or the <code>tidyverse</code> way with <code>slice()</code> and <code>pull()</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>covid_cases <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>covid_cases <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08"
  [6] "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08" "2020-03-08"
 [11] "2020-03-08"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>covid_cases <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>covid_cases <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "spm" "esp" "ita" "deu" "fra" "gbr" "tur" "bel" "che" "nld" "prt"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>covid_cases <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>covid_cases <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
@@ -1048,20 +1059,20 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>data <span class="ot">&lt;-</span> covid_cases<span class="sc">$</span>cases[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span>
-<span id="cb40-2"><a></a></span>
-<span id="cb40-3"><a></a><span class="co"># before</span></span>
-<span id="cb40-4"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>data <span class="ot">&lt;-</span> covid_cases<span class="sc">$</span>cases[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span>
+<span id="cb39-2"><a></a></span>
+<span id="cb39-3"><a></a><span class="co"># before</span></span>
+<span id="cb39-4"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>idx <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(data)) <span class="co"># create index vector from 1 to the length of data</span></span>
-<span id="cb42-2"><a></a><span class="cf">for</span> (i <span class="cf">in</span> idx) {</span>
-<span id="cb42-3"><a></a>  data[i] <span class="ot">&lt;-</span> data[i]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb42-4"><a></a>}</span>
-<span id="cb42-5"><a></a></span>
-<span id="cb42-6"><a></a><span class="co"># after</span></span>
-<span id="cb42-7"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>idx <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(data)) <span class="co"># create index vector from 1 to the length of data</span></span>
+<span id="cb41-2"><a></a><span class="cf">for</span> (i <span class="cf">in</span> idx) {</span>
+<span id="cb41-3"><a></a>  data[i] <span class="ot">&lt;-</span> data[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb41-4"><a></a>}</span>
+<span id="cb41-5"><a></a></span>
+<span id="cb41-6"><a></a><span class="co"># after</span></span>
+<span id="cb41-7"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]       0    3136 1555009   24336    8649    1849       0    3600    3025
 [10]    3600      64</code></pre>
@@ -1069,41 +1080,52 @@
 </div>
 </div>
 </section>
-<section id="vectorisation" class="slide level2">
+<section id="vectorisation" class="slide level2 scrollable">
 <h2>Vectorisation</h2>
 <div>
 <ul>
-<li class="fragment">Instead of going through each element and apply an action, we can an action to all elements at once</li>
+<li class="fragment">Instead of going through each element and perform an action, we can <em>apply</em> an action to all elements at once</li>
 <li class="fragment">Example: Take the square root of a vector</li>
 </ul>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="co"># before</span></span>
-<span id="cb44-2"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="co"># before</span></span>
+<span id="cb43-2"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]       0    3136 1555009   24336    8649    1849       0    3600    3025
 [10]    3600      64</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co"># after</span></span>
-<span id="cb46-2"><a></a><span class="fu">sqrt</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># after</span></span>
+<span id="cb45-2"><a></a><span class="fu">sqrt</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="co"># alternative using `sapply()`</span></span>
+<span id="cb47-2"><a></a><span class="fu">sapply</span>(data, sqrt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
 </div>
-<ul>
-<li>Most functions in base R are already vectorised</li>
-</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Most functions in base R are already vectorised</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="vectorisation-1" class="slide level2">
 <h2>Vectorisation</h2>
-<p>Uhhh… ok? We saved 1-2 lines of code? What’s the deal?</p>
-</section>
-<section id="vectorisation-2" class="slide level2">
-<h2>Vectorisation</h2>
 <ul>
-<li>R has a <strong>functional</strong> style, which means vectorisation fits better and is more intuitive</li>
+<li>R has a <strong>functional</strong> style, which means vectorisation is more intuitive to write and read code</li>
 <li>On a technical level:
 <ul>
 <li>R itself <em>might be slightly</em> faster when doing vectorisation, compared to for-loops</li>
@@ -1111,21 +1133,224 @@
 </ul></li>
 </ul>
 </section>
+<section id="vectorisation-2" class="slide level2">
+<h2>Vectorisation</h2>
+<ul>
+<li>Vectorisation shines when there are more complex actions, and you have to write your own functions</li>
+<li>Example: Assume that <code>data</code> is a vector of circle diameters, take its square roots and calculate the surface areas with vectorisation using <code>sapply()</code></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>area_from_diameter <span class="ot">&lt;-</span> <span class="cf">function</span>(d) {</span>
+<span id="cb49-2"><a></a>  <span class="fu">return</span>(<span class="fl">3.14</span> <span class="sc">*</span> (<span class="fu">sqrt</span>(d) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb49-3"><a></a>}</span>
+<span id="cb49-4"><a></a><span class="fu">sapply</span>(data, area_from_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]       0.000    2461.760 1220682.065   19103.760    6789.465    1451.465
+ [7]       0.000    2826.000    2374.625    2826.000      50.240</code></pre>
+</div>
+</div>
+</div>
+</section>
 <section id="vectorisation-3" class="slide level2">
 <h2>Vectorisation</h2>
 <ul>
-<li>Vectorisation shines when there are more complex actions, where you have to write your own functions</li>
+<li>Vectorisation shines when there are more complex actions, and you have to write your own functions</li>
+<li>Example: Assume that <code>data</code> is a vector of circle diameters, calculate the surface areas with vectorisation using <code>sapply()</code></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="co"># alternatively</span></span>
+<span id="cb51-2"><a></a><span class="fu">sapply</span>(data, \(d) <span class="fl">3.14</span> <span class="sc">*</span> (<span class="fu">sqrt</span>(d) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]       0.000    2461.760 1220682.065   19103.760    6789.465    1451.465
+ [7]       0.000    2826.000    2374.625    2826.000      50.240</code></pre>
+</div>
+</div>
 </section>
-<section id="vectorisation-with-map-vs.-apply" class="slide level2">
-<h2>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></h2>
+<section id="vectorisation-with-map" class="slide level2">
+<h2>Vectorisation with <code>map()</code></h2>
 <ul>
-<li>Recall what is “vectorisation”</li>
+<li>In the <code>tidyverse</code>, we can perform vectorisation with the <code>purrr::map()</code> <em>family</em></li>
+<li>Let’s check how it works with <code>?purrr::map()</code></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Previous example using <code>map()</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">map</span>(data, \(d) <span class="fl">3.14</span> <span class="sc">*</span> (<span class="fu">sqrt</span>(d) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">list_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]       0.000    2461.760 1220682.065   19103.760    6789.465    1451.465
+ [7]       0.000    2826.000    2374.625    2826.000      50.240</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="vectorisation-with-map-1" class="slide level2">
+<h2>Vectorisation with <code>map()</code></h2>
+<ul>
+<li>If you have 2 vectors that you want to go through at the same time, you can use <code>map2()</code></li>
+<li>Example: <code>data2</code> is a vector of side lengths of squares, I want the sum of surface areas from the circles and the squares</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>data2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">29</span>, <span class="dv">37</span>, <span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">39</span>, <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">33</span>, <span class="dv">43</span>, <span class="dv">36</span>, <span class="dv">26</span>)</span>
+<span id="cb55-2"><a></a></span>
+<span id="cb55-3"><a></a><span class="fu">map2</span>(data, data2, \(d, l) (<span class="fl">3.14</span> <span class="sc">*</span> (<span class="fu">sqrt</span>(d) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> (l<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> <span class="fu">list_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]     841.000    3830.760 1221166.065   20328.760    8310.465    2292.465
+ [7]     900.000    3915.000    4223.625    4122.000     726.240</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="vectorisation-with-map-2" class="slide level2 scrollable">
+<h2>Vectorisation with <code>map()</code></h2>
+<ul>
+<li>You can create new columns, or edit current columns, with complex actions when using <code>map()</code> with <code>mutate()</code></li>
+<li>Example: Using the <code>mtcars</code> dataset, create a new column called <code>hp_p_wt</code>, which is the horsepower per weight of each car <strong>in kilograms</strong></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb57-3"><a></a>    <span class="at">hp_p_wt =</span> <span class="fu">map2</span>(hp, wt, \(h, w) h <span class="sc">/</span> (w <span class="sc">/</span> <span class="fl">2.205</span>)) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>(),</span>
+<span id="cb57-4"><a></a>    <span class="at">.before =</span> mpg</span>
+<span id="cb57-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["hp_p_wt"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["mpg"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"92.57634","2":"21.0","3":"6","4":"160.0","5":"110","6":"3.90","7":"2.620","8":"16.46","9":"0","10":"1","11":"4","12":"4","_rn_":"Mazda RX4"},{"1":"84.36522","2":"21.0","3":"6","4":"160.0","5":"110","6":"3.90","7":"2.875","8":"17.02","9":"0","10":"1","11":"4","12":"4","_rn_":"Mazda RX4 Wag"},{"1":"88.39009","2":"22.8","3":"4","4":"108.0","5":"93","6":"3.85","7":"2.320","8":"18.61","9":"1","10":"1","11":"4","12":"1","_rn_":"Datsun 710"},{"1":"75.44323","2":"21.4","3":"6","4":"258.0","5":"110","6":"3.08","7":"3.215","8":"19.44","9":"1","10":"0","11":"3","12":"1","_rn_":"Hornet 4 Drive"},{"1":"112.17297","2":"18.7","3":"8","4":"360.0","5":"175","6":"3.15","7":"3.440","8":"17.02","9":"0","10":"0","11":"3","12":"2","_rn_":"Hornet Sportabout"},{"1":"66.91474","2":"18.1","3":"6","4":"225.0","5":"105","6":"2.76","7":"3.460","8":"20.22","9":"1","10":"0","11":"3","12":"1","_rn_":"Valiant"},{"1":"151.32353","2":"14.3","3":"8","4":"360.0","5":"245","6":"3.21","7":"3.570","8":"15.84","9":"0","10":"0","11":"3","12":"4","_rn_":"Duster 360"},{"1":"42.85580","2":"24.4","3":"4","4":"146.7","5":"62","6":"3.69","7":"3.190","8":"20.00","9":"1","10":"0","11":"4","12":"2","_rn_":"Merc 240D"},{"1":"66.50000","2":"22.8","3":"4","4":"140.8","5":"95","6":"3.92","7":"3.150","8":"22.90","9":"1","10":"0","11":"4","12":"2","_rn_":"Merc 230"},{"1":"78.84157","2":"19.2","3":"6","4":"167.6","5":"123","6":"3.92","7":"3.440","8":"18.30","9":"1","10":"0","11":"4","12":"4","_rn_":"Merc 280"},{"1":"78.84157","2":"17.8","3":"6","4":"167.6","5":"123","6":"3.92","7":"3.440","8":"18.90","9":"1","10":"0","11":"4","12":"4","_rn_":"Merc 280C"},{"1":"97.51843","2":"16.4","3":"8","4":"275.8","5":"180","6":"3.07","7":"4.070","8":"17.40","9":"0","10":"0","11":"3","12":"3","_rn_":"Merc 450SE"},{"1":"106.40751","2":"17.3","3":"8","4":"275.8","5":"180","6":"3.07","7":"3.730","8":"17.60","9":"0","10":"0","11":"3","12":"3","_rn_":"Merc 450SL"},{"1":"105.00000","2":"15.2","3":"8","4":"275.8","5":"180","6":"3.07","7":"3.780","8":"18.00","9":"0","10":"0","11":"3","12":"3","_rn_":"Merc 450SLC"},{"1":"86.10000","2":"10.4","3":"8","4":"472.0","5":"205","6":"2.93","7":"5.250","8":"17.98","9":"0","10":"0","11":"3","12":"4","_rn_":"Cadillac Fleetwood"},{"1":"87.40321","2":"10.4","3":"8","4":"460.0","5":"215","6":"3.00","7":"5.424","8":"17.82","9":"0","10":"0","11":"3","12":"4","_rn_":"Lincoln Continental"},{"1":"94.88307","2":"14.7","3":"8","4":"440.0","5":"230","6":"3.23","7":"5.345","8":"17.42","9":"0","10":"0","11":"3","12":"4","_rn_":"Chrysler Imperial"},{"1":"66.15000","2":"32.4","3":"4","4":"78.7","5":"66","6":"4.08","7":"2.200","8":"19.47","9":"1","10":"1","11":"4","12":"1","_rn_":"Fiat 128"},{"1":"70.99690","2":"30.4","3":"4","4":"75.7","5":"52","6":"4.93","7":"1.615","8":"18.52","9":"1","10":"1","11":"4","12":"2","_rn_":"Honda Civic"},{"1":"78.10627","2":"33.9","3":"4","4":"71.1","5":"65","6":"4.22","7":"1.835","8":"19.90","9":"1","10":"1","11":"4","12":"1","_rn_":"Toyota Corolla"},{"1":"86.76876","2":"21.5","3":"4","4":"120.1","5":"97","6":"3.70","7":"2.465","8":"20.01","9":"1","10":"0","11":"3","12":"1","_rn_":"Toyota Corona"},{"1":"93.96307","2":"15.5","3":"8","4":"318.0","5":"150","6":"2.76","7":"3.520","8":"16.87","9":"0","10":"0","11":"3","12":"2","_rn_":"Dodge Challenger"},{"1":"96.28821","2":"15.2","3":"8","4":"304.0","5":"150","6":"3.15","7":"3.435","8":"17.30","9":"0","10":"0","11":"3","12":"2","_rn_":"AMC Javelin"},{"1":"140.68359","2":"13.3","3":"8","4":"350.0","5":"245","6":"3.73","7":"3.840","8":"15.41","9":"0","10":"0","11":"3","12":"4","_rn_":"Camaro Z28"},{"1":"100.35761","2":"19.2","3":"8","4":"400.0","5":"175","6":"3.08","7":"3.845","8":"17.05","9":"0","10":"0","11":"3","12":"2","_rn_":"Pontiac Firebird"},{"1":"75.20930","2":"27.3","3":"4","4":"79.0","5":"66","6":"4.08","7":"1.935","8":"18.90","9":"1","10":"1","11":"4","12":"1","_rn_":"Fiat X1-9"},{"1":"93.76402","2":"26.0","3":"4","4":"120.3","5":"91","6":"4.43","7":"2.140","8":"16.70","9":"0","10":"1","11":"5","12":"2","_rn_":"Porsche 914-2"},{"1":"164.68275","2":"30.4","3":"4","4":"95.1","5":"113","6":"3.77","7":"1.513","8":"16.90","9":"1","10":"1","11":"5","12":"2","_rn_":"Lotus Europa"},{"1":"183.63407","2":"15.8","3":"8","4":"351.0","5":"264","6":"4.22","7":"3.170","8":"14.50","9":"0","10":"1","11":"5","12":"4","_rn_":"Ford Pantera L"},{"1":"139.30505","2":"19.7","3":"6","4":"145.0","5":"175","6":"3.62","7":"2.770","8":"15.50","9":"0","10":"1","11":"5","12":"6","_rn_":"Ferrari Dino"},{"1":"206.91176","2":"15.0","3":"8","4":"301.0","5":"335","6":"3.54","7":"3.570","8":"14.60","9":"0","10":"1","11":"5","12":"8","_rn_":"Maserati Bora"},{"1":"86.45504","2":"21.4","3":"4","4":"121.0","5":"109","6":"4.11","7":"2.780","8":"18.60","9":"1","10":"1","11":"4","12":"2","_rn_":"Volvo 142E"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="ggplot2-for-data-visualisation" class="title-slide slide level1 center">
+<h1><code>ggplot2</code> for data visualisation</h1>
+
+</section>
+<section id="data-visualisation" class="slide level2">
+<h2>Data visualisation</h2>
+<div>
+<ul>
+<li class="fragment">Now that we have the results of our study, we should visualise it to disseminate the information</li>
+<li class="fragment">In base R, we use <code>plot()</code> (and other functions) to draw figures</li>
+<li class="fragment">In <code>tidyverse</code>, we use the <code>ggplot2</code> package</li>
+</ul>
+</div>
+</section>
+<section id="an-example" class="slide level2 scrollable">
+<h2>An example</h2>
+<ul>
+<li>Base R:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="fu">plot</span>(</span>
+<span id="cb58-2"><a></a>  <span class="at">x =</span> mtcars<span class="sc">$</span>wt,</span>
+<span id="cb58-3"><a></a>  <span class="at">y =</span> mtcars<span class="sc">$</span>mpg,</span>
+<span id="cb58-4"><a></a>  <span class="at">xlab =</span> <span class="st">"Weight (1000 lbs)"</span>,</span>
+<span id="cb58-5"><a></a>  <span class="at">ylab =</span> <span class="st">"Miles Per Gallon"</span>,</span>
+<span id="cb58-6"><a></a>  <span class="at">main =</span> <span class="st">"MPG vs. Weight"</span>,</span>
+<span id="cb58-7"><a></a>  <span class="at">pch =</span> <span class="dv">19</span>,       <span class="co"># Solid circle points</span></span>
+<span id="cb58-8"><a></a>  <span class="at">col =</span> <span class="st">"blue"</span></span>
+<span id="cb58-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tidyverse_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="an-example-1" class="slide level2 scrollable">
+<h2>An example</h2>
+<ul>
+<li><code>ggplot2</code> :</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb59-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb59-3"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="st">"Weight (1000 lbs)"</span>) <span class="sc">+</span></span>
+<span id="cb59-4"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Miles Per Gallon"</span>) <span class="sc">+</span></span>
+<span id="cb59-5"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"MPG vs. Weight"</span>) <span class="sc">+</span> </span>
+<span id="cb59-6"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="tidyverse_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ggplot2" class="slide level2">
+<h2><code>ggplot2</code></h2>
+<ul>
+<li><code>ggplot2</code> works directly with <em>tidy data</em> (same as everything under <code>tidyverse</code>)</li>
+<li>It is based on a concept called “grammar of graphics”</li>
+<li>Has intuitive and comprehensive documentation on how to use it effectively</li>
+<li>Provide <em>enough</em> flexibility for customisation</li>
 </ul>
 </section>
-<section id="vectorisation-with-map-vs.-apply-1" class="slide level2">
-<h2>Vectorisation with <code>map()</code> vs.&nbsp;<code>*apply()</code></h2>
-<p>Vectorisation vs.&nbsp;looping</p>
+<section id="grammar-of-graphics" class="slide level2">
+<h2>Grammar of graphics</h2>
+<ul>
+<li>A framework to describe and construct graphics in a structured manner</li>
+<li>Has a layered approach, i.e.&nbsp;each component of a figure is a separate layer</li>
+</ul>
+</section>
+<section id="grammar-of-graphics-1" class="slide level2">
+<h2>Grammar of graphics</h2>
+
+<img data-src="imgs/tidyverse/grammar_of_graphics.png" class="r-stretch"></section>
+<section id="grammar-of-graphics-2" class="slide level2">
+<h2>Grammar of graphics</h2>
+<ul>
+<li>Look back at the example code:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb60-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb60-3"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="st">"Weight (1000 lbs)"</span>) <span class="sc">+</span></span>
+<span id="cb60-4"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Miles Per Gallon"</span>) <span class="sc">+</span></span>
+<span id="cb60-5"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"MPG vs. Weight"</span>) <span class="sc">+</span> </span>
+<span id="cb60-6"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Can you identify the different layers of this plot?</li>
+</ul>
+</section>
+<section id="grammar-of-graphics-3" class="slide level2">
+<h2>Grammar of graphics</h2>
+<ul>
+<li>Checkout the reference tab and cheatsheet for ggplot2 <a href="https://ggplot2.tidyverse.org/">here</a></li>
+</ul>
+</section></section>
+<section id="exercise-5" class="title-slide slide level1 center">
+<h1>Exercise</h1>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Checklist</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Have a look at the <code>covid_cases</code> dataset: What would be a good visualisation?</li>
+</ul>
+</div>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="imgs/oucru-logo.png" class="slide-logo"></p>
@@ -1133,7 +1358,7 @@
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
