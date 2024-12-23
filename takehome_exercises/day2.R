@@ -1,0 +1,55 @@
+library(tidyverse)
+
+covid_cases <- read_rds("./data/covid_cases.rds") %>%
+  pivot_longer(
+    -date,
+    names_to = "country",
+    names_pattern = "cases_(.+)",
+    values_to = "cases"
+  ) %>%
+  mutate(week = week(date)) %>%
+  filter(cases > -1, week < 3 + 10)
+
+top_n <- 5
+top_countries <- covid_cases %>%
+  group_by(country) %>%
+  summarise(total_cases = sum(cases)) %>%
+  slice_max(total_cases, n = top_n) %>%
+  pull(country)
+
+plot_data <- covid_cases %>%
+  mutate(
+    country = if_else(country %in% top_countries, country, "Others"),
+    country = fct_lump_n(country, n = top_n, other_level = "Others") %>%
+      fct_relevel("Others", after = Inf)
+  ) %>%
+  group_by(date, country) %>%
+  summarise(total_cases = sum(cases)) %>%
+  mutate(
+    pct_cases = total_cases / sum(total_cases) * 100
+  ) %>%
+  drop_na()
+
+plot_data %>%
+  ggplot(aes(x = date, y = pct_cases, fill = country)) +
+  geom_area() +
+  scale_y_continuous(
+    "Percent of total cases",
+    breaks = seq(0, 100, 10),
+    labels = paste0(seq(0, 100, 10), "%")
+  ) +
+  scale_x_date(
+    "Date",
+    date_breaks = "1 week", date_labels = "W%W-%Y",
+    minor_breaks = NULL
+  ) +
+  scale_fill_discrete(
+    "Country",
+    labels = c(
+      "chn" = "China",
+      "deu" = "Germany",
+      "esp" = "Spain",
+      "ita" = "Italy",
+      "usa" = "USA"
+    )
+  )

@@ -655,7 +655,7 @@
     "href": "index.html#agenda",
     "title": "Welcome to R Café",
     "section": "Agenda",
-    "text": "Agenda\n\nGetting started with R and Git (day 1)\n\nPart 1: Setup (45’) - Tuyen & QA\n\nWhat is R Café & Agenda (5’)\nBrief introduction to Git, GitHub, and GitHub Desktop\n\nGoal: Publish your own branch on R Café’s GitHub repository\n\nRstudio (20’)\n\nGoal: Create RStudio project\nGoal: Everyone create and push their first commit onto their own branch\n\nNavigate GitHub\n\nPart 2: Foundations of R (60’) - QA\n\nVariables & Functions & Packages (with outline)\nExercises\n\nGoal: Create a function and push to GitHub\nGoal: Create issues and comment on each other’s issues on GitHub\n\n\nBreak (15’)\nPart 3: Data manipulation in R (45’) - QA\n\nData management\nTake-home exercises setup\n\n\nR programming with tidyverse (day 2)\nQuarto & Markdown (and related) (day 3)"
+    "text": "Agenda\n\nGetting started with R and Git (day 1)\n\nPart 1: Setup (45’) - Tuyen & QA\n\nWhat is R Café & Agenda (5’)\nBrief introduction to Git, GitHub, and GitHub Desktop\n\nGoal: Publish your own branch on R Café’s GitHub repository\n\nRstudio (20’)\n\nGoal: Create RStudio project\nGoal: Everyone create and push their first commit onto their own branch\n\nNavigate GitHub\n\nPart 2: Foundations of R (60’) - QA\n\nVariables & Functions & Packages (with outline)\nExercises\n\nGoal: Create a function and push to GitHub\nGoal: Create issues and comment on each other’s issues on GitHub\n\n\nBreak (15’)\nPart 3: Data manipulation in R (45’) - QA\n\nData management\nTake-home exercises setup\n\n\nR programming with tidyverse (day 2)\n\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\nPiping with %&gt;%\n\nExercise\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map()\ntidyverse style vs. base R style\n\nggplot2 for data visualisation\n\nGrammar of graphics\n\nExercise\n\n\nQuarto & Markdown (and related) (day 3)"
   },
   {
     "objectID": "index.html#take-home-exercises",
@@ -865,7 +865,7 @@
     "href": "slides/tidyverse.html#exercise-4",
     "title": "R programming with tidyverse",
     "section": "Exercise",
-    "text": "Exercise\n\nHow to use: ?pivot_longer()\nMake the data “longer”\n\n\n\ncovid_cases &lt;- covid_cases %&gt;% \n  pivot_longer(\n    cols = -date, \n    names_to = \"country\", \n    names_pattern = \"cases_(.+)\",\n    values_to = \"cases\"\n  )\ncovid_cases"
+    "text": "Exercise\n\nHow to use: ?pivot_longer()\nMake the data “longer”\n\n\n\ncovid_cases &lt;- covid_cases %&gt;% \n  pivot_longer(\n    cols = -date,\n    names_to = \"country\", \n    names_pattern = \"cases_(.+)\",\n    values_to = \"cases\"\n  )\ncovid_cases"
   },
   {
     "objectID": "slides/tidyverse.html#what-is-a-vector",

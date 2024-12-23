@@ -911,7 +911,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>covid_cases <span class="ot">&lt;-</span> covid_cases <span class="sc">%&gt;%</span> </span>
 <span id="cb18-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb18-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>date, </span>
+<span id="cb18-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>date,</span>
 <span id="cb18-4"><a></a>    <span class="at">names_to =</span> <span class="st">"country"</span>, </span>
 <span id="cb18-5"><a></a>    <span class="at">names_pattern =</span> <span class="st">"cases_(.+)"</span>,</span>
 <span id="cb18-6"><a></a>    <span class="at">values_to =</span> <span class="st">"cases"</span></span>

@@ -407,7 +407,7 @@ covid_cases
 ```{r}
 covid_cases <- covid_cases %>% 
   pivot_longer(
-    cols = -date, 
+    cols = -date,
     names_to = "country", 
     names_pattern = "cases_(.+)",
     values_to = "cases"

@@ -4,3 +4,5 @@
 .Ruserdata
 
 /.quarto/
+.vscode/
+**/*/.DS_Store

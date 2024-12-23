@@ -42,11 +42,25 @@ format: html
 		- Data management
 		- Take-home exercises setup
 
-2. R programming with `tidyverse` (day 2)
+2. [R programming with `tidyverse` (day 2)](slides/tidyverse.qmd){target="_blank"}
+	- **Into the `tidyverse`**
+		- What is `tidyverse`?
+		- Why should we use it?
+		- How do we use it?
+		- Piping with `%>%`
+	- Exercise
+	- **Vectorise R functions**
+		- Vectors and vectorisation
+		- Vectorisation with `map()`
+		- `tidyverse` style vs. base R style
+	- **`ggplot2` for data visualisation**
+		- Grammar of graphics
+	- Exercise
+  
 3. Quarto & Markdown (and related) (day 3)
 
 ## Take-home exercises
-1. Initial Data Analysis - IDA (with `skimr`)
+1. [Initial Data Analysis - IDA (with `skimr`)](takehome_exercises/day1.qmd){target="_blank"}
 	- Generate questions around your data
 	- Customize your summary table output
 	- Simple visualization data, e.g. histogram
