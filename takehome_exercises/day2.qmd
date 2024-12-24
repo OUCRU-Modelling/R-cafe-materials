@@ -1,3 +1,12 @@
+---
+title: "Day 2 - Take home exercise"
+format: 
+  html: 
+    navbar: false
+    df-print: paged
+    code-copy: true
+---
+
 library(tidyverse)
 
 covid_cases <- read_rds("./data/covid_cases.rds") %>%
