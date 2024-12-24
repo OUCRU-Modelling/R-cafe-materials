@@ -65,11 +65,11 @@ format: html
 	- Customize your summary table output
 	- Simple visualization data, e.g. histogram
 	- Calculate statistics, e.g. correlation, collinearity
-2. Data transformation
-	- Handle missing data
-	- Reformat
+2. [Data transformation](takehome_exercises/day2.qmd){target="_blank"}
+	- Data cleaning and filtering
+	- Data transformation
 	- Factor your data (with `forcats`)
-	- Tricky data types: Datetime, String
+	- Data visualization (with `ggplot2`)
 3. Analysis with `gtsummary`
 	- Demographic summary
 	- Statistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.
