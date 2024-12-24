@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tran Thai Hung">
-<meta name="keywords" content="Rproject, Rstudio">
 
-<title>Rproject setup – R Café</title>
+<title>Day 2 - Take home exercise – R Café</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,160 +68,48 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">R Café</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../slides/intro.html"> 
-<span class="menu-text">Getting started with R and Git</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../slides/tidyverse.html"> 
-<span class="menu-text">R programming with tidyverse</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#steps-to-setup-rproject" id="toc-steps-to-setup-rproject" class="nav-link active" data-scroll-target="#steps-to-setup-rproject"><span class="header-section-number">1</span> Steps to setup Rproject</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Rproject.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="Rproject.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Rproject setup</h1>
+<h1 class="title">Day 2 - Take home exercise</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Tran Thai Hung </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            OUCRU biostatistics
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Last version: December 05, 2024</p>
-    </div>
-  </div>
+    
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="block-title">Abstract</div>
-    Quick note to setup Rproject
-  </div>
-</div>
 
-<div>
-  <div class="keywords">
-    <div class="block-title">Keywords</div>
-    <p>Rproject, Rstudio</p>
-  </div>
-</div>
 
 </header>
 
 
-<section id="steps-to-setup-rproject" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Steps to setup Rproject</h1>
-<ol type="1">
-<li><strong>Open Rstudio</strong><br>
-In the menu, <code>File</code> -&gt; <code>New project...</code></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figure\fig_1.png" class="img-fluid figure-img"></p>
-<figcaption>Create New project</figcaption>
-</figure>
-</div>
-<ol start="2" type="1">
-<li><strong>Choose Existing Directory</strong>.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figure\fig_2.png" class="img-fluid figure-img"></p>
-<figcaption>Existing Directory</figcaption>
-</figure>
-</div>
-<ol start="3" type="1">
-<li><strong>Create project at prefered directory</strong>
-<ul>
-<li>Click <code>Browse</code> and select your project directory</li>
-<li>Then click <code>Create project</code></li>
-</ul></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figure\fig_3.png" class="img-fluid figure-img"></p>
-<figcaption>Select the directory</figcaption>
-</figure>
-</div>
-<ol start="4" type="1">
-<li><strong>Check your Rproject</strong>
-<ul>
-<li>Your Rproject will be at your directory</li>
-</ul></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figure\fig_4.png" class="img-fluid figure-img"></p>
-<figcaption>Rproject</figcaption>
-</figure>
-</div>
+<p>library(tidyverse)</p>
+<p>covid_cases &lt;- read_rds(“./data/covid_cases.rds”) %&gt;% pivot_longer( -date, names_to = “country”, names_pattern = “cases_(.+)”, values_to = “cases” ) %&gt;% mutate(week = week(date)) %&gt;% filter(cases &gt; -1, week &lt; 3 + 10)</p>
+<p>top_n &lt;- 5 top_countries &lt;- covid_cases %&gt;% group_by(country) %&gt;% summarise(total_cases = sum(cases)) %&gt;% slice_max(total_cases, n = top_n) %&gt;% pull(country)</p>
+<p>plot_data &lt;- covid_cases %&gt;% mutate( country = if_else(country %in% top_countries, country, “Others”), country = fct_lump_n(country, n = top_n, other_level = “Others”) %&gt;% fct_relevel(“Others”, after = Inf) ) %&gt;% group_by(date, country) %&gt;% summarise(total_cases = sum(cases)) %&gt;% mutate( pct_cases = total_cases / sum(total_cases) * 100 ) %&gt;% drop_na()</p>
+<p>plot_data %&gt;% ggplot(aes(x = date, y = pct_cases, fill = country)) + geom_area() + scale_y_continuous( “Percent of total cases”, breaks = seq(0, 100, 10), labels = paste0(seq(0, 100, 10), “%”) ) + scale_x_date( “Date”, date_breaks = “1 week”, date_labels = “W%W-%Y”, minor_breaks = NULL ) + scale_fill_discrete( “Country”, labels = c( “chn” = “China”, “deu” = “Germany”, “esp” = “Spain”, “ita” = “Italy”, “usa” = “USA” ) )</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
