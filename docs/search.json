@@ -410,7 +410,7 @@
     "href": "index.html#take-home-exercises",
     "title": "Welcome to R Café",
     "section": "Take-home exercises",
-    "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nHandle missing data\nReformat\nFactor your data (with forcats)\nTricky data types: Datetime, String\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
+    "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nData cleaning and filtering\nData transformation\nFactor your data (with forcats)\nData visualization (with ggplot2)\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
   },
   {
     "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
