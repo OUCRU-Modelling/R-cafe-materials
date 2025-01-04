@@ -12,6 +12,8 @@ website:
         text: Getting started with R and Git
       - href: slides/tidyverse.qmd
         text: R programming with tidyverse
+      - href: slides/gtsummary.qmd
+        text: Quarto and gtsummary
 
 execute: 
   echo: TRUE

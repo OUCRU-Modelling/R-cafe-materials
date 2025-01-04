@@ -1,0 +1,236 @@
+---
+title: "Quarto"
+format: 
+  revealjs:
+    css: "../styles.css"
+    df-print: paged
+    slide-number: true
+    logo: "./imgs/oucru-logo.png"
+code-line-numbers: false
+revealjs-plugins:
+  - codewindow
+---
+
+## What is Quarto?
+
+- A publishing system for creating documents, presentations, websites...
+
+- Combines Markdown and R/Python code for reproducible workflows.
+
+## What can Quarto do?
+
+{{<qrcode https://quarto.org/docs/gallery/ width=200 height=200 >}}
+
+Or click [here](https://quarto.org/docs/gallery/)
+
+## Creating a Quarto file
+
+:::: columns
+
+::: {.column width="50%"}
+![](imgs/quarto/create-quarto-file.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+
+1. Open RStudio
+2. Go to File > New File > Quarto Document
+3. Select the format you want
+4. Save the file with a `.qmd` extension
+
+:::
+
+::::
+
+## How to use Quarto?
+
+:::: columns
+
+::: {.column width="45%"}
+::: {.codewindow .quarto}
+index.qmd
+````markdown
+---
+title: "My Quarto file"
+author: "Your Name"
+date: "`r Sys.Date()`"
+format: html
+---
+
+Summary of `mtcars`
+
+```{{r}}
+summary(mtcars)
+```
+````
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+Main components of a Quarto file:
+
+1. Header (YAML metadata)
+2. Body (Markdown content and code chunks)
+:::
+
+::::
+
+## Header
+
+:::: columns
+
+::: {.column width="45%"}
+::: {.codewindow .quarto}
+index.qmd
+````markdown
+---
+title: "My Quarto file"
+author: "Your Name"
+date: "`r Sys.Date()`"
+format: html
+---
+````
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+
+Defines document properties and settings, for examples:
+
+- `title`: Document title
+- `author`: Authorship
+- `date`: Date this document was published
+- `format`: `html`, `docx`, or `pdf`
+
+:::
+
+::::
+
+## Body
+
+:::: columns
+
+::: {.column width="50%"}
+::: {.codewindow .quarto}
+index.qmd
+````markdown
+---
+title: "Hello, Quarto"
+date: 2025-01-06
+author:
+  - name: Thinh Ong
+    orcid: 0000-0001-6772-9291
+format: 
+  html:
+    code-overflow: wrap
+number-sections: true
+navbar: false
+---
+
+## Introduction to Quarto
+
+Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. 
+
+## Header Levels
+
+Quarto supports multiple header levels to create a hierarchical structure in your document. For example:
+
+- Level 1 header: `# Header`
+- Level 2 header: `## Subheader`
+- Level 3 header: `### Sub-subheader`
+
+### Nested Headers
+
+Using headers, you can create nested sections to structure your document in a clear and organized way.
+
+## Inline Text Formatting
+
+You can format your text inline to add emphasis or other styling options.
+
+- **Bold text**: `**bold**`
+- *Italic text*: `*italic*`
+- Inline `code`: `` `code` ``
+
+> Blockquotes can be used to highlight important information or quotes by adding `> ` at the beginning of a line.
+
+## Lists
+
+Quarto supports both ordered and unordered lists.
+
+### Unordered List
+
+To create an unordered list, use an asterisk `*` before each item:
+
+* First item
+* Second item
+* Third item
+
+### Ordered List
+
+To create an ordered list, use numbers before each item:
+
+1. First item
+2. Second item
+3. Third item
+
+## Links and images
+
+<http://example.com>
+
+[linked phrase](http://example.com)
+
+![optional caption text](imgs/oucru-logo.png)
+
+## Tables
+
+| First Header | Second Header |
+|--------------|---------------|
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
+
+## Code block
+
+Quarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:
+
+```{{r}}
+#| fig-width: 4
+#| fig-height: 3
+#| out-width: "100%"
+x <- c(1, 2, 3, 4, 5)
+y <- c(1, 4, 9, 16, 25)
+
+plot(x, y, type = "o", col = "blue", main = "Simple plot", xlab = "x", ylab = "y")
+```
+
+## Footnotes
+
+Footnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]
+````
+:::
+:::
+
+::: {.column width="50%"}
+::: {.codewindow .html}
+index.html
+<iframe class="slide-deck" src="quarto-example.html" style="width: 100%; height: 484.47px;"></iframe>
+:::
+:::
+
+::::
+
+## Rendering output
+
+1. Save your Quarto file.
+2. Render it using the "Render" button in RStudio or by pressing `Ctrl+Shift+K`.
+
+![](imgs/quarto/render.png)
+

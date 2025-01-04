@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thinh Ong">
+<meta name="dcterms.date" content="2025-01-06">
 
-<title>Welcome to R Café – R Café</title>
+<title>Hello, Quarto – R Café</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,51 +104,14 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">R Café</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./slides/intro.html"> 
-<span class="menu-text">Getting started with R and Git</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./slides/tidyverse.html"> 
-<span class="menu-text">R programming with tidyverse</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./slides/gtsummary.html"> 
-<span class="menu-text">Quarto and gtsummary</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -120,11 +119,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#duration" id="toc-duration" class="nav-link active" data-scroll-target="#duration">Duration</a></li>
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
-  <li><a href="#r-café-helpful-shortcuts" id="toc-r-café-helpful-shortcuts" class="nav-link" data-scroll-target="#r-café-helpful-shortcuts">R Café helpful shortcuts</a></li>
-  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
-  <li><a href="#take-home-exercises" id="toc-take-home-exercises" class="nav-link" data-scroll-target="#take-home-exercises">Take-home exercises</a></li>
+  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link active" data-scroll-target="#introduction-to-quarto"><span class="header-section-number">1</span> Introduction to Quarto</a></li>
+  <li><a href="#header-levels" id="toc-header-levels" class="nav-link" data-scroll-target="#header-levels"><span class="header-section-number">2</span> Header Levels</a>
+  <ul class="collapse">
+  <li><a href="#nested-headers" id="toc-nested-headers" class="nav-link" data-scroll-target="#nested-headers"><span class="header-section-number">2.1</span> Nested Headers</a></li>
+  </ul></li>
+  <li><a href="#inline-text-formatting" id="toc-inline-text-formatting" class="nav-link" data-scroll-target="#inline-text-formatting"><span class="header-section-number">3</span> Inline Text Formatting</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">4</span> Lists</a>
+  <ul class="collapse">
+  <li><a href="#unordered-list" id="toc-unordered-list" class="nav-link" data-scroll-target="#unordered-list"><span class="header-section-number">4.1</span> Unordered List</a></li>
+  <li><a href="#ordered-list" id="toc-ordered-list" class="nav-link" data-scroll-target="#ordered-list"><span class="header-section-number">4.2</span> Ordered List</a></li>
+  </ul></li>
+  <li><a href="#links-and-images" id="toc-links-and-images" class="nav-link" data-scroll-target="#links-and-images"><span class="header-section-number">5</span> Links and images</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">6</span> Tables</a></li>
+  <li><a href="#code-block" id="toc-code-block" class="nav-link" data-scroll-target="#code-block"><span class="header-section-number">7</span> Code block</a></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes"><span class="header-section-number">8</span> Footnotes</a></li>
   </ul>
 </nav>
     </div>
@@ -133,14 +142,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to R Café</h1>
+<h1 class="title">Hello, Quarto</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thinh Ong <a href="https://orcid.org/0000-0001-6772-9291" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 6, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -150,126 +171,120 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="duration" class="level2">
-<h2 class="anchored" data-anchor-id="duration">Duration</h2>
-<p>3 weeks of study + 1 week of extra content (if any) and closing remarks</p>
+<section id="introduction-to-quarto" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction-to-quarto"><span class="header-section-number">1</span> Introduction to Quarto</h2>
+<p>Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools.</p>
 </section>
-<section id="structure" class="level2">
-<h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<section id="header-levels" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="header-levels"><span class="header-section-number">2</span> Header Levels</h2>
+<p>Quarto supports multiple header levels to create a hierarchical structure in your document. For example:</p>
 <ul>
-<li>3-hour face-to-face sessions per day, 1 day per week</li>
-<li>Take home exercises given between face-to-face sessions</li>
+<li>Level 1 header: <code># Header</code></li>
+<li>Level 2 header: <code>## Subheader</code></li>
+<li>Level 3 header: <code>### Sub-subheader</code></li>
+</ul>
+<section id="nested-headers" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="nested-headers"><span class="header-section-number">2.1</span> Nested Headers</h3>
+<p>Using headers, you can create nested sections to structure your document in a clear and organized way.</p>
+</section>
+</section>
+<section id="inline-text-formatting" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="inline-text-formatting"><span class="header-section-number">3</span> Inline Text Formatting</h2>
+<p>You can format your text inline to add emphasis or other styling options.</p>
+<ul>
+<li><strong>Bold text</strong>: <code>**bold**</code></li>
+<li><em>Italic text</em>: <code>*italic*</code></li>
+<li>Inline <code>code</code>: <code>`code`</code></li>
+</ul>
+<blockquote class="blockquote">
+<p>Blockquotes can be used to highlight important information or quotes by adding <code>&gt;</code> at the beginning of a line.</p>
+</blockquote>
+</section>
+<section id="lists" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="lists"><span class="header-section-number">4</span> Lists</h2>
+<p>Quarto supports both ordered and unordered lists.</p>
+<section id="unordered-list" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="unordered-list"><span class="header-section-number">4.1</span> Unordered List</h3>
+<p>To create an unordered list, use an asterisk <code>*</code> before each item:</p>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
 </ul>
 </section>
-<section id="r-café-helpful-shortcuts" class="level2">
-<h2 class="anchored" data-anchor-id="r-café-helpful-shortcuts">R Café helpful shortcuts</h2>
-<ul>
-<li><a href="https://teams.microsoft.com/l/channel/19%3AGyu0GBNtFFuDmjrVqXsrTYScHLPgP5bpTDLOoaJEeaE1%40thread.tacv2/Tech%20support?groupId=6abc7e7a-0132-4ec2-afa7-393d89c247d8&amp;tenantId=22514748-bbda-4cb8-9795-bfa3fbeec018&amp;ngc=true&amp;allowXTenantAccess=true" target="_blank">Teams Tech support channel</a></li>
-<li><a href="https://github.com/OUCRU-Modelling/R-cafe" target="_blank">Main GitHub repository</a></li>
-<li><a href="https://oucru-modelling.github.io/R-cafe-materials/" target="_blank">Theoretical slides</a></li>
-<li><a href="https://github.com/OUCRU-Modelling/R-cafe-materials/tree/main/additional_handouts/day_1" target="_blank">Additional handouts and instructions</a></li>
-<li>Current instructor roster:
-<ul>
-<li>Thinh Ong Phuc (thinhop@oucru.org)</li>
-<li>Anh Phan Truong Quynh (anhptq@oucru.org)</li>
-<li>Hung Tran Thai (hungtt@oucru.org)</li>
-<li>Tuyen Huynh (tuyenhn@oucru.org)</li>
-<li>Hai Ho Bich (haihb@oucru.org)</li>
-</ul></li>
-</ul>
-</section>
-<section id="agenda" class="level2">
-<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
+<section id="ordered-list" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="ordered-list"><span class="header-section-number">4.2</span> Ordered List</h3>
+<p>To create an ordered list, use numbers before each item:</p>
 <ol type="1">
-<li><a href="./slides/intro.html" target="_blank">Getting started with R and Git (day 1)</a>
-<ul>
-<li><strong>Part 1</strong>: Setup (45’) - <em>Tuyen &amp; QA</em>
-<ul>
-<li>What is R Café &amp; Agenda (5’)</li>
-<li>Brief introduction to Git, GitHub, and GitHub Desktop
-<ul>
-<li>Goal: Publish your own branch on R Café’s GitHub repository</li>
-</ul></li>
-<li>Rstudio (20’)
-<ul>
-<li>Goal: Create RStudio project</li>
-<li>Goal: Everyone create and push their first commit onto their own branch</li>
-</ul></li>
-<li>Navigate GitHub</li>
-</ul></li>
-<li><strong>Part 2</strong>: Foundations of R (60’) - <em>QA</em>
-<ul>
-<li>Variables &amp; Functions &amp; Packages (with outline)</li>
-<li>Exercises
-<ul>
-<li>Goal: Create a function and push to GitHub</li>
-<li>Goal: Create issues and comment on each other’s issues on GitHub</li>
-</ul></li>
-</ul></li>
-<li><strong>Break</strong> (15’)</li>
-<li><strong>Part 3</strong>: Data manipulation in R (45’) - <em>QA</em>
-<ul>
-<li>Data management</li>
-<li>Take-home exercises setup</li>
-</ul></li>
-</ul></li>
-<li><a href="./slides/tidyverse.html" target="_blank">R programming with <code>tidyverse</code> (day 2)</a>
-<ul>
-<li><strong>Into the <code>tidyverse</code></strong>
-<ul>
-<li>What is <code>tidyverse</code>?</li>
-<li>Why should we use it?</li>
-<li>How do we use it?</li>
-<li>Piping with <code>%&gt;%</code></li>
-</ul></li>
-<li>Exercise</li>
-<li><strong>Vectorise R functions</strong>
-<ul>
-<li>Vectors and vectorisation</li>
-<li>Vectorisation with <code>map()</code></li>
-<li><code>tidyverse</code> style vs.&nbsp;base R style</li>
-</ul></li>
-<li><strong><code>ggplot2</code> for data visualisation</strong>
-<ul>
-<li>Grammar of graphics</li>
-</ul></li>
-<li>Exercise</li>
-</ul></li>
-<li>Quarto &amp; Markdown (and related) (day 3)</li>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
 </ol>
 </section>
-<section id="take-home-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="take-home-exercises">Take-home exercises</h2>
-<ol type="1">
-<li><a href="./takehome_exercises/day1.html" target="_blank">Initial Data Analysis - IDA (with <code>skimr</code>)</a>
-<ul>
-<li>Generate questions around your data</li>
-<li>Customize your summary table output</li>
-<li>Simple visualization data, e.g.&nbsp;histogram</li>
-<li>Calculate statistics, e.g.&nbsp;correlation, collinearity</li>
-</ul></li>
-<li><a href="./takehome_exercises/day2.html" target="_blank">Data transformation</a>
-<ul>
-<li>Data cleaning and filtering</li>
-<li>Data transformation</li>
-<li>Factor your data (with <code>forcats</code>)</li>
-<li>Data visualization (with <code>ggplot2</code>)</li>
-</ul></li>
-<li>Analysis with <code>gtsummary</code>
-<ul>
-<li>Demographic summary</li>
-<li>Statistical tests, e.g.&nbsp;t-test, chi-sq, fisher-exact, OR, etc.</li>
-</ul></li>
-<li>Generate report with Quarto
-<ul>
-<li>Citation (inline footnote and reference)</li>
-</ul></li>
-</ol>
+</section>
+<section id="links-and-images" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="links-and-images"><span class="header-section-number">5</span> Links and images</h2>
+<p><a href="http://example.com" class="uri">http://example.com</a></p>
+<p><a href="http://example.com">linked phrase</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgs/oucru-logo.png" class="img-fluid figure-img"></p>
+<figcaption>optional caption text</figcaption>
+</figure>
+</div>
+</section>
+<section id="tables" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="tables"><span class="header-section-number">6</span> Tables</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr class="even">
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="code-block" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="code-block"><span class="header-section-number">7</span> Code block</h2>
+<p>Quarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>, <span class="dv">25</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"o"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">main =</span> <span class="st">"Simple plot"</span>, <span class="at">xlab =</span> <span class="st">"x"</span>, <span class="at">ylab =</span> <span class="st">"y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="quarto-example_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="footnotes" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="footnotes"><span class="header-section-number">8</span> Footnotes</h2>
+<p>Footnotes can be added inline to provide additional information or references. Here’s an example of a footnote in Quarto: <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This is an example footnote.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
