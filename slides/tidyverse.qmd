@@ -444,10 +444,10 @@ class(c(12, 13, 14))
 -   `12` itself is a vector that has one numeric element
 :::
 
-## What is a vector? {.scrollable}
+## What is a vector?
 
 ::: incremental
--   Conceptually, a `data.frame` (or a `tibble`) is a list of named vectors!
+-   Conceptually, a `tibble` is a list of *named vectors*!
 -   You can see it using the `str()` function
 :::
 
@@ -464,9 +464,9 @@ str(covid_cases)
     -   `cases` is a vector of numbers
 :::
 
-## What is a vector? {.scrollable}
+## What is a vector?
 
--   You can access these vectors with the `$` operator
+-   You can access vector elements with the `$` operator
 
 ```{r}
 covid_cases$date[10000:10010]
@@ -474,8 +474,9 @@ covid_cases$country[10000:10010]
 covid_cases$cases[10000:10010]
 ```
 
-:::: fragment
--   Or the `tidyverse` way with `slice()` and `pull()`
+## What is a vector? {.scrollable}
+
+-   Or the `tidyverse` way with `dplyr::slice()` and `dplyr::pull()`
 
 ```{r}
 covid_cases %>% slice(10000:10010) %>% pull(date)
@@ -483,12 +484,13 @@ covid_cases %>% slice(10000:10010) %>% pull(country)
 covid_cases %>% slice(10000:10010) %>% pull(cases)
 ```
 
-::: {style="font-size: 75%;"}
-*one of the cases where using base R might be quicker and doesn't sacrifice readability*
+::: callout-note
+- one of the cases where using base R might be quicker and doesn't sacrifice readability
+- [dplyr and tidyverse equivalents](https://dplyr.tidyverse.org/articles/base.html#one-table-verbs){target="_blank"}
 :::
-::::
 
-## For-loops
+
+## For-loops {.scrollable}
 
 ::: incremental
 -   In programming, we typically use for-loops to go through elements within a vector
@@ -502,13 +504,14 @@ data <- covid_cases$cases[10000:10010]
 # before
 data
 
+squared_data <- numeric() # create new object to hold new data
 idx <- seq(1, length(data)) # create index vector from 1 to the length of data
 for (i in idx) {
-  data[i] <- data[i]^2
+  squared_data[i] <- data[i]^2
 }
 
 # after
-data
+squared_data
 ```
 :::
 
@@ -522,17 +525,19 @@ data
 ::: fragment
 ```{r}
 # before
-data
+squared_data
 
 # after
-sqrt(data)
+sqrt_data <- sqrt(squared_data)
+sqrt_data
 
 # alternative using `sapply()`
-sapply(data, sqrt)
+sqrt_data <- sapply(squared_data, sqrt)
+sqrt_data
 ```
 
 :::: callout-note
-Most functions in base R are already vectorised
+Most functions math-related functions and operators in base R are already vectorised, e.g. `sqrt()`, `log()`, `exp()`, `+`, `-`, `*`, `/`
 ::::
 :::
 
@@ -557,15 +562,12 @@ sapply(data, area_from_diameter)
 ```
 :::
 
-## Vectorisation
-
--   Vectorisation shines when there are more complex actions, and you have to write your own functions
--   Example: Assume that `data` is a vector of circle diameters, calculate the surface areas with vectorisation using `sapply()`
-
+::: fragment
 ```{r}
 # alternatively
 sapply(data, \(d) 3.14 * (sqrt(d) / 2)^2)
 ```
+:::
 
 ## Vectorisation with `map()`
 
@@ -578,6 +580,10 @@ sapply(data, \(d) 3.14 * (sqrt(d) / 2)^2)
 ```{r}
 map(data, \(d) 3.14 * (sqrt(d) / 2)^2) %>% list_c()
 ```
+:::
+
+::: callout-note
+We do `list_c()` after a `map()` because `map()` is designed to take in a `list` and return a `list`. `list_c()` helps combine a list into a vector
 :::
 
 ## Vectorisation with `map()`

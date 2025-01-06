@@ -413,7 +413,7 @@
 (function() {
   var script = document.currentScript;
   var qrcode = script.previousElementSibling;
-  qrcode.qrcode = new QRCode(qrcode, {"height":"200","colorDark":"#000000","colorLight":"#ffffff","width":"200","text":"https://quarto.org/docs/gallery/"});
+  qrcode.qrcode = new QRCode(qrcode, {"width":"200","text":"https://quarto.org/docs/gallery/","colorLight":"#ffffff","height":"200","colorDark":"#000000"});
   script.remove();
 })();
 </script>

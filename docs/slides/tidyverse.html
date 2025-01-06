@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.55">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>R Café – R programming with tidyverse</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -973,11 +973,11 @@
 </ul>
 </div>
 </section>
-<section id="what-is-a-vector-2" class="slide level2 scrollable">
+<section id="what-is-a-vector-2" class="slide level2">
 <h2>What is a vector?</h2>
 <div>
 <ul>
-<li class="fragment">Conceptually, a <code>data.frame</code> (or a <code>tibble</code>) is a list of named vectors!</li>
+<li class="fragment">Conceptually, a <code>tibble</code> is a list of <em>named vectors</em>!</li>
 <li class="fragment">You can see it using the <code>str()</code> function</li>
 </ul>
 </div>
@@ -1003,10 +1003,10 @@
 </ul>
 </div>
 </section>
-<section id="what-is-a-vector-3" class="slide level2 scrollable">
+<section id="what-is-a-vector-3" class="slide level2">
 <h2>What is a vector?</h2>
 <ul>
-<li>You can access these vectors with the <code>$</code> operator</li>
+<li>You can access vector elements with the <code>$</code> operator</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>covid_cases<span class="sc">$</span>date[<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1024,9 +1024,11 @@
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
 </div>
-<div class="fragment">
+</section>
+<section id="what-is-a-vector-4" class="slide level2 scrollable">
+<h2>What is a vector?</h2>
 <ul>
-<li>Or the <code>tidyverse</code> way with <code>slice()</code> and <code>pull()</code></li>
+<li>Or the <code>tidyverse</code> way with <code>dplyr::slice()</code> and <code>dplyr::pull()</code></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>covid_cases <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10000</span><span class="sc">:</span><span class="dv">10010</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1044,12 +1046,24 @@
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
 </div>
-<div style="font-size: 75%;">
-<p><em>one of the cases where using base R might be quicker and doesn’t sacrifice readability</em></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>one of the cases where using base R might be quicker and doesn’t sacrifice readability</li>
+<li><a href="https://dplyr.tidyverse.org/articles/base.html#one-table-verbs" target="_blank">dplyr and tidyverse equivalents</a></li>
+</ul>
+</div>
 </div>
 </div>
 </section>
-<section id="for-loops" class="slide level2">
+<section id="for-loops" class="slide level2 scrollable">
 <h2>For-loops</h2>
 <div>
 <ul>
@@ -1066,13 +1080,14 @@
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>idx <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(data)) <span class="co"># create index vector from 1 to the length of data</span></span>
-<span id="cb41-2"><a></a><span class="cf">for</span> (i <span class="cf">in</span> idx) {</span>
-<span id="cb41-3"><a></a>  data[i] <span class="ot">&lt;-</span> data[i]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb41-4"><a></a>}</span>
-<span id="cb41-5"><a></a></span>
-<span id="cb41-6"><a></a><span class="co"># after</span></span>
-<span id="cb41-7"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>squared_data <span class="ot">&lt;-</span> <span class="fu">numeric</span>() <span class="co"># create new object to hold new data</span></span>
+<span id="cb41-2"><a></a>idx <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(data)) <span class="co"># create index vector from 1 to the length of data</span></span>
+<span id="cb41-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> idx) {</span>
+<span id="cb41-4"><a></a>  squared_data[i] <span class="ot">&lt;-</span> data[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb41-5"><a></a>}</span>
+<span id="cb41-6"><a></a></span>
+<span id="cb41-7"><a></a><span class="co"># after</span></span>
+<span id="cb41-8"><a></a>squared_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]       0    3136 1555009   24336    8649    1849       0    3600    3025
 [10]    3600      64</code></pre>
@@ -1091,18 +1106,20 @@
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="co"># before</span></span>
-<span id="cb43-2"><a></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-2"><a></a>squared_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]       0    3136 1555009   24336    8649    1849       0    3600    3025
 [10]    3600      64</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># after</span></span>
-<span id="cb45-2"><a></a><span class="fu">sqrt</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-2"><a></a>sqrt_data <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(squared_data)</span>
+<span id="cb45-3"><a></a>sqrt_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="co"># alternative using `sapply()`</span></span>
-<span id="cb47-2"><a></a><span class="fu">sapply</span>(data, sqrt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-2"><a></a>sqrt_data <span class="ot">&lt;-</span> <span class="fu">sapply</span>(squared_data, sqrt)</span>
+<span id="cb47-3"><a></a>sqrt_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]    0   56 1247  156   93   43    0   60   55   60    8</code></pre>
 </div>
@@ -1116,7 +1133,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Most functions in base R are already vectorised</p>
+<p>Most functions math-related functions and operators in base R are already vectorised, e.g.&nbsp;<code>sqrt()</code>, <code>log()</code>, <code>exp()</code>, <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></p>
 </div>
 </div>
 </div>
@@ -1146,24 +1163,19 @@
 <span id="cb49-3"><a></a>}</span>
 <span id="cb49-4"><a></a><span class="fu">sapply</span>(data, area_from_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]       0.000    2461.760 1220682.065   19103.760    6789.465    1451.465
- [7]       0.000    2826.000    2374.625    2826.000      50.240</code></pre>
+<pre><code> [1]   0.000  43.960 978.895 122.460  73.005  33.755   0.000  47.100  43.175
+[10]  47.100   6.280</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="vectorisation-3" class="slide level2">
-<h2>Vectorisation</h2>
-<ul>
-<li>Vectorisation shines when there are more complex actions, and you have to write your own functions</li>
-<li>Example: Assume that <code>data</code> is a vector of circle diameters, calculate the surface areas with vectorisation using <code>sapply()</code></li>
-</ul>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="co"># alternatively</span></span>
 <span id="cb51-2"><a></a><span class="fu">sapply</span>(data, \(d) <span class="fl">3.14</span> <span class="sc">*</span> (<span class="fu">sqrt</span>(d) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]       0.000    2461.760 1220682.065   19103.760    6789.465    1451.465
- [7]       0.000    2826.000    2374.625    2826.000      50.240</code></pre>
+<pre><code> [1]   0.000  43.960 978.895 122.460  73.005  33.755   0.000  47.100  43.175
+[10]  47.100   6.280</code></pre>
+</div>
 </div>
 </div>
 </section>
@@ -1180,8 +1192,21 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">map</span>(data, \(d) <span class="fl">3.14</span> <span class="sc">*</span> (<span class="fu">sqrt</span>(d) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">list_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]       0.000    2461.760 1220682.065   19103.760    6789.465    1451.465
- [7]       0.000    2826.000    2374.625    2826.000      50.240</code></pre>
+<pre><code> [1]   0.000  43.960 978.895 122.460  73.005  33.755   0.000  47.100  43.175
+[10]  47.100   6.280</code></pre>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>We do <code>list_c()</code> after a <code>map()</code> because <code>map()</code> is designed to take in a <code>list</code> and return a <code>list</code>. <code>list_c()</code> helps combine a list into a vector</p>
 </div>
 </div>
 </div>
@@ -1198,8 +1223,8 @@
 <span id="cb55-2"><a></a></span>
 <span id="cb55-3"><a></a><span class="fu">map2</span>(data, data2, \(d, l) (<span class="fl">3.14</span> <span class="sc">*</span> (<span class="fu">sqrt</span>(d) <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> (l<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> <span class="fu">list_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]     841.000    3830.760 1221166.065   20328.760    8310.465    2292.465
- [7]     900.000    3915.000    4223.625    4122.000     726.240</code></pre>
+<pre><code> [1]  841.000 1412.960 1462.895 1347.460 1594.005  874.755  900.000 1136.100
+ [9] 1892.175 1343.100  682.280</code></pre>
 </div>
 </div>
 </div>
