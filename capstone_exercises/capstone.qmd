@@ -61,6 +61,7 @@ Characteristics to summarize:
 
 #### 2. Adverse Events (AE):
 Summarize proportions of individuals with AEs, categorized by grade (I-IV) and relation to treatment.
+
 - Exclude specific events (e.g., "Nasogastric tube", "Tracheostomy").
 - Use chi-square or Fisher’s exact test for comparisons.
 - Severe adverse events are summarized separately for each population.

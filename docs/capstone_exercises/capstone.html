@@ -8,7 +8,7 @@
 
 <meta name="author" content="Tran Thai Hung">
 
-<title>Capstone Exercise: Applying Lessons in a Mini-Project</title>
+<title>Capstone Exercise: Applying Lessons in a Mini-Project – R Café</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +24,114 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="capstone_files/libs/clipboard/clipboard.min.js"></script>
-<script src="capstone_files/libs/quarto-html/quarto.js"></script>
-<script src="capstone_files/libs/quarto-html/popper.min.js"></script>
-<script src="capstone_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="capstone_files/libs/quarto-html/anchor.min.js"></script>
-<link href="capstone_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="capstone_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="capstone_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="capstone_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="capstone_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">R Café</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides/intro.html"> 
+<span class="menu-text">Getting started with R and Git</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides/tidyverse.html"> 
+<span class="menu-text">R programming with tidyverse</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides/gtsummary.html"> 
+<span class="menu-text">Quarto and gtsummary</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a.-data-and-files" id="toc-a.-data-and-files" class="nav-link active" data-scroll-target="#a.-data-and-files">A. Data and Files</a></li>
+  <li><a href="#b.-objectives" id="toc-b.-objectives" class="nav-link" data-scroll-target="#b.-objectives">B. Objectives</a>
+  <ul class="collapse">
+  <li><a href="#i.-data-preparation" id="toc-i.-data-preparation" class="nav-link" data-scroll-target="#i.-data-preparation">I. Data Preparation</a></li>
+  <li><a href="#ii.-table-creation" id="toc-ii.-table-creation" class="nav-link" data-scroll-target="#ii.-table-creation">II. Table Creation</a></li>
+  <li><a href="#iii.-plots" id="toc-iii.-plots" class="nav-link" data-scroll-target="#iii.-plots">III. Plots</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="capstone.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -137,7 +227,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="adverse-events-ae" class="level4">
 <h4 class="anchored" data-anchor-id="adverse-events-ae">2. Adverse Events (AE):</h4>
-<p>Summarize proportions of individuals with AEs, categorized by grade (I-IV) and relation to treatment. - Exclude specific events (e.g., “Nasogastric tube”, “Tracheostomy”). - Use chi-square or Fisher’s exact test for comparisons. - Severe adverse events are summarized separately for each population.</p>
+<p>Summarize proportions of individuals with AEs, categorized by grade (I-IV) and relation to treatment.</p>
+<ul>
+<li>Exclude specific events (e.g., “Nasogastric tube”, “Tracheostomy”).</li>
+<li>Use chi-square or Fisher’s exact test for comparisons.</li>
+<li>Severe adverse events are summarized separately for each population.</li>
+</ul>
 </section>
 </section>
 <section id="iii.-plots" class="level3">
@@ -169,12 +264,13 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="create-line-plot-for">2. Create line plot for:</h4>
 <p>Create a line plot of the daily maximum temperature for each patient during the first 7 days after admission. Use one colour for each treatment arm and make the mean temperature for each day bold for each patient.</p>
 <hr>
+
+
 </section>
 </section>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
