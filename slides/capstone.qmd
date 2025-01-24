@@ -1,9 +1,9 @@
 ---
 title: "Capstone Exercise: Applying Lessons in a Mini-Project"
 author: "Tran Thai Hung"
-output: 
-  html_document:
-    code_folding: show
+format: 
+  html:
+    code-folding: show
 ---
 
 ## A. Data and Files
