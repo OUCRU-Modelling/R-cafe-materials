@@ -420,223 +420,6 @@
     "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
   },
   {
-    "objectID": "slides/gtsummary.html",
-    "href": "slides/gtsummary.html",
-    "title": "Reproducible tables",
-    "section": "",
-    "text": "Intro to Quarto"
-  },
-  {
-    "objectID": "slides/gtsummary.html#dataset",
-    "href": "slides/gtsummary.html#dataset",
-    "title": "Reproducible tables",
-    "section": "Dataset",
-    "text": "Dataset\n\nlibrary(gtsummary)\nlibrary(tidyverse)\n\ndf &lt;- readRDS(\"../data/simulated_covid.rds\")\n\nFirst, let’s take a look at the data:\n\nhead(df)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nIs this data tidy?\n\n\nThe dataset is a line list, where each row represents a case with details such as sex, age, and outcome. This outbreak is interesting for its two distinct peaks. After a slight decrease in case counts in July, the numbers rose again.\n\n\nCode\ndf %&gt;% \n  count(date_onset) %&gt;% \n  ggplot(\n    aes(\n      x = date_onset, y = n, \n      text = paste0(\"Ngày: \", date_onset, \"\\n\", \"Số ca: \", n)\n      )\n    ) + \n  geom_bar(stat = \"identity\", fill = \"cornflowerblue\") + \n  labs(x = \"Date of onset\", y = \"Case count\") +\n  theme_classic()"
-  },
-  {
-    "objectID": "slides/gtsummary.html#descriptive-tables",
-    "href": "slides/gtsummary.html#descriptive-tables",
-    "title": "Reproducible tables",
-    "section": "Descriptive tables",
-    "text": "Descriptive tables\nAt the start of any analysis, it’s common to present a demographic table that summarises the characteristics of our sample. This can be done easily using tbl_summary() from the gtsummary package:\n\ndf %&gt;% \n  tbl_summary(\n    include = c(sex, age, outcome, outbreak)\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nsex\n\n\n\n\n    f\n1,365 (49%)\n\n\n    m\n1,397 (51%)\n\n\nage\n15 (8, 22)\n\n\noutcome\n\n\n\n\n    died\n220 (8.0%)\n\n\n    recovered\n2,542 (92%)\n\n\noutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nThe variable labels and values in your table might not appear as expected. Let’s fix this, starting with the labels:\n\ndf %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    f\n1,365 (49%)\n\n\n    m\n1,397 (51%)\n\n\nAge (years)\n15 (8, 22)\n\n\nOutcome\n\n\n\n\n    died\n220 (8.0%)\n\n\n    recovered\n2,542 (92%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nNow, let’s correct the values:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49%)\n\n\n    Male\n1,397 (51%)\n\n\nAge (years)\n15 (8, 22)\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nIt looks pretty good now, but your supervisor mentioned that the number of decimals in your tables should be consistent. For example, percentages and continuous variables should both have one decimal place. Let’s fix that:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1)\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49.4%)\n\n\n    Male\n1,397 (50.6%)\n\n\nAge (years)\n15.0 (8.0, 22.0)\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92.0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (54.8%)\n\n\n    2nd outbreak\n1,249 (45.2%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nOkay, now the Age is displayed as the median with the quantile range, but your supervisor prefers it to be shown as the mean \\(\\pm\\) standard deviation. Let’s change it:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49.4%)\n\n\n    Male\n1,397 (50.6%)\n\n\nAge (years)\n15.5 ± 9.1\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92.0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (54.8%)\n\n\n    2nd outbreak\n1,249 (45.2%)\n\n\n\n1 n (%); Mean ± SD\n\n\n\n\n\n\n\n\nExtra tip for Vietnamese theses: Change the decimal mark from . to ,.\n\ntheme_gtsummary_language(language = \"en\", big.mark = \".\", decimal.mark = \",\")\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2.7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1.365 (49,4%)\n\n\n    Male\n1.397 (50,6%)\n\n\nAge (years)\n15,5 ± 9,1\n\n\nOutcome\n\n\n\n\n    Died\n220 (8,0%)\n\n\n    Recovered\n2.542 (92,0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1.513 (54,8%)\n\n\n    2nd outbreak\n1.249 (45,2%)\n\n\n\n1 n (%); Mean ± SD"
-  },
-  {
-    "objectID": "slides/gtsummary.html#statistical-inference",
-    "href": "slides/gtsummary.html#statistical-inference",
-    "title": "Reproducible tables",
-    "section": "Statistical inference",
-    "text": "Statistical inference\nThe most common goal is to compare two groups and make inferences. In gtsummary, you can do this by simply copying the code for the descriptive table and adding the by = group_variable argument. Just remember to remove the group_variable from include if you included it in the descriptive table.\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\n\n\n\n\nSex\n\n\n\n\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n\n\nOutcome\n\n\n\n\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n1 n (%); Mean ± SD\n\n\n\n\n\n\n\n\nLook good now! You probably need p-values. Add them using the add_p() function.\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  ) %&gt;% \n  add_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n0.9\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n0.14\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Wilcoxon rank sum test\n\n\n\n\n\n\n\n\nAgain, your supervisor wants p-values displayed with three decimal digits. Let do it:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n0.894\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n0.138\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Wilcoxon rank sum test\n\n\n\n\n\n\n\n\nYou discovered that the default test is the Wilcoxon test, but now you want to use the t-test for age. Specify it in add_p() like this:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3),\n    test = list(age ~ \"t.test\")\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n0.894\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n0.138\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Welch Two Sample t-test\n\n\n\n\n\n\n\n\nWe’re nearly there. Your supervisor (yet again) wants an overall column. Simply add it using add_overall():\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3),\n    test = list(age ~ \"t.test\")\n  ) %&gt;% \n  add_overall()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall N = 2,7621\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n\n\n0.894\n\n\n    Female\n1,365 (49.4%)\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n1,397 (50.6%)\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n15.5 ± 9.1\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n0.138\n\n\n    Died\n220 (8.0%)\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n2,542 (92.0%)\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Welch Two Sample t-test\n\n\n\n\n\n\n\n\nGreat! Finally, we usually highlight small p-values to guide readers to the exciting findings. Just use bold_p() and set the threshold you want:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3),\n    test = list(age ~ \"t.test\")\n  ) %&gt;%\n  add_overall() %&gt;%\n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall N = 2,7621\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n\n\n0.894\n\n\n    Female\n1,365 (49.4%)\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n1,397 (50.6%)\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n15.5 ± 9.1\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n0.138\n\n\n    Died\n220 (8.0%)\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n2,542 (92.0%)\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Welch Two Sample t-test"
-  },
-  {
-    "objectID": "slides/gtsummary.html#univariate-analysis",
-    "href": "slides/gtsummary.html#univariate-analysis",
-    "title": "Reproducible tables",
-    "section": "Univariate analysis",
-    "text": "Univariate analysis\nThe next step in a typical analysis is to perform a univariate analysis and calculate the odds ratio (OR) for each variable:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_uvregression(\n    method = glm,\n    y = outbreak,\n    method.args = list(family = binomial),\n    exponentiate = TRUE,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  ) %&gt;%\n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN\nOR1\n95% CI1\np-value\n\n\n\n\nSex\n2,762\n\n\n\n\n\n\n\n\n    Female\n\n\n—\n—\n\n\n\n\n    Male\n\n\n0.99\n0.85 – 1.15\n0.894\n\n\nAge (years)\n2,762\n1.08\n1.07 – 1.09\n&lt;0.001\n\n\nOutcome\n2,762\n\n\n\n\n\n\n\n\n    Died\n\n\n—\n—\n\n\n\n\n    Recovered\n\n\n0.81\n0.62 – 1.07\n0.138\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nIf you want to hide the sample size, add hide_n = TRUE:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_uvregression(\n    method = glm,\n    y = outbreak,\n    method.args = list(family = binomial),\n    exponentiate = TRUE,\n    hide_n = TRUE,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  ) %&gt;%\n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOR1\n95% CI1\np-value\n\n\n\n\nSex\n\n\n\n\n\n\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.99\n0.85 – 1.15\n0.894\n\n\nAge (years)\n1.08\n1.07 – 1.09\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n\n\n    Died\n—\n—\n\n\n\n\n    Recovered\n0.81\n0.62 – 1.07\n0.138\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
-  },
-  {
-    "objectID": "slides/gtsummary.html#multivariate-analysis",
-    "href": "slides/gtsummary.html#multivariate-analysis",
-    "title": "Reproducible tables",
-    "section": "Multivariate analysis",
-    "text": "Multivariate analysis\nFinally, you might want to run a multivariate analysis to adjust these OR values for confounders:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  glm(outbreak ~ sex + age + outcome, data = ., family = binomial) %&gt;%\n  tbl_regression(\n    exponentiate = TRUE,\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  ) %&gt;% \n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOR1\n95% CI1\np-value\n\n\n\n\nSex\n\n\n\n\n\n\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.98\n0.84 – 1.15\n0.824\n\n\nAge (years)\n1.08\n1.07 – 1.09\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n\n\n    Died\n—\n—\n\n\n\n\n    Recovered\n0.85\n0.63 – 1.13\n0.265\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html",
-    "href": "additional_handouts/day_1/outline/outline.html",
-    "title": "Outline day 1",
-    "section": "",
-    "text": "Difference between Git and GitHub.\nWhy version control is important for collaboration.\nHands-on: Creating and cloning repositories.\n\n\n\n\n\nOverview of RStudio projects.\nBenefits of using a project environment.\nSetting up your first R project."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#git-vs-github",
-    "href": "additional_handouts/day_1/outline/outline.html#git-vs-github",
-    "title": "Outline day 1",
-    "section": "",
-    "text": "Difference between Git and GitHub.\nWhy version control is important for collaboration.\nHands-on: Creating and cloning repositories."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#rproject-project-environment",
-    "href": "additional_handouts/day_1/outline/outline.html#rproject-project-environment",
-    "title": "Outline day 1",
-    "section": "",
-    "text": "Overview of RStudio projects.\nBenefits of using a project environment.\nSetting up your first R project."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#rscript",
-    "href": "additional_handouts/day_1/outline/outline.html#rscript",
-    "title": "Outline day 1",
-    "section": "2.1 Rscript",
-    "text": "2.1 Rscript\n\nWhat is an R script?\nHow to create and run scripts in RStudio."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#variableclassesspecial-values",
-    "href": "additional_handouts/day_1/outline/outline.html#variableclassesspecial-values",
-    "title": "Outline day 1",
-    "section": "2.2 Variable/Classes/Special Values",
-    "text": "2.2 Variable/Classes/Special Values\n\nVariables and data types (numeric, character, logical, etc.).\nSpecial values (e.g., NA, NaN, Inf, NULL)."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#functions",
-    "href": "additional_handouts/day_1/outline/outline.html#functions",
-    "title": "Outline day 1",
-    "section": "2.3 Functions",
-    "text": "2.3 Functions\n\nCreating and using functions.\nBuilt-in vs custom functions."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#scope",
-    "href": "additional_handouts/day_1/outline/outline.html#scope",
-    "title": "Outline day 1",
-    "section": "2.4 Scope",
-    "text": "2.4 Scope\n\nLocal vs global scope.\nThe environment in R."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#packages",
-    "href": "additional_handouts/day_1/outline/outline.html#packages",
-    "title": "Outline day 1",
-    "section": "2.5 Packages",
-    "text": "2.5 Packages\n\nInstalling and loading packages.\nExploring CRAN, Bioconductor, and GitHub."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#data-importexport",
-    "href": "additional_handouts/day_1/outline/outline.html#data-importexport",
-    "title": "Outline day 1",
-    "section": "4.1 Data Import/Export",
-    "text": "4.1 Data Import/Export\n\nReading data from CSV, Excel, and other formats.\nWriting data to files."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#clean-column-names",
-    "href": "additional_handouts/day_1/outline/outline.html#clean-column-names",
-    "title": "Outline day 1",
-    "section": "4.2 Clean Column Names",
-    "text": "4.2 Clean Column Names\n\nStandardizing column names using janitor::clean_names()."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#simple-data-extraction",
-    "href": "additional_handouts/day_1/outline/outline.html#simple-data-extraction",
-    "title": "Outline day 1",
-    "section": "4.3 Simple Data Extraction",
-    "text": "4.3 Simple Data Extraction\n\nSelecting rows and columns."
-  },
-  {
-    "objectID": "additional_handouts/day_1/outline/outline.html#data-summary",
-    "href": "additional_handouts/day_1/outline/outline.html#data-summary",
-    "title": "Outline day 1",
-    "section": "4.4 Data Summary",
-    "text": "4.4 Data Summary\n\nSummarizing data with summary and skim."
-  },
-  {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
-    "title": "Commit, push and create issue",
-    "section": "",
-    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory\n\n\n\n\n\n\n\n\n\nOpen Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
-  },
-  {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
-    "title": "Commit, push and create issue",
-    "section": "",
-    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory"
-  },
-  {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
-    "title": "Commit, push and create issue",
-    "section": "",
-    "text": "Open Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
-  },
-  {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
-    "title": "Commit, push and create issue",
-    "section": "2.1 Create an issue on Github",
-    "text": "2.1 Create an issue on Github\n\n2.1.1 Select the reference in new issue\n\nClick on the number of the line in the code\nClick ... -&gt; select Reference in new issue\n\n\n\n\nSelect the place where you want to refer to\n\n\n\n\n2.1.2 Put more information to your issue and submit issue\n\nFill in the title in Add a title\nThe link to the error place will automatically appear in Add a description. You might write more detail about the errors in this section as below\nSelect the person you would like assign this issue by select Assignees or quickly assign it to yourself by assign yourself\nClassify the issue by Labels\nClick Submit new issue\n\n\n\n\nAdd information and submit issue\n\n\n\n\n2.1.3 View the open issues\n\nSelect Issues -&gt; Open. You might see the one who is responsible for this issue in Assignee tab.\nSelect the issue you would like to view Typo in example_push_commit_issue.R file.\n\n\n\n\nView the open issue\n\n\n\n\n2.1.4 View the detail of an issue\n\nYou might see the title of the issue, the reference links to the errors, and the detail of the issue.\nNavigate the place of error by clicking the reference link\n\n\n\n\nView the details of issue"
-  },
-  {
-    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
-    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
-    "title": "Commit, push and create issue",
-    "section": "2.2 Resolve the issue",
-    "text": "2.2 Resolve the issue\n\n2.2.1 Clone the branch you would like to fix the issue\n\nRefer to Steps to Clone a Repository on Github in Github note 1\n\n\n\n2.2.2 Fix the code locally\n\nOpen the example_push_commit_issue.R file\n\nMake correction to the code and make a comment.\n\n\n\n\nResolve issue in local cloned repository\n\n\n\n\n2.2.3 Commit the corrections using Github desktop\n\nOpen the Github desktop. You will see the changes now. The red lines are old version. The green lines are current version.\nCommit and push the corrections\n\n\n\n\nCommit and push the correction\n\n\n\n\n2.2.4 Check the branch again\n\n\n\nView the code on github\n\n\n\n\n2.2.5 Comment and close the issue\n\nGo back to the issue. Select Issues -&gt; Open -&gt; Typo in example_push_commit_issue.R file\nAdd comments in Add a comment -&gt; Click on Close with comment. (If the issue has not been resolved, we can click Comment to discuss with other collaborators)\n\n\n\n\nClose and comment issue on Github\n\n\n\n\n2.2.6 View closed issue\n\nWe can always view the old closed issue by clicking Issues -&gt; Closed\n\n\n\n\nView the closed issues on github"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to R Café",
-    "section": "",
-    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
-  },
-  {
-    "objectID": "index.html#duration",
-    "href": "index.html#duration",
-    "title": "Welcome to R Café",
-    "section": "",
-    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
-  },
-  {
-    "objectID": "index.html#structure",
-    "href": "index.html#structure",
-    "title": "Welcome to R Café",
-    "section": "Structure",
-    "text": "Structure\n\n3-hour face-to-face sessions per day, 1 day per week\nTake home exercises given between face-to-face sessions"
-  },
-  {
-    "objectID": "index.html#r-café-helpful-shortcuts",
-    "href": "index.html#r-café-helpful-shortcuts",
-    "title": "Welcome to R Café",
-    "section": "R Café helpful shortcuts",
-    "text": "R Café helpful shortcuts\n\nTeams Tech support channel\nMain GitHub repository\nTheoretical slides\nAdditional handouts and instructions\nCurrent instructor roster:\n\nThinh Ong Phuc (thinhop@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)\nTuyen Huynh (tuyenhn@oucru.org)\nHai Ho Bich (haihb@oucru.org)"
-  },
-  {
-    "objectID": "index.html#agenda",
-    "href": "index.html#agenda",
-    "title": "Welcome to R Café",
-    "section": "Agenda",
-    "text": "Agenda\n\nGetting started with R and Git (day 1)\n\nPart 1: Setup (45’) - Tuyen & QA\n\nWhat is R Café & Agenda (5’)\nBrief introduction to Git, GitHub, and GitHub Desktop\n\nGoal: Publish your own branch on R Café’s GitHub repository\n\nRstudio (20’)\n\nGoal: Create RStudio project\nGoal: Everyone create and push their first commit onto their own branch\n\nNavigate GitHub\n\nPart 2: Foundations of R (60’) - QA\n\nVariables & Functions & Packages (with outline)\nExercises\n\nGoal: Create a function and push to GitHub\nGoal: Create issues and comment on each other’s issues on GitHub\n\n\nBreak (15’)\nPart 3: Data manipulation in R (45’) - QA\n\nData management\nTake-home exercises setup\n\n\nR programming with tidyverse (day 2)\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\nPiping with %&gt;%\n\nExercise\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map()\ntidyverse style vs. base R style\n\nggplot2 for data visualisation\n\nGrammar of graphics\n\nExercise\n\nQuarto & Markdown (and related) (day 3)"
-  },
-  {
-    "objectID": "index.html#take-home-exercises",
-    "href": "index.html#take-home-exercises",
-    "title": "Welcome to R Café",
-    "section": "Take-home exercises",
-    "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nData cleaning and filtering\nData transformation\nFactor your data (with forcats)\nData visualization (with ggplot2)\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
-  },
-  {
-    "objectID": "additional_handouts/day_1/Rproject_renv/Rproject.html",
-    "href": "additional_handouts/day_1/Rproject_renv/Rproject.html",
-    "title": "Rproject setup",
-    "section": "",
-    "text": "1 Steps to setup Rproject\n\nOpen Rstudio\nIn the menu, File -&gt; New project...\n\n\n\n\nCreate New project\n\n\n\nChoose Existing Directory.\n\n\n\n\nExisting Directory\n\n\n\nCreate project at prefered directory\n\nClick Browse and select your project directory\nThen click Create project\n\n\n\n\n\nSelect the directory\n\n\n\nCheck your Rproject\n\nYour Rproject will be at your directory\n\n\n\n\n\nRproject"
-  },
-  {
-    "objectID": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
-    "href": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
-    "title": "Github note 1",
-    "section": "",
-    "text": "1 Steps to Clone a Repository on GitHub\n\nVisit the GitHub repository you would like to clone\nFor example: https://github.com/OUCRU-Modelling/R-cafe.\nClick on Code → select HTTPS → copy the link in the URL.\n\n\n\n\nCopy the repository link\n\n\n\nOpen GitHub Desktop\nThen choose File → Clone repository.\n\n\n\n\nOpen cloning tab\n\n\n\nChoose URL\n\nPaste the copied link into the blank field below “Hub/cool-repo”.\n\nChange the local path to your preferred directory (or it will use the default directory).\n\nClick Clone.\n\n\n\n\n\nPaste the link\n\n\n\nVerify\nCheck if the repository has been cloned to the correct location.\n\n\n\n\nCheck local repository\n\n\n\n\n2 Steps to create a new branch\n\nCreate new branch\n\nClick on Current branch (main) -&gt; choose New branch\n\n\n\n\n\nCreate new branch\n\n\n\nName the new branch\n\nFill in the branch name (For example: “hungtt”) -&gt; choose Create branch\n\n\n\n\n\nName the new branch\n\n\n\nPublish your branch\n\nClick on Publish branch\n\n\n\n\n\nPublish branch\n\n\n\nCheck your branch on Github\n\nClick on main. You might see your branch name. If not, choose View all branches to find your branch.\n\n\n\n\n\nFind your branch"
-  },
-  {
     "objectID": "slides/intro.html#about-the-course",
     "href": "slides/intro.html#about-the-course",
     "title": "Welcome to R Café",
@@ -1113,6 +896,244 @@
     "text": "Upcoming lessons\n\nData cleaning in R\ntidyverse package for\n\nData cleaning, handling tricky datatypes (string, Date, factor, etc.)\nData visualization using ggplots\n\nData analysis in R\n\nDemographic analysis, perform statistical tests using gtsummary\nCreating report using Rmarkdown/Quarto"
   },
   {
+    "objectID": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
+    "href": "additional_handouts/day_1/Clone and push github/Clone a repository from Github.html",
+    "title": "Github note 1",
+    "section": "",
+    "text": "1 Steps to Clone a Repository on GitHub\n\nVisit the GitHub repository you would like to clone\nFor example: https://github.com/OUCRU-Modelling/R-cafe.\nClick on Code → select HTTPS → copy the link in the URL.\n\n\n\n\nCopy the repository link\n\n\n\nOpen GitHub Desktop\nThen choose File → Clone repository.\n\n\n\n\nOpen cloning tab\n\n\n\nChoose URL\n\nPaste the copied link into the blank field below “Hub/cool-repo”.\n\nChange the local path to your preferred directory (or it will use the default directory).\n\nClick Clone.\n\n\n\n\n\nPaste the link\n\n\n\nVerify\nCheck if the repository has been cloned to the correct location.\n\n\n\n\nCheck local repository\n\n\n\n\n2 Steps to create a new branch\n\nCreate new branch\n\nClick on Current branch (main) -&gt; choose New branch\n\n\n\n\n\nCreate new branch\n\n\n\nName the new branch\n\nFill in the branch name (For example: “hungtt”) -&gt; choose Create branch\n\n\n\n\n\nName the new branch\n\n\n\nPublish your branch\n\nClick on Publish branch\n\n\n\n\n\nPublish branch\n\n\n\nCheck your branch on Github\n\nClick on main. You might see your branch name. If not, choose View all branches to find your branch.\n\n\n\n\n\nFind your branch"
+  },
+  {
+    "objectID": "additional_handouts/day_1/Rproject_renv/Rproject.html",
+    "href": "additional_handouts/day_1/Rproject_renv/Rproject.html",
+    "title": "Rproject setup",
+    "section": "",
+    "text": "1 Steps to setup Rproject\n\nOpen Rstudio\nIn the menu, File -&gt; New project...\n\n\n\n\nCreate New project\n\n\n\nChoose Existing Directory.\n\n\n\n\nExisting Directory\n\n\n\nCreate project at prefered directory\n\nClick Browse and select your project directory\nThen click Create project\n\n\n\n\n\nSelect the directory\n\n\n\nCheck your Rproject\n\nYour Rproject will be at your directory\n\n\n\n\n\nRproject"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to R Café",
+    "section": "",
+    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
+  },
+  {
+    "objectID": "index.html#duration",
+    "href": "index.html#duration",
+    "title": "Welcome to R Café",
+    "section": "",
+    "text": "3 weeks of study + 1 week of extra content (if any) and closing remarks"
+  },
+  {
+    "objectID": "index.html#structure",
+    "href": "index.html#structure",
+    "title": "Welcome to R Café",
+    "section": "Structure",
+    "text": "Structure\n\n3-hour face-to-face sessions per day, 1 day per week\nTake home exercises given between face-to-face sessions"
+  },
+  {
+    "objectID": "index.html#r-café-helpful-shortcuts",
+    "href": "index.html#r-café-helpful-shortcuts",
+    "title": "Welcome to R Café",
+    "section": "R Café helpful shortcuts",
+    "text": "R Café helpful shortcuts\n\nTeams Tech support channel\nMain GitHub repository\nTheoretical slides\nAdditional handouts and instructions\nCurrent instructor roster:\n\nThinh Ong Phuc (thinhop@oucru.org)\nAnh Phan Truong Quynh (anhptq@oucru.org)\nHung Tran Thai (hungtt@oucru.org)\nTuyen Huynh (tuyenhn@oucru.org)\nHai Ho Bich (haihb@oucru.org)"
+  },
+  {
+    "objectID": "index.html#agenda",
+    "href": "index.html#agenda",
+    "title": "Welcome to R Café",
+    "section": "Agenda",
+    "text": "Agenda\n\nGetting started with R and Git (day 1)\n\nPart 1: Setup (45’) - Tuyen & QA\n\nWhat is R Café & Agenda (5’)\nBrief introduction to Git, GitHub, and GitHub Desktop\n\nGoal: Publish your own branch on R Café’s GitHub repository\n\nRstudio (20’)\n\nGoal: Create RStudio project\nGoal: Everyone create and push their first commit onto their own branch\n\nNavigate GitHub\n\nPart 2: Foundations of R (60’) - QA\n\nVariables & Functions & Packages (with outline)\nExercises\n\nGoal: Create a function and push to GitHub\nGoal: Create issues and comment on each other’s issues on GitHub\n\n\nBreak (15’)\nPart 3: Data manipulation in R (45’) - QA\n\nData management\nTake-home exercises setup\n\n\nR programming with tidyverse (day 2)\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\nPiping with %&gt;%\n\nExercise\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map()\ntidyverse style vs. base R style\n\nggplot2 for data visualisation\n\nGrammar of graphics\n\nExercise\n\nQuarto & Markdown (and related) (day 3)"
+  },
+  {
+    "objectID": "index.html#take-home-exercises",
+    "href": "index.html#take-home-exercises",
+    "title": "Welcome to R Café",
+    "section": "Take-home exercises",
+    "text": "Take-home exercises\n\nInitial Data Analysis - IDA (with skimr)\n\nGenerate questions around your data\nCustomize your summary table output\nSimple visualization data, e.g. histogram\nCalculate statistics, e.g. correlation, collinearity\n\nData transformation\n\nData cleaning and filtering\nData transformation\nFactor your data (with forcats)\nData visualization (with ggplot2)\n\nAnalysis with gtsummary\n\nDemographic summary\nStatistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.\n\nGenerate report with Quarto\n\nCitation (inline footnote and reference)"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory\n\n\n\n\n\n\n\n\n\nOpen Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#working-on-local-repository",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Rstudio\nIn the menu, File -&gt; New File -&gt; R script\n\n\n\n\nCreate New R script\n\n\n\n\n\n\nType your work in Source code section -&gt; click on save icon or Ctrl + S\n\n\n\n\nWrite down your work\n\n\n\n\n\n\nClick Browse and select your project directory\nName your file in File name -&gt; click save\n\n\n\n\nSelect the directory"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#commit-and-push-your-work",
+    "title": "Commit, push and create issue",
+    "section": "",
+    "text": "Open Github desktop.\nTick files which you would like to commit in the Changes section. You could view what changes has been made to any file by clicking on each file. The changes will appear on the right.\nFill in the summary of your commit in the Summary required. Add more details in the Description.\nClick on Commit to [your branch]. Always check whether you commit to correct branch.\n\n\n\n\nSelect files, add summary, description\n\n\n\n\n\n\nDouble check if your Current branch is correct. Now, click on Push origin to push to your branch.\n\n\n\n\nPush to your branch\n\n\n\n\n\n\nSelect your branch on Github\nYou will see a notification of your push from local repository\nShow you how many commit you ahead of or behind main\nYou can compare your branch with other branch or main and make pull request. You could ignore this for now.\nClick on day1 to view our example_commit_push_issue.R script\n\n\n\n\nView our push on Github branch\n\n\n\nView our example_commit_push_issue.R\n\n\n\n\nView our script on Github branch"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#create-an-issue-on-github",
+    "title": "Commit, push and create issue",
+    "section": "2.1 Create an issue on Github",
+    "text": "2.1 Create an issue on Github\n\n2.1.1 Select the reference in new issue\n\nClick on the number of the line in the code\nClick ... -&gt; select Reference in new issue\n\n\n\n\nSelect the place where you want to refer to\n\n\n\n\n2.1.2 Put more information to your issue and submit issue\n\nFill in the title in Add a title\nThe link to the error place will automatically appear in Add a description. You might write more detail about the errors in this section as below\nSelect the person you would like assign this issue by select Assignees or quickly assign it to yourself by assign yourself\nClassify the issue by Labels\nClick Submit new issue\n\n\n\n\nAdd information and submit issue\n\n\n\n\n2.1.3 View the open issues\n\nSelect Issues -&gt; Open. You might see the one who is responsible for this issue in Assignee tab.\nSelect the issue you would like to view Typo in example_push_commit_issue.R file.\n\n\n\n\nView the open issue\n\n\n\n\n2.1.4 View the detail of an issue\n\nYou might see the title of the issue, the reference links to the errors, and the detail of the issue.\nNavigate the place of error by clicking the reference link\n\n\n\n\nView the details of issue"
+  },
+  {
+    "objectID": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "href": "additional_handouts/day_1/commit, push and create issue on github/commit_push_issue.html#resolve-the-issue",
+    "title": "Commit, push and create issue",
+    "section": "2.2 Resolve the issue",
+    "text": "2.2 Resolve the issue\n\n2.2.1 Clone the branch you would like to fix the issue\n\nRefer to Steps to Clone a Repository on Github in Github note 1\n\n\n\n2.2.2 Fix the code locally\n\nOpen the example_push_commit_issue.R file\n\nMake correction to the code and make a comment.\n\n\n\n\nResolve issue in local cloned repository\n\n\n\n\n2.2.3 Commit the corrections using Github desktop\n\nOpen the Github desktop. You will see the changes now. The red lines are old version. The green lines are current version.\nCommit and push the corrections\n\n\n\n\nCommit and push the correction\n\n\n\n\n2.2.4 Check the branch again\n\n\n\nView the code on github\n\n\n\n\n2.2.5 Comment and close the issue\n\nGo back to the issue. Select Issues -&gt; Open -&gt; Typo in example_push_commit_issue.R file\nAdd comments in Add a comment -&gt; Click on Close with comment. (If the issue has not been resolved, we can click Comment to discuss with other collaborators)\n\n\n\n\nClose and comment issue on Github\n\n\n\n\n2.2.6 View closed issue\n\nWe can always view the old closed issue by clicking Issues -&gt; Closed\n\n\n\n\nView the closed issues on github"
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html",
+    "href": "additional_handouts/day_1/outline/outline.html",
+    "title": "Outline day 1",
+    "section": "",
+    "text": "Difference between Git and GitHub.\nWhy version control is important for collaboration.\nHands-on: Creating and cloning repositories.\n\n\n\n\n\nOverview of RStudio projects.\nBenefits of using a project environment.\nSetting up your first R project."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#git-vs-github",
+    "href": "additional_handouts/day_1/outline/outline.html#git-vs-github",
+    "title": "Outline day 1",
+    "section": "",
+    "text": "Difference between Git and GitHub.\nWhy version control is important for collaboration.\nHands-on: Creating and cloning repositories."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#rproject-project-environment",
+    "href": "additional_handouts/day_1/outline/outline.html#rproject-project-environment",
+    "title": "Outline day 1",
+    "section": "",
+    "text": "Overview of RStudio projects.\nBenefits of using a project environment.\nSetting up your first R project."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#rscript",
+    "href": "additional_handouts/day_1/outline/outline.html#rscript",
+    "title": "Outline day 1",
+    "section": "2.1 Rscript",
+    "text": "2.1 Rscript\n\nWhat is an R script?\nHow to create and run scripts in RStudio."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#variableclassesspecial-values",
+    "href": "additional_handouts/day_1/outline/outline.html#variableclassesspecial-values",
+    "title": "Outline day 1",
+    "section": "2.2 Variable/Classes/Special Values",
+    "text": "2.2 Variable/Classes/Special Values\n\nVariables and data types (numeric, character, logical, etc.).\nSpecial values (e.g., NA, NaN, Inf, NULL)."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#functions",
+    "href": "additional_handouts/day_1/outline/outline.html#functions",
+    "title": "Outline day 1",
+    "section": "2.3 Functions",
+    "text": "2.3 Functions\n\nCreating and using functions.\nBuilt-in vs custom functions."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#scope",
+    "href": "additional_handouts/day_1/outline/outline.html#scope",
+    "title": "Outline day 1",
+    "section": "2.4 Scope",
+    "text": "2.4 Scope\n\nLocal vs global scope.\nThe environment in R."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#packages",
+    "href": "additional_handouts/day_1/outline/outline.html#packages",
+    "title": "Outline day 1",
+    "section": "2.5 Packages",
+    "text": "2.5 Packages\n\nInstalling and loading packages.\nExploring CRAN, Bioconductor, and GitHub."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#data-importexport",
+    "href": "additional_handouts/day_1/outline/outline.html#data-importexport",
+    "title": "Outline day 1",
+    "section": "4.1 Data Import/Export",
+    "text": "4.1 Data Import/Export\n\nReading data from CSV, Excel, and other formats.\nWriting data to files."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#clean-column-names",
+    "href": "additional_handouts/day_1/outline/outline.html#clean-column-names",
+    "title": "Outline day 1",
+    "section": "4.2 Clean Column Names",
+    "text": "4.2 Clean Column Names\n\nStandardizing column names using janitor::clean_names()."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#simple-data-extraction",
+    "href": "additional_handouts/day_1/outline/outline.html#simple-data-extraction",
+    "title": "Outline day 1",
+    "section": "4.3 Simple Data Extraction",
+    "text": "4.3 Simple Data Extraction\n\nSelecting rows and columns."
+  },
+  {
+    "objectID": "additional_handouts/day_1/outline/outline.html#data-summary",
+    "href": "additional_handouts/day_1/outline/outline.html#data-summary",
+    "title": "Outline day 1",
+    "section": "4.4 Data Summary",
+    "text": "4.4 Data Summary\n\nSummarizing data with summary and skim."
+  },
+  {
+    "objectID": "slides/gtsummary.html",
+    "href": "slides/gtsummary.html",
+    "title": "Reproducible tables",
+    "section": "",
+    "text": "Intro to Quarto"
+  },
+  {
+    "objectID": "slides/gtsummary.html#dataset",
+    "href": "slides/gtsummary.html#dataset",
+    "title": "Reproducible tables",
+    "section": "Dataset",
+    "text": "Dataset\n\nlibrary(gtsummary)\nlibrary(tidyverse)\n\ndf &lt;- readRDS(\"../data/simulated_covid.rds\")\n\nFirst, let’s take a look at the data:\n\nhead(df)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nIs this data tidy?\n\n\nThe dataset is a line list, where each row represents a case with details such as sex, age, and outcome. This outbreak is interesting for its two distinct peaks. After a slight decrease in case counts in July, the numbers rose again.\n\n\nCode\ndf %&gt;% \n  count(date_onset) %&gt;% \n  ggplot(\n    aes(\n      x = date_onset, y = n, \n      text = paste0(\"Ngày: \", date_onset, \"\\n\", \"Số ca: \", n)\n      )\n    ) + \n  geom_bar(stat = \"identity\", fill = \"cornflowerblue\") + \n  labs(x = \"Date of onset\", y = \"Case count\") +\n  theme_classic()"
+  },
+  {
+    "objectID": "slides/gtsummary.html#descriptive-tables",
+    "href": "slides/gtsummary.html#descriptive-tables",
+    "title": "Reproducible tables",
+    "section": "Descriptive tables",
+    "text": "Descriptive tables\nAt the start of any analysis, it’s common to present a demographic table that summarises the characteristics of our sample. This can be done easily using tbl_summary() from the gtsummary package:\n\ndf %&gt;% \n  tbl_summary(\n    include = c(sex, age, outcome, outbreak)\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nsex\n\n\n\n\n    f\n1,365 (49%)\n\n\n    m\n1,397 (51%)\n\n\nage\n15 (8, 22)\n\n\noutcome\n\n\n\n\n    died\n220 (8.0%)\n\n\n    recovered\n2,542 (92%)\n\n\noutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nThe variable labels and values in your table might not appear as expected. Let’s fix this, starting with the labels:\n\ndf %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    f\n1,365 (49%)\n\n\n    m\n1,397 (51%)\n\n\nAge (years)\n15 (8, 22)\n\n\nOutcome\n\n\n\n\n    died\n220 (8.0%)\n\n\n    recovered\n2,542 (92%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nNow, let’s correct the values:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49%)\n\n\n    Male\n1,397 (51%)\n\n\nAge (years)\n15 (8, 22)\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nIt looks pretty good now, but your supervisor mentioned that the number of decimals in your tables should be consistent. For example, percentages and continuous variables should both have one decimal place. Let’s fix that:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1)\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49.4%)\n\n\n    Male\n1,397 (50.6%)\n\n\nAge (years)\n15.0 (8.0, 22.0)\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92.0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (54.8%)\n\n\n    2nd outbreak\n1,249 (45.2%)\n\n\n\n1 n (%); Median (Q1, Q3)\n\n\n\n\n\n\n\n\nOkay, now the Age is displayed as the median with the quantile range, but your supervisor prefers it to be shown as the mean \\(\\pm\\) standard deviation. Let’s change it:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49.4%)\n\n\n    Male\n1,397 (50.6%)\n\n\nAge (years)\n15.5 ± 9.1\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92.0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (54.8%)\n\n\n    2nd outbreak\n1,249 (45.2%)\n\n\n\n1 n (%); Mean ± SD\n\n\n\n\n\n\n\n\nExtra tip for Vietnamese theses: Change the decimal mark from . to ,.\n\ntheme_gtsummary_language(language = \"en\", big.mark = \".\", decimal.mark = \",\")\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2.7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1.365 (49,4%)\n\n\n    Male\n1.397 (50,6%)\n\n\nAge (years)\n15,5 ± 9,1\n\n\nOutcome\n\n\n\n\n    Died\n220 (8,0%)\n\n\n    Recovered\n2.542 (92,0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1.513 (54,8%)\n\n\n    2nd outbreak\n1.249 (45,2%)\n\n\n\n1 n (%); Mean ± SD"
+  },
+  {
+    "objectID": "slides/gtsummary.html#statistical-inference",
+    "href": "slides/gtsummary.html#statistical-inference",
+    "title": "Reproducible tables",
+    "section": "Statistical inference",
+    "text": "Statistical inference\nThe most common goal is to compare two groups and make inferences. In gtsummary, you can do this by simply copying the code for the descriptive table and adding the by = group_variable argument. Just remember to remove the group_variable from include if you included it in the descriptive table.\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\n\n\n\n\nSex\n\n\n\n\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n\n\nOutcome\n\n\n\n\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n1 n (%); Mean ± SD\n\n\n\n\n\n\n\n\nLook good now! You probably need p-values. Add them using the add_p() function.\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  ) %&gt;% \n  add_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n0.9\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n0.14\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Wilcoxon rank sum test\n\n\n\n\n\n\n\n\nAgain, your supervisor wants p-values displayed with three decimal digits. Let do it:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n0.894\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n0.138\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Wilcoxon rank sum test\n\n\n\n\n\n\n\n\nYou discovered that the default test is the Wilcoxon test, but now you want to use the t-test for age. Specify it in add_p() like this:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3),\n    test = list(age ~ \"t.test\")\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n0.894\n\n\n    Female\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n0.138\n\n\n    Died\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Welch Two Sample t-test\n\n\n\n\n\n\n\n\nWe’re nearly there. Your supervisor (yet again) wants an overall column. Simply add it using add_overall():\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3),\n    test = list(age ~ \"t.test\")\n  ) %&gt;% \n  add_overall()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall N = 2,7621\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n\n\n0.894\n\n\n    Female\n1,365 (49.4%)\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n1,397 (50.6%)\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n15.5 ± 9.1\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n0.138\n\n\n    Died\n220 (8.0%)\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n2,542 (92.0%)\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Welch Two Sample t-test\n\n\n\n\n\n\n\n\nGreat! Finally, we usually highlight small p-values to guide readers to the exciting findings. Just use bold_p() and set the threshold you want:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_summary(\n    by = outbreak,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    digits = c(all_categorical() ~ c(0, 1), all_continuous() ~ 1),\n    statistic = list(all_continuous() ~ \"{mean} \\u00b1 {sd}\")\n  ) %&gt;%\n  add_p(\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3),\n    test = list(age ~ \"t.test\")\n  ) %&gt;%\n  add_overall() %&gt;%\n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall N = 2,7621\n1st outbreak N = 1,5131\n2nd outbreak N = 1,2491\np-value2\n\n\n\n\nSex\n\n\n\n\n\n\n0.894\n\n\n    Female\n1,365 (49.4%)\n746 (49.3%)\n619 (49.6%)\n\n\n\n\n    Male\n1,397 (50.6%)\n767 (50.7%)\n630 (50.4%)\n\n\n\n\nAge (years)\n15.5 ± 9.1\n12.8 ± 7.6\n18.8 ± 9.6\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n0.138\n\n\n    Died\n220 (8.0%)\n110 (7.3%)\n110 (8.8%)\n\n\n\n\n    Recovered\n2,542 (92.0%)\n1,403 (92.7%)\n1,139 (91.2%)\n\n\n\n\n\n1 n (%); Mean ± SD\n\n\n2 Pearson’s Chi-squared test; Welch Two Sample t-test"
+  },
+  {
+    "objectID": "slides/gtsummary.html#univariate-analysis",
+    "href": "slides/gtsummary.html#univariate-analysis",
+    "title": "Reproducible tables",
+    "section": "Univariate analysis",
+    "text": "Univariate analysis\nThe next step in a typical analysis is to perform a univariate analysis and calculate the odds ratio (OR) for each variable:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_uvregression(\n    method = glm,\n    y = outbreak,\n    method.args = list(family = binomial),\n    exponentiate = TRUE,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  ) %&gt;%\n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN\nOR1\n95% CI1\np-value\n\n\n\n\nSex\n2,762\n\n\n\n\n\n\n\n\n    Female\n\n\n—\n—\n\n\n\n\n    Male\n\n\n0.99\n0.85 – 1.15\n0.894\n\n\nAge (years)\n2,762\n1.08\n1.07 – 1.09\n&lt;0.001\n\n\nOutcome\n2,762\n\n\n\n\n\n\n\n\n    Died\n\n\n—\n—\n\n\n\n\n    Recovered\n\n\n0.81\n0.62 – 1.07\n0.138\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nIf you want to hide the sample size, add hide_n = TRUE:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  tbl_uvregression(\n    method = glm,\n    y = outbreak,\n    method.args = list(family = binomial),\n    exponentiate = TRUE,\n    hide_n = TRUE,\n    include = c(sex, age, outcome),\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  ) %&gt;%\n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOR1\n95% CI1\np-value\n\n\n\n\nSex\n\n\n\n\n\n\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.99\n0.85 – 1.15\n0.894\n\n\nAge (years)\n1.08\n1.07 – 1.09\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n\n\n    Died\n—\n—\n\n\n\n\n    Recovered\n0.81\n0.62 – 1.07\n0.138\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/gtsummary.html#multivariate-analysis",
+    "href": "slides/gtsummary.html#multivariate-analysis",
+    "title": "Reproducible tables",
+    "section": "Multivariate analysis",
+    "text": "Multivariate analysis\nFinally, you might want to run a multivariate analysis to adjust these OR values for confounders:\n\ndf %&gt;%\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) %&gt;%\n  glm(outbreak ~ sex + age + outcome, data = ., family = binomial) %&gt;%\n  tbl_regression(\n    exponentiate = TRUE,\n    label = list(sex ~ \"Sex\", age ~ \"Age (years)\", outcome ~ \"Outcome\"),\n    pvalue_fun = function(x)\n      style_pvalue(x, digits = 3)\n  ) %&gt;% \n  bold_p(t = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOR1\n95% CI1\np-value\n\n\n\n\nSex\n\n\n\n\n\n\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.98\n0.84 – 1.15\n0.824\n\n\nAge (years)\n1.08\n1.07 – 1.09\n&lt;0.001\n\n\nOutcome\n\n\n\n\n\n\n\n\n    Died\n—\n—\n\n\n\n\n    Recovered\n0.85\n0.63 – 1.13\n0.265\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/capstone.html",
+    "href": "slides/capstone.html",
+    "title": "Capstone Exercise: Applying Lessons in a Mini-Project",
+    "section": "",
+    "text": "This project uses real clinical trial data from OUCRU. The data includes:\n\nMain Dataset:\n\nFile: “2-10-2020-_03TS_V1_Data.xls”\nContains most information. Variable explanations are in the statistical plan file (“03TS analysis plan V1.5 November 2020 Accept changes.docx”).\n\nTreatment Allocation:\n\nFile: “03TS_Randlist.xlsx”\nIncludes treatment arm allocations and a “dictionary” sheet explaining the four arms.\n\nViolations, Exclusions, Withdrawals:\n\nFile: “Protocol violations, exclusions, withdrawals.xlsx”\n\nStatistical Plan:\n\nFile: “03TS analysis plan V1.5 November 2020 Accept changes.docx”\nProvides guidance on specific variables."
+  },
+  {
+    "objectID": "slides/capstone.html#a.-data-and-files",
+    "href": "slides/capstone.html#a.-data-and-files",
+    "title": "Capstone Exercise: Applying Lessons in a Mini-Project",
+    "section": "",
+    "text": "This project uses real clinical trial data from OUCRU. The data includes:\n\nMain Dataset:\n\nFile: “2-10-2020-_03TS_V1_Data.xls”\nContains most information. Variable explanations are in the statistical plan file (“03TS analysis plan V1.5 November 2020 Accept changes.docx”).\n\nTreatment Allocation:\n\nFile: “03TS_Randlist.xlsx”\nIncludes treatment arm allocations and a “dictionary” sheet explaining the four arms.\n\nViolations, Exclusions, Withdrawals:\n\nFile: “Protocol violations, exclusions, withdrawals.xlsx”\n\nStatistical Plan:\n\nFile: “03TS analysis plan V1.5 November 2020 Accept changes.docx”\nProvides guidance on specific variables."
+  },
+  {
+    "objectID": "slides/capstone.html#b.-objectives",
+    "href": "slides/capstone.html#b.-objectives",
+    "title": "Capstone Exercise: Applying Lessons in a Mini-Project",
+    "section": "B. Objectives",
+    "text": "B. Objectives\n\nI. Data Preparation\nPrepare data for the following populations:\n\nIT-ITT, IM_ITT, IT_PP, IM_PP, IM_ALL.\nUse “03TS_Randlist.xlsx” for allocation of the first 272 participants.\nUse “Protocol violations, exclusions, withdrawals.xlsx” for filtering data per population.\n\n\n\nII. Table Creation\n\n1. Baseline Characteristics:\nSummarize as follows:\n\nNumeric Data: Report median, 1st/3rd quartiles, lowest, and highest values.\nCategorical Data: Report count (n) and percentage (%).\nNo formal statistical comparisons between study arms.\n\nCharacteristics to summarize:\n\nPatient Details:\n\nSex, age, BMI (BMI = ADM.WEIGHT / (ADM.HEIGHT)^2).\n\nPast Medical History:\n\nVariables like ADM.HYPERTENSION, ADM.MYOCARDIALINFART, ADM.SEVERELIVER, etc.\n\nPatient History:\n\nDuration of illness, incubation period, respiratory rate, platelet count, etc.\n\nSpecific Severity Scores:\n\nTetanus Severity, SOFA, APACHE II (calculated from variables).\n\n\n\n\n2. Adverse Events (AE):\nSummarize proportions of individuals with AEs, categorized by grade (I-IV) and relation to treatment.\n\nExclude specific events (e.g., “Nasogastric tube”, “Tracheostomy”).\nUse chi-square or Fisher’s exact test for comparisons.\nSevere adverse events are summarized separately for each population.\n\n\n\n\nIII. Plots\n\n1. Create histograms for:\n\nPipecuronium:\n\nTotal dose during hospital stay (ventilated patients).\nDuration of use (ventilated patients).\n\nDiazepam:\n\nTotal dose during hospital stay.\n\nMidazolam:\n\nTotal dose during hospital stay.\n\nBenzodiazepines:\n\nTotal dose as diazepam equivalent.\nTotal duration of use.\n\n\n\n\n2. Create line plot for:\nCreate a line plot of the daily maximum temperature for each patient during the first 7 days after admission. Use one colour for each treatment arm and make the mean temperature for each day bold for each patient."
+  },
+  {
     "objectID": "slides/quarto.html#what-is-quarto",
     "href": "slides/quarto.html#what-is-quarto",
     "title": "Quarto",
@@ -1187,27 +1208,6 @@
     "href": "takehome_exercises/day2.html#exercises",
     "title": "Day 2 - Take home exercise",
     "section": "Exercises",
-    "text": "Exercises\n\nTask 1: Data import\n\nRead data from R-cafe/day1/data/covid_cases.rds\nLoad the tidyverse meta-package into R\n\n\nsuppressPackageStartupMessages(library(tidyverse))\n\ncovid_cases &lt;- read_rds(\"../data/covid_cases.rds\")\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard? (refer to session 2 slides)\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\ncovid_cases &lt;- covid_cases %&gt;%\n  pivot_longer(\n    -date,\n    names_to = \"country\",\n    names_pattern = \"cases_(.+)\",\n    values_to = \"cases\"\n  ) %&gt;%\n  mutate(week = week(date)) %&gt;%\n  filter(cases &gt; -1, week &lt; 3 + 10)\n\n\n\n\n\n\n\nTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTip: data skimming and cleaning\n\n\n\n\n\n\nUse skimr::skim() such as in day 1 exercises to quickly look at the data\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\ntop_n &lt;- 5 # optional\ntop_countries &lt;- covid_cases %&gt;%\n  group_by(country) %&gt;%\n  summarise(total_cases = sum(cases)) %&gt;%\n  slice_max(total_cases, n = top_n) %&gt;%\n  pull(country)\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type (refer to [session 1 slides])(../slides/intro.qmd#/classes){target=“_blank”} using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\nplot_data &lt;- covid_cases %&gt;%\n  group_by(country) %&gt;%\n  mutate(total_cases = sum(cases)) %&gt;%\n  ungroup() %&gt;%\n  mutate(\n    country = fct_lump_n(country, n = top_n, w = total_cases, other_level = \"Others\") %&gt;%\n      fct_relevel(\"Others\", after = Inf)\n  ) %&gt;%\n  group_by(date, country) %&gt;%\n  summarise(total_cases = sum(cases)) %&gt;%\n  mutate(\n    pct_cases = total_cases / sum(total_cases) * 100\n  ) %&gt;%\n  drop_na() %&gt;%\n  suppressMessages()\n\n\n\n\n\n\n\nTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\ncovid_cases %&gt;%\n  group_by(date, country) %&gt;%\n  summarise(total_cases = sum(cases))\n\n`summarise()` has grouped output by 'date'. You can override using the\n`.groups` argument.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\ncovid_cases %&gt;%\n  group_by(country) %&gt;%\n  mutate(total_cases = sum(cases))\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\nplot_data %&gt;%\n  ggplot(aes(x = date, y = pct_cases, fill = country)) +\n  geom_area() +\n  scale_y_continuous(\n    \"Percent of total cases\",\n    breaks = seq(0, 100, 10),\n    labels = paste0(seq(0, 100, 10), \"%\")\n  ) +\n  scale_x_date(\n    \"Date\",\n    date_breaks = \"1 week\", date_labels = \"W%W\",\n    minor_breaks = NULL\n  ) +\n  scale_fill_discrete(\n    \"Country\",\n    labels = c(\n      \"chn\" = \"China\",\n      \"deu\" = \"Germany\",\n      \"esp\" = \"Spain\",\n      \"ita\" = \"Italy\",\n      \"usa\" = \"USA\"\n    )\n  ) +\n  ggtitle(\"Percentage of COVID case counts per country for the first 10 weeks of 2020\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
-  },
-  {
-    "objectID": "capstone_exercises/capstone.html",
-    "href": "capstone_exercises/capstone.html",
-    "title": "Capstone Exercise: Applying Lessons in a Mini-Project",
-    "section": "",
-    "text": "This project uses real clinical trial data from OUCRU. The data includes:\n\nMain Dataset:\n\nFile: “2-10-2020-_03TS_V1_Data.xls”\nContains most information. Variable explanations are in the statistical plan file (“03TS analysis plan V1.5 November 2020 Accept changes.docx”).\n\nTreatment Allocation:\n\nFile: “03TS_Randlist.xlsx”\nIncludes treatment arm allocations and a “dictionary” sheet explaining the four arms.\n\nViolations, Exclusions, Withdrawals:\n\nFile: “Protocol violations, exclusions, withdrawals.xlsx”\n\nStatistical Plan:\n\nFile: “03TS analysis plan V1.5 November 2020 Accept changes.docx”\nProvides guidance on specific variables."
-  },
-  {
-    "objectID": "capstone_exercises/capstone.html#a.-data-and-files",
-    "href": "capstone_exercises/capstone.html#a.-data-and-files",
-    "title": "Capstone Exercise: Applying Lessons in a Mini-Project",
-    "section": "",
-    "text": "This project uses real clinical trial data from OUCRU. The data includes:\n\nMain Dataset:\n\nFile: “2-10-2020-_03TS_V1_Data.xls”\nContains most information. Variable explanations are in the statistical plan file (“03TS analysis plan V1.5 November 2020 Accept changes.docx”).\n\nTreatment Allocation:\n\nFile: “03TS_Randlist.xlsx”\nIncludes treatment arm allocations and a “dictionary” sheet explaining the four arms.\n\nViolations, Exclusions, Withdrawals:\n\nFile: “Protocol violations, exclusions, withdrawals.xlsx”\n\nStatistical Plan:\n\nFile: “03TS analysis plan V1.5 November 2020 Accept changes.docx”\nProvides guidance on specific variables."
-  },
-  {
-    "objectID": "capstone_exercises/capstone.html#b.-objectives",
-    "href": "capstone_exercises/capstone.html#b.-objectives",
-    "title": "Capstone Exercise: Applying Lessons in a Mini-Project",
-    "section": "B. Objectives",
-    "text": "B. Objectives\n\nI. Data Preparation\nPrepare data for the following populations:\n\nIT-ITT, IM_ITT, IT_PP, IM_PP, IM_ALL.\nUse “03TS_Randlist.xlsx” for allocation of the first 272 participants.\nUse “Protocol violations, exclusions, withdrawals.xlsx” for filtering data per population.\n\n\n\nII. Table Creation\n\n1. Baseline Characteristics:\nSummarize as follows:\n\nNumeric Data: Report median, 1st/3rd quartiles, lowest, and highest values.\nCategorical Data: Report count (n) and percentage (%).\nNo formal statistical comparisons between study arms.\n\nCharacteristics to summarize:\n\nPatient Details:\n\nSex, age, BMI (BMI = ADM.WEIGHT / (ADM.HEIGHT)^2).\n\nPast Medical History:\n\nVariables like ADM.HYPERTENSION, ADM.MYOCARDIALINFART, ADM.SEVERELIVER, etc.\n\nPatient History:\n\nDuration of illness, incubation period, respiratory rate, platelet count, etc.\n\nSpecific Severity Scores:\n\nTetanus Severity, SOFA, APACHE II (calculated from variables).\n\n\n\n\n2. Adverse Events (AE):\nSummarize proportions of individuals with AEs, categorized by grade (I-IV) and relation to treatment.\n\nExclude specific events (e.g., “Nasogastric tube”, “Tracheostomy”).\nUse chi-square or Fisher’s exact test for comparisons.\nSevere adverse events are summarized separately for each population.\n\n\n\n\nIII. Plots\n\n1. Create histograms for:\n\nPipecuronium:\n\nTotal dose during hospital stay (ventilated patients).\nDuration of use (ventilated patients).\n\nDiazepam:\n\nTotal dose during hospital stay.\n\nMidazolam:\n\nTotal dose during hospital stay.\n\nBenzodiazepines:\n\nTotal dose as diazepam equivalent.\nTotal duration of use.\n\n\n\n\n2. Create line plot for:\nCreate a line plot of the daily maximum temperature for each patient during the first 7 days after admission. Use one colour for each treatment arm and make the mean temperature for each day bold for each patient."
+    "text": "Exercises\n\nTask 1: Data import\n\nRead data from R-cafe/day1/data/covid_cases.rds\nLoad the tidyverse meta-package into R\n\n\nsuppressPackageStartupMessages(library(tidyverse))\n\ncovid_cases &lt;- read_rds(\"../data/covid_cases.rds\")\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard? (refer to session 2 slides)\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\ncovid_cases &lt;- covid_cases %&gt;%\n  pivot_longer(\n    -date,\n    names_to = \"country\",\n    names_pattern = \"cases_(.+)\",\n    values_to = \"cases\"\n  ) %&gt;%\n  mutate(week = week(date)) %&gt;%\n  filter(cases &gt; -1, week &lt; 3 + 10)\n\n\n\n\n\n\n\nTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTip: data skimming and cleaning\n\n\n\n\n\n\nUse skimr::skim() such as in day 1 exercises to quickly look at the data\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\ntop_n &lt;- 5 # optional\ntop_countries &lt;- covid_cases %&gt;%\n  group_by(country) %&gt;%\n  summarise(total_cases = sum(cases)) %&gt;%\n  slice_max(total_cases, n = top_n) %&gt;%\n  pull(country)\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type (refer to session 1 slides using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\nplot_data &lt;- covid_cases %&gt;%\n  group_by(country) %&gt;%\n  mutate(total_cases = sum(cases)) %&gt;%\n  ungroup() %&gt;%\n  mutate(\n    country = fct_lump_n(country, n = top_n, w = total_cases, other_level = \"Others\") %&gt;%\n      fct_relevel(\"Others\", after = Inf)\n  ) %&gt;%\n  group_by(date, country) %&gt;%\n  summarise(total_cases = sum(cases)) %&gt;%\n  mutate(\n    pct_cases = total_cases / sum(total_cases) * 100\n  ) %&gt;%\n  drop_na() %&gt;%\n  suppressMessages()\n\n\n\n\n\n\n\nTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\ncovid_cases %&gt;%\n  group_by(date, country) %&gt;%\n  summarise(total_cases = sum(cases))\n\n`summarise()` has grouped output by 'date'. You can override using the\n`.groups` argument.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\ncovid_cases %&gt;%\n  group_by(country) %&gt;%\n  mutate(total_cases = sum(cases))\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\nplot_data %&gt;%\n  ggplot(aes(x = date, y = pct_cases, fill = country)) +\n  geom_area() +\n  scale_y_continuous(\n    \"Percent of total cases\",\n    breaks = seq(0, 100, 10),\n    labels = paste0(seq(0, 100, 10), \"%\")\n  ) +\n  scale_x_date(\n    \"Date\",\n    date_breaks = \"1 week\", date_labels = \"W%W\",\n    minor_breaks = NULL\n  ) +\n  scale_fill_discrete(\n    \"Country\",\n    labels = c(\n      \"chn\" = \"China\",\n      \"deu\" = \"Germany\",\n      \"esp\" = \"Spain\",\n      \"ita\" = \"Italy\",\n      \"usa\" = \"USA\"\n    )\n  ) +\n  ggtitle(\"Percentage of COVID case counts per country for the first 10 weeks of 2020\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
   }
 ]
