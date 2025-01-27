@@ -1,29 +1,64 @@
 ---
 title: "Capstone Exercise: Applying Lessons in a Mini-Project"
 author: "Tran Thai Hung"
-format: 
-  html:
-    code-folding: show
+output: 
+  html_document:
+    code_folding: show
+TOC: TRUE
 ---
+## Notes and instructions
+
+::: callout-note
+## Get capstone project
+
+On Github Desktop
+
+-   Cloned [R-cafe repository](https://github.com/OUCRU-Modelling/R-cafe)
+-   Created your own branch on the repository
+-   Checkout your own branch
+:::
+
+::: callout-note
+## Answer script
+
+You are expected to save your answer under `R-cafe/Capstone exercises/capstone.R`
+:::
+
+::: callout-note
+## Variations in answers
+
+It is expected that the exercise answers will vary, and any result that fulfills the objectives will be acceptable.
+:::
+
+::: callout-note
+## Samples
+
+The samples are provided in `samples` folder to illustrate what might be included in the results; you may add other elements or make changes based on your experience and needs.
+:::
 
 ## A. Data and Files
 
 This project uses real clinical trial data from OUCRU. The data includes:
 
 1. **Main Dataset**:
-    - **File**: "2-10-2020-_03TS_V1_Data.xls"
-    - Contains most information. Variable explanations are in the statistical plan file ("03TS analysis plan V1.5 November 2020 Accept changes.docx").
+    - **File**: `2-10-2020-_03TS_V1_Data.xls`
+    - Contains most information. Variable explanations are in the statistical plan file (`03TS analysis plan V1.5 November 2020 Accept changes.docx`).
     
 2. **Treatment Allocation**:
-    - **File**: "03TS_Randlist.xlsx"
-    - Includes treatment arm allocations and a "dictionary" sheet explaining the four arms.
+    - **File**: `03TS_Randlist.xlsx`
+    - Includes treatment arm allocations and a `dictionary` sheet explaining the four arms.
     
 3. **Violations, Exclusions, Withdrawals**:
-    - **File**: "Protocol violations, exclusions, withdrawals.xlsx"
+    - **File**: `Protocol violations, exclusions, withdrawals.xlsx`
+    - Any ids listed in the files will be excluded accordingly.
+
+4. **Adverse events**:
+    - **File**: `AE.SAE DATA SHEET.xls`
+    - Includes adverse events information.
     
-4. **Statistical Plan**:
-    - **File**: "03TS analysis plan V1.5 November 2020 Accept changes.docx"
-    - Provides guidance on specific variables.
+5. **Statistical Plan**:
+    - **File**: `03TS analysis plan V1.5 November 2020 Accept changes.docx`
+    - Provides guidance on specific variables. Read this for more details to fulfill your objectives.
 
 ## B. Objectives
 
@@ -32,9 +67,9 @@ Prepare data for the following populations:
 
 - IT-ITT, IM_ITT, IT_PP, IM_PP, IM_ALL.
 
-- Use "03TS_Randlist.xlsx" for allocation of the first 272 participants.
+- Use `03TS_Randlist.xlsx` for allocation of the first 272 participants.
 
-- Use "Protocol violations, exclusions, withdrawals.xlsx" for filtering data per population.
+- Use `Protocol violations, exclusions, withdrawals.xlsx` for filtering data per population.
 
 ### II. Table Creation
 
@@ -84,7 +119,24 @@ Summarize proportions of individuals with AEs, categorized by grade (I-IV) and r
     1. Total dose as diazepam equivalent.
     2. Total duration of use.
 
-#### 2. Create line plot for:
-Create a line plot of the daily maximum temperature for each patient during the first 7 days after admission. Use one colour for each treatment arm and make the mean temperature for each day bold for each patient.
+::: {.callout-tip collapse="true"}
+### Tip: ggplot2, gridExtra
 
+- ggplot2 is a powerful package for creating plots, offering many functions that support various features. For example, it can create violin plots (`geom_violin`), boxplots (`geom_boxplot`), histograms (`geom_histogram` with the `binwidth` argument to adjust the bins), scatter plots (`geom_point`), and use `geom_segment` to display the mean and confidence intervals.
+- gridExtra is a package used to arrange multiple plots in a single figure. Try using `grid.arrange`, or you may opt for another package that serves the same function.
+
+:::
+
+#### 2. Create line plot for:
+Create a line plot of the daily maximum temperature for each patient during the first 7 days after admission. Use one colour for each treatment arm and make the mean temperature for each day bold for each patient. Sample is not provided for this exercise.
+
+::: {.callout-tip collapse="true"}
+### Tip: Line plot
+
+- Compute Mean: Use `dplyr::group_by()` and `summarize()` to calculate the mean temperature for each day and treatment arm.
+- Plot Individual Lines: Use `geom_line()` with `aes(group = usubjid)` for individual patient data.
+- Add Bold Line for Mean: Use a second `geom_line()` with the computed mean data and adjust the size parameter for a bold line.
+
+
+:::
 ---
