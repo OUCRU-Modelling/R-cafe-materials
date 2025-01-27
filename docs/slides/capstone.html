@@ -125,7 +125,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a.-data-and-files" id="toc-a.-data-and-files" class="nav-link active" data-scroll-target="#a.-data-and-files">A. Data and Files</a></li>
+  <li><a href="#notes-and-instructions" id="toc-notes-and-instructions" class="nav-link active" data-scroll-target="#notes-and-instructions">Notes and instructions</a></li>
+  <li><a href="#a.-data-and-files" id="toc-a.-data-and-files" class="nav-link" data-scroll-target="#a.-data-and-files">A. Data and Files</a></li>
   <li><a href="#b.-objectives" id="toc-b.-objectives" class="nav-link" data-scroll-target="#b.-objectives">B. Objectives</a>
   <ul class="collapse">
   <li><a href="#i.-data-preparation" id="toc-i.-data-preparation" class="nav-link" data-scroll-target="#i.-data-preparation">I. Data Preparation</a></li>
@@ -163,28 +164,94 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="notes-and-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="notes-and-instructions">Notes and instructions</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Get capstone project
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On Github Desktop</p>
+<ul>
+<li>Cloned <a href="https://github.com/OUCRU-Modelling/R-cafe">R-cafe repository</a></li>
+<li>Created your own branch on the repository</li>
+<li>Checkout your own branch</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer script
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You are expected to save your answer under <code>R-cafe/Capstone exercises/capstone.R</code></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variations in answers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is expected that the exercise answers will vary, and any result that fulfills the objectives will be acceptable.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Samples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The samples are provided in <code>samples</code> folder to illustrate what might be included in the results; you may add other elements or make changes based on your experience and needs.</p>
+</div>
+</div>
+</section>
 <section id="a.-data-and-files" class="level2">
 <h2 class="anchored" data-anchor-id="a.-data-and-files">A. Data and Files</h2>
 <p>This project uses real clinical trial data from OUCRU. The data includes:</p>
 <ol type="1">
 <li><strong>Main Dataset</strong>:
 <ul>
-<li><strong>File</strong>: “2-10-2020-_03TS_V1_Data.xls”</li>
-<li>Contains most information. Variable explanations are in the statistical plan file (“03TS analysis plan V1.5 November 2020 Accept changes.docx”).</li>
+<li><strong>File</strong>: <code>2-10-2020-_03TS_V1_Data.xls</code></li>
+<li>Contains most information. Variable explanations are in the statistical plan file (<code>03TS analysis plan V1.5 November 2020 Accept changes.docx</code>).</li>
 </ul></li>
 <li><strong>Treatment Allocation</strong>:
 <ul>
-<li><strong>File</strong>: “03TS_Randlist.xlsx”</li>
-<li>Includes treatment arm allocations and a “dictionary” sheet explaining the four arms.</li>
+<li><strong>File</strong>: <code>03TS_Randlist.xlsx</code></li>
+<li>Includes treatment arm allocations and a <code>dictionary</code> sheet explaining the four arms.</li>
 </ul></li>
 <li><strong>Violations, Exclusions, Withdrawals</strong>:
 <ul>
-<li><strong>File</strong>: “Protocol violations, exclusions, withdrawals.xlsx”</li>
+<li><strong>File</strong>: <code>Protocol violations, exclusions, withdrawals.xlsx</code></li>
+<li>Any ids listed in the files will be excluded accordingly.</li>
+</ul></li>
+<li><strong>Adverse events</strong>:
+<ul>
+<li><strong>File</strong>: <code>AE.SAE DATA SHEET.xls</code></li>
+<li>Includes adverse events information.</li>
 </ul></li>
 <li><strong>Statistical Plan</strong>:
 <ul>
-<li><strong>File</strong>: “03TS analysis plan V1.5 November 2020 Accept changes.docx”</li>
-<li>Provides guidance on specific variables.</li>
+<li><strong>File</strong>: <code>03TS analysis plan V1.5 November 2020 Accept changes.docx</code></li>
+<li>Provides guidance on specific variables. Read this for more details to fulfill your objectives.</li>
 </ul></li>
 </ol>
 </section>
@@ -195,8 +262,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Prepare data for the following populations:</p>
 <ul>
 <li><p>IT-ITT, IM_ITT, IT_PP, IM_PP, IM_ALL.</p></li>
-<li><p>Use “03TS_Randlist.xlsx” for allocation of the first 272 participants.</p></li>
-<li><p>Use “Protocol violations, exclusions, withdrawals.xlsx” for filtering data per population.</p></li>
+<li><p>Use <code>03TS_Randlist.xlsx</code> for allocation of the first 272 participants.</p></li>
+<li><p>Use <code>Protocol violations, exclusions, withdrawals.xlsx</code> for filtering data per population.</p></li>
 </ul>
 </section>
 <section id="ii.-table-creation" class="level3">
@@ -263,10 +330,49 @@ ul.task-list li input[type="checkbox"] {
 <li>Total duration of use.</li>
 </ol></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip: ggplot2, gridExtra
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>ggplot2 is a powerful package for creating plots, offering many functions that support various features. For example, it can create violin plots (<code>geom_violin</code>), boxplots (<code>geom_boxplot</code>), histograms (<code>geom_histogram</code> with the <code>binwidth</code> argument to adjust the bins), scatter plots (<code>geom_point</code>), and use <code>geom_segment</code> to display the mean and confidence intervals.</li>
+<li>gridExtra is a package used to arrange multiple plots in a single figure. Try using <code>grid.arrange</code>, or you may opt for another package that serves the same function.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="create-line-plot-for" class="level4">
 <h4 class="anchored" data-anchor-id="create-line-plot-for">2. Create line plot for:</h4>
-<p>Create a line plot of the daily maximum temperature for each patient during the first 7 days after admission. Use one colour for each treatment arm and make the mean temperature for each day bold for each patient.</p>
+<p>Create a line plot of the daily maximum temperature for each patient during the first 7 days after admission. Use one colour for each treatment arm and make the mean temperature for each day bold for each patient. Sample is not provided for this exercise.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip: Line plot
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Compute Mean: Use <code>dplyr::group_by()</code> and <code>summarize()</code> to calculate the mean temperature for each day and treatment arm.</li>
+<li>Plot Individual Lines: Use <code>geom_line()</code> with <code>aes(group = usubjid)</code> for individual patient data.</li>
+<li>Add Bold Line for Mean: Use a second <code>geom_line()</code> with the computed mean data and adjust the size parameter for a bold line.</li>
+</ul>
+</div>
+</div>
+</div>
 <hr>
 
 
