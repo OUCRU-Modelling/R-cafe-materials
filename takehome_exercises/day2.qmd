@@ -120,7 +120,7 @@ top_countries <- covid_cases %>%
 
     - So that we only keep the names of countries in the top 5 (generated above). **Countries on in the top 5 will be changed to `"Others"`**
 
-    - **Turn this column into a `factor` type** (refer to [session 1 slides])(../slides/intro.qmd#/classes){target="_blank"} using the [`forcats`](https://forcats.tidyverse.org/){target="_blank"} package (already in `tidyverse`)
+    - **Turn this column into a `factor` type** (refer to [session 1 slides](../slides/intro.qmd#/classes){target="_blank"} using the [`forcats`](https://forcats.tidyverse.org/){target="_blank"} package (already in `tidyverse`)
 
     - Group the data again, this time, **group by date and country**
 
