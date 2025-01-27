@@ -21,7 +21,7 @@ On Github Desktop
 ::: callout-note
 ## Answer script
 
-You are expected to save your answer under `R-cafe/Capstone exercises/capstone.R`
+You are expected to save your answer under `R-cafe/capstone_exercises/capstone.R`
 :::
 
 ::: callout-note
@@ -103,7 +103,7 @@ Summarize proportions of individuals with AEs, categorized by grade (I-IV) and r
 
 ### III. Plots
 
-#### 1. Create histograms for:
+#### 1. Create plots for:
 
 - **Pipecuronium**:
     1. Total dose during hospital stay (ventilated patients).
