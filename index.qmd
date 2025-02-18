@@ -57,7 +57,13 @@ format: html
 		- Grammar of graphics
 	- Exercise
   
-3. Quarto & Markdown (and related) (day 3)
+3. [Quarto & `gtsummary` (day 3)](slides/gtsummary.qmd){target="_blank"}
+	- [Intro to Quarto](slides/quarto.qmd){target="_blank"}
+	- Reproducible tables
+		- Descriptive tables
+		- Statistical inference
+		- Univariate analysis
+		- Multivariate analysis
 
 ## Take-home exercises
 1. [Initial Data Analysis - IDA (with `skimr`)](takehome_exercises/day1.qmd){target="_blank"}
