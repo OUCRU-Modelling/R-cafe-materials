@@ -7,7 +7,11 @@ author:
 date: 'last-modified'
 date-format: '[Last version:] MMMM DD, YYYY'
 format: 
-  html: default
+  html: 
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
 toc: TRUE
 lof: FALSE
 lot: FALSE
