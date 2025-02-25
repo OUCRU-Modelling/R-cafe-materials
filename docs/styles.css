@@ -1,0 +1,26 @@
+/* css styles */
+
+.reveal .slide-logo {
+  height: 30px !important;
+  width: 112px !important;
+  max-height: unset !important;
+}
+
+.codewindow .textarea .sourceCode {
+  text-wrap: balance;
+}
+
+.medium-text-size {
+  font-size: 30px !important;
+}
+
+div.cell-output-display div.pagedtable-wrapper table.table {
+  font-size: 0.6em !important;
+}
+
+.inline-img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 30px;
+}
