@@ -27,7 +27,6 @@ editor: visual
 #load library
 library(readxl)
 library(dplyr)
-library(reshape2)
 library(data.table)
 library(stringr)
 library(ggplot2)
@@ -45,7 +44,7 @@ Import all the sheets in raw data `2-10-2020-_03TS_V1_Data.xls`. Convert "UNKNOW
 
 ```{r load-data, message=FALSE, warning=FALSE}
 # Define file path
-daily_file_path <- file.path("data", "2-10-2020-_03TS_V1_Data.xls")
+daily_file_path <- here::here("data", "2-10-2020-_03TS_V1_Data.xls")
 
 # Define sheets to import
 sheets <- c("ENR", "ADM", "VENT", "VENT_VENTILATION", "VENT_TracheSupp", "DAILY", 
@@ -89,7 +88,7 @@ Import the allocation data of treatment arm `03TS_Randlist.xlsx` and recode the 
 <summary>[Import random allocation data]{style="color:blue"}</summary>
 
 ```{r}
-allocation_file_path <- file.path("data", "03TS_Randlist.xlsx")
+allocation_file_path <- here::here("data", "03TS_Randlist.xlsx")
 
 
 # Read and process allocation data
@@ -117,7 +116,7 @@ Import the inclusion and exclusion data `Protocol violations, exclusions, withdr
 <summary>[Import inclusion and exclusion data]{style="color:blue"}</summary>
 
 ```{r}
-violations_file_path <- file.path("data", "Protocol violations, exclusions, withdrawals.xlsx")  
+violations_file_path <- here::here("data", "Protocol violations, exclusions, withdrawals.xlsx")  
 
 # Import all sheets from the Protocol violations file
 all_sheets <- excel_sheets(violations_file_path)  # Get sheet names
@@ -334,7 +333,7 @@ generate_baseline_summary(baseline_data)
 
 </details>
 
-::: {.column-margin}
+::: column-margin
 Apply our `generate_baseline_summary` function to make tables for 5 different populations. Note how each population is filtered and grouped into treatment arms according to the `Statistical analysis plan`
 :::
 
@@ -430,4 +429,5 @@ generate_baseline_summary(baseline_data)
 :::
 
 # 3. Coming up next
+
 Could you apply these hints to Adverse Events tables?
