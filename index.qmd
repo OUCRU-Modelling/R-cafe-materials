@@ -81,3 +81,6 @@ format: html
 	- Statistical tests, e.g. t-test, chi-sq, fisher-exact, OR, etc.
 4. Generate report with Quarto
 	- Citation (inline footnote and reference)
+
+## Capstone hint
+1. [Capstone hint 1](slides/capstone_hint_1.qmd)
