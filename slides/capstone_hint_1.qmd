@@ -7,12 +7,7 @@ author:
 date: 'last-modified'
 date-format: '[Last version:] MMMM DD, YYYY'
 format: 
-  docx:
-    reference-doc: templates\custom-reference-doc.docx
   html: default
-  revealjs:
-    scrollable: true
-    slide-number: true
 toc: TRUE
 lof: FALSE
 lot: FALSE
