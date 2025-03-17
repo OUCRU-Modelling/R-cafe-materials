@@ -46,8 +46,20 @@ Import all the sheets in raw data `2-10-2020-_03TS_V1_Data.xls`. Convert "UNKNOW
 daily_file_path <- here::here("data", "2-10-2020-_03TS_V1_Data.xls")
 
 # Define sheets to import
-sheets <- c("ENR", "ADM", "VENT", "VENT_VENTILATION", "VENT_TracheSupp", "DAILY", 
-            "DAILY_DAILY", "COMP", "FU", "DAILY_FU", "DAILY_FU_GridFU", "S_AE")
+sheets <- c(
+  "ENR",
+  "ADM",
+  "VENT",
+  "VENT_VENTILATION",
+  "VENT_TracheSupp",
+  "DAILY",
+  "DAILY_DAILY",
+  "COMP",
+  "FU",
+  "DAILY_FU",
+  "DAILY_FU_GridFU",
+  "S_AE"
+)
 
 # Read and store data in a named list
 data_list <- lapply(sheets, function(sheet) {
@@ -55,15 +67,25 @@ data_list <- lapply(sheets, function(sheet) {
   
   # Replace "UNKNOWN" with NA, convert "Y"/"N" to "yes"/"no"
   df <- df %>%
-    mutate(across(where(is.character), ~ case_when(
-      .x == "Y" ~ "yes",
-      .x == "N" ~ "no",
-      .x == "UNKNOWN" ~ NA_character_,
-      TRUE ~ .x
-    ))) %>%
-    mutate(across(where(~ all(.x %in% c("yes", "no", NA), na.rm = TRUE)), 
-                  ~ factor(.x, levels = c("no", "yes"), labels = c(0, 1), exclude = NULL)))  # Ensure both levels exist
-
+    mutate(across(
+      where(is.character),
+      ~ case_when(
+        .x == "Y" ~ "yes",
+        .x == "N" ~ "no",
+        .x == "UNKNOWN" ~ NA_character_,
+        TRUE ~ .x
+      )
+    )) %>%
+    mutate(across(
+      where( ~ all(.x %in% c("yes", "no", NA), na.rm = TRUE)),
+      ~ factor(
+        .x,
+        levels = c("no", "yes"),
+        labels = c(0, 1),
+        exclude = NULL
+      )
+    ))  # Ensure both levels exist
+  
   setNames(df, tolower(names(df)))
 })
 
@@ -73,7 +95,7 @@ list2env(setNames(data_list, tolower(sheets)), envir = .GlobalEnv)
 
 # another method
 # for (sheet in sheets) {
-#   assign(tolower(sheet), read_excel(daily_file_path, sheet = sheet) %>%  
+#   assign(tolower(sheet), read_excel(daily_file_path, sheet = sheet) %>%
 #            setNames(tolower(names(.))))
 # }
 ```
@@ -91,18 +113,21 @@ allocation_file_path <- here::here("data", "03TS_Randlist.xlsx")
 
 
 # Read and process allocation data
-allocation_data <- read_excel(allocation_file_path, sheet = "Allocation") %>%  
+allocation_data <- read_excel(allocation_file_path, sheet = "Allocation") %>%
   setNames(tolower(names(.)))
 
 randolist <- allocation_data %>%  filter(row_number() %in% c(1:272)) %>%
-  rename(arm = r.arm) %>%  
-      mutate(pat.id=str_replace(pat.id,".*-", ""),
-             usubjid=paste("003",pat.id,sep="-"),
-             arm = case_when(
-               arm == "14 ampoules: TETANUS ANTITOXIN (IM) + 2 prefilled-syringes : TETAGAM®P (intrathecal))" ~ "equine and intrathecal",
-               arm == "14 ampoules: TETANUS ANTITOXIN (IM)" ~ "equine and sham",
-               arm == "12 prefilled-syringes : TETAGAM®P (IM) + 2 prefilled-syringes : TETAGAM®P (intrathecal))" ~ "human and intrathecal",
-               arm == "12 prefilled-syringes : TETAGAM®P (IM)" ~ "human and sham"))
+  rename(arm = r.arm) %>%
+  mutate(
+    pat.id = str_replace(pat.id, ".*-", ""),
+    usubjid = paste("003", pat.id, sep = "-"),
+    arm = case_when(
+      arm == "14 ampoules: TETANUS ANTITOXIN (IM) + 2 prefilled-syringes : TETAGAM®P (intrathecal))" ~ "equine and intrathecal",
+      arm == "14 ampoules: TETANUS ANTITOXIN (IM)" ~ "equine and sham",
+      arm == "12 prefilled-syringes : TETAGAM®P (IM) + 2 prefilled-syringes : TETAGAM®P (intrathecal))" ~ "human and intrathecal",
+      arm == "12 prefilled-syringes : TETAGAM®P (IM)" ~ "human and sham"
+    )
+  )
 
 ```
 
@@ -115,7 +140,7 @@ Import the inclusion and exclusion data `Protocol violations, exclusions, withdr
 <summary>[Import inclusion and exclusion data]{style="color:blue"}</summary>
 
 ```{r}
-violations_file_path <- here::here("data", "Protocol violations, exclusions, withdrawals.xlsx")  
+violations_file_path <- here::here("data", "Protocol violations, exclusions, withdrawals.xlsx")
 
 # Import all sheets from the Protocol violations file
 all_sheets <- excel_sheets(violations_file_path)  # Get sheet names
@@ -135,7 +160,7 @@ for (name in names(violations_data)) {
   assign(modified_name, violations_data[[name]])
 }
 
-im_itt <- im_itt %>% 
+im_itt <- im_itt %>%
   rename(usubjid = "id")
 ```
 
@@ -157,8 +182,18 @@ excluded_subjects <- unique(c(pilot$usubjid, withdrawals$usubjid))
 
 # List of dataset names
 dataset_names <- c(
-  "vent", "enr", "adm", "vent_ventilation", "vent_trachesupp",
-  "daily", "daily_daily", "comp", "fu", "daily_fu", "daily_fu_gridfu", "s_ae"
+  "vent",
+  "enr",
+  "adm",
+  "vent_ventilation",
+  "vent_trachesupp",
+  "daily",
+  "daily_daily",
+  "comp",
+  "fu",
+  "daily_fu",
+  "daily_fu_gridfu",
+  "s_ae"
 )
 
 # Apply filtering to all datasets and reassign them
@@ -179,14 +214,16 @@ Relabel variable and add units. So they will appear nicely in the table later. Y
 <summary>[Baseline data]{style="color:blue"}</summary>
 
 ```{r}
-baseline_data <- enr %>% 
+baseline_data <- enr %>%
   select(-entry) %>%
-  left_join(adm, by = "usubjid") %>% 
+  left_join(adm, by = "usubjid") %>%
   left_join(randolist %>% select(usubjid, arm), by = "usubjid")
 
-baseline_data_raw <- upData(baseline_data,
-    bmi = weight/((height/100)^2), #new variable derived from weight and height
-   labels = c(
+baseline_data_raw <- upData(
+  baseline_data,
+  bmi = weight / ((height / 100) ^ 2),
+  #new variable derived from weight and height
+  labels = c(
     age = "Age (years)",
     icudays = "Days in ICU",
     sex = "Sex",
@@ -411,14 +448,21 @@ generate_baseline_summary(baseline_data)
 <summary>Click to expand/collapse</summary>
 
 ```{r}
-baseline_data <- baseline_data_raw %>% 
-  mutate( 
-    Arm=recode(arm, "equine and intrathecal" = 0, 
-               "equine and sham" = 0,
-               "human and sham" = 1,
-               "human and intrathecal" = 1),
-    Arm=ifelse(prehtig==1,2,Arm),
-    Arm=factor(Arm, levels=c(0,1,2), labels=c("Equine IM","Human IM","Equine IM pre hospital"))
+baseline_data <- baseline_data_raw %>%
+  mutate(
+    Arm = recode(
+      arm,
+      "equine and intrathecal" = 0,
+      "equine and sham" = 0,
+      "human and sham" = 1,
+      "human and intrathecal" = 1
+    ),
+    Arm = ifelse(prehtig == 1, 2, Arm),
+    Arm = factor(
+      Arm,
+      levels = c(0, 1, 2),
+      labels = c("Equine IM", "Human IM", "Equine IM pre hospital")
+    )
   )
 
 generate_baseline_summary(baseline_data)
@@ -427,6 +471,357 @@ generate_baseline_summary(baseline_data)
 </details>
 :::
 
-# 3. Coming up next
+# 3. Compute Apache II score
 
-Could you apply these hints to Adverse Events tables?
+<details>
+
+<summary>[Preparing data for Apache II scoring]{style="color:blue"}</summary>
+
+```{r apache ii data}
+## Calculate scores
+
+### Create the data table for apache.ii
+
+apache.ii_data <-
+  adm %>% select(usubjid, maxtemp, gcs, resp, fio2, spo2, pao2, ph, plt, wbc, hct, maxhr, minhr, maxsbp, worstsbp, worstdbp, bili, na, k, creat, electivesurgery, emergencysurgery, immunocompromised, severeresp, cardiacfailureiv, diawithchronic, severeliver) %>%
+   left_join(enr, by="usubjid") %>% select (usubjid, age, randtc, maxtemp, gcs, resp, fio2, spo2, pao2, ph, plt, wbc, hct, maxhr, minhr, maxsbp, worstsbp, worstdbp, bili, na, k, creat, electivesurgery, emergencysurgery, immunocompromised, severeresp, cardiacfailureiv, diawithchronic, severeliver) %>%
+  mutate(
+    temp = structure(maxtemp, label="Maximum temperature during 1st day"),
+    worstdbp = structure(worstdbp, label="Worst DBP"),
+    worstsbp = structure(worstsbp, label="Worst SBP"),
+    rr = structure(resp, label="Respiratory rate"),
+    fio2 = structure(fio2, label="FiO2"),
+    spo2 = structure(spo2, label="SpO2"),
+    pao2 = structure(pao2, label="PAO2"),
+    ph = structure(ph, label="PH"),
+    plt = structure(plt, label="Platelet count"),
+    wbc = structure(wbc, label="White blood cell count"),
+    hct = structure(hct, label="Haematorcrit"),
+    hr = pmax(maxhr, minhr),
+    hr = structure(hr, label="HR"),
+    maxsbp = structure(maxsbp, label="Max SBP"),
+    sodium = structure(na, label="Sodium"),
+    potassium = structure(k, label="Potassium"),
+    creatinine = structure(creat, label="Creatinine"),
+    map = worstdbp + (worstsbp-worstdbp)/3,
+    map = structure(map, label="Mean Arterial Pressure"),
+    gcs = structure(gcs, label="GCS"),
+    age = structure(age, label="Age", unit="years"),
+    elective = electivesurgery,
+    emergency = emergencysurgery,
+    chronic = case_when(
+      immunocompromised == "1" ~ 1,
+      severeresp == "1" ~ 1,
+      cardiacfailureiv == "1" ~ 1,
+      diawithchronic == "1" ~ 1,
+      severeliver == "1" ~ 1,
+      TRUE ~ 0
+    )
+,
+    chronic = factor(chronic, levels=c(0,1), labels=c("0","1"))
+  ) %>% 
+  select(usubjid, temp, map, hr, rr, fio2, pao2, ph, sodium, potassium, creatinine, hct, wbc, gcs, age, elective, emergency, chronic)
+```
+
+</details>
+
+<details>
+
+<summary>[Write function to compute Apache II score]{style="color:blue"}</summary>
+
+```{r apache ii}
+calculate_apache_ii <- function(data) {
+  data <- data %>%
+    mutate(
+      temp_score = case_when(
+        temp >= 41 ~ 4,
+        temp >= 39 ~ 3,
+        temp >= 38.5 ~ 1,
+        TRUE ~ 0
+      ),
+      map_score = case_when(
+        map >= 160 | map < 40 ~ 4,
+        map >= 130 | map < 50 ~ 3,
+        map >= 110 | map < 70 ~ 2,
+        TRUE ~ 0
+      ),
+      hr_score = case_when(
+        hr >= 180 | hr < 40 ~ 4,
+        hr >= 140 | hr < 55 ~ 3,
+        hr >= 110 | hr < 70 ~ 2,
+        TRUE ~ 0
+      ),
+      rr_score = case_when(
+        rr >= 50 | rr < 6 ~ 4,
+        rr >= 35 ~ 3,
+        rr < 10 ~ 2,
+        rr >= 25 | rr < 12 ~ 1,
+        TRUE ~ 0
+      ),
+      pao2_score = case_when(
+        fio2 > 0.5 ~ 0,
+        pao2 < 55 ~ 4,
+        pao2 <= 60 ~ 2,
+        pao2 <= 70 ~ 1,
+        TRUE ~ 0
+      ),
+      ph_score = case_when(
+        ph >= 7.7 | ph < 7.15 ~ 4,
+        ph >= 7.6 | ph < 7.25 ~ 3,
+        ph < 7.33 ~ 2,
+        ph >= 7.5 ~ 1,
+        TRUE ~ 0
+      ),
+      sodium_score = case_when(
+        sodium >= 180 | sodium <= 110 ~ 4,
+        sodium >= 160 | sodium < 120 ~ 3,
+        sodium >= 155 | sodium < 130 ~ 2,
+        sodium >= 150 ~ 1,
+        TRUE ~ 0
+      ),
+      potassium_score = case_when(
+        potassium >= 7 | potassium < 2.5 ~ 4,
+        potassium >= 6 ~ 3,
+        potassium < 3 ~ 2,
+        potassium >= 5.5 | potassium < 3.5 ~ 1,
+        TRUE ~ 0
+      ),
+      creatinine_score = case_when(
+        creatinine >= 210 ~ 4,
+        creatinine >= 178 ~ 3,
+        creatinine >= 133 | creatinine < 54 ~ 2,
+        TRUE ~ 0
+      ),
+      hct_score = case_when(
+        hct >= 60 | hct < 20 ~ 4,
+        hct >= 50 | hct < 30 ~ 2,
+        hct >= 46 ~ 1,
+        TRUE ~ 0
+      ),
+      wbc_score = case_when(
+        wbc >= 40 | wbc < 1 ~ 4,
+        wbc >= 20 | wbc < 3 ~ 2,
+        wbc >= 15 ~ 1,
+        TRUE ~ 0
+      ),
+      gcs_score = 15 - gcs,
+      age_score = case_when(
+        age >= 75 ~ 6,
+        age >= 65 ~ 5,
+        age >= 55 ~ 3,
+        age >= 45 ~ 2,
+        TRUE ~ 0
+      ),
+      elective_score = case_when(
+        elective == "1" ~ 5,
+        TRUE ~ 0
+      ),
+      emergency_score = case_when(
+        emergency == "1" ~ 5,
+        TRUE ~ 0
+      ),
+      chronic_score = case_when(
+        chronic == "1" ~ 5,
+        TRUE ~ 0
+      ),
+      apache_ii_score = temp_score + map_score + hr_score + rr_score +
+        pao2_score + ph_score + sodium_score + potassium_score + creatinine_score +
+        hct_score + wbc_score + gcs_score + age_score + elective_score + emergency_score + chronic_score,
+      apache_ii_score = structure(apache_ii_score, label = "Apache II score")
+    )
+  return(data)
+}
+```
+
+</details>
+
+<details>
+
+<summary>[Apply the `calculate_apache_ii` to `apache.ii_data` and update the score to `baseline_data_raw`]{style="color:blue"}</summary>
+
+```{r apache ii score}
+apache.ii.score <- calculate_apache_ii(apache.ii_data)
+baseline_data_raw <- baseline_data_raw %>% left_join(apache.ii.score %>% select(usubjid, apache_ii_score), by = "usubjid")
+```
+
+</details>
+
+Because we has wrapped the repeated code to create baseline table into `generate_baseline_summary` function, we just need to add the `apache_ii_score` variable in the `select` part of `generate_baseline_summary` once and then apply it to our subset data.
+
+<details>
+
+<summary>[Update `generate_baseline_summary` function]{style="color:blue"}</summary>
+
+```{r}
+generate_baseline_summary <- function(baseline_data) {
+  library(dplyr)
+  library(gtsummary)
+  
+  # Select relevant columns
+  baseline_data <- baseline_data %>%
+    select(usubjid, age, sex, bmi, source, tetanus, icudays, outcome, hypertension, 
+           myocardialinfart, angina, perivascular, chronicpul, connectivetissue, 
+           mildliver, hemiplegia, diawithchronic, severeliver, aids, cardiacfailureiii, 
+           cerebrovascular, severeresp, pepticulcer, diabetes, severekidney, malignancy, 
+           tumour, dementia, renalfailure, electivesurgery, emergencysurgery, timetoadm, 
+           incubationperiod, incuperiodonset, wound, diffbreath, ablettscore, asa, 
+           maxtemp, resp, fio2, spo2, pao2, ph, plt, wbc, hct, maxhr, minhr, maxsbp, 
+           worstdbp, worstsbp, vaso, na, k, creat, apache_ii_score, Arm) %>% #add apache_ii_score
+    as.data.frame(stringsAsFactors = FALSE)
+  
+  # Identify factor variables, excluding "Arm"
+  factor_vars <- setdiff(names(baseline_data)[sapply(baseline_data, is.factor)], "Arm")
+  
+  # Create a formula dynamically: c(var1, var2, ...) ~ "1"
+  value_formula <- as.formula(paste("c(", paste(factor_vars, collapse = ", "), ") ~ '1'"))
+  
+  # Generate the summary table
+  baseline_table <- baseline_data %>%
+    select(-usubjid) %>%
+    tbl_summary(
+      by = Arm, 
+      missing = "no", # Handle missing values
+      statistic = list(
+        all_continuous() ~ "{median} ({p25}, {p75})", 
+        all_categorical() ~ "{n}/{N} ({p}%)"
+      ),
+      digits = list(all_continuous() ~ 1),
+      type = list(fio2 ~ "continuous"),
+      value = value_formula  # Apply "1" to all factor variables
+    ) %>%
+    modify_header(label ~ "Variable") %>%
+    bold_labels()
+  
+  return(baseline_table)
+}
+
+```
+
+</details>
+
+::: panel-tabset
+### Baseline table IT_ITT
+
+<details>
+
+<summary>Click to expand/collapse</summary>
+
+```{r}
+# Prepare baseline data
+baseline_data <- baseline_data_raw %>% 
+  mutate( 
+    Arm = recode(arm, 
+                 "equine and intrathecal" = 0, 
+                 "human and intrathecal" = 0,
+                 "human and sham" = 1,
+                 "equine and sham" = 1),
+    Arm = factor(Arm, levels = c(0,1), labels = c("Intrathecal treatment", "Sham procedure"))
+  )
+
+generate_baseline_summary(baseline_data)
+```
+
+</details>
+
+::: column-margin
+Apply our `generate_baseline_summary` function to make tables for 5 different populations. Note how each population is filtered and grouped into treatment arms according to the `Statistical analysis plan`
+:::
+
+### Baseline table IM_ITT
+
+<details>
+
+<summary>Click to expand/collapse</summary>
+
+```{r}
+baseline_data <- baseline_data_raw %>% 
+  filter(!usubjid %in% im_itt$usubjid) %>% 
+  mutate(
+    Arm=recode(arm, "equine and intrathecal" = 0, 
+               "equine and sham" = 0,
+               "human and sham" = 1,
+               "human and intrathecal" = 1),
+    Arm=factor(Arm, levels=c(0,1), labels=c("Equine IM","Human IM"))
+  )
+
+generate_baseline_summary(baseline_data)
+```
+
+</details>
+
+### Baseline table IT_PP
+
+<details>
+
+<summary>Click to expand/collapse</summary>
+
+```{r}
+baseline_data <- baseline_data_raw %>% 
+  filter(!usubjid %in% it_per_protocol$usubjid) %>% 
+  mutate( 
+    Arm = recode(arm, 
+                 "equine and intrathecal" = 0, 
+                 "human and intrathecal" = 0,
+                 "human and sham" = 1,
+                 "equine and sham" = 1),
+    Arm = factor(Arm, levels = c(0,1), labels = c("Intrathecal treatment", "Sham procedure"))
+  )
+
+generate_baseline_summary(baseline_data)
+```
+
+</details>
+
+### Baseline table IM_PP
+
+<details>
+
+<summary>Click to expand/collapse</summary>
+
+```{r}
+baseline_data <- baseline_data_raw %>% 
+  filter(!usubjid %in% im_per_protocol$usubjid) %>% 
+  mutate( 
+    Arm=recode(arm,
+               "equine and intrathecal" = 0, 
+               "equine and sham" = 0,
+               "human and sham" = 1,
+               "human and intrathecal" = 1),
+    Arm=factor(Arm, levels=c(0,1), labels=c("Equine IM","Human IM"))
+  )
+
+generate_baseline_summary(baseline_data)
+```
+
+</details>
+
+### Baseline table IM_ALL
+
+<details>
+
+<summary>Click to expand/collapse</summary>
+
+```{r}
+baseline_data <- baseline_data_raw %>%
+  mutate(
+    Arm = recode(
+      arm,
+      "equine and intrathecal" = 0,
+      "equine and sham" = 0,
+      "human and sham" = 1,
+      "human and intrathecal" = 1
+    ),
+    Arm = ifelse(prehtig == 1, 2, Arm),
+    Arm = factor(
+      Arm,
+      levels = c(0, 1, 2),
+      labels = c("Equine IM", "Human IM", "Equine IM pre hospital")
+    )
+  )
+
+generate_baseline_summary(baseline_data)
+```
+
+</details>
+:::
+
