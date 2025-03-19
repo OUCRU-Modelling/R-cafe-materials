@@ -480,7 +480,7 @@ The appendix of how `Tetanus Severity, SOFA, APACHE II` calculated is available 
 
 <details>
 
-<summary>[Preparing data for Apache II scoring]{style="color:blue"}</summary>
+<summary>[Prepare data for Apache II scoring]{style="color:blue"}</summary>
 
 ```{r apache ii data}
 ## Calculate scores
@@ -834,7 +834,7 @@ generate_baseline_summary(baseline_data)
 
 <details>
 
-<summary>[Import adversed event data]{style="color:blue"}</summary>
+<summary>[Import adverse event data]{style="color:blue"}</summary>
 
 ```{r load ae dataset}
 # Define file path
@@ -857,12 +857,13 @@ sae_gridsae <- sae_gridsae %>%
 
 </details>
 
-According to the protocol, the following events will be excluded from adverse event reporting AE.SAE DATA SHEET:  SAE_GRID_AE.CTCAENAME = “Nasogastric tube”; “Urinary Catheter”; “Tracheostomy”; “Mechanical ventilation” and “ANSD”. 
+According to the protocol, the following events will be excluded from adverse event reporting AE.SAE DATA SHEET:  `SAE_GRID_AE.CTCAENAME = “Nasogastric tube”; “Urinary Catheter”; “Tracheostomy”; “Mechanical ventilation” and “ANSD”`. 
+
 Use `filter` function
 
 <details>
 
-<summary>[Filter events that are not beling to adverse event]{style="color:blue"}</summary>
+<summary>[Filter events that do not belong to adverse event]{style="color:blue"}</summary>
 
 ```{r}
 any_ae <- sae_gridae %>% 
