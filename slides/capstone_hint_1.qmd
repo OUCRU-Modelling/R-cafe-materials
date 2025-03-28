@@ -17,7 +17,7 @@ lof: FALSE
 lot: FALSE
 number-sections: FALSE
 thanks: "Please do not circulate."
-abstract: ""
+abstract: "This capstone exercise adapted from the study <a href='https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(22)00117-6/fulltext' target='_blank'>Human versus equine intramuscular antitoxin, with or without human intrathecal antitoxin, for the treatment of adults with tetanus: a 2 × 2 factorial randomised controlled trial</a>."
 keywords: ""
 editor: visual
 ---
