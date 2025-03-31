@@ -564,7 +564,7 @@ calculate_apache_ii <- function(data) {
         TRUE ~ 0
       ),
       pao2_score = case_when(
-        fio2 > 0.5 ~ 0,
+        fio2 > 50 ~ 0,
         pao2 < 55 ~ 4,
         pao2 <= 60 ~ 2,
         pao2 <= 70 ~ 1,
@@ -1232,6 +1232,7 @@ For the this last part of the hint, I adapt from the original codes of the study
 The original study used the `dcast` function from the `data.table` package (2008), while I changed it to `pivot_wider` from the `tidyverse` package (2016), which uses `dcast` internally. Therefore, we don't need to call `library(data.table)` or switch between the `data.table` format and `tibble`.
 
 <details>
+
 <summary>[Compute total pipecuronium doses and total pipecuronium durations]{style="color:blue"}</summary>
 
 ```{r}
@@ -1256,6 +1257,7 @@ pipecuronium_wide <- daily_daily %>%
 </details>
 
 <details>
+
 <summary>[Create the data frame for each population]{style="color:blue"}</summary>
 
 ```{r}
@@ -1337,6 +1339,7 @@ Based on the Box-Cox diagnoses,... a square root transformation scale for dose o
 If we plotted based on "total_pipecuronium", it would be different from the original paper.
 
 <details>
+
 <summary>[Make simple linear regression model]{style="color:blue"}</summary>
 
 ```{r}
@@ -1350,6 +1353,7 @@ pipecuronium.fit.im.all <- lm(Total_PIPE~Arm, data=pipecuronium.im.all)
 </details>
 
 <details>
+
 <summary>[Histogram plots]{style="color:blue"}</summary>
 
 ```{r}
@@ -1428,6 +1432,7 @@ total_pipecuronium.plot.im.all
 </details>
 
 <details>
+
 <summary>[Violin plots]{style="color:blue"}</summary>
 
 ```{r}
@@ -1491,6 +1496,7 @@ total_pipecuronium.plot.im.all
 </details>
 
 <details>
+
 <summary>[Empirical Cumulative Distribution Function (ECDF) plot]{style="color:blue"}</summary>
 
 ```{r}
