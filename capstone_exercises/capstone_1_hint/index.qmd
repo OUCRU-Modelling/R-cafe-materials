@@ -480,58 +480,6 @@ The appendix of how `Tetanus Severity, SOFA, APACHE II` calculated is available 
 
 <details>
 
-<summary>[Prepare data for Apache II scoring]{style="color:blue"}</summary>
-
-```{r apache ii data}
-## Calculate scores
-
-### Create the data table for apache.ii
-
-apache.ii_data <-
-  adm %>% select(usubjid, maxtemp, gcs, resp, fio2, spo2, pao2, ph, plt, wbc, hct, maxhr, minhr, maxsbp, worstsbp, worstdbp, bili, na, k, creat, electivesurgery, emergencysurgery, immunocompromised, severeresp, cardiacfailureiv, diawithchronic, severeliver) %>%
-   left_join(enr, by="usubjid") %>% select (usubjid, age, randtc, maxtemp, gcs, resp, fio2, spo2, pao2, ph, plt, wbc, hct, maxhr, minhr, maxsbp, worstsbp, worstdbp, bili, na, k, creat, electivesurgery, emergencysurgery, immunocompromised, severeresp, cardiacfailureiv, diawithchronic, severeliver) %>%
-  mutate(
-    temp = structure(maxtemp, label="Maximum temperature during 1st day"),
-    worstdbp = structure(worstdbp, label="Worst DBP"),
-    worstsbp = structure(worstsbp, label="Worst SBP"),
-    rr = structure(resp, label="Respiratory rate"),
-    fio2 = structure(fio2, label="FiO2"),
-    spo2 = structure(spo2, label="SpO2"),
-    pao2 = structure(pao2, label="PAO2"),
-    ph = structure(ph, label="PH"),
-    plt = structure(plt, label="Platelet count"),
-    wbc = structure(wbc, label="White blood cell count"),
-    hct = structure(hct, label="Haematorcrit"),
-    hr = pmax(maxhr, minhr),
-    hr = structure(hr, label="HR"),
-    maxsbp = structure(maxsbp, label="Max SBP"),
-    sodium = structure(na, label="Sodium"),
-    potassium = structure(k, label="Potassium"),
-    creatinine = structure(creat, label="Creatinine"),
-    map = worstdbp + (worstsbp-worstdbp)/3,
-    map = structure(map, label="Mean Arterial Pressure"),
-    gcs = structure(gcs, label="GCS"),
-    age = structure(age, label="Age", unit="years"),
-    elective = electivesurgery,
-    emergency = emergencysurgery,
-    chronic = case_when(
-      immunocompromised == "1" ~ 1,
-      severeresp == "1" ~ 1,
-      cardiacfailureiv == "1" ~ 1,
-      diawithchronic == "1" ~ 1,
-      severeliver == "1" ~ 1,
-      TRUE ~ 0
-    )
-,
-    chronic = factor(chronic, levels=c(0,1), labels=c("0","1"))
-  ) %>% 
-  select(usubjid, temp, map, hr, rr, fio2, pao2, ph, sodium, potassium, creatinine, hct, wbc, gcs, age, elective, emergency, chronic)
-```
-
-</details>
-
-<details>
-
 <summary>[Write function to compute Apache II score]{style="color:blue"}</summary>
 
 ```{r apache ii}
@@ -636,6 +584,59 @@ calculate_apache_ii <- function(data) {
     )
   return(data)
 }
+```
+
+</details>
+
+
+<details>
+
+<summary>[Prepare data for Apache II scoring]{style="color:blue"}</summary>
+
+```{r apache ii data}
+## Calculate scores
+
+### Create the data table for apache.ii
+
+apache.ii_data <-
+  adm %>% select(usubjid, maxtemp, gcs, resp, fio2, spo2, pao2, ph, plt, wbc, hct, maxhr, minhr, maxsbp, worstsbp, worstdbp, bili, na, k, creat, electivesurgery, emergencysurgery, immunocompromised, severeresp, cardiacfailureiv, diawithchronic, severeliver) %>%
+   left_join(enr, by="usubjid") %>% select (usubjid, age, randtc, maxtemp, gcs, resp, fio2, spo2, pao2, ph, plt, wbc, hct, maxhr, minhr, maxsbp, worstsbp, worstdbp, bili, na, k, creat, electivesurgery, emergencysurgery, immunocompromised, severeresp, cardiacfailureiv, diawithchronic, severeliver) %>%
+  mutate(
+    temp = structure(maxtemp, label="Maximum temperature during 1st day"),
+    worstdbp = structure(worstdbp, label="Worst DBP"),
+    worstsbp = structure(worstsbp, label="Worst SBP"),
+    rr = structure(resp, label="Respiratory rate"),
+    fio2 = structure(fio2, label="FiO2"),
+    spo2 = structure(spo2, label="SpO2"),
+    pao2 = structure(pao2, label="PAO2"),
+    ph = structure(ph, label="PH"),
+    plt = structure(plt, label="Platelet count"),
+    wbc = structure(wbc, label="White blood cell count"),
+    hct = structure(hct, label="Haematorcrit"),
+    hr = pmax(maxhr, minhr),
+    hr = structure(hr, label="HR"),
+    maxsbp = structure(maxsbp, label="Max SBP"),
+    sodium = structure(na, label="Sodium"),
+    potassium = structure(k, label="Potassium"),
+    creatinine = structure(creat, label="Creatinine"),
+    map = worstdbp + (worstsbp-worstdbp)/3,
+    map = structure(map, label="Mean Arterial Pressure"),
+    gcs = structure(gcs, label="GCS"),
+    age = structure(age, label="Age", unit="years"),
+    elective = electivesurgery,
+    emergency = emergencysurgery,
+    chronic = case_when(
+      immunocompromised == "1" ~ 1,
+      severeresp == "1" ~ 1,
+      cardiacfailureiv == "1" ~ 1,
+      diawithchronic == "1" ~ 1,
+      severeliver == "1" ~ 1,
+      TRUE ~ 0
+    )
+,
+    chronic = factor(chronic, levels=c(0,1), labels=c("0","1"))
+  ) %>% 
+  select(usubjid, temp, map, hr, rr, fio2, pao2, ph, sodium, potassium, creatinine, hct, wbc, gcs, age, elective, emergency, chronic)
 ```
 
 </details>
