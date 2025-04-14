@@ -31,8 +31,8 @@
     "objectID": "slides/tidyverse.html#session-overview",
     "href": "slides/tidyverse.html#session-overview",
     "title": "R programming with tidyverse",
-    "section": "",
-    "text": "What will be covered:\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\nPiping with %&gt;%\n\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map()\ntidyverse style vs. base R style\n\nggplot2 for data visualisation\n\nGrammar of graphics"
+    "section": "Session overview",
+    "text": "Session overview\nWhat will be covered:\n\nInto the tidyverse\n\nWhat is tidyverse?\nWhy should we use it?\nHow do we use it?\nPiping with %&gt;%\n\nVectorise R functions\n\nVectors and vectorisation\nVectorisation with map()\ntidyverse style vs. base R style\n\nggplot2 for data visualisation\n\nGrammar of graphics"
   },
   {
     "objectID": "slides/tidyverse.html#session-overview-1",
@@ -53,14 +53,14 @@
     "href": "slides/tidyverse.html#what-is-tidyverse-1",
     "title": "R programming with tidyverse",
     "section": "What is tidyverse?",
-    "text": "What is tidyverse?\n\nTidy data\n\nA dataset with rows and columns\nEach column is a variable\nEach row is an observation\nEach cell contains 1 value only"
+    "text": "What is tidyverse?\nTidy data\n\nA dataset with rows and columns\nEach column is a variable\nEach row is an observation\nEach cell contains 1 value only"
   },
   {
     "objectID": "slides/tidyverse.html#what-is-tidyverse-2",
     "href": "slides/tidyverse.html#what-is-tidyverse-2",
     "title": "R programming with tidyverse",
     "section": "What is tidyverse?",
-    "text": "What is tidyverse?\n\nTidy data\nWhich of these is a tidy data table\n\n\n# A tibble: 2 × 4\n  country code  `2015` `2016`\n  &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 Aruba   ABW   28419. 28450.\n2 Albania ALB    3953.  4124.\n\n\nor\n\n\n# A tibble: 4 × 4\n  country code   year    gdp\n  &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1 Aruba   ABW    2015 28419.\n2 Aruba   ABW    2016 28450.\n3 Albania ALB    2015  3953.\n4 Albania ALB    2016  4124."
+    "text": "What is tidyverse?\nTidy data\nWhich of these is a tidy data table\n\n\n# A tibble: 2 × 4\n  country code  `2015` `2016`\n  &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 Aruba   ABW   28419. 28450.\n2 Albania ALB    3953.  4124.\n\n\nor\n\n\n# A tibble: 4 × 4\n  country code   year    gdp\n  &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1 Aruba   ABW    2015 28419.\n2 Aruba   ABW    2016 28450.\n3 Albania ALB    2015  3953.\n4 Albania ALB    2016  4124."
   },
   {
     "objectID": "slides/tidyverse.html#what-is-tidyverse-3",
@@ -74,21 +74,21 @@
     "href": "slides/tidyverse.html#why-tidyverse",
     "title": "R programming with tidyverse",
     "section": "Why tidyverse?",
-    "text": "Why tidyverse?\n\n\nEvery function in tidyverse shares a consistent structure and pattern. Making it very easy to implement and edit your R code\nOutputs are also easier to read and consistent\nIn general, your R code may look cleaner and easier to follow, compared to base R\nYou just need to install everything once, instead of different packages for different things\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is all subjective and your experience with tidyverse may varies"
+    "text": "Why tidyverse?\n\n\nEvery function in tidyverse shares a consistent structure and pattern. Making it very easy to implement and edit your R code\nOutputs are also easier to read and consistent\nIn general, your R code may look cleaner and easier to follow, compared to base R\nYou just need to install everything once, instead of different packages for different things\n\n\n\n\n\n\n\n\n\nNote\n\n\nThis is all subjective and your experience with tidyverse may varies"
   },
   {
     "objectID": "slides/tidyverse.html#why-tidyverse-1",
     "href": "slides/tidyverse.html#why-tidyverse-1",
     "title": "R programming with tidyverse",
     "section": "Why tidyverse?",
-    "text": "Why tidyverse?\n\n\n\n\n\n\nTakeaway points\n\n\n\n\ntidyverse is not a replacement of base R. It is just a collection of R packages\nYou don’t have to use tidyverse when using R\ntidyverse has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster\nUnderstanding the principles and goals of tidyverse will better your knowledge on good coding practices and R"
+    "text": "Why tidyverse?\n\n\n\n\n\n\nTakeaway points\n\n\n\ntidyverse is not a replacement of base R. It is just a collection of R packages\nYou don’t have to use tidyverse when using R\ntidyverse has most functions for data science needs. Though, there are times base R will be needed, and might be better/easier/faster\nUnderstanding the principles and goals of tidyverse will better your knowledge on good coding practices and R"
   },
   {
     "objectID": "slides/tidyverse.html#why-tidyverse-2",
     "href": "slides/tidyverse.html#why-tidyverse-2",
     "title": "R programming with tidyverse",
     "section": "Why tidyverse?",
-    "text": "Why tidyverse?\n\nCommonly used tidyverse functions:\n\n\ndplyr::select() to select columns from a tibble\ndplyr::mutate() to change and create columns in a tibble\ntidyr::pivot_longer() to transform a tibble from wide to long format (less columns, more rows)\ntidyr::pivot_wider() to transform a tibble from long to wide format (less rows, more columns)\ndplyr::group_by() and dplyr::summarise() to group data and summarise it using a function, e.g. mean, max, min, sum\n\n\n\n\n\n\n\n\nNote\n\n\n\ntibble is a type of dataframe that is used by all tidyverse functions"
+    "text": "Why tidyverse?\nCommonly used tidyverse functions:\n\n\ndplyr::select() to select columns from a tibble\ndplyr::mutate() to change and create columns in a tibble\ntidyr::pivot_longer() to transform a tibble from wide to long format (less columns, more rows)\ntidyr::pivot_wider() to transform a tibble from long to wide format (less rows, more columns)\ndplyr::group_by() and dplyr::summarise() to group data and summarise it using a function, e.g. mean, max, min, sum\n\n\n\n\n\n\n\n\n\nNote\n\n\ntibble is a type of dataframe that is used by all tidyverse functions"
   },
   {
     "objectID": "slides/tidyverse.html#why-tidyverse-3",
@@ -102,21 +102,21 @@
     "href": "slides/tidyverse.html#how-to-use-tidyverse",
     "title": "R programming with tidyverse",
     "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nStart by installing it!\n\ninstall.packages(\"tidyverse\")\n\n\n\n\n\n\n\nNote\n\n\n\nMost packages will be installed. You might need some more packages, but generally it should cover most of your needs."
+    "text": "How to use tidyverse\nStart by installing it!\n\ninstall.packages(\"tidyverse\")\n\n\n\n\n\n\n\nNote\n\n\nMost packages will be installed. You might need some more packages, but generally it should cover most of your needs."
   },
   {
     "objectID": "slides/tidyverse.html#how-to-use-tidyverse-1",
     "href": "slides/tidyverse.html#how-to-use-tidyverse-1",
     "title": "R programming with tidyverse",
     "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nThen load it into your R environment!\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ purrr     1.0.4\n✔ forcats   1.0.0     ✔ readr     2.1.5\n✔ ggplot2   3.5.2     ✔ stringr   1.5.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n\n\n\n\n\nFree R tip\n\n\n\nYou can load specific packages like library(dplyr)"
+    "text": "How to use tidyverse\nThen load it into your R environment!\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ purrr     1.0.4\n✔ forcats   1.0.0     ✔ readr     2.1.5\n✔ ggplot2   3.5.2     ✔ stringr   1.5.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n\n\n\n\n\nFree R tip\n\n\nYou can load specific packages like library(dplyr)"
   },
   {
     "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2",
     "href": "slides/tidyverse.html#how-to-use-tidyverse-2",
     "title": "R programming with tidyverse",
     "section": "How to use tidyverse",
-    "text": "How to use tidyverse\nRun this example code below to make sure everything is running normally\n\nggplot(\n  data = ungroup(summarise(group_by(mtcars, gear), mean_mpg = mean(mpg))),\n  aes(x = gear, y = mean_mpg)\n) +\n  geom_col()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFree R tips\n\n\n\n\ntype ?function_name for help on how to use a function and see which package is it coming from\nadd “tidyverse” into your Google searches when looking for R issues"
+    "text": "How to use tidyverse\nRun this example code below to make sure everything is running normally\n\nggplot(\n  data = ungroup(summarise(group_by(mtcars, gear), mean_mpg = mean(mpg))),\n  aes(x = gear, y = mean_mpg)\n) +\n  geom_col()\n\n\n\n\n\n\n\n\nFree R tips\n\n\n\ntype ?function_name for help on how to use a function and see which package is it coming from\nadd “tidyverse” into your Google searches when looking for R issues"
   },
   {
     "objectID": "slides/tidyverse.html#how-to-use-tidyverse-2-output",
@@ -151,7 +151,7 @@
     "href": "slides/tidyverse.html#piping-with-3",
     "title": "R programming with tidyverse",
     "section": "Piping with %>%",
-    "text": "Piping with %&gt;%\n\n\nPipe is a powerful tool to express a sequence of actions (functions)\nIt helps you write code that is easier to read and understand\nIn R, you can pipe between functions using the %&gt;% or |&gt; operators\nRstudio shortcut: Cmd+Shift+M or Ctrl+Shift+M\n\n\n\n\n\n\n\n\n%&gt;% vs. |&gt;\n\n\n\n\n%&gt;% comes from the magrittr package which is used by all of tidyverse\n|&gt; comes from R since version 4.1.0. It functions largely the same as %&gt;% but not identical\nR Café will use %&gt;%"
+    "text": "Piping with %&gt;%\n\n\nPipe is a powerful tool to express a sequence of actions (functions)\nIt helps you write code that is easier to read and understand\nIn R, you can pipe between functions using the %&gt;% or |&gt; operators\nRstudio shortcut: Cmd+Shift+M or Ctrl+Shift+M\n\n\n\n\n\n\n\n\n\n%&gt;% vs. |&gt;\n\n\n\n%&gt;% comes from the magrittr package which is used by all of tidyverse\n|&gt; comes from R since version 4.1.0. It functions largely the same as %&gt;% but not identical\nR Café will use %&gt;%"
   },
   {
     "objectID": "slides/tidyverse.html#piping-with-4",
@@ -172,7 +172,7 @@
     "href": "slides/tidyverse.html#piping-with-6",
     "title": "R programming with tidyverse",
     "section": "Piping with %>%",
-    "text": "Piping with %&gt;%\nAnother example:\n\nsummarise(group_by(mtcars, gear), mean_mpg = mean(mpg))\n\nis exactly the same as\n\nmtcars %&gt;% group_by(gear) %&gt;% summarise(mean_mpg = mean(mpg))\n\n\n\n\n\n\n\nNote\n\n\n\nEvery function under tidyverse will take the data as the first argument, so everything can be piped!"
+    "text": "Piping with %&gt;%\nAnother example:\n\nsummarise(group_by(mtcars, gear), mean_mpg = mean(mpg))\n\nis exactly the same as\n\nmtcars %&gt;% group_by(gear) %&gt;% summarise(mean_mpg = mean(mpg))\n\n\n\n\n\n\n\n\nNote\n\n\nEvery function under tidyverse will take the data as the first argument, so everything can be piped!"
   },
   {
     "objectID": "slides/tidyverse.html#piping-with-7",
@@ -193,7 +193,7 @@
     "href": "slides/tidyverse.html#exercise-1",
     "title": "R programming with tidyverse",
     "section": "Exercise",
-    "text": "Exercise\n\n\n\n\n\n\nChecklist\n\n\n\n\nLoad the covid_cases dataset\nHave a look at the dataset, do you understand how is it structured? Does it follow the tidy data standard?\nUse tidyverse to transform the data into a tidy tibble"
+    "text": "Exercise\n\n\n\n\n\n\nChecklist\n\n\n\nLoad the covid_cases dataset\nHave a look at the dataset, do you understand how is it structured? Does it follow the tidy data standard?\nUse tidyverse to transform the data into a tidy tibble"
   },
   {
     "objectID": "slides/tidyverse.html#exercise-2",
@@ -249,7 +249,7 @@
     "href": "slides/tidyverse.html#what-is-a-vector-4",
     "title": "R programming with tidyverse",
     "section": "What is a vector?",
-    "text": "What is a vector?\n\nOr the tidyverse way with dplyr::slice() and dplyr::pull()\n\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(date)\n\n [1] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n [6] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n[11] \"2020-03-08\"\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(country)\n\n [1] \"spm\" \"esp\" \"ita\" \"deu\" \"fra\" \"gbr\" \"tur\" \"bel\" \"che\" \"nld\" \"prt\"\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(cases)\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n\n\n\n\n\n\n\nNote\n\n\n\n\none of the cases where using base R might be quicker and doesn’t sacrifice readability\ndplyr and tidyverse equivalents"
+    "text": "What is a vector?\n\nOr the tidyverse way with dplyr::slice() and dplyr::pull()\n\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(date)\n\n [1] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n [6] \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\" \"2020-03-08\"\n[11] \"2020-03-08\"\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(country)\n\n [1] \"spm\" \"esp\" \"ita\" \"deu\" \"fra\" \"gbr\" \"tur\" \"bel\" \"che\" \"nld\" \"prt\"\n\ncovid_cases %&gt;% slice(10000:10010) %&gt;% pull(cases)\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n\n\n\n\n\n\n\nNote\n\n\n\none of the cases where using base R might be quicker and doesn’t sacrifice readability\ndplyr and tidyverse equivalents"
   },
   {
     "objectID": "slides/tidyverse.html#for-loops",
@@ -263,7 +263,7 @@
     "href": "slides/tidyverse.html#vectorisation",
     "title": "R programming with tidyverse",
     "section": "Vectorisation",
-    "text": "Vectorisation\n\n\nInstead of going through each element and perform an action, we can apply an action to all elements at once\nExample: Take the square root of a vector\n\n\n\n\n# before\nsquared_data\n\n [1]       0    3136 1555009   24336    8649    1849       0    3600    3025\n[10]    3600      64\n\n# after\nsqrt_data &lt;- sqrt(squared_data)\nsqrt_data\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n# alternative using `sapply()`\nsqrt_data &lt;- sapply(squared_data, sqrt)\nsqrt_data\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n\n\n\n\n\n\n\nNote\n\n\n\nMost functions math-related functions and operators in base R are already vectorised, e.g. sqrt(), log(), exp(), +, -, *, /"
+    "text": "Vectorisation\n\n\nInstead of going through each element and perform an action, we can apply an action to all elements at once\nExample: Take the square root of a vector\n\n\n\n\n# before\nsquared_data\n\n [1]       0    3136 1555009   24336    8649    1849       0    3600    3025\n[10]    3600      64\n\n# after\nsqrt_data &lt;- sqrt(squared_data)\nsqrt_data\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n# alternative using `sapply()`\nsqrt_data &lt;- sapply(squared_data, sqrt)\nsqrt_data\n\n [1]    0   56 1247  156   93   43    0   60   55   60    8\n\n\n\n\n\n\n\n\nNote\n\n\nMost functions math-related functions and operators in base R are already vectorised, e.g. sqrt(), log(), exp(), +, -, *, /"
   },
   {
     "objectID": "slides/tidyverse.html#vectorisation-1",
@@ -284,7 +284,7 @@
     "href": "slides/tidyverse.html#vectorisation-with-map",
     "title": "R programming with tidyverse",
     "section": "Vectorisation with map()",
-    "text": "Vectorisation with map()\n\nIn the tidyverse, we can perform vectorisation with the purrr::map() family\nLet’s check how it works with ?purrr::map()\n\n\n\nPrevious example using map()\n\n\nmap(data, \\(d) 3.14 * (sqrt(d) / 2)^2) %&gt;% list_c()\n\n [1]   0.000  43.960 978.895 122.460  73.005  33.755   0.000  47.100  43.175\n[10]  47.100   6.280\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe do list_c() after a map() because map() is designed to take in a list and return a list. list_c() helps combine a list into a vector"
+    "text": "Vectorisation with map()\n\nIn the tidyverse, we can perform vectorisation with the purrr::map() family\nLet’s check how it works with ?purrr::map()\n\n\n\nPrevious example using map()\n\n\nmap(data, \\(d) 3.14 * (sqrt(d) / 2)^2) %&gt;% list_c()\n\n [1]   0.000  43.960 978.895 122.460  73.005  33.755   0.000  47.100  43.175\n[10]  47.100   6.280\n\n\n\n\n\n\n\n\n\nNote\n\n\nWe do list_c() after a map() because map() is designed to take in a list and return a list. list_c() helps combine a list into a vector"
   },
   {
     "objectID": "slides/tidyverse.html#vectorisation-with-map-1",
@@ -682,8 +682,8 @@
     "objectID": "slides/intro.html#about-the-course",
     "href": "slides/intro.html#about-the-course",
     "title": "Welcome to R Café",
-    "section": "",
-    "text": "Welcome to “R-cafe: R for reproducible research”\nIn this course, the following topics will be covered\n\nGetting started with R and Git - Introduction to working with RStudio, R and Github\nR programming with tidyverse - Introduce important tools for data science in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
+    "section": "About the course",
+    "text": "About the course\nWelcome to “R-cafe: R for reproducible research”\nIn this course, the following topics will be covered\n\nGetting started with R and Git - Introduction to working with RStudio, R and Github\nR programming with tidyverse - Introduce important tools for data science in R\nMarkdown/Quarto and `gtsummary` - introduce gtsummary for analysis and creating report with Markdown/Quarto"
   },
   {
     "objectID": "slides/intro.html#about-the-course-1",
@@ -697,14 +697,14 @@
     "href": "slides/intro.html#prerequisites",
     "title": "Welcome to R Café",
     "section": "Prerequisites",
-    "text": "Prerequisites\n\n\n\n\n\n\nBefore this lesson, you should have:\n\n\n\n\nR and RStudio installed\na Github account, Github Desktop installed"
+    "text": "Prerequisites\n\n\n\n\n\n\nBefore this lesson, you should have:\n\n\n\nR and RStudio installed\na Github account, Github Desktop installed"
   },
   {
     "objectID": "slides/intro.html#overview",
     "href": "slides/intro.html#overview",
     "title": "Welcome to R Café",
     "section": "Overview",
-    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\n\nBrief introduction to Git, GitHub, and GitHub Desktop\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R"
+    "text": "Overview\n\n\n\n\n\n\nNote\n\n\n\nBrief introduction to Git, GitHub, and GitHub Desktop\nIntro to RStudio\nR project (create R project, set up renv)\nIntro to R"
   },
   {
     "objectID": "slides/intro.html#git-vs.-github",
@@ -732,7 +732,7 @@
     "href": "slides/intro.html#git-and-github-2",
     "title": "Welcome to R Café",
     "section": "Git  and GitHub ",
-    "text": "Git  and GitHub \n\n\n\n\n\n\nTerminologies\n\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
+    "text": "Git  and GitHub \n\n\n\n\n\n\nTerminologies\n\n\n\nBranch: a separate environment, identical copy of where and when you branch from\nCommit: packaging all the changes you made into a “version”\nPush: pushing a commit (a “version”) to remote, e.g. GitHub\nPull: updating your local repository with changes from remote\nAdd: chosing which changes you want to commit"
   },
   {
     "objectID": "slides/intro.html#git-and-github-3",
@@ -746,14 +746,14 @@
     "href": "slides/intro.html#git-and-github-4",
     "title": "Welcome to R Café",
     "section": "Git  and GitHub ",
-    "text": "Git  and GitHub \n\n\n\n\n\n\nTakeaway points\n\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
+    "text": "Git  and GitHub \n\n\n\n\n\n\nTakeaway points\n\n\n\nGit is a standalone software, which works fully locally. You can use Git without GitHub\nGitHub is a platform for collaboration. It uses Git as the version control system"
   },
   {
     "objectID": "slides/intro.html#github-desktop-1",
     "href": "slides/intro.html#github-desktop-1",
     "title": "Welcome to R Café",
     "section": "GitHub Desktop ",
-    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
+    "text": "GitHub Desktop \n\nGit is a command-line interface (CLI) software.\n\n\n\n\n\n\n\n\nCaution\n\n\nWe strongly recommend to not use Git through its CLI. It is not fun and you will lose your work because of a typo."
   },
   {
     "objectID": "slides/intro.html#github-desktop-2",
@@ -767,7 +767,7 @@
     "href": "slides/intro.html#setting-up-github-desktop",
     "title": "Welcome to R Café",
     "section": "Setting up GitHub Desktop ",
-    "text": "Setting up GitHub Desktop \n\n\n\n\n\n\nChecklist\n\n\n\n\nSign in to your account in GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\nRefer to the handouts for instructions"
+    "text": "Setting up GitHub Desktop \n\n\n\n\n\n\nChecklist\n\n\n\nSign in to your account in GitHub Desktop\nClone R Cafe into your computer/laptop. Link\nCreate your own branch\nPublish (push) your branch\n\n\n\n\nRefer to the handouts for instructions"
   },
   {
     "objectID": "slides/intro.html#r-and-rstudio-1",
@@ -816,7 +816,7 @@
     "href": "slides/intro.html#sec-file-naming",
     "title": "Welcome to R Café",
     "section": "Naming convention",
-    "text": "Naming convention\n\n\n\n\n\n\n\nNote\n\n\n\nSome rules of thumb for naming files and folders:\n\nDo not use diacritics (e.g. Vietnamese accent marks).\nDo not use overly long names, keep it short but meaningful.\nDo not include special characters such as /, \\, &, ,, (, )... in names. It’s best to use only letters and numbers.\nAvoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., dataSoiHcm) or PascalCase (capitalize the first letter of all words, e.g., DataSoiHcm).\nDo not include spaces (\" \") in names. Instead, you can use camelCase, or replace spaces with - or _. For example, instead of naming a file data soi HCM 2023.xlsx, you could name it dataSoiHcm2023.xlsx, data-soi-hcm-2023.xlsx, or data_soi_hcm_2023.xlsx."
+    "text": "Naming convention\n\n\n\n\n\n\n\nNote\n\n\nSome rules of thumb for naming files and folders:\n\nDo not use diacritics (e.g. Vietnamese accent marks).\nDo not use overly long names, keep it short but meaningful.\nDo not include special characters such as /, \\, &, ,, (, )... in names. It’s best to use only letters and numbers.\nAvoid mixing uppercase and lowercase letters arbitrarily. If necessary, use naming conventions like camelCase (capitalize the first letter of each word after the first one, e.g., dataSoiHcm) or PascalCase (capitalize the first letter of all words, e.g., DataSoiHcm).\nDo not include spaces (\" \") in names. Instead, you can use camelCase, or replace spaces with - or _. For example, instead of naming a file data soi HCM 2023.xlsx, you could name it dataSoiHcm2023.xlsx, data-soi-hcm-2023.xlsx, or data_soi_hcm_2023.xlsx."
   },
   {
     "objectID": "slides/intro.html#set-up-renv",
@@ -830,7 +830,7 @@
     "href": "slides/intro.html#why-use-renv",
     "title": "Welcome to R Café",
     "section": "Why use renv?",
-    "text": "Why use renv?\n\n\n\nEncapsulate the development environment of your R projects (R version, packages used and their versions) in a file called renv.lock\nEnsure collaborators to replicate your R project’s development environment by simply running renv::restore()\nIsolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under\n\npath_to_project/renv/library/{R-version}/{device-architecture}/\n\n\n\n\n\n\n\n\n\n\nWhat are packages?\n\n\n\nAn R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process."
+    "text": "Why use renv?\n\n\n\nEncapsulate the development environment of your R projects (R version, packages used and their versions) in a file called renv.lock\nEnsure collaborators to replicate your R project’s development environment by simply running renv::restore()\nIsolate installed packages under project directory for more convenient management. With renv set up, the installed packages are stored under\n\npath_to_project/renv/library/{R-version}/{device-architecture}/\n\n\n\n\n\n\n\n\n\n\nWhat are packages?\n\n\nAn R package is a shareable bundle of functions. We will frequently use available packages to assist us during coding process."
   },
   {
     "objectID": "slides/intro.html#r-script",
@@ -858,7 +858,7 @@
     "href": "slides/intro.html#variable-1",
     "title": "Welcome to R Café",
     "section": "Variable",
-    "text": "Variable\nValue of a variable can also be overridden\n\nvar &lt;- 5\nvar\n\n[1] 5\n\n# override variable\nvar &lt;- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 6.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
+    "text": "Variable\nValue of a variable can also be overridden\n\nvar &lt;- 5\nvar\n\n[1] 5\n\n# override variable\nvar &lt;- \"new value\"\nvar\n\n[1] \"new value\"\n\n\n\n\n\n\n\n\nNaming variable\n\n\nThe rule for naming variable is similar to that of naming file/folder names (See Section 6.5)\nAdditionally, variable name needs to be concise and beware of overriding values"
   },
   {
     "objectID": "slides/intro.html#classes",
@@ -914,7 +914,7 @@
     "href": "slides/intro.html#functions-5",
     "title": "Welcome to R Café",
     "section": "Functions",
-    "text": "Functions\n\n\n\n\n\n\nNote\n\n\n\nYou can provide value for each argument without specifying the name but it must follow the same order in the function definition.\nHowever, it is generally recommended to include the name of the argument for better readability. When argument name is specified, order no longer matter.\n\ncompute_power(5, 2) \n\n[1] 25\n\ncompute_power(2, 5) # expect different result (2^5)\n\n[1] 32\n\ncompute_power(base = 5, power = 2)\n\n[1] 25\n\ncompute_power(power = 2, base = 5) # expect same result\n\n[1] 25"
+    "text": "Functions\n\n\n\n\n\n\nNote\n\n\nYou can provide value for each argument without specifying the name but it must follow the same order in the function definition.\nHowever, it is generally recommended to include the name of the argument for better readability. When argument name is specified, order no longer matter.\n\ncompute_power(5, 2) \n\n[1] 25\n\ncompute_power(2, 5) # expect different result (2^5)\n\n[1] 32\n\ncompute_power(base = 5, power = 2)\n\n[1] 25\n\ncompute_power(power = 2, base = 5) # expect same result\n\n[1] 25"
   },
   {
     "objectID": "slides/intro.html#functions-6",
@@ -991,7 +991,7 @@
     "href": "slides/intro.html#packages-1",
     "title": "Welcome to R Café",
     "section": "Packages",
-    "text": "Packages\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")\n\n\n\n\n\n\n\nUpdate renv.lock\n\n\n\nTo update your renv.lock after changing development environment, run the code renv::snapshot()"
+    "text": "Packages\n\nExample: Download package for reading Excel files\n\ninstall.packages(\"readxl\")\n\n\n\n\n\n\n\nUpdate renv.lock\n\n\nTo update your renv.lock after changing development environment, run the code renv::snapshot()"
   },
   {
     "objectID": "slides/intro.html#packages-2",
@@ -1012,7 +1012,7 @@
     "href": "slides/intro.html#goal",
     "title": "Welcome to R Café",
     "section": "Goal",
-    "text": "Goal\n\n\n\n\n\n\nNote\n\n\n\nIn this exercise, you will:\n\nCreate a function from the given code\nPush your code to Github\nCommenting collaborators’ code on Github"
+    "text": "Goal\n\n\n\n\n\n\nNote\n\n\nIn this exercise, you will:\n\nCreate a function from the given code\nPush your code to Github\nCommenting collaborators’ code on Github"
   },
   {
     "objectID": "slides/intro.html#code-file",
@@ -1033,7 +1033,7 @@
     "href": "slides/intro.html#create-function-1",
     "title": "Welcome to R Café",
     "section": "Create function",
-    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col &lt;- \"cases_chn\"\n\nbasic_stats &lt;- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
+    "text": "Create function\n\nGoal Create a function that allow users to choose compute basic statistics (min, max, mean, quartiles) for number cases of each country.\nGiven the code to compute basic stats for case reports in China (cases_chn) is as followed\n\ncase_col &lt;- \"cases_chn\"\n\nbasic_stats &lt;- c(\n  min =  min(covid_cases[[case_col]]),\n  q1 = quantile(covid_cases[[case_col]], 0.25, names=FALSE),\n  median = median(covid_cases[[case_col]]),\n  q3 = quantile(covid_cases[[case_col]], 0.75, names=FALSE),\n  max = max(covid_cases[[case_col]])\n)\n\nbasic_stats\n\n    min      q1  median      q3     max \n    0.0    65.5   128.0   950.5 19461.0 \n\n\n\n\n\n\n\n\nNote\n\n\nThe syntax data[[column_name]] is used for extracting values in a column"
   },
   {
     "objectID": "slides/intro.html#suggested-solution",
@@ -1047,7 +1047,7 @@
     "href": "slides/intro.html#navigating-github-desktop-github",
     "title": "Welcome to R Café",
     "section": "Navigating Github Desktop & Github",
-    "text": "Navigating Github Desktop & Github\nOnce you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)\n\n\n\n\n\n\nNote\n\n\n\n\nPush your code to Github using Github Desktop\nCreate an issue on Github to comment on at least 1 other participant’s code"
+    "text": "Navigating Github Desktop & Github\nOnce you have created the function, complete the following tasks on Github Desktop and Github (refer to the handout for detailed instructions)\n\n\n\n\n\n\nNote\n\n\n\nPush your code to Github using Github Desktop\nCreate an issue on Github to comment on at least 1 other participant’s code"
   },
   {
     "objectID": "slides/intro.html#data-import",
