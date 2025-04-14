@@ -1,5 +1,5 @@
 ---
-title: Capstone Hint 1
+title: Capstone 1 hint
 author: 
 - name: Tran Thai Hung
   affiliations:
@@ -17,7 +17,7 @@ lof: FALSE
 lot: FALSE
 number-sections: FALSE
 thanks: "Please do not circulate."
-abstract: "This capstone exercise adapted from the study <a href='https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(22)00117-6/fulltext' target='_blank'>Human versus equine intramuscular antitoxin, with or without human intrathecal antitoxin, for the treatment of adults with tetanus: a 2 × 2 factorial randomised controlled trial</a>."
+abstract: This is full hint for capstone 1
 keywords: ""
 editor: visual
 ---
@@ -906,7 +906,7 @@ data_ae <- any_ae %>% left_join(select(baseline_data, c(usubjid, Arm)))
 
 As I mentioned in the capstone exercise, you can adjust the tables format based on your experience and needs. In this section, I use the format that looks like a published paper from OUCRU's project in *NEJM* ([link](https://www.nejm.org/doi/full/10.1056/NEJMoa2216218#t3)).
 
-![](imgs/capstone_hint/nejmoa2216218_t3.jpg)
+![](imgs/nejmoa2216218_t3.jpg)
 
 If you’re unsure where to start, don’t worry—let’s break it down step by step.
 

@@ -14,7 +14,7 @@ website:
         text: R programming with tidyverse
       - href: slides/gtsummary.qmd
         text: Quarto and gtsummary
-      - href: slides/capstone.qmd
+      - href: capstone_exercises/index.qmd
         text: Capstone exercises
 
 execute: 

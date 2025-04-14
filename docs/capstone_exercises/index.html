@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to R Café – R Café</title>
+<title>index – R Café</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,9 +68,67 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-post .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="styles.css">
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-post'] = new List('listing-post', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">R Café</span>
     </a>
   </div>
@@ -89,23 +149,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./slides/intro.html"> 
+    <a class="nav-link" href="../slides/intro.html"> 
 <span class="menu-text">Getting started with R and Git</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./slides/tidyverse.html"> 
+    <a class="nav-link" href="../slides/tidyverse.html"> 
 <span class="menu-text">R programming with tidyverse</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./slides/gtsummary.html"> 
+    <a class="nav-link" href="../slides/gtsummary.html"> 
 <span class="menu-text">Quarto and gtsummary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./capstone_exercises/index.html"> 
+    <a class="nav-link active" href="../capstone_exercises/index.html" aria-current="page"> 
 <span class="menu-text">Capstone exercises</span></a>
   </li>  
 </ul>
@@ -116,183 +176,131 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#duration" id="toc-duration" class="nav-link active" data-scroll-target="#duration">Duration</a></li>
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
-  <li><a href="#r-café-helpful-shortcuts" id="toc-r-café-helpful-shortcuts" class="nav-link" data-scroll-target="#r-café-helpful-shortcuts">R Café helpful shortcuts</a></li>
-  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
-  <li><a href="#take-home-exercises" id="toc-take-home-exercises" class="nav-link" data-scroll-target="#take-home-exercises">Take-home exercises</a></li>
-  <li><a href="#capstone_1-exercises-breakdown-by-day" id="toc-capstone_1-exercises-breakdown-by-day" class="nav-link" data-scroll-target="#capstone_1-exercises-breakdown-by-day">Capstone_1 exercises breakdown by day</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome to R Café</h1>
+
+
+
+<div id="listing-post" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-post-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-post'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1744609723000" data-listing-file-modified-sort="1744609723087" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1876">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../capstone_exercises/capstone_1_day_1/index.html" class="no-external">Capstone 1 (day 1): Import and cleaning data</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../capstone_exercises/capstone_1_day_1/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../capstone_exercises/capstone_1_day_1/index.html" class="no-external">This is break down exercise day 1 for capstone 1</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../capstone_exercises/capstone_1_day_1/index.html" class="no-external">
+<div class="listing-date">
+Apr 14, 2025
+</div>
+<div class="listing-author">
+Tran Thai Hung
+</div>
+<div class="listing-reading-time">
+10 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1744609269000" data-listing-file-modified-sort="1744609269471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="46" data-listing-word-count-sort="9075">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../capstone_exercises/capstone_1_hint/index.html" class="no-external">Capstone 1 hint</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../capstone_exercises/capstone_1_hint/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../capstone_exercises/capstone_1_hint/index.html" class="no-external">This is full hint for capstone 1</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../capstone_exercises/capstone_1_hint/index.html" class="no-external">
+<div class="listing-date">
+Apr 14, 2025
+</div>
+<div class="listing-author">
+Tran Thai Hung
+</div>
+<div class="listing-reading-time">
+46 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1744607386000" data-listing-file-modified-sort="1744607386876" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="738">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../capstone_exercises/capstone_1/index.html" class="no-external">Capstone 1: Applying Lessons in a Mini-Project</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../capstone_exercises/capstone_1/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../capstone_exercises/capstone_1/index.html" class="no-external">This capstone exercise adapted from the study </a><a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(22)00117-6/fulltext" target="_blank">Human versus equine intramuscular antitoxin, with or without human intrathecal antitoxin, for the treatment of adults with tetanus: a 2 × 2 factorial randomised controlled trial</a>.
+</div>
+</div>
+<div class="metadata">
+<a href="../capstone_exercises/capstone_1/index.html" class="no-external">
+<div class="listing-date">
+Apr 14, 2025
+</div>
+<div class="listing-author">
+Tran Thai Hung
+</div>
+<div class="listing-reading-time">
+4 min
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
 </div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="duration" class="level2">
-<h2 class="anchored" data-anchor-id="duration">Duration</h2>
-<p>3 weeks of study + 1 week of extra content (if any) and closing remarks</p>
-</section>
-<section id="structure" class="level2">
-<h2 class="anchored" data-anchor-id="structure">Structure</h2>
-<ul>
-<li>3-hour face-to-face sessions per day, 1 day per week</li>
-<li>Take home exercises given between face-to-face sessions</li>
-</ul>
-</section>
-<section id="r-café-helpful-shortcuts" class="level2">
-<h2 class="anchored" data-anchor-id="r-café-helpful-shortcuts">R Café helpful shortcuts</h2>
-<ul>
-<li><a href="https://teams.microsoft.com/l/channel/19%3AGyu0GBNtFFuDmjrVqXsrTYScHLPgP5bpTDLOoaJEeaE1%40thread.tacv2/Tech%20support?groupId=6abc7e7a-0132-4ec2-afa7-393d89c247d8&amp;tenantId=22514748-bbda-4cb8-9795-bfa3fbeec018&amp;ngc=true&amp;allowXTenantAccess=true" target="_blank">Teams Tech support channel</a></li>
-<li><a href="https://github.com/OUCRU-Modelling/R-cafe" target="_blank">Main GitHub repository</a></li>
-<li><a href="https://oucru-modelling.github.io/R-cafe-materials/" target="_blank">Theoretical slides</a></li>
-<li><a href="https://github.com/OUCRU-Modelling/R-cafe-materials/tree/main/additional_handouts/day_1" target="_blank">Additional handouts and instructions</a></li>
-<li>Current instructor roster:
-<ul>
-<li>Thinh Ong Phuc (thinhop@oucru.org)</li>
-<li>Anh Phan Truong Quynh (anhptq@oucru.org)</li>
-<li>Hung Tran Thai (hungtt@oucru.org)</li>
-<li>Tuyen Huynh (tuyenhn@oucru.org)</li>
-<li>Hai Ho Bich (haihb@oucru.org)</li>
-</ul></li>
-</ul>
-</section>
-<section id="agenda" class="level2">
-<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
-<ol type="1">
-<li><a href="./slides/intro.html" target="_blank">Getting started with R and Git (day 1)</a>
-<ul>
-<li><strong>Part 1</strong>: Setup (45’) - <em>Tuyen &amp; QA</em>
-<ul>
-<li>What is R Café &amp; Agenda (5’)</li>
-<li>Brief introduction to Git, GitHub, and GitHub Desktop
-<ul>
-<li>Goal: Publish your own branch on R Café’s GitHub repository</li>
-</ul></li>
-<li>Rstudio (20’)
-<ul>
-<li>Goal: Create RStudio project</li>
-<li>Goal: Everyone create and push their first commit onto their own branch</li>
-</ul></li>
-<li>Navigate GitHub</li>
-</ul></li>
-<li><strong>Part 2</strong>: Foundations of R (60’) - <em>QA</em>
-<ul>
-<li>Variables &amp; Functions &amp; Packages (with outline)</li>
-<li>Exercises
-<ul>
-<li>Goal: Create a function and push to GitHub</li>
-<li>Goal: Create issues and comment on each other’s issues on GitHub</li>
-</ul></li>
-</ul></li>
-<li><strong>Break</strong> (15’)</li>
-<li><strong>Part 3</strong>: Data manipulation in R (45’) - <em>QA</em>
-<ul>
-<li>Data management</li>
-<li>Take-home exercises setup</li>
-</ul></li>
-</ul></li>
-<li><a href="./slides/tidyverse.html" target="_blank">R programming with <code>tidyverse</code> (day 2)</a>
-<ul>
-<li><strong>Into the <code>tidyverse</code></strong>
-<ul>
-<li>What is <code>tidyverse</code>?</li>
-<li>Why should we use it?</li>
-<li>How do we use it?</li>
-<li>Piping with <code>%&gt;%</code></li>
-</ul></li>
-<li>Exercise</li>
-<li><strong>Vectorise R functions</strong>
-<ul>
-<li>Vectors and vectorisation</li>
-<li>Vectorisation with <code>map()</code></li>
-<li><code>tidyverse</code> style vs.&nbsp;base R style</li>
-</ul></li>
-<li><strong><code>ggplot2</code> for data visualisation</strong>
-<ul>
-<li>Grammar of graphics</li>
-</ul></li>
-<li>Exercise</li>
-</ul></li>
-<li><a href="./slides/gtsummary.html" target="_blank">Quarto &amp; <code>gtsummary</code> (day 3)</a>
-<ul>
-<li><a href="./slides/quarto.html" target="_blank">Intro to Quarto</a></li>
-<li>Reproducible tables
-<ul>
-<li>Descriptive tables</li>
-<li>Statistical inference</li>
-<li>Univariate analysis</li>
-<li>Multivariate analysis</li>
-</ul></li>
-</ul></li>
-</ol>
-</section>
-<section id="take-home-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="take-home-exercises">Take-home exercises</h2>
-<ol type="1">
-<li><a href="./takehome_exercises/day1.html" target="_blank">Initial Data Analysis - IDA (with <code>skimr</code>)</a>
-<ul>
-<li>Generate questions around your data</li>
-<li>Customize your summary table output</li>
-<li>Simple visualization data, e.g.&nbsp;histogram</li>
-<li>Calculate statistics, e.g.&nbsp;correlation, collinearity</li>
-</ul></li>
-<li><a href="./takehome_exercises/day2.html" target="_blank">Data transformation</a>
-<ul>
-<li>Data cleaning and filtering</li>
-<li>Data transformation</li>
-<li>Factor your data (with <code>forcats</code>)</li>
-<li>Data visualization (with <code>ggplot2</code>)</li>
-</ul></li>
-<li>Analysis with <code>gtsummary</code>
-<ul>
-<li>Demographic summary</li>
-<li>Statistical tests, e.g.&nbsp;t-test, chi-sq, fisher-exact, OR, etc.</li>
-</ul></li>
-<li>Generate report with Quarto
-<ul>
-<li>Citation (inline footnote and reference)</li>
-</ul></li>
-</ol>
-</section>
-<section id="capstone_1-exercises-breakdown-by-day" class="level2">
-<h2 class="anchored" data-anchor-id="capstone_1-exercises-breakdown-by-day">Capstone_1 exercises breakdown by day</h2>
-<ol type="1">
-<li><a href="./capstone_exercises/capstone_1_day_1/index.html" target="_blank">Day_1: Import and clean data</a>
-<ul>
-<li>Import data ENR, ADM, Allocation, Violation data.</li>
-<li>Clean data and merge data.</li>
-</ul></li>
-</ol>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

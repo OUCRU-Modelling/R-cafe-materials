@@ -1,0 +1,455 @@
+---
+title: "Capstone 1 (day 1): Import and cleaning data"
+author: 
+- name: Tran Thai Hung
+  affiliations:
+    - OUCRU biostat
+date: 'last-modified'
+date-format: '[Last version:] MMMM DD, YYYY'
+format: 
+  html: 
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+toc: TRUE
+lof: FALSE
+lot: FALSE
+number-sections: FALSE
+thanks: "Please do not circulate."
+abstract: This is break down exercise day 1 for capstone 1
+keywords: ""
+editor: visual
+execute:
+  echo: false        # Show code
+  warning: false    # Hide warnings
+  message: false    # Hide messages
+  eval: false
+---
+
+In this exercise, you'll practice reading Excel sheets and cleaning the data using basic R functions.
+
+------------------------------------------------------------------------
+
+## Setup
+
+Open `R.project` in the folder cloned from repository.
+
+Create a new script file and save it under the name `exercise_day1.R` (you can create rmd or qmd file if you are comfortable with them)
+
+Install the required packages if you haven't already:
+
+``` r
+install.packages(c("readxl", "dplyr", "here", "stringr", "Hmisc"))
+```
+
+Then load the libraries using `library()`
+
+```{r, echo=TRUE}
+library(readxl)
+library(dplyr)
+library(here)
+library(stringr)
+library(Hmisc)
+```
+
+------------------------------------------------------------------------
+
+## 1. Read ADM and ENR data
+
+### 1.1. Define the File Path
+
+Set the path to the Excel file `2-10-2020-_03TS_V1_Data.xls` stored in the `data` folder. You might use `here` function from `here` package.
+
+❓ **Question:** What folder is the file located in? Why do we use `here()` instead of typing the full path?
+
+::: {.callout-tip collapse="true"}
+✅ Why Use here()?
+
+Ensures your code works across different computers.
+
+Makes file paths dynamic and reproducible.
+
+Works best when you use an RStudio Project (.Rproj file), which sets the root directory.
+
+Example:
+
+``` r
+data_path <- here("capstone_exercises","data", "2-10-2020-_03TS_V1_Data.xls")  # Replace with your actual file name if needed
+```
+
+This points to: `<your_project_root>/capstone_exercises/data/2-10-2020-_03TS_V1_Data.xls`
+:::
+
+```{r}
+file_path <- here("data", "2-10-2020-_03TS_V1_Data.xls") 
+```
+
+------------------------------------------------------------------------
+
+### 1.2. Read the ENR and ADM Sheets
+
+Use `read_excel` function to import the excel sheets. Use `setNames` + `tolower` to make all variables names become lowercases.
+
+::: {.callout-tip collapse="true"}
+Example:
+
+``` r
+# Read the ENR sheet
+enr <- read_excel(file_path, sheet = "ENR") %>%
+  setNames(tolower(names(.)))
+```
+
+Write code to import "ADM" sheet to `adm` data frame too.
+:::
+
+```{r}
+# Read the ENR sheet
+enr <- read_excel(file_path, sheet = "ENR") %>%
+  setNames(tolower(names(.)))
+
+# Read the ADM sheet
+adm <- read_excel(file_path, sheet = "ADM") %>%
+  setNames(tolower(names(.)))
+```
+
+Use `summary`, `skimr` , `str` to inspect our data. Determine whether any cleaning is necessary.
+
+------------------------------------------------------------------------
+
+### 1.3. Clean the Data
+
+#### For `ENR`
+
+Most of the time, we receive data with undesired values like `Y/N/UNKNOWN` instead of `yes, no, or NA`. We need to clean them.
+
+Using `mutate`, `case_when` and `factor`
+
+-   Replace `"Y"` with `"yes"`, `"N"` with `"no"`
+-   Replace `"UNKNOWN"` with `NA`
+-   Convert `"yes"`/`"no"` columns to factors labeled `0` and `1`
+
+::: {.callout-tip collapse="true"}
+Example: clean variable `age16`
+
+``` r
+enr <- enr %>% 
+  mutate(
+    age16 = case_when(age16 == "Y" ~ "yes",
+                      age16 == "N" ~ "no",
+                      age16 == "UNKNOWN" ~ NA_character_),
+    age16 = factor(age16, levels = c("no", "yes"), labels = c(0, 1))
+  )
+```
+:::
+
+You might apply this manually to all other variables in enr and adm.
+
+However, if you need to change many variables, it's more efficient to use `across` function that mutates all of them automatically, as shown below. This approach saves time, ensures that no variables are missed, and eliminates the need to modify the code when new variables are added to the data.
+
+::: {.callout-tip collapse="true"}
+``` r
+enr <- enr %>%
+  mutate(across(
+    where(is.character),
+    ~ case_when(
+      .x == "Y" ~ "yes",
+      .x == "N" ~ "no",
+      .x == "UNKNOWN" ~ NA_character_,
+      TRUE ~ .x
+    )
+  )) %>%
+  mutate(across(
+    where(~ all(.x %in% c("yes", "no", NA), na.rm = TRUE)),
+    ~ factor(.x, levels = c("no", "yes"), labels = c(0, 1))
+  ))
+```
+:::
+
+```{r}
+enr <- enr %>%
+  mutate(across(
+    where(is.character),
+    ~ case_when(
+      .x == "Y" ~ "yes",
+      .x == "N" ~ "no",
+      .x == "UNKNOWN" ~ NA_character_,
+      TRUE ~ .x
+    )
+  )) %>%
+  mutate(across(
+    where(~ all(.x %in% c("yes", "no", NA), na.rm = TRUE)),
+    ~ factor(.x, levels = c("no", "yes"), labels = c(0, 1))
+  ))
+```
+
+#### For `ADM` (Repeat the same steps)
+
+```{r}
+adm <- adm %>%
+  mutate(across(
+    where(is.character),
+    ~ case_when(
+      .x == "Y" ~ "yes",
+      .x == "N" ~ "no",
+      .x == "UNKNOWN" ~ NA_character_,
+      TRUE ~ .x
+    )
+  )) %>%
+  mutate(across(
+    where(~ all(.x %in% c("yes", "no", NA), na.rm = TRUE)),
+    ~ factor(.x, levels = c("no", "yes"), labels = c(0, 1))
+  ))
+```
+
+#### Check Your Work
+
+Use `summary`, `skimr`, `str` to explore your cleaned data.
+
+------------------------------------------------------------------------
+
+## 2. Read and Process Allocation Data
+
+In this section, you'll import an Excel file `03TS_Randlist.xlsx` that contains randomization information and prepare it for analysis.
+
+------------------------------------------------------------------------
+
+### 2.1 Define the File Path
+
+```{r}
+allocation_file_path <- here::here("data", "03TS_Randlist.xlsx")
+```
+
+------------------------------------------------------------------------
+
+### 2.2 Read the Allocation Sheet
+
+Now import the `"Allocation"` sheet and convert all column names to lowercase.
+
+```{r}
+allocation_data <- read_excel(allocation_file_path, sheet = "Allocation") %>%
+  setNames(tolower(names(.)))
+```
+
+------------------------------------------------------------------------
+
+### 2.3 Filter and Clean the Data
+
+Next, keep only the first 272 rows (patients) using `filter` function.
+
+Then rename the treatment arm column from `r.arm` to `arm` using `rename`.
+
+Create cleaned patient `usubjid` columns from `pat.id` that matches the format of `usubjid` from `enr` using `mutate`, `str_replace` and `paste`.
+
+Replace the values in `arm` according to the `dictionary` sheet in the `03TS_Randlist.xlsx` using `mutate` and `case_when`
+
+::: {.callout-tip collapse="true"}
+```{r, echo= TRUE}
+randolist <- allocation_data %>%
+  filter(row_number() %in% c(1:272)) %>%
+  rename(arm = r.arm) %>%
+  mutate(
+    pat.id = str_replace(pat.id, ".*-", ""),
+    usubjid = paste("003", pat.id, sep = "-"),
+    arm = case_when(
+      arm == "14 ampoules: TETANUS ANTITOXIN (IM) + 2 prefilled-syringes : TETAGAM®P (intrathecal))" ~ "equine and intrathecal",
+      arm == "14 ampoules: TETANUS ANTITOXIN (IM)" ~ "equine and sham",
+      arm == "12 prefilled-syringes : TETAGAM®P (IM) + 2 prefilled-syringes : TETAGAM®P (intrathecal))" ~ "human and intrathecal",
+      arm == "12 prefilled-syringes : TETAGAM®P (IM)" ~ "human and sham"
+    )
+  )
+```
+:::
+
+Use `head(randolist)` to check your processed data.
+
+------------------------------------------------------------------------
+
+## 3. Protocol Violations, Exclusions, and Withdrawals
+
+In this section, you will work with a file that contains information about patients who should be excluded from the study or had protocol violations.
+
+------------------------------------------------------------------------
+
+### 3.1 Define the File Path
+
+```{r}
+violations_file_path <- here::here("data", "Protocol violations, exclusions, withdrawals.xlsx")
+```
+
+------------------------------------------------------------------------
+
+### 3.2 Read Each Sheet
+
+Import each relevant sheet from the Excel file and standardize column names.
+
+::: {.callout-tip collapse="true"}
+```{r, echo=TRUE}
+# Read and standardize all relevant sheets
+pilot <- read_excel(violations_file_path, sheet = "Pilot") %>%
+  setNames(tolower(names(.)))
+
+mv_before_im <- read_excel(violations_file_path, sheet = "MV before IM") %>%
+  setNames(tolower(names(.)))
+
+mv_before_it <- read_excel(violations_file_path, sheet = "MV before IT") %>%
+  setNames(tolower(names(.)))
+
+protocol_violation <- read_excel(violations_file_path, sheet = "Protocol violation") %>%
+  setNames(tolower(names(.)))
+
+withdrawals <- read_excel(violations_file_path, sheet = "Withdrawals") %>%
+  setNames(tolower(names(.)))
+
+it_per_protocol <- read_excel(violations_file_path, sheet = "IT Per protocol") %>%
+  setNames(tolower(names(.)))
+
+im_per_protocol <- read_excel(violations_file_path, sheet = "IM per protocol") %>%
+  setNames(tolower(names(.)))
+
+im_itt <- read_excel(violations_file_path, sheet = "IM ITT") %>%
+  setNames(tolower(names(.)))
+
+# Rename column for consistency
+im_itt <- im_itt %>% rename(usubjid = "id")
+```
+:::
+
+**Challenge:** If you are familiar with writing new functions and using map, try writing code to automatically import all sheets from an Excel file.
+
+Use `str()` or `names()` to explore the structure of these data frames.
+
+------------------------------------------------------------------------
+
+### 3.3 Identify and Exclude Patients
+
+Now combine excluded patient IDs from the `pilot` and `withdrawals` sheets using `unique` and `c`. Filter out excluded patients from the main datasets using `filter`.
+
+::: {.callout-tip collapse="true"}
+```{r, echo=TRUE}
+# Combine USUBJIDs for exclusion
+excluded_subjects <- unique(c(pilot$usubjid, withdrawals$usubjid))
+
+# Filter ENR and ADM to remove excluded subjects
+enr <- enr %>% filter(!usubjid %in% excluded_subjects)
+adm <- adm %>% filter(!usubjid %in% excluded_subjects)
+```
+:::
+
+------------------------------------------------------------------------
+
+## 4. Create and Label Baseline Data
+
+In this section, you'll merge enrollment, admission, and allocation data, then create new variables and assign labels.
+
+------------------------------------------------------------------------
+
+### 4.1 Merge Datasets
+
+Join `enr`, `adm`, and `randolist` to create a complete baseline dataset by`usubjid` using `left_join`.
+
+::: {.callout-tip collapse="true"}
+```{r, echo=TRUE}
+baseline_data <- enr %>%
+  select(-c(entry, studyid, siteid, subjid, event )) %>%
+  left_join(adm, by = "usubjid") %>%
+  left_join(randolist %>% select(usubjid, arm), by = "usubjid")
+```
+:::
+
+❓ **Question:** Why might we want to remove the `entry`, `studyid`, `siteid`, `subjid` and `event` column before merging? How about `enteredtime`?
+
+------------------------------------------------------------------------
+
+### 4.2 Add BMI and Label Variables
+
+Now we use the `upData()` function to add a new variable (BMI) and label the columns for easier reference in summaries and tables.
+
+Example:
+
+``` r
+baseline_data_raw <- upData(
+  baseline_data,
+  bmi = weight / ((height / 100) ^ 2),
+  # New variable derived from weight and height
+  labels = c(
+    age = "Age (years)",
+    icudays = "Days in ICU"
+    )
+  )
+```
+
+```{r}
+baseline_data_raw <- upData(
+  baseline_data,
+  bmi = weight / ((height / 100) ^ 2),
+  # New variable derived from weight and height
+  labels = c(
+    age = "Age (years)",
+    icudays = "Days in ICU",
+    sex = "Sex",
+    weight = "Weight (kg)",
+    height = "Height (cm)",
+    bmi = "BMI (kg/m2)",
+    source = "Source",
+    tetanus = "Tetanus",
+    hypertension = "Hypertension",
+    myocardialinfart = "Myocardial infarction",
+    angina = "Angina",
+    perivascular = "Perivascular",
+    chronicpul = "Chronic pulmonary",
+    connectivetissue = "Connective tissue",
+    mildliver = "Mild liver",
+    hemiplegia = "Hemiplegia",
+    diawithchronic = "Diabetes with chronic",
+    severeliver = "Severe liver",
+    aids = "AIDS",
+    cardiacfailureiii = "Cardiac failure III",
+    cardiacfailureiv = "Cardiac failure IV",
+    cerebrovascular = "Cerebrovascular",
+    severeresp = "Severe respiratory",
+    pepticulcer = "Peptic ulcer",
+    diabetes = "Diabetes",
+    severekidney = "Severe kidney",
+    malignancy = "Malignancy",
+    tumour = "Tumour",
+    dementia = "Dementia",
+    comorbidityoth1 = "Other comorbidity 1",
+    comorbidityoth2 = "Other comorbidity 2",
+    electivesurgery = "Elective surgery",
+    emergencysurgery = "Emergency surgery",
+    timetoadm = "Duration of illness (days)",
+    incubationperiod = "Incubation period (days)",
+    incuperiodonset = "Period of onset (days)",
+    wound = "Wound",
+    diffbreath = "Difficulty breathing on admission",
+    ablettscore = "Ablett Score on admission",
+    asa = "ASA score",
+    maxtemp = "Maximum temperature during 1st day",
+    resp = "Respiratory rate",
+    fio2 = "FiO2",
+    spo2 = "SpO2",
+    pao2 = "PAO2",
+    ph = "PH",
+    plt = "Platelet count",
+    wbc = "White blood cell count",
+    hct = "Haematocrit",
+    maxhr = "Max HR",
+    minhr = "Min HR",
+    maxsbp = "Max SBP",
+    worstdbp = "Worst DBP",
+    worstsbp = "Worst SBP",
+    vaso = "Vasopressors",
+    bili = "Bilirubin",
+    na = "Sodium",
+    k = "Potassium",
+    creat = "Creatinine",
+    renalfailure = "Acute Renal Failure"
+  )
+)
+```
+
+🔍 **Try this:** Relabel all other variables by adding them to the example above. Run `summary(baseline_data_raw)` to explore the labeled dataset.\
+🧠 **Reflection:** Why is labeling variables important in medical data analysis?
+
+------------------------------------------------------------------------

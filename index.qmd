@@ -82,5 +82,7 @@ format: html
 4. Generate report with Quarto
 	- Citation (inline footnote and reference)
 
-## Capstone hint
-1. [Capstone hint 1](slides/capstone_hint_1.qmd)
+## Capstone_1 exercises breakdown by day
+1. [Day_1: Import and clean data](capstone_exercises/capstone_1_day_1/index.qmd){target="_blank"}
+	- Import data ENR, ADM, Allocation, Violation data.
+	- Clean data and merge data.
